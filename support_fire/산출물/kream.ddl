@@ -346,6 +346,10 @@ CREATE TABLE payment(
 		pl_no                         		NUMBER(10)		 NULL 
 );
 
+DROP SEQUENCE payment_pm_no_SEQ;
+
+CREATE SEQUENCE payment_pm_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
+
 COMMENT ON TABLE payment is 'payment';
 COMMENT ON COLUMN payment.pm_no is 'pm_no';
 COMMENT ON COLUMN payment.pm_name is 'pm_name';
