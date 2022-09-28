@@ -2,16 +2,16 @@ package com.itwill.dto;
 
 public class Sizes {
 	private String s_size;
-	private Category category;
+	private int c_no;
 	
 	public Sizes() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Sizes(String s_size, Category category) {
+	public Sizes(String s_size, int c_no) {
 		super();
 		this.s_size = s_size;
-		this.category = category;
+		this.c_no = c_no;
 	}
 
 	public String getS_size() {
@@ -22,17 +22,19 @@ public class Sizes {
 		this.s_size = s_size;
 	}
 
-	public Category getCategory() {
-		return category;
+	public int getC_no() {
+		return c_no;
 	}
 
-	public void setCategory(Category category) {
-		this.category = category;
+	public void setC_no(int c_no) {
+		this.c_no = c_no;
 	}
 
 	@Override
 	public String toString() {
-		return "Sizes [s_size=" + s_size + ", category=" + category + "]";
+		return "Sizes [s_size=" + s_size + ", c_no=" + c_no + "]";
 	}
+
+	
 	
 }

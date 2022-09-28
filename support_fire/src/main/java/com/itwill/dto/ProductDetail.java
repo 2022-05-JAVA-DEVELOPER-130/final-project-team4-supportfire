@@ -9,15 +9,15 @@ public class ProductDetail {
 	private Date pd_end;
 	private ProductSize productsize;
 	private String m_id;
-	private BidType bidType;
-	private BidStatus bidStatus;
+	private int bt_no;
+	private int b_no;
 	
 	public ProductDetail() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public ProductDetail(int pd_no, int pd_price, Date pd_start, Date pd_end, ProductSize productsize, String m_id,
-			BidType bidType, BidStatus bidStatus) {
+			int bt_no, int b_no) {
 		super();
 		this.pd_no = pd_no;
 		this.pd_price = pd_price;
@@ -25,8 +25,8 @@ public class ProductDetail {
 		this.pd_end = pd_end;
 		this.productsize = productsize;
 		this.m_id = m_id;
-		this.bidType = bidType;
-		this.bidStatus = bidStatus;
+		this.bt_no = bt_no;
+		this.b_no = b_no;
 	}
 
 	public int getPd_no() {
@@ -77,28 +77,28 @@ public class ProductDetail {
 		this.m_id = m_id;
 	}
 
-	public BidType getBidType() {
-		return bidType;
+	public int getBt_no() {
+		return bt_no;
 	}
 
-	public void setBidType(BidType bidType) {
-		this.bidType = bidType;
+	public void setBt_no(int bt_no) {
+		this.bt_no = bt_no;
 	}
 
-	public BidStatus getBidStatus() {
-		return bidStatus;
+	public int getB_no() {
+		return b_no;
 	}
 
-	public void setBidStatus(BidStatus bidStatus) {
-		this.bidStatus = bidStatus;
+	public void setB_no(int b_no) {
+		this.b_no = b_no;
 	}
 
 	@Override
 	public String toString() {
 		return "ProductDetail [pd_no=" + pd_no + ", pd_price=" + pd_price + ", pd_start=" + pd_start + ", pd_end="
-				+ pd_end + ", productsize=" + productsize + ", m_id=" + m_id + ", bidType=" + bidType + ", bidStatus="
-				+ bidStatus + "]";
+				+ pd_end + ", productsize=" + productsize + ", m_id=" + m_id + ", bt_no=" + bt_no + ", b_no=" + b_no
+				+ "]";
 	}
-	
+
 	
 }

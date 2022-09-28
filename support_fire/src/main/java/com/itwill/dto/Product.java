@@ -6,20 +6,20 @@ public class Product {
 	private String p_date;
 	private String p_price;
 	private String p_image;
-	private Brands brands;
+	private int br_no;
 	
 	public Product() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	public Product(int p_no, String p_name, String p_date, String p_price, String p_image, Brands brands) {
+
+	public Product(int p_no, String p_name, String p_date, String p_price, String p_image, int br_no) {
 		super();
 		this.p_no = p_no;
 		this.p_name = p_name;
 		this.p_date = p_date;
 		this.p_price = p_price;
 		this.p_image = p_image;
-		this.brands = brands;
+		this.br_no = br_no;
 	}
 
 	public int getP_no() {
@@ -62,18 +62,18 @@ public class Product {
 		this.p_image = p_image;
 	}
 
-	public Brands getBrands() {
-		return brands;
+	public int getBr_no() {
+		return br_no;
 	}
 
-	public void setBrands(Brands brands) {
-		this.brands = brands;
+	public void setBr_no(int br_no) {
+		this.br_no = br_no;
 	}
 
 	@Override
 	public String toString() {
 		return "Product [p_no=" + p_no + ", p_name=" + p_name + ", p_date=" + p_date + ", p_price=" + p_price
-				+ ", p_image=" + p_image + ", brands=" + brands + "]";
+				+ ", p_image=" + p_image + ", br_no=" + br_no + "]";
 	}
 	
 	
