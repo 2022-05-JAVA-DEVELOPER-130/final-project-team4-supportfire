@@ -99,7 +99,7 @@ CREATE TABLE product(
 		p_no                          		NUMBER(10)		 NOT NULL,
 		p_name                        		VARCHAR2(50)		 NULL ,
 		p_date                        		VARCHAR2(15)		 NULL ,
-		p_price                       		VARCHAR2(20)		 NULL ,
+		p_price                       		NUMBER(20)		 NULL ,
 		p_image                       		VARCHAR2(50)		 NULL ,
 		br_no                         		NUMBER(10)		 NULL 
 );
@@ -176,7 +176,7 @@ COMMENT ON COLUMN bidStatus.b_status is 'b_status';
 /**********************************/
 CREATE TABLE productDetail(
 		pd_no                         		NUMBER(10)		 NOT NULL,
-		pd_price                      		VARCHAR2(20)		 NULL ,
+		pd_price                      		NUMBER(20)			 NULL ,
 		pd_start                      		DATE		 DEFAULT sysdate		 NULL ,
 		pd_end                        		DATE		 NULL ,
 		ps_no                         		VARCHAR2(20)		 NULL ,
@@ -345,10 +345,6 @@ CREATE TABLE payment(
 		o_no                          		VARCHAR2(10)		 NULL ,
 		pl_no                         		NUMBER(10)		 NULL 
 );
-
-DROP SEQUENCE payment_pm_no_SEQ;
-
-CREATE SEQUENCE payment_pm_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
 COMMENT ON TABLE payment is 'payment';
 COMMENT ON COLUMN payment.pm_no is 'pm_no';
