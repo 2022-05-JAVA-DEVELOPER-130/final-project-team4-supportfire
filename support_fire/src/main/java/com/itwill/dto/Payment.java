@@ -6,15 +6,14 @@ public class Payment {
 	private String pm_phone;
 	private String pm_address;
 	private String pm_memo;
-	private Orders o_no;
-	private PaymentList pl_no;
+	private int o_no;
+	private int pl_no;
 	
 	public Payment() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Payment(int pm_no, String pm_name, String pm_phone, String pm_address, String pm_memo, Orders o_no,
-			PaymentList pl_no) {
+	public Payment(int pm_no, String pm_name, String pm_phone, String pm_address, String pm_memo, int o_no, int pl_no) {
 		super();
 		this.pm_no = pm_no;
 		this.pm_name = pm_name;
@@ -65,19 +64,19 @@ public class Payment {
 		this.pm_memo = pm_memo;
 	}
 
-	public Orders getO_no() {
+	public int getO_no() {
 		return o_no;
 	}
 
-	public void setO_no(Orders o_no) {
+	public void setO_no(int o_no) {
 		this.o_no = o_no;
 	}
 
-	public PaymentList getPl_no() {
+	public int getPl_no() {
 		return pl_no;
 	}
 
-	public void setPl_no(PaymentList pl_no) {
+	public void setPl_no(int pl_no) {
 		this.pl_no = pl_no;
 	}
 
@@ -86,5 +85,6 @@ public class Payment {
 		return "Payment [pm_no=" + pm_no + ", pm_name=" + pm_name + ", pm_phone=" + pm_phone + ", pm_address="
 				+ pm_address + ", pm_memo=" + pm_memo + ", o_no=" + o_no + ", pl_no=" + pl_no + "]";
 	}
+
 	
 }
