@@ -114,3 +114,34 @@ insert into paymentList values(3, '카카오페이');
 insert into payment values(1, '지원준비', '01034567890', '인천', '안전한 배송 부탁 드립니다.', 1, 1);
 insert into payment values(2, '우치하', '01087654321', '나뭇잎 마을', '안전한 배송 부탁 드립니다.', 2, 3);
 
+/*********QNA***********/
+insert into qna values(QNA_Q_NO_SEQ.nextval, '제목1', '내용내용내용내용내용내용내용내용내용내용1', sysdate, QNA_Q_NO_SEQ.currval, 1, 0, 'seongmin');
+insert into qna values(QNA_Q_NO_SEQ.nextval, '제목2', '내용내용내용내용내용내용내용내용내용내용2', sysdate, QNA_Q_NO_SEQ.currval, 1, 0, 'seongmin');
+insert into qna values(QNA_Q_NO_SEQ.nextval, '제목3', '내용내용내용내용내용내용내용내용내용내용3', sysdate, QNA_Q_NO_SEQ.currval, 1, 0, 'seongmin');
+insert into qna values(QNA_Q_NO_SEQ.nextval, '제목4', '내용내용내용내용내용내용내용내용내용내용4', sysdate, QNA_Q_NO_SEQ.currval, 1, 0, 'seongmin');
+insert into qna values(QNA_Q_NO_SEQ.nextval, '제목5', '내용내용내용내용내용내용내용내용내용내용5', sysdate, QNA_Q_NO_SEQ.currval, 1, 0, 'seongmin');
+insert into qna values(QNA_Q_NO_SEQ.nextval, '제목6', '내용내용내용내용내용내용내용내용내용내용6', sysdate, QNA_Q_NO_SEQ.currval, 1, 0, 'seongmin');
+insert into qna values(QNA_Q_NO_SEQ.nextval, '제목7', '내용내용내용내용내용내용내용내용내용내용7', sysdate, QNA_Q_NO_SEQ.currval, 1, 0, 'seongmin');
+insert into qna values(QNA_Q_NO_SEQ.nextval, '제목8', '내용내용내용내용내용내용내용내용내용내용8', sysdate, QNA_Q_NO_SEQ.currval, 1, 0, 'seongmin');
+
+/**********notice***********/
+insert into notice values(NOTICE_N_NO_SEQ.nextval, '제목1', '내용1', sysdate);
+insert into notice values(NOTICE_N_NO_SEQ.nextval, '제목2', '내용2', sysdate);
+insert into notice values(NOTICE_N_NO_SEQ.nextval, '제목3', '내용3', sysdate);
+insert into notice values(NOTICE_N_NO_SEQ.nextval, '제목4', '내용4', sysdate);
+insert into notice values(NOTICE_N_NO_SEQ.nextval, '제목5', '내용5', sysdate);
+insert into notice values(NOTICE_N_NO_SEQ.nextval, '제목6', '내용6', sysdate);
+
+/*********review**********/
+insert into review values(REVIEW_R_NO_SEQ.nextval, '제목1', '내용1', sysdate, '5', 'seongmin', '1');
+insert into review values(REVIEW_R_NO_SEQ.nextval, '제목2', '내용2', sysdate, '5', 'seongmin', '2');
+insert into review values(REVIEW_R_NO_SEQ.nextval, '제목3', '내용3', sysdate, '1', 'seongmin', '3');
+insert into review values(REVIEW_R_NO_SEQ.nextval, '제목4', '내용4', sysdate, '5', 'seongmin', '4');
+insert into review values(REVIEW_R_NO_SEQ.nextval, '제목5', '내용5', sysdate, '5', 'seongmin', '5');
+insert into review values(REVIEW_R_NO_SEQ.nextval, '제목6', '내용6', sysdate, '4', 'seongmin', '6');
+insert into review values(REVIEW_R_NO_SEQ.nextval, '제목7', '내용7', sysdate, '3', 'seongmin', '7');
+insert into review values(REVIEW_R_NO_SEQ.nextval, '제목8', '내용8', sysdate, '5', 'seongmin', '8');
+insert into review values(REVIEW_R_NO_SEQ.nextval, '제목9', '내용9', sysdate, '4', 'seongmin', '9');
+insert into review values(REVIEW_R_NO_SEQ.nextval, '제목10', '내용10', sysdate, '5', 'seongmin', '10');
+
+commit;
