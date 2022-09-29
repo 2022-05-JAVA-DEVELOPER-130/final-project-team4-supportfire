@@ -22,7 +22,7 @@ public interface PaymentMapper {
 	
 	//결제정보전제조회
 	@Select("select * from payment")
-	public List<Payment> selecAll();
+	public List<Payment> selectAll();
 	
 	//주문번호로결제정보업데이트(배송지변경,이름,핸드폰,배송메모)
 	@Update("update payment set pm_name=#{pm_name},pm_phone=#{pm_phone},pm_address=#{pm_address},pm_memo=#{pm_memo} where o_no=#{o_no}")
