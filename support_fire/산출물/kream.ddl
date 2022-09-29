@@ -286,7 +286,7 @@ COMMENT ON COLUMN notice.n_date is 'n_date';
 /* Table Name: orders */
 /**********************************/
 CREATE TABLE orders(
-		o_no                          		VARCHAR2(10)		 NULL ,
+		o_no                          		NUMBER(10)		 NULL ,
 		o_date                        		DATE		 NULL ,
 		pd_no_purchase                		NUMBER(10)		 NULL ,
 		pd_no_sell                    		NUMBER(10)		 NULL ,

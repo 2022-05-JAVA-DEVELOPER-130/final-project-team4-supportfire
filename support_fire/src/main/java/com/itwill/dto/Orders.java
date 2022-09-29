@@ -3,7 +3,7 @@ package com.itwill.dto;
 import java.sql.Date;
 
 public class Orders {
-	private String o_no;
+	private int o_no;
 	private Date o_date;
 	private ProductDetail po_no_purchase;
 	private ProductDetail po_no_sell;
@@ -13,7 +13,7 @@ public class Orders {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Orders(String o_no, Date o_date, ProductDetail po_no_purchase, ProductDetail po_no_sell, String o_status) {
+	public Orders(int o_no, Date o_date, ProductDetail po_no_purchase, ProductDetail po_no_sell, String o_status) {
 		super();
 		this.o_no = o_no;
 		this.o_date = o_date;
@@ -22,11 +22,11 @@ public class Orders {
 		this.o_status = o_status;
 	}
 
-	public String getO_no() {
+	public int getO_no() {
 		return o_no;
 	}
 
-	public void setO_no(String o_no) {
+	public void setO_no(int o_no) {
 		this.o_no = o_no;
 	}
 
