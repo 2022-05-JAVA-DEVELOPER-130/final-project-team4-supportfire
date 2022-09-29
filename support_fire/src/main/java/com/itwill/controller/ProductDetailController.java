@@ -5,9 +5,9 @@ import org.springframework.stereotype.Controller;
 
 import com.itwill.service.ProductDetailService;
 
-@Controller
+//@Controller
 public class ProductDetailController {
-	@Autowired
+	//@Autowired
 	private ProductDetailService productDetailService;
 	
 	
