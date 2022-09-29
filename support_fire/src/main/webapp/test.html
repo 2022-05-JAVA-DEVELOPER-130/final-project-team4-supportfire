@@ -22,7 +22,7 @@
   }
   </style>
 <script type="text/javascript">
-$(document).ready(function() {
+$(function() {
     $("#writeBtn").click(function(){
     	location.href ="write";
     })
@@ -31,10 +31,10 @@ $(document).ready(function() {
     	success: function(result){             
         var html = "";
     	result.forEach(function(item){
-    		html+= "<tr> <td><a href = 'view?idx=" + item.q_no + "'>" + item.q_title + "</a>" +
-        			"<ul class='hide'>" +
+    		html+= "<tr> <td id='ass'>" + item.q_title  +
         			"<br><br><br>" +
-        			"<li>" + item.q_date.substring(0,10) + "</li>" +
+        			"<ul class='hide'>" +
+        			"<li id='add'>" + item.q_date.substring(0,10) + "</li>" +
         			"<li>" + item.q_content + "</li>"
         			
         			
@@ -46,6 +46,35 @@ $(document).ready(function() {
      $("#deleteBtn").click(function(){
     	location.href ="write";
      })
+     
+     $('ul .hide').click(function(e){
+ 		/**************기본효과(slide)*********/
+ 		//$(e.target).next().show();
+ 		$(e.target).next().hide();
+ 		//$(e.target).next().toggle();
+ 		
+ 		/************************************/
+ 		console.log(e);
+ 		
+ 		/**************slide효과***************/
+ 		
+ 		$(e.target).next().slideDown();
+ 		$(e.target).next().slideUp();
+ 		//$(e.target).next().slideToggle(2000, functiong(){
+ 		//	alert('slideToggle이완료된후 실행하는 function');
+ 		//});
+ 		
+ 		/**************fade효과***************/
+ 		//$(e.target).next().fadeIn();
+ 		//$(e.target).next().fadeOut();
+ 		//$(e.target).next().fadeToggle(2000,function(){
+ 			
+ 		//});
+ 		
+ 		
+ 		
+ 	});
+     
 } );
 
 </script>
@@ -79,8 +108,8 @@ $(document).ready(function() {
 		                <th>제목</th>
 		            </tr>
 		        </thead>
-		        <tbody id = "listArea">
-		        </tbody>
+		        <div id = "listArea">
+		        </div>
 		    </table>
 			<button type="button" class="btn btn-primary" id = "writeBtn">글쓰기</button>
 		</div>

@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 
 import com.itwill.dto.Qna;
 
@@ -22,14 +23,22 @@ public interface QnaMapper {
 	@Select("select * from QNa")
 	public List<Qna> selectAll();
 	
+	@Select("select * from qna where m_id = #{m_id}")
 	public Qna qna_selectById(int m_id);
+	
+	@Select("select * from qna where q_no = #{q_no}")
+	public Qna qna_selectByNo(int q_no);
 
+	
 	public int qna_update(Qna vo);
 
+	
 	public int qna_delete(int m_id);
+	
 	
 	public int qna_countAll();
 
+	
 	public int qna_reply_insert(Qna qna);
 
 	

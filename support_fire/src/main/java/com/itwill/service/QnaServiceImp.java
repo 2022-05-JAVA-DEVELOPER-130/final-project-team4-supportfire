@@ -46,6 +46,11 @@ public class QnaServiceImp implements QnaService{
 	}
 
 	@Override
+	public Qna qna_selectByNo(int q_no) {
+		return qnaDao.qna_selectByNo(q_no);
+	}
+	
+	@Override
 	public int qna_update(Qna qna) {
 		return qnaDao.qna_update(qna);
 	}

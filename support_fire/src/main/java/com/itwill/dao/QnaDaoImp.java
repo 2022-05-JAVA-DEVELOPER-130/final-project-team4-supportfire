@@ -45,7 +45,12 @@ public class QnaDaoImp implements QnaDao{
 	public Qna qna_selectById(int m_id) {
 		return qnaMapper.qna_selectById(m_id);
 	}
-
+	
+	@Override
+	public Qna qna_selectByNo(int q_no) {
+		return qnaMapper.qna_selectByNo(q_no);
+	}
+	
 	@Override
 	public int qna_update(Qna qna) {
 		return qnaMapper.qna_update(qna);

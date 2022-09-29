@@ -13,6 +13,8 @@ public interface QnaService {
 	List<Qna> qna_list(int start, int last);
 
 	Qna qna_selectById(int m_id);
+	
+	Qna qna_selectByNo(int q_no);
 
 	int qna_update(Qna vo);
 
