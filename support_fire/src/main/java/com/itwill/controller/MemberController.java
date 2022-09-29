@@ -24,7 +24,7 @@ public class MemberController {
 		return "member_main";
 	}
 	
-	@GetMapping("guest_list")
+	@GetMapping("member_list")
 	public String member_list(Model model) throws Exception{
 		List<Member> members = memberService.selectAllmembers();
 		model.addAttribute("members", members);
