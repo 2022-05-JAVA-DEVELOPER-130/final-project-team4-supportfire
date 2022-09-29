@@ -1,5 +1,8 @@
 package com.itwill.mapper;
 
-public interface SizesMapper {
 
+public interface SizesMapper {
+	
+	
+	
 }

@@ -1,5 +1,10 @@
 package com.itwill.service;
 
-public interface CategoryService {
+import java.util.List;
 
+import com.itwill.dto.Category;
+
+public interface CategoryService {
+	
+	List<Category> selectAll();
 }
