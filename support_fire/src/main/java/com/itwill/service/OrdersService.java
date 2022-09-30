@@ -6,9 +6,9 @@ import com.itwill.dto.Orders;
 
 public interface OrdersService {
 
-	Orders selectByIdPurchase(String m_id) throws Exception;
+	List<Orders> selectByIdPurchase(String m_id) throws Exception;
 	
-	Orders selectByIdSell(String m_id) throws Exception;
+	List<Orders> selectByIdSell(String m_id) throws Exception;
 	
 	Orders selectByNo(int o_no) throws Exception;
 	
