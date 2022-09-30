@@ -9,6 +9,8 @@ import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.FilterType;
 
 import com.itwill.dao.ProductDetailDao;
+import com.itwill.dto.ProductDetail;
+import com.itwill.dto.ProductSize;
 import com.itwill.mapper.ProductDetailMapper;
 
 @SpringBootApplication
@@ -29,7 +31,9 @@ public class ProductDetatilDaoSpringBootTestApplication {
 		System.out.println(productDetailDao.selectByNo(1));
 		System.out.println(productDetailDao.selectById("seongmin"));
 		System.out.println(productDetailDao.selectAll());
-
+		System.out.println(productDetailDao.selectByIdAndBtNo("seongmin", 1));
+		//System.out.println(productDetailDao.insert(new ProductDetail(0, 140000, null, null, new ProductSize(1, null, null), "seongmin", 1, 1)));
+		System.out.println(productDetailDao.delete(8));
 	}
 
 }

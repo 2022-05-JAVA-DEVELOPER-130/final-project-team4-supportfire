@@ -5,19 +5,29 @@
 <html lang="UTF-8">
 <head>
 <title>QNA</title>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
-
-
+$(function() {
+    $("#writeBtn").click(function(){
+    	location.href ="write";
+    })
+    $.ajax({
+    	url: "test", 
+    	success: function(result){             
+        console.log(result);
+        console.log(result.pd_no);
+        console.log(result.productsize.ps_no);
+        console.log(result.productsize.product.p_price);
+    	}
+    	
+    })
+    });
 
 </script>
-<% ProductDetail product = (ProductDetail)request.getAttribute("product"); %>
 </head>
 <body>
 asdsa
-<%=product %>
-<%=product.getB_no() %>
-<%=product.getPd_no() %>
+
 ${product}
 ${product.pd_no}
 ${product.pd_price}

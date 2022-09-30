@@ -1,6 +1,5 @@
 package com.itwill.controller;
 
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,13 +14,12 @@ public class ProductDetailController {
 	@Autowired
 	private ProductDetailService productDetailService;
 	
-	@RequestMapping("/test")
+	@RequestMapping(value = "test")
 	@ResponseBody
-	public String list(HttpServletRequest request) {
+	public ProductDetail test() {
 		ProductDetail product = productDetailService.selectByNo(1);
-		request.setAttribute("product", product);
 		System.out.println("product : " + product);
-		return "forward:test.jsp";
+		return product;
 		
 	}
 }

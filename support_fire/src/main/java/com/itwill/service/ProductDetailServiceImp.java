@@ -10,6 +10,7 @@ import com.itwill.dto.ProductDetail;
 
 @Service
 public class ProductDetailServiceImp implements ProductDetailService{
+	
 	@Autowired
 	private ProductDetailDao productDetailDao;
 
@@ -44,7 +45,7 @@ public class ProductDetailServiceImp implements ProductDetailService{
 	}
 
 	@Override
-	public ProductDetail selectByIdAndBtNo(String m_id, int bt_no) {
+	public List<ProductDetail> selectByIdAndBtNo(String m_id, int bt_no) {
 		return productDetailDao.selectByIdAndBtNo(m_id, bt_no);
 	}
 
