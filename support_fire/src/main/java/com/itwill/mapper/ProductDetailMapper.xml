@@ -3,7 +3,7 @@
 <mapper namespace="com.itwill.mapper.ProductDetailMapper">
 
 
-	<resultMap id="selectByNo"
+	<resultMap id="productDetail"
 				type="com.itwill.dto.ProductDetail">
 			<result column="pd_no" property="pd_no"/>
 			<result column="pd_price" property="pd_price"/>

@@ -30,22 +30,22 @@ public interface ProductDetailMapper {
 		
 		//제품넘버로찾기
 		@Select("select * from productDetail pd left outer join productsize ps on pd.ps_no = ps.ps_no left outer join product p on ps.p_no = p.p_no where pd.pd_no=#{pd_no}")
-		@ResultMap("selectByNo")
+		@ResultMap("productDetail")
 		ProductDetail selectByNo(int pd_no);
 		
 		//회원아이디로찾기
 		@Select("select * from productDetail pd left outer join productsize ps on pd.ps_no = ps.ps_no left outer join product p on ps.p_no = p.p_no where pd.m_id=#{m_id}")
-		@ResultMap("selectByNo")
+		@ResultMap("productDetail")
 		List<ProductDetail> selectById(String m_id);
 		
 		//회원의 판매,구매찾기
 		@Select("select * from productDetail pd left outer join productsize ps on pd.ps_no = ps.ps_no left outer join product p on ps.p_no = p.p_no where pd.m_id=#{m_id} and pd.bt_no=#{bt_no}")
-		@ResultMap("selectByNo")
+		@ResultMap("productDetail")
 		List<ProductDetail> selectByIdAndBtNo(String m_id, int bt_no);
 		
 		//전체출력
 		@Select("select * from productDetail pd left outer join productsize ps on pd.ps_no = ps.ps_no left outer join product p on ps.p_no = p.p_no")
-		@ResultMap("selectByNo")
+		@ResultMap("productDetail")
 		List<ProductDetail> selectAll();
 	
 }

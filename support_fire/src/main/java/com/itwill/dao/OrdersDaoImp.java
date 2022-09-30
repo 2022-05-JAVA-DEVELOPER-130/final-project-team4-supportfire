@@ -11,7 +11,7 @@ import com.itwill.mapper.OrdersMapper;
 @Repository
 public class OrdersDaoImp implements OrdersDao {
 	
-	@Autowired
+	//@Autowired
 	private OrdersMapper ordersMapper;
 	
 	public OrdersDaoImp() {

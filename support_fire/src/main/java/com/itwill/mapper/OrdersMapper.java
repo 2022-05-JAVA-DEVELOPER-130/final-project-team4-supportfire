@@ -11,26 +11,26 @@ import org.apache.ibatis.annotations.Update;
 
 import com.itwill.dto.Orders;
 
-@Mapper
+//@Mapper
 public interface OrdersMapper {
 	//고객한명구매내역전체보기
 	@Select("select * from orders o join productdetail pd on o.pd_no_purchase=pd.pd_no where m_id=#{m_id}")
-	@ResultMap("selectByNo")
+	//@ResultMap("selectByNo")
 	public List<Orders> selectByIdPurchase(String m_id);
 	
 	//고객한명판매내역전체보기
 	@Select("select * from orders o join productdetail pd on o.pd_no_sell=pd.pd_no where m_id=#{m_id}")
-	@ResultMap("selectByNo")
+	//@ResultMap("selectByNo")
 	public List<Orders> selectByIdSell(String m_id);
 	
 	//주문번호로주문한개조회
 	@Select("select * from orders where o_no=#{o_no}")
-	@ResultMap("selectByNo")
+	//@ResultMap("selectByNo")
 	public Orders selectByNo(int o_no);
 	
 	//주문전체조회
 	@Select("select * from orders")
-	@ResultMap("selectByNo")
+	//@ResultMap("selectByNo")
 	public List<Orders> selectAll();
 	
 	//주문번호한개삭제
