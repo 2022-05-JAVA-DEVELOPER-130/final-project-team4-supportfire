@@ -21,7 +21,7 @@ public interface ProductDetailDao {
 	ProductDetail selectByNo(int pd_no);
 	
 	//회원아이디로찾기
-	ProductDetail selectById(String m_id);
+	List<ProductDetail> selectById(String m_id);
 	
 	//회원의 판매,구매찾기
 	ProductDetail selectByIdAndBtNo(String m_id, int bt_no);

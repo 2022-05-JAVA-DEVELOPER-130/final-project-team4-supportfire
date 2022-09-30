@@ -39,7 +39,7 @@ public class ProductDetailDaoImp  implements ProductDetailDao{
 	}
 
 	@Override
-	public ProductDetail selectById(String m_id) {
+	public List<ProductDetail> selectById(String m_id) {
 		return productDetailMapper.selectById(m_id);
 	}
 

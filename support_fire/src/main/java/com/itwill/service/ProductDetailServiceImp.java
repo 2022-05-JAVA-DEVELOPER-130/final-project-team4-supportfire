@@ -39,7 +39,7 @@ public class ProductDetailServiceImp implements ProductDetailService{
 	}
 
 	@Override
-	public ProductDetail selectById(String m_id) {
+	public List<ProductDetail> selectById(String m_id) {
 		return productDetailDao.selectById(m_id);
 	}
 
