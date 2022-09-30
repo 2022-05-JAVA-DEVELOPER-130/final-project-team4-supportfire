@@ -35,8 +35,8 @@ public class ProductDaoSpringBootTestApplication {
 		//System.out.println(productDetailDao.selectById("seongmin"));
 		//System.out.println(productDetailDao.selectAll());
 		//System.out.println(productDetailDao.selectByIdAndBtNo("seongmin", 1));
-		System.out.println(productDao.insert(new Product(0, "갤럭시제트제트플립플립플립", "30/09/30", 2000000, "img", 3)));
-		//System.out.println(productDetailDao.delete(8));
+		//System.out.println(productDao.insert(new Product(0, "갤럭시제트제트플립플립플립", "30/09/30", 2000000, "img", 3)));
+		System.out.println(productDao.delete(6));
 	}
 
 }
