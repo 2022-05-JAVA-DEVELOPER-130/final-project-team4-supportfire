@@ -1,5 +1,7 @@
 package com.itwill.test;
 
+import java.sql.Date;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,6 +11,8 @@ import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.FilterType;
 
 import com.itwill.dao.OrdersDao;
+import com.itwill.dto.Orders;
+import com.itwill.dto.ProductDetail;
 import com.itwill.mapper.OrdersMapper;
 
 @SpringBootApplication
@@ -26,9 +30,16 @@ public class OrdersDaoSpringBootTestApplication {
 		application.setWebApplicationType(WebApplicationType.NONE);
 		ConfigurableApplicationContext context=application.run(args);
 		OrdersDao ordersDao=(OrdersDao)context.getBean(OrdersDao.class);
-		System.out.println(ordersDao.selectAll());
-		System.out.println(ordersDao.selectByIdPurchase("jiwon"));
-		System.out.println(ordersDao.selectByIdSell("jiwon"));
+		//System.out.println(ordersDao.selectAll());
+		//System.out.println(ordersDao.selectByIdPurchase("jiwon"));
+		//System.out.println(ordersDao.selectByIdSell("jiwon"));
+		//System.out.println(ordersDao.selectByNo(1));
+		
+		
+
+		
+		
+		
 		
 	}
 

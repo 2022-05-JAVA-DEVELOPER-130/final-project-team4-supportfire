@@ -1,3 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.itwill.mapper.OrdersMapper"></mapper>
+<mapper namespace="com.itwill.mapper.OrdersMapper">
+
+	<resultMap id="selectByNo" type="com.itwill.dto.Orders">
+		<result column="o_no" property="o_no"/>
+		<result column="o_date" property="o_date"/>
+		<result column="o_status" property="o_status"/>
+		<association property="po_no_purchase" javaType="com.itwill.dto.ProductDetail">
+			<result column="pd_no" property="pd_no"/>
+			<result column="pd_price" property="pd_price"/>
+			<result column="pd_start" property="pd_start"/>
+			<result column="pd_end" property="pd_end"/>
+			<result column="m_id" property="m_id"/>
+			<result column="bt_no" property="bt_no"/>
+			<result column="b_no" property="b_no"/>
+			<association property="productsize"
+						 javaType="com.itwill.dto.ProductSize">
+						 <result column="ps_no" property="ps_no"/>
+						 <result column="s_size" property="s_size"/>
+						 <association property="product"
+						 			  javaType="com.itwill.dto.Product">
+						 			  <result column="p_no" property="p_no"/>
+						 			  <result column="p_name" property="p_name"/>
+						 			  <result column="p_date" property="p_date"/>
+						 			  <result column="p_price" property="p_price"/>
+						 			  <result column="p_image" property="p_image"/>
+						 			  <result column="br_no" property="br_no"/>
+						 </association>
+			</association>
+		</association>
+		<association property="po_no_sell" javaType="com.itwill.dto.ProductDetail">
+			<result column="pd_no" property="pd_no"/>
+			<result column="pd_price" property="pd_price"/>
+			<result column="pd_start" property="pd_start"/>
+			<result column="pd_end" property="pd_end"/>
+			<result column="m_id" property="m_id"/>
+			<result column="bt_no" property="bt_no"/>
+			<result column="b_no" property="b_no"/>
+			<association property="productsize"
+						 javaType="com.itwill.dto.ProductSize">
+						 <result column="ps_no" property="ps_no"/>
+						 <result column="s_size" property="s_size"/>
+						 <association property="product"
+						 			  javaType="com.itwill.dto.Product">
+						 			  <result column="p_no" property="p_no"/>
+						 			  <result column="p_name" property="p_name"/>
+						 			  <result column="p_date" property="p_date"/>
+						 			  <result column="p_price" property="p_price"/>
+						 			  <result column="p_image" property="p_image"/>
+						 			  <result column="br_no" property="br_no"/>
+						 </association>
+			</association>
+		</association>
+	</resultMap>
+	
+</mapper>

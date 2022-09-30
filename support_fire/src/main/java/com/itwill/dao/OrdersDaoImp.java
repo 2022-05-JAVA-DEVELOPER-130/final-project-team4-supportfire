@@ -25,12 +25,12 @@ public class OrdersDaoImp implements OrdersDao {
 
 
 	@Override
-	public Orders selectByIdPurchase(String m_id) throws Exception {
+	public List<Orders> selectByIdPurchase(String m_id) throws Exception {
 		return ordersMapper.selectByIdPurchase(m_id);
 	}
 
 	@Override
-	public Orders selectByIdSell(String m_id) throws Exception {
+	public List<Orders> selectByIdSell(String m_id) throws Exception {
 		return ordersMapper.selectByIdSell(m_id);
 	}
 
