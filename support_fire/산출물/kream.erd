@@ -984,10 +984,10 @@
                                                           <columnName>pd_price</columnName>
                                                           <logicalName>pd_price</logicalName>
                                                           <columnType class="net.java.amateras.db.dialect.ColumnType">
-                                                            <name>VARCHAR2</name>
-                                                            <logicalName>String</logicalName>
+                                                            <name>NUMBER</name>
+                                                            <logicalName>Numeric</logicalName>
                                                             <supportSize>true</supportSize>
-                                                            <type>12</type>
+                                                            <type>2</type>
                                                           </columnType>
                                                           <size>20</size>
                                                           <notNull>false</notNull>

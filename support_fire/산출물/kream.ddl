@@ -99,11 +99,11 @@ CREATE TABLE product(
 		p_no                          		NUMBER(10)		 NOT NULL,
 		p_name                        		VARCHAR2(50)		 NULL ,
 		p_date                        		VARCHAR2(15)		 NULL ,
-		p_price                       		VARCHAR2(20)		 NULL ,
+		p_price                       		NUMBER(20)		 NULL ,
 		p_image                       		VARCHAR2(50)		 NULL ,
 		br_no                         		NUMBER(10)		 NULL 
 );
-
+		
 DROP SEQUENCE product_p_no_SEQ;
 
 CREATE SEQUENCE product_p_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
@@ -176,7 +176,7 @@ COMMENT ON COLUMN bidStatus.b_status is 'b_status';
 /**********************************/
 CREATE TABLE productDetail(
 		pd_no                         		NUMBER(10)		 NOT NULL,
-		pd_price                      		VARCHAR2(20)		 NULL ,
+		pd_price                      		NUMBER(20)			 NULL ,
 		pd_start                      		DATE		 DEFAULT sysdate		 NULL ,
 		pd_end                        		DATE		 NULL ,
 		ps_no                         		VARCHAR2(20)		 NULL ,
@@ -188,6 +188,7 @@ CREATE TABLE productDetail(
 DROP SEQUENCE productDetail_pd_no_SEQ;
 
 CREATE SEQUENCE productDetail_pd_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
+
 
 COMMENT ON TABLE productDetail is 'productDetail';
 COMMENT ON COLUMN productDetail.pd_no is 'pd_no';
@@ -285,7 +286,7 @@ COMMENT ON COLUMN notice.n_date is 'n_date';
 /* Table Name: orders */
 /**********************************/
 CREATE TABLE orders(
-		o_no                          		NUMBER(10)		 NULL ,
+		o_no                          		VARCHAR2(10)		 NULL ,
 		o_date                        		DATE		 NULL ,
 		pd_no_purchase                		NUMBER(10)		 NULL ,
 		pd_no_sell                    		NUMBER(10)		 NULL ,
@@ -341,7 +342,7 @@ CREATE TABLE payment(
 		pm_phone                      		VARCHAR2(15)		 NULL ,
 		pm_address                    		VARCHAR2(50)		 NULL ,
 		pm_memo                       		VARCHAR2(100)		 NULL ,
-		o_no                          		NUMBER(10)		 NULL ,
+		o_no                          		VARCHAR2(10)		 NULL ,
 		pl_no                         		NUMBER(10)		 NULL 
 );
 
@@ -359,53 +360,44 @@ COMMENT ON COLUMN payment.pl_no is 'pl_no';
 ALTER TABLE member ADD CONSTRAINT IDX_member_PK PRIMARY KEY (m_id);
 
 ALTER TABLE address ADD CONSTRAINT IDX_address_PK PRIMARY KEY (a_no);
-ALTER TABLE address ADD CONSTRAINT IDX_address_FK0 FOREIGN KEY (m_id) REFERENCES member (m_id);
+
 
 ALTER TABLE category ADD CONSTRAINT IDX_category_PK PRIMARY KEY (c_no);
 
 ALTER TABLE brands ADD CONSTRAINT IDX_brands_PK PRIMARY KEY (br_no);
-ALTER TABLE brands ADD CONSTRAINT IDX_brands_FK0 FOREIGN KEY (c_no) REFERENCES category (c_no);
+
 
 ALTER TABLE product ADD CONSTRAINT IDX_product_PK PRIMARY KEY (p_no);
-ALTER TABLE product ADD CONSTRAINT IDX_product_FK0 FOREIGN KEY (br_no) REFERENCES brands (br_no);
+
 
 ALTER TABLE sizes ADD CONSTRAINT IDX_sizes_PK PRIMARY KEY (s_size);
-ALTER TABLE sizes ADD CONSTRAINT IDX_sizes_FK0 FOREIGN KEY (c_no) REFERENCES category (c_no);
+
 
 ALTER TABLE productSize ADD CONSTRAINT IDX_productSize_PK PRIMARY KEY (ps_no);
-ALTER TABLE productSize ADD CONSTRAINT IDX_productSize_FK0 FOREIGN KEY (s_size) REFERENCES sizes (s_size);
-ALTER TABLE productSize ADD CONSTRAINT IDX_productSize_FK1 FOREIGN KEY (p_no) REFERENCES product (p_no);
+
 
 ALTER TABLE bidType ADD CONSTRAINT IDX_bidType_PK PRIMARY KEY (bt_no);
 
 ALTER TABLE bidStatus ADD CONSTRAINT IDX_bidStatus_PK PRIMARY KEY (b_no);
 
 ALTER TABLE productDetail ADD CONSTRAINT IDX_productDetail_PK PRIMARY KEY (pd_no);
-ALTER TABLE productDetail ADD CONSTRAINT IDX_productDetail_FK0 FOREIGN KEY (ps_no) REFERENCES productSize (ps_no);
-ALTER TABLE productDetail ADD CONSTRAINT IDX_productDetail_FK1 FOREIGN KEY (bt_no) REFERENCES bidType (bt_no);
-ALTER TABLE productDetail ADD CONSTRAINT IDX_productDetail_FK2 FOREIGN KEY (b_no) REFERENCES bidStatus (b_no);
-ALTER TABLE productDetail ADD CONSTRAINT IDX_productDetail_FK3 FOREIGN KEY (m_id) REFERENCES member (m_id);
+
 
 ALTER TABLE QNA ADD CONSTRAINT IDX_QNA_PK PRIMARY KEY (q_no);
-ALTER TABLE QNA ADD CONSTRAINT IDX_QNA_FK0 FOREIGN KEY (m_id) REFERENCES member (m_id);
+
 
 ALTER TABLE review ADD CONSTRAINT IDX_review_PK PRIMARY KEY (r_no);
-ALTER TABLE review ADD CONSTRAINT IDX_review_FK0 FOREIGN KEY (p_no) REFERENCES product (p_no);
-ALTER TABLE review ADD CONSTRAINT IDX_review_FK1 FOREIGN KEY (m_id) REFERENCES member (m_id);
+
+
 
 ALTER TABLE notice ADD CONSTRAINT IDX_notice_PK PRIMARY KEY (n_no);
 
 ALTER TABLE orders ADD CONSTRAINT IDX_orders_PK PRIMARY KEY (o_no);
-ALTER TABLE orders ADD CONSTRAINT IDX_orders_FK0 FOREIGN KEY (pd_no_purchase) REFERENCES productDetail (pd_no);
-ALTER TABLE orders ADD CONSTRAINT IDX_orders_FK1 FOREIGN KEY (pd_no_sell) REFERENCES productDetail (pd_no);
+
 
 ALTER TABLE wishList ADD CONSTRAINT IDX_wishList_PK PRIMARY KEY (w_no);
-ALTER TABLE wishList ADD CONSTRAINT IDX_wishList_FK0 FOREIGN KEY (p_no) REFERENCES product (p_no);
-ALTER TABLE wishList ADD CONSTRAINT IDX_wishList_FK1 FOREIGN KEY (m_id) REFERENCES member (m_id);
 
 ALTER TABLE paymentList ADD CONSTRAINT IDX_paymentList_PK PRIMARY KEY (pl_no);
 
 ALTER TABLE payment ADD CONSTRAINT IDX_payment_PK PRIMARY KEY (pm_no);
-ALTER TABLE payment ADD CONSTRAINT IDX_payment_FK0 FOREIGN KEY (o_no) REFERENCES orders (o_no);
-ALTER TABLE payment ADD CONSTRAINT IDX_payment_FK1 FOREIGN KEY (pl_no) REFERENCES paymentList (pl_no);
 

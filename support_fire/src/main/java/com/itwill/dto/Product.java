@@ -4,7 +4,7 @@ public class Product {
 	private int p_no;
 	private String p_name;
 	private String p_date;
-	private String p_price;
+	private int p_price;
 	private String p_image;
 	private int br_no;
 	
@@ -12,7 +12,7 @@ public class Product {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Product(int p_no, String p_name, String p_date, String p_price, String p_image, int br_no) {
+	public Product(int p_no, String p_name, String p_date, int p_price, String p_image, int br_no) {
 		super();
 		this.p_no = p_no;
 		this.p_name = p_name;
@@ -21,7 +21,7 @@ public class Product {
 		this.p_image = p_image;
 		this.br_no = br_no;
 	}
-
+	
 	public int getP_no() {
 		return p_no;
 	}
@@ -46,11 +46,11 @@ public class Product {
 		this.p_date = p_date;
 	}
 
-	public String getP_price() {
+	public int getP_price() {
 		return p_price;
 	}
 
-	public void setP_price(String p_price) {
+	public void setP_price(int p_price) {
 		this.p_price = p_price;
 	}
 
@@ -75,7 +75,6 @@ public class Product {
 		return "Product [p_no=" + p_no + ", p_name=" + p_name + ", p_date=" + p_date + ", p_price=" + p_price
 				+ ", p_image=" + p_image + ", br_no=" + br_no + "]";
 	}
-	
-	
+
 	
 }
