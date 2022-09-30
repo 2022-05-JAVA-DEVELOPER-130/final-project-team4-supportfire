@@ -15,6 +15,4 @@ public interface CategoryMapper {
 	
 	@Select("select * from category")
 	List<Category> selectAll();
-	
-	
 }

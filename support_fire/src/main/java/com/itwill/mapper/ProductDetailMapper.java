@@ -35,7 +35,6 @@ public interface ProductDetailMapper {
 		
 		//회원아이디로찾기
 		@Select("select * from productDetail pd left outer join productsize ps on pd.ps_no = ps.ps_no left outer join product p on ps.p_no = p.p_no where pd.m_id = #{m_id}")
-		@ResultMap("selectByNo")
 		ProductDetail selectById(String m_id);
 		
 		//회원의 판매,구매찾기

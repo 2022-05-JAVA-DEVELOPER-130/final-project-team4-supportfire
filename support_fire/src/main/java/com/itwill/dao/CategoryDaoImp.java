@@ -9,6 +9,7 @@ import com.itwill.dto.Category;
 import com.itwill.mapper.CategoryMapper;
 @Repository
 public class CategoryDaoImp implements CategoryDao{
+	
 	@Autowired
 	private CategoryMapper categoryMapper;
 
