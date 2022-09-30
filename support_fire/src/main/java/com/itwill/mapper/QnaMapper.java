@@ -2,10 +2,11 @@ package com.itwill.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
-import org.springframework.stereotype.Repository;
+import org.apache.ibatis.annotations.Update;
 
 import com.itwill.dto.Qna;
 
@@ -13,32 +14,39 @@ import com.itwill.dto.Qna;
 @Mapper
 public interface QnaMapper {
 	
+	//QNA 추가
 	@Insert("insert into qna (q_no, q_title, q_contents, q_date, q_groupno, q_step, q_depth, m_id) values(qna_q_no_seq.nextval, #{q_title}, #{q_contents}, sysdate, qna_q_no_seq.currval, 1, 0, #{m_id})")
 	public int qna_insert(Qna qna);
 	
-	
+	//QNA 리스트 출력 (정렬해서 출력)
 	@Select("select * from (select ROWNUM idx, s.* from (select * from qna ORDER BY q_groupno DESC, q_step ASC)s)WHERE idx >= #{start} AND idx <= #{last}")
 	public List<Qna> qna_list(int start, int last);
 	
+	//QNA 리스트 출력
 	@Select("select * from QNa")
 	public List<Qna> selectAll();
 	
+	//QNA id로 찾기
 	@Select("select * from qna where m_id = #{m_id}")
 	public Qna qna_selectById(int m_id);
 	
+	//QNA 상세
 	@Select("select * from qna where q_no = #{q_no}")
 	public Qna qna_selectByNo(int q_no);
+	
+	//QNA 업데이트
+	@Update("update qna set q_title=#{q_title}, q_content=#{q_content} where q_no=#{q_no}")
+	public int qna_update(Qna qna);
 
+	//QNA 삭제
+	@Delete("delete from qna where q_no=#{q_no}")
+	public int qna_delete(int q_no);
 	
-	public int qna_update(Qna vo);
-
-	
-	public int qna_delete(int m_id);
-	
-	
+	//QNA 총 갯수 찾기
+	@Select("select count(*) from qna")
 	public int qna_countAll();
 
-	
+	//QNA 답글달기
 	public int qna_reply_insert(Qna qna);
 
 	
