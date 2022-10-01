@@ -11,7 +11,7 @@ import org.apache.ibatis.annotations.Update;
 
 import com.itwill.dto.Orders;
 
-//@Mapper
+@Mapper
 public interface OrdersMapper {
 	//고객한명구매내역전체보기
 	@Select("select * from orders o join productdetail pd on o.pd_no_purchase=pd.pd_no where m_id=#{m_id}")
@@ -39,7 +39,7 @@ public interface OrdersMapper {
 	
 	//주문정보한개업데이트(주문상태변경)
 	@Update("update orders set o_status=#{o_status} where o_no=#{o_no}")
-	public int updateByNo(Orders orders);
+	public int updateByNo(String o_status,int o_no);
 	
 	//주문한개생성
 	@Insert("insert into orders (o_no, o_date, pd_no_purchase,pd_no_sell,o_status) values (orders_o_no_seq.nextval, TO_DATE(SYSDATE),#{pd_no_purchase},#{pd_no_sell},#{o_status})")

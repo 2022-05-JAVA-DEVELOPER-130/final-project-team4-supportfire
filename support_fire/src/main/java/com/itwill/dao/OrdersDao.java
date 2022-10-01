@@ -16,7 +16,7 @@ public interface OrdersDao {
 	
 	int deleteByNo(int o_no) throws Exception;
 	
-	int updateByNo(Orders orders) throws Exception;
+	int updateByNo(String o_status, int o_no) throws Exception;
 	
 	int insertOrder(Orders orders) throws Exception;
 	

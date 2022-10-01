@@ -11,7 +11,7 @@ import com.itwill.mapper.OrdersMapper;
 @Repository
 public class OrdersDaoImp implements OrdersDao {
 	
-	//@Autowired
+	@Autowired
 	private OrdersMapper ordersMapper;
 	
 	public OrdersDaoImp() {
@@ -50,8 +50,8 @@ public class OrdersDaoImp implements OrdersDao {
 	}
 
 	@Override
-	public int updateByNo(Orders orders) throws Exception {
-		return ordersMapper.updateByNo(orders);
+	public int updateByNo(String o_status,int o_no) throws Exception {
+		return ordersMapper.updateByNo(o_status,o_no);
 	}
 
 	@Override

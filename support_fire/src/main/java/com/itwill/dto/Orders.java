@@ -5,15 +5,15 @@ import java.sql.Date;
 public class Orders {
 	private int o_no;
 	private Date o_date;
-	private ProductDetail pd_no_purchase;
-	private ProductDetail pd_no_sell;
+	private int pd_no_purchase;
+	private int pd_no_sell;
 	private String o_status;
 	
 	public Orders() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Orders(int o_no, Date o_date, ProductDetail pd_no_purchase, ProductDetail pd_no_sell, String o_status) {
+	public Orders(int o_no, Date o_date, int pd_no_purchase, int pd_no_sell, String o_status) {
 		super();
 		this.o_no = o_no;
 		this.o_date = o_date;
@@ -38,19 +38,19 @@ public class Orders {
 		this.o_date = o_date;
 	}
 
-	public ProductDetail getPd_no_purchase() {
+	public int getPd_no_purchase() {
 		return pd_no_purchase;
 	}
 
-	public void setPd_no_purchase(ProductDetail pd_no_purchase) {
+	public void setPd_no_purchase(int pd_no_purchase) {
 		this.pd_no_purchase = pd_no_purchase;
 	}
 
-	public ProductDetail getPd_no_sell() {
+	public int getPd_no_sell() {
 		return pd_no_sell;
 	}
 
-	public void setPd_no_sell(ProductDetail pd_no_sell) {
+	public void setPd_no_sell(int pd_no_sell) {
 		this.pd_no_sell = pd_no_sell;
 	}
 
@@ -68,6 +68,7 @@ public class Orders {
 				+ pd_no_sell + ", o_status=" + o_status + "]";
 	}
 
+	
 	
 
 	
