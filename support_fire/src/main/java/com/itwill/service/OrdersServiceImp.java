@@ -75,7 +75,11 @@ public class OrdersServiceImp implements OrdersService{
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	
+	/**
+	 * 
+	 * 즉시구매: 상품디테일 페이지에서 입찰종류가 판매로 되어있고,입찰가능 상태일때, 해당하는 가격으로 orders테이블에 insert
+	 * 즉시판매: 상품디테일 페이지에서 입찰종류가 구매로 되어있고, 입찰가능 상태일때, 해당하는 가격으로 orders insert
+	 */
 	
 	
 	
