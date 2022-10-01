@@ -2,6 +2,7 @@
 select * from orders o join productdetail pd on o.pd_no_purchase=pd.pd_no where m_id='jiwon' ;
 --고객한명판매내역전체보기
 select * from orders o join productdetail pd on o.pd_no_sell=pd.pd_no where m_id='seongmin';
+select * from orders o join productdetail pd on o.pd_no_sell=pd.pd_no ;
 --주문번호로주문한개조회
 select * from orders where o_no=1;
 
@@ -11,7 +12,7 @@ select * from orders;
 delete from orders where o_no=3;
 
 --주문정보한개업데이트(주문상태변경)
-update orders set o_status='배송완료' where o_no=1;
+update orders set o_status='배송준비중' where o_no=1;
 
 --주문한개생성
 insert into orders (o_no, o_date, pd_no_purchase,pd_no_sell,o_status)
