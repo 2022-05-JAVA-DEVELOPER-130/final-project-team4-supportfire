@@ -138,6 +138,9 @@ CREATE TABLE productSize(
 		s_size                        		VARCHAR2(30)		 NULL ,
 		p_no                          		NUMBER(10)		 NULL 
 );
+DROP SEQUENCE productSize_PS_NO_SEQ;
+
+CREATE SEQUENCE productSize_PS_NO_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
 COMMENT ON TABLE productSize is 'productSize';
 COMMENT ON COLUMN productSize.ps_no is 'ps_no';

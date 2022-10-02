@@ -31,20 +31,20 @@ insert into sizes values('XL', 3);
 insert into sizes values('XXL',3);
 /*********브랜드*********/
 /*신발*/
-insert into brands values(1, 'Nike', 1);
-insert into brands values(2, 'adidas', 1);
+insert into brands values(BRANDS_BR_NO_SEQ.nextval, 'Nike', 1);
+insert into brands values(BRANDS_BR_NO_SEQ.nextval, 'adidas', 1);
 
 /*상의*/
-insert into brands values(3, 'Nike', 2);
-insert into brands values(4, 'adidas', 2);
+insert into brands values(BRANDS_BR_NO_SEQ.nextval, 'Nike', 2);
+insert into brands values(BRANDS_BR_NO_SEQ.nextval, 'adidas', 2);
 
 /*하의*/
-insert into brands values(5, 'Nike', 3);
-insert into brands values(6, 'adidas', 3);
+insert into brands values(BRANDS_BR_NO_SEQ.nextval, 'Nike', 3);
+insert into brands values(BRANDS_BR_NO_SEQ.nextval, 'adidas', 3);
 
 /*전자제품*/
-insert into brands values(7, 'Apple', 4);
-insert into brands values(8, 'Samsung', 4);
+insert into brands values(BRANDS_BR_NO_SEQ.nextval, 'Apple', 4);
+insert into brands values(BRANDS_BR_NO_SEQ.nextval, 'Samsung', 4);
 
 /************제품***************/
 insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Nike Air Force 1 07 WB Flax', '19/09/10', 169000 ,'img', 1);
@@ -54,22 +54,24 @@ insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Nike Dunk Low Retro Gym Re
 insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Nike x J.Crew Killshot 2 Sail Midnight Navy', '17/02/26', 109000, 'img', 1);
 
 /**************제품사이즈**************/
-insert into productSize values(1, '230', 1);
-insert into productSize values(2, '250', 2);
-insert into productSize values(3, '270', 3);
-insert into productSize values(4, '290', 4);
-insert into productSize values(5, '300', 5);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 1);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 1);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 1);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 2);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 3);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 4);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 5);
 
-insert into productSize values(6, 'S', 6);
-insert into productSize values(7, 'M', 7);
-insert into productSize values(8, 'XL', 8);
-insert into productSize values(9, 'XXL', 9);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, 'S', 6);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, 'M', 7);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, 'XL', 8);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, 'XXL', 9);
 
-insert into productSize values(10, '90', 10);
-insert into productSize values(11, '95', 11);
-insert into productSize values(12, '100', 12);
-insert into productSize values(13, '105', 13);
-insert into productSize values(14, '110', 14);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '90', 10);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '95', 11);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '100', 12);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '105', 13);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '110', 14);
 
 /************입찰상태************/
 insert into bidStatus values(1, '대기중');
