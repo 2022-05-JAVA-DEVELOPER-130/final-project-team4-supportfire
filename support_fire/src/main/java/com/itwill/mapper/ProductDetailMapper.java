@@ -28,6 +28,9 @@ public interface ProductDetailMapper {
 		@Delete("delete from productdetail where pd_no=#{pd_no}")
 		int delete(int pd_no);
 		
+		@Select("select * from productdetail where pd_no=#{pd_no}")
+		int selectByNoInt(int pd_no);
+		
 		//제품넘버로찾기
 		@Select("select * from productDetail pd left outer join productsize ps on pd.ps_no = ps.ps_no left outer join product p on ps.p_no = p.p_no where pd.pd_no=#{pd_no}")
 		@ResultMap("productDetail")
