@@ -19,5 +19,10 @@ public class ProductDaoImp implements ProductDao{
 	public int delete(int p_no) {
 		return productMapper.delete(p_no);
 	}
-	
+	/*
+	@Override
+	public Product selectByNo(int p_no) {
+		return productMapper.selectByNo(p_no);
+	}
+	*/
 }

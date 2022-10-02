@@ -8,4 +8,7 @@ public interface ProductDao {
 	
 	//상품삭제
 	int delete(int p_no);
+	
+	//상품 1개 조회
+	//Product selectByNo(int p_no);
 }
