@@ -33,37 +33,37 @@ public class OrdersServiceImp implements OrdersService{
 	@Override
 	public List<Orders> selectByIdPurchase(String m_id) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return ordersDao.selectByIdPurchase(m_id);
 	}
 
 	@Override
 	public List<Orders> selectByIdSell(String m_id) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return ordersDao.selectByIdSell(m_id);
 	}
 
 	@Override
 	public Orders selectByNo(int o_no) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return ordersDao.selectByNo(o_no);
 	}
 
 	@Override
 	public List<Orders> selectAll() throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return ordersDao.selectAll();
 	}
 
 	@Override
 	public int deleteByNo(int o_no) throws Exception {
 		// TODO Auto-generated method stub
-		return 0;
+		return ordersDao.deleteByNo(o_no);
 	}
 
 	@Override
 	public int updateByNo(String o_status, int o_no) throws Exception {
 		// TODO Auto-generated method stub
-		return 0;
+		return ordersDao.updateByNo(o_status, o_no);
 	}
 	
 	/**즉시구매,즉시판매,구매입찰,판매입찰  
@@ -72,19 +72,19 @@ public class OrdersServiceImp implements OrdersService{
 	 * 즉시판매: 상품디테일에 사이즈가 등록되어있을경우(구매입찰이 등록되어있을경우) 해당하는 가격으로 즉시 판매가능
 	 * 판매입찰: 원하는 가격에 판매하고싶을 경우 (구매입찰의 가격이 마음에 안들 경우, 원하는 가격으 입찰정보 insert	 
 	 * >>구매입찰과 판매입찰은 같은 가격으로 등록 불가
-	 * >>근데 이걸다 어떻게 구현하지,,주문이 아니라 입찰 테이블에서 이루어 져야 하는건가,,, 아 어렵네    
+	 * >>근데 이걸다 어떻게 구현하지,,주문이 아니라 입찰 테이블에서 이루어 져야 하는건가,,, 
 	 */
 	@Override
 	public int insertOrder(Orders orders) throws Exception {
 		
 			//즉시구매 
 		   
-				if(orders.getPd_no_sell()!=0 && orders.getPd_no_purchase()==0) {
+			if(orders.getPd_no_sell()!=0 && orders.getPd_no_purchase()==0) {
 				
-					Orders purchaseOrder= new Orders(0, null,0,orders.getPd_no_sell(), "배송준비중");
-					System.out.println("즉시구매가 완료되었습니다");
-					return ordersDao.insertOrder(purchaseOrder);
-				}
+				Orders purchaseOrder= new Orders(0, null,0,orders.getPd_no_sell(), "배송준비중");
+				System.out.println("즉시구매가 완료되었습니다");
+				return ordersDao.insertOrder(purchaseOrder);
+			}
 		    
 			//즉시판매
 			if(orders.getPd_no_sell()==0 && orders.getPd_no_purchase()!=0) {
