@@ -18,6 +18,7 @@ public interface ProductMapper {
 	
 	//제품 1개 출력
 	
+	
 	//제품 전체 출력
 	
 	
