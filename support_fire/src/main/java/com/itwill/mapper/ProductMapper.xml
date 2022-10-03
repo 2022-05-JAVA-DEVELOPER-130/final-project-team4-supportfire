@@ -4,7 +4,7 @@
 
 
 	<resultMap id="product"
-			   type="com.itwill.dto.Product">
+				type="com.itwill.dto.Product">
 		<result column="p_no" property="p_no"/>			
 		<result column="p_name" property="p_name"/>			
 		<result column="p_date" property="p_date"/>			
@@ -12,6 +12,7 @@
 		<result column="p_image" property="p_image"/>			
 		<result column="br_no" property="br_no"/>
 	</resultMap>
+	
 	<resultMap id="productDetail"
 				type="com.itwill.dto.ProductDetail">
 			<result column="pd_no" property="pd_no"/>
