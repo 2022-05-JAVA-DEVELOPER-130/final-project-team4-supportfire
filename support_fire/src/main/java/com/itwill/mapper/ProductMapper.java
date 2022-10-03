@@ -1,10 +1,15 @@
 package com.itwill.mapper;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.SelectKey;
 
 import com.itwill.dto.Product;
 import com.itwill.dto.ProductDetail;
@@ -19,10 +24,28 @@ public interface ProductMapper {
 	int delete(int p_no);
 	
 	//제품 1개 출력
+	@Select("select * from product where p_no = #{p_no}")
+	Product selectByNo(int p_no);
+	
+	//제품 1개 구매최소가격 출력
+	@Select("select p.p_no, min(pd.pd_price) from productsize ps left outer join (select * from productdetail where bt_no = 1 and b_no = 1) pd on ps.ps_no = pd.ps_no join product p on ps.p_no = p.p_no where p.p_no = #{p_no} group by p.p_no")
+	@ResultMap("selectMap")
+	Map selectBuyMinPriceByNo(int p_no);
+	
+	
+	//제품 1개 판매최소가격 출력
+	@Select("select p.p_no, min(pd.pd_price) from productsize ps left outer join (select * from productdetail where bt_no = 2 and b_no = 1) pd on ps.ps_no = pd.ps_no join product p on ps.p_no = p.p_no where p.p_no = #{p_no} group by p.p_no")
+	@ResultMap("selectMap")
+	Map selectSellMinPriceByNo(int p_no);
 	
 	//제품 전체 출력
+	@Select("select * from product ORDER BY p_no asc")
+	List<Product> selectAll();
 	
-
+	//제품 최소 판매가 전체 출력
+	@Select("select p.p_no, min(pd.pd_price) from productsize ps left outer join (select * from productdetail where bt_no = 2 and b_no = 1) pd on ps.ps_no = pd.ps_no join product p on ps.p_no = p.p_no group by p.p_no ORDER BY p_no asc")
+	@ResultMap("selectMap")
+	List<Map> selectAllMinPrice();
 	
 	
 }

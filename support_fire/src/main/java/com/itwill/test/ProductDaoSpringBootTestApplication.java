@@ -1,5 +1,8 @@
 package com.itwill.test;
 
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -37,6 +40,17 @@ public class ProductDaoSpringBootTestApplication {
 		//System.out.println(productDetailDao.selectByIdAndBtNo("seongmin", 1));
 		//System.out.println(productDao.insert(new Product(0, "갤럭시제트제트플립플립플립", "30/09/30", 2000000, "img", 3)));
 		System.out.println(productDao.delete(6));
+		System.out.println(productDao.selectAll());
+		System.out.println(productDao.selectAllMinPrice());
+		System.out.println(productDao.selectBuyMinPriceByNo(1));
+		System.out.println(productDao.selectSellMinPriceByNo(1));
+		System.out.println(productDao.selectByNo(1));
+		
+		List<Map> map = productDao.selectAllMinPrice();
+		for (Map map2 : map) {
+			System.out.println("P_no = " +map2.get("P_NO") + " : min_price =" + map2.get("min_price"));
+		}
+		
 	}
 
 }

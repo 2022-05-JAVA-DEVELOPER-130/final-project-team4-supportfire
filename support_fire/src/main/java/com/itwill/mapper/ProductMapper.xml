@@ -37,4 +37,13 @@
 						 </association>
 			</association>
 	</resultMap>
+	
+	<resultMap type="hashmap" id="selectMap">
+        <result column="p.p_no" property="p_no"/>
+        <result column="min(pd.pd_price)" property="min_price"/>
+    </resultMap>
+	
+
+
+
 </mapper>
