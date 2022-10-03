@@ -76,9 +76,10 @@ public class OrdersServiceImp implements OrdersService{
 	 */
 	@Override
 	public int insertOrder(Orders orders) throws Exception {
+		 	
 		
-			//즉시구매 
-		   
+		
+		 	//즉시구매 
 			if(orders.getPd_no_sell()!=0 && orders.getPd_no_purchase()==0) {
 				
 				Orders purchaseOrder= new Orders(0, null,0,orders.getPd_no_sell(), "배송준비중");
@@ -106,7 +107,6 @@ public class OrdersServiceImp implements OrdersService{
 	 * 즉시판매: 상품디테일 페이지에서 입찰종류가 구매로 되어있고, 입찰가능 상태일때, orders insert
 	 */
 
-	
 	
 	
 	
