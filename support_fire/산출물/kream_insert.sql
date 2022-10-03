@@ -95,7 +95,8 @@ insert into address values(3, '인천', 'jiwon');
 insert into address values(4, '경상남도', 'hyun');
 
 /*************제품상세****************/
-insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 17000, sysdate, sysdate+7, 1, 'seongmin', 1, 1);
+insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 12000, sysdate, sysdate+7, 1, 'seongmin', 2, 1);
+insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 17000, sysdate, sysdate+7, 1, 'seongmin', 2, 1);
 insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 35000, sysdate, sysdate+7, 2, 'bongkyoun', 2, 1);
 insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 87000, sysdate, sysdate+7, 3, 'jiwon', 1, 2);
 insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 66000, sysdate, sysdate+7, 4, 'hyun', 2, 1);

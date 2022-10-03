@@ -32,7 +32,8 @@ public class ProductDetailDaoSpringBootTestApplication {
 		ConfigurableApplicationContext context=application.run(args);
 		ProductDetailDao productDetailDao=(ProductDetailDao)context.getBean(ProductDetailDao.class);
 		//System.out.println(productDetailDao.selectAll());
-		System.out.println(productDetailDao.updateByBidStatus(3, 5));
+		//System.out.println(productDetailDao.updateByBidStatus(3, 5));
+		System.out.println(productDetailDao.selectByNo(1));
 	}
 
 }
