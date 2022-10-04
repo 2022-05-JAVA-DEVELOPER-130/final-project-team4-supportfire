@@ -50,5 +50,9 @@ public interface ProductDetailMapper {
 		@Select("select * from productDetail pd left outer join productsize ps on pd.ps_no = ps.ps_no left outer join product p on ps.p_no = p.p_no")
 		@ResultMap("productDetail")
 		List<ProductDetail> selectAll();
-	
+		
+		//제품 1개 판매 내역
+		@Select("select * from productSize ps join (select * from productDetail where bt_no = 2 and b_no = 3) pd on pd.ps_no = ps.ps_no where ps.p_no = #{p_no}")
+		@ResultMap("productDetail")
+		List<ProductDetail> selectSellListByNo(int p_no);
 }

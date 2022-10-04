@@ -42,7 +42,7 @@ public class ProductDetailDaoImp  implements ProductDetailDao{
 	public List<ProductDetail> selectById(String m_id) {
 		return productDetailMapper.selectById(m_id);
 	}
-
+	
 	@Override
 	public List<ProductDetail> selectByIdAndBtNo(String m_id, int bt_no) {
 		return productDetailMapper.selectByIdAndBtNo(m_id, bt_no);
@@ -51,6 +51,11 @@ public class ProductDetailDaoImp  implements ProductDetailDao{
 	@Override
 	public List<ProductDetail> selectAll() {
 		return productDetailMapper.selectAll();
+	}
+
+	@Override
+	public List<ProductDetail> selectSellListByNo(int p_no) {
+		return productDetailMapper.selectSellListByNo(p_no);
 	}
 	
 	

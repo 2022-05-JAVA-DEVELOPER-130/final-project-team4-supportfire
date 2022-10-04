@@ -28,4 +28,7 @@ public interface ProductDetailDao {
 	
 	//전체출력
 	List<ProductDetail> selectAll();
+	
+	//제품 1개 판매 내역
+	List<ProductDetail> selectSellListByNo(int p_no);
 }
