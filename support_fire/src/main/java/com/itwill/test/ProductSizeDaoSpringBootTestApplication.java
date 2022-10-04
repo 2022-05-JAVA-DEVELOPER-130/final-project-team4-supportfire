@@ -11,6 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.FilterType;
 
+import com.itwill.dao.ProductDao;
 import com.itwill.dao.ProductSizeDao;
 import com.itwill.dto.Product;
 import com.itwill.dto.ProductDetail;
@@ -23,7 +24,7 @@ import com.itwill.mapper.ProductSizeMapper;
 @ComponentScan(basePackages = {"com.itwill"}, includeFilters = {
         @Filter(
                 type = FilterType.ASSIGNABLE_TYPE, 
-                classes = {ProductSizeDao.class,ProductSizeMapper.class}
+                classes = {ProductSizeDao.class,ProductSizeMapper.class, ProductDao.class}
             )
         } )
 public class ProductSizeDaoSpringBootTestApplication {
@@ -34,10 +35,18 @@ public class ProductSizeDaoSpringBootTestApplication {
 		application.setWebApplicationType(WebApplicationType.NONE);
 		ConfigurableApplicationContext context=application.run(args);
 		ProductSizeDao productSizeDao=(ProductSizeDao)context.getBean(ProductSizeDao.class);
+		ProductDao productDao=(ProductDao)context.getBean(ProductDao.class);
 		//System.out.println(productSizeDao.selectByNo(1));
-		System.out.println(productSizeDao.selectBuyMinPriceBySize(1, "230"));
-		System.out.println(productSizeDao.selectSellMinPriceBySize(1, "230"));
 		//System.out.println(productSizeDao.delete(14));
+		System.out.println(productSizeDao.selectBuyMinPriceByNo(1));
+		System.out.println(productSizeDao.selectSellMinPriceByNo(1));
+		Product product_no = productDao.selectByNo(1);
+		System.out.println(product_no);
+		ProductSize productSizeInsert = new ProductSize(0, "230", product_no);
+		System.out.println(productSizeDao.insert(productSizeInsert));
+		/*
+		System.out.println(productSizeDao.insert(insertProductSize));
+		*/
 		/*
 		System.out.println(productDao.selectAll());
 		System.out.println(productDao.selectAllMinPrice());

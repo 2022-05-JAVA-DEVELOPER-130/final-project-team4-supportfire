@@ -47,5 +47,8 @@ public interface ProductMapper {
 	@ResultMap("selectMap")
 	List<Map> selectAllMinPrice();
 	
+	//제품 검색
+	@Select("select * from product where p_name like '%'||#{p_name}||'%' or p_name like initcap('%'||#{p_name}||'%')")
+	List<Product> searchAll(String p_name);
 	
 }

@@ -38,15 +38,16 @@ public class ProductDaoSpringBootTestApplication {
 		//System.out.println(productDao.delete(6));
 		//System.out.println(productDao.selectAll());
 		//System.out.println(productDao.selectAllMinPrice());
-		System.out.println(productDao.selectBuyMinPriceByNo(1));
+		//System.out.println(productDao.selectBuyMinPriceByNo(1));
+		System.out.println(productDao.searchAll("nike"));
 		//System.out.println(productDao.selectSellMinPriceByNo(1));
 		//System.out.println(productDao.selectByNo(1));
-		/*
+		
 		List<Map> map = productDao.selectAllMinPrice();
 		for (Map map2 : map) {
 			System.out.println("P_no = " +map2.get("P_NO") + " : min_price =" + map2.get("min_price"));
 		}
-		 */
+		 
 		
 	}
 

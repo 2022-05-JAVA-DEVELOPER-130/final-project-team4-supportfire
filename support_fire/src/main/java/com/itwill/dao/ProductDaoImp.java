@@ -29,7 +29,6 @@ public class ProductDaoImp implements ProductDao{
 		return productMapper.selectByNo(p_no);
 	}
 	
-	
 	@Override
 	public Map selectBuyMinPriceByNo(int p_no) {
 		return productMapper.selectBuyMinPriceByNo(p_no);
@@ -47,6 +46,10 @@ public class ProductDaoImp implements ProductDao{
 	@Override
 	public List<Map> selectAllMinPrice() {
 		return productMapper.selectAllMinPrice();
-}
-
+	}
+	@Override
+	public List<Product> searchAll(String p_name) {	
+		return productMapper.searchAll(p_name);
+	}
+	
 }
