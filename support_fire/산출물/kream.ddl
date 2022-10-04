@@ -60,10 +60,10 @@ CREATE SEQUENCE brands_br_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
 CREATE TABLE product(
 		p_no                          		NUMBER(10)		 NOT NULL,
-		p_name                        		VARCHAR2(50)		 NULL ,
+		p_name                        		VARCHAR2(80)		 NULL ,
 		p_date                        		VARCHAR2(15)		 NULL ,
 		p_price                       		NUMBER(20)		 NULL ,
-		p_image                       		VARCHAR2(50)		 NULL ,
+		p_image                       		VARCHAR2(80)		 NULL ,
 		br_no                         		NUMBER(10)		 NULL 
 );
 
