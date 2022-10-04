@@ -1,5 +1,9 @@
 package com.itwill.test;
 
+
+
+import java.util.Date;
+
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
@@ -13,6 +17,8 @@ import com.itwill.dao.CategoryDao;
 import com.itwill.dao.CategoryDaoImp;
 import com.itwill.dao.OrdersDao;
 import com.itwill.dao.ProductDetailDao;
+import com.itwill.dto.ProductDetail;
+import com.itwill.dto.ProductSize;
 import com.itwill.mapper.CategoryMapper;
 import com.itwill.mapper.OrdersMapper;
 import com.itwill.mapper.ProductDetailMapper;
@@ -31,7 +37,11 @@ public class ProductDetailDaoSpringBootTestApplication {
 		application.setWebApplicationType(WebApplicationType.NONE);
 		ConfigurableApplicationContext context=application.run(args);
 		ProductDetailDao productDetailDao=(ProductDetailDao)context.getBean(ProductDetailDao.class);
+		ProductDetail insertProductDetail=
+				new ProductDetail(0, 0, new Date(), new Date(), null, null, 0, 0);
+		//new ProductDetail(null, 0, new Date(), new Date(), new ProductSize(0, null, null), null, 0, 0);
 		System.out.println(productDetailDao.selectSellListByNo(1));
+		System.out.println(productDetailDao.insertSequence(insertProductDetail));
 		//System.out.println(productDetailDao.selectAll());
 		//System.out.println(productDetailDao.updateByBidStatus(3, 5));
 		//System.out.println(productDetailDao.selectByNo(1));

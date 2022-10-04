@@ -1,6 +1,6 @@
 package com.itwill.dto;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class ProductDetail {
 	private int pd_no;
@@ -99,6 +99,6 @@ public class ProductDetail {
 				+ pd_end + ", productsize=" + productsize + ", m_id=" + m_id + ", bt_no=" + bt_no + ", b_no=" + b_no
 				+ "]";
 	}
-
+	
 	
 }

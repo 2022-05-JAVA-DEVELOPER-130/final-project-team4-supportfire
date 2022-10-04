@@ -24,12 +24,12 @@ public class ProductDetailDaoImp  implements ProductDetailDao{
 	}
 
 	@Override
-	public int updateByBidStatus(int b_no, int pd_no) {
+	public int updateByBidStatus(int b_no, Integer pd_no) {
 		return productDetailMapper.updateByBidStatus(b_no, pd_no);
 	}
 
 	@Override
-	public int delete(int pd_no) {
+	public int delete(Integer pd_no) {
 		return productDetailMapper.delete(pd_no);
 	}
 
@@ -56,6 +56,11 @@ public class ProductDetailDaoImp  implements ProductDetailDao{
 	@Override
 	public List<ProductDetail> selectSellListByNo(int p_no) {
 		return productDetailMapper.selectSellListByNo(p_no);
+	}
+
+	@Override
+	public int insertSequence(ProductDetail productDetail) {
+		return productDetailMapper.insertSequence(productDetail);
 	}
 	
 	

@@ -12,10 +12,10 @@ public interface ProductDetailDao {
 	int update(ProductDetail productDetail);
 	
 	//제품상태업데이트
-	int updateByBidStatus(int b_no, int pd_no);
+	int updateByBidStatus(int b_no, Integer pd_no);
 	
 	//제품삭제
-	int delete(int pd_no);
+	int delete(Integer pd_no);
 	
 	//제품넘버로찾기
 	ProductDetail selectByNo(int pd_no);
@@ -31,4 +31,7 @@ public interface ProductDetailDao {
 	
 	//제품 1개 판매 내역
 	List<ProductDetail> selectSellListByNo(int p_no);
+	
+	//pd_no 생성 및 PK 출력
+	int insertSequence(ProductDetail productDetail);
 }
