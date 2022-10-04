@@ -34,6 +34,9 @@
     background: #aaa;
   }
   
+  .hiden {
+  	display: none;
+  }
   </style>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -45,12 +48,11 @@ $(document).ready(function() {
     	success: function(result){             
         var html = "";
     	result.forEach(function(item){
-    		html+= "<tr> <td><a href = 'view?idx=" + item.q_no + "'>" + item.q_title + "</a>" +
-        			"<ul class='hide'>" +
+    		html+= "<tr> <td><a href = '#'>" + item.q_title + "</a>" +
+        			"<ul class='hiden'>" +
         			"<br><br><br>" +
         			"<li>" + item.q_date.substring(0,10) + "</li>" +
         			"<li>" + item.q_content + "</li>"
-        			
         			
         			
         })
@@ -60,6 +62,38 @@ $(document).ready(function() {
      $("#deleteBtn").click(function(){
     	location.href ="write";
      })
+     
+     
+     $(document).on('click','.sorting_1',function(e){
+ 		/**************기본효과(slide)*********/
+ 		//$(e.target).next().show();
+ 		//$(e.target).next().hide();
+ 		//$(e.target).next().toggle();
+ 		
+ 		/************************************/
+ 		//view?idx=" + item.q_no + "
+ 		
+ 		/**************slide효과***************/
+ 		
+ 		//$(e.target).next().slideDown();
+ 		//$(e.target).next().slideUp();
+ 		$(e.target).next().slideToggle(500, function(){
+ 			//alert('slideToggle이완료된후 실행하는 function');
+ 		});
+ 		
+ 		/**************fade효과***************/
+ 		//$(e.target).next().fadeIn();
+ 		//$(e.target).next().fadeOut();
+ 		/* $(e.target).next().fadeToggle(2000,function(){
+ 			alert('fadeToggle이완료된후 실행하는 function'); 
+ 		}); */
+ 		console.log(e.target);
+ 		e.preventDefault();
+ 		
+ 	});
+     
+     
+     
 } );
 
 </script>
