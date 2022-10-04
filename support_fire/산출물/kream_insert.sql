@@ -3,7 +3,7 @@ insert into category values(1, '신발');
 insert into category values(2, '상의');
 insert into category values(3, '하의');
 insert into category values(4, '전자제품');
-
+ 
 /**************사이즈*****************/
 insert into sizes values('210', 1);
 insert into sizes values('220', 1);
