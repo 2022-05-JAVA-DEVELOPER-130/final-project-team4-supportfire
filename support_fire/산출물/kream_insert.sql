@@ -83,16 +83,17 @@ insert into bidType values(1, '구매');
 insert into bidType values(2, '판매');
 
 /************회원*****************/
-insert into member values('seongmin', '1234', '알찬성민', '01012345678', '970902', 'seongmin@gamil.com', '남', 0);
-insert into member values('bongkyoun', '1234', '봉된장', '01023456789', '940601', 'bongkyoun@gamil.com', '남', 0);
-insert into member values('jiwon', '1234', '지원준비', '01034567890', '971002', 'jiwon@gamil.com', '여', 0);
-insert into member values('hyun', '1234', '현악기', '01045678901', '900602', 'hyun@gamil.com', '남', 0);
+insert into member values('seongmin', '1234', '알찬성민', '01012345678', '970902', 'seongmin@gamil.com', '남', 1000, '서울시 강남구');
+insert into member values('bongkyoun', '1234', '봉된장', '01023456789', '940601', 'bongkyoun@gamil.com', '남', 1000, '서울시 서초구');
+insert into member values('jiwon', '1234', '지원준비', '01034567890', '971002', 'jiwon@gamil.com', '여', 1000, '서울시 종로구');
+insert into member values('hyun', '1234', '현악기', '01045678901', '900602', 'hyun@gamil.com', '남', 1000, '서울시 중구');
     
-/***********주소*************/
-insert into address values(1, '경기도', 'seongmin');
-insert into address values(2, '서울', 'bongkyoun');
-insert into address values(3, '인천', 'jiwon');
-insert into address values(4, '경상남도', 'hyun');
+/***********배달주소*************/
+
+insert into deliveryaddress values('집', '06392', '서울시 강남구', '301호', 'seongmin');
+insert into deliveryaddress values('회사', '09283', '서울시 서초구', '302호', 'bongkyoun');
+insert into deliveryaddress values('사무실', '11846', '서울시 종로구', '303호', 'jiwon');
+insert into deliveryaddress values('집', '03527', '서울시 중구', '304호', 'hyun');
 
 /*************제품상세****************/
 insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 12000, sysdate, sysdate+7, 1, 'seongmin', 2, 1);
