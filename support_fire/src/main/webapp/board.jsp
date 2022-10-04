@@ -99,6 +99,11 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
+<!-- Offcanvas Menu Begin -->
+    
+    <jsp:include page="top.jsp" />
+    
+    <!-- Offcanvas Menu End -->
 <div>
 <jsp:include page="header.jsp" />
 </div>

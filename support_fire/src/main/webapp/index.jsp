@@ -27,6 +27,13 @@
 </head>
 
 <body>
+	
+	<!-- Offcanvas Menu Begin -->
+    
+    <jsp:include page="top.jsp" />
+    
+    <!-- Offcanvas Menu End -->
+	
 	<!-- Header Section Begin -->
 	
 	<jsp:include page="header.jsp" />

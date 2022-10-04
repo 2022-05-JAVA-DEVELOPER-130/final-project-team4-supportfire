@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -28,6 +27,12 @@
 </head>
 
 <body>
+	<!-- Offcanvas Menu Begin -->
+    
+    <jsp:include page="top.jsp" />
+    
+    <!-- Offcanvas Menu End -->
+
     <!-- Header Section Begin -->
 	
 	<jsp:include page="header.jsp" />
@@ -42,7 +47,7 @@
                     <div class="breadcrumb__text">
                         <h4>마이페이지</h4>
                         <div class="breadcrumb__links">
-                            <a href="./index.html">Home</a>
+                            <a href="./index.jsp">Home</a>
                             <span>MyPage</span>
                         </div>
                     </div>
@@ -69,7 +74,7 @@
                                         <div class="card-body">
                                             <div class="shop__sidebar__categories">
                                                 <ul class="nice-scroll">
-                                                    <li><a href="purchase_list">구매내역</a></li>
+                                                    <li><a href="#">구매내역</a></li>
                                                     <li><a href="#">판매내역</a></li>
                                                     <li><a href="#">판매내역</a></li>
                                                     <li><a href="#">판매내역</a></li>
