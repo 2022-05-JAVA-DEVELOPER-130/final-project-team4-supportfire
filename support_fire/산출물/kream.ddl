@@ -32,15 +32,6 @@ DROP SEQUENCE member_m_id_SEQ;
 
 CREATE SEQUENCE member_m_id_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
-CREATE TRIGGER member_m_id_TRG
-BEFORE INSERT ON member
-FOR EACH ROW
-BEGIN
-IF :NEW.m_id IS NOT NULL THEN
-  SELECT member_m_id_SEQ.NEXTVAL INTO :NEW.m_id FROM DUAL;
-END IF;
-END;
-
 
 CREATE TABLE deliveryAddress(
 		da_name                       		VARCHAR2(30)		 NULL ,
@@ -67,38 +58,18 @@ DROP SEQUENCE brands_br_no_SEQ;
 
 CREATE SEQUENCE brands_br_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
-CREATE TRIGGER brands_br_no_TRG
-BEFORE INSERT ON brands
-FOR EACH ROW
-BEGIN
-IF :NEW.br_no IS NOT NULL THEN
-  SELECT brands_br_no_SEQ.NEXTVAL INTO :NEW.br_no FROM DUAL;
-END IF;
-END;
-
-
 CREATE TABLE product(
 		p_no                          		NUMBER(10)		 NOT NULL,
-		p_name                        		VARCHAR2(50)		 NULL ,
+		p_name                        		VARCHAR2(80)		 NULL ,
 		p_date                        		VARCHAR2(15)		 NULL ,
 		p_price                       		NUMBER(20)		 NULL ,
-		p_image                       		VARCHAR2(50)		 NULL ,
+		p_image                       		VARCHAR2(80)		 NULL ,
 		br_no                         		NUMBER(10)		 NULL 
 );
 
 DROP SEQUENCE product_p_no_SEQ;
 
 CREATE SEQUENCE product_p_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
-
-CREATE TRIGGER product_p_no_TRG
-BEFORE INSERT ON product
-FOR EACH ROW
-BEGIN
-IF :NEW.p_no IS NOT NULL THEN
-  SELECT product_p_no_SEQ.NEXTVAL INTO :NEW.p_no FROM DUAL;
-END IF;
-END;
-
 
 CREATE TABLE sizes(
 		s_size                        		VARCHAR2(30)		 NULL ,
@@ -115,16 +86,6 @@ CREATE TABLE productSize(
 DROP SEQUENCE productSize_ps_no_SEQ;
 
 CREATE SEQUENCE productSize_ps_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
-
-CREATE TRIGGER productSize_ps_no_TRG
-BEFORE INSERT ON productSize
-FOR EACH ROW
-BEGIN
-IF :NEW.ps_no IS NOT NULL THEN
-  SELECT productSize_ps_no_SEQ.NEXTVAL INTO :NEW.ps_no FROM DUAL;
-END IF;
-END;
-
 
 CREATE TABLE bidType(
 		bt_no                         		NUMBER(10)		 NULL ,
@@ -153,16 +114,6 @@ DROP SEQUENCE productDetail_pd_no_SEQ;
 
 CREATE SEQUENCE productDetail_pd_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
-CREATE TRIGGER productDetail_pd_no_TRG
-BEFORE INSERT ON productDetail
-FOR EACH ROW
-BEGIN
-IF :NEW.pd_no IS NOT NULL THEN
-  SELECT productDetail_pd_no_SEQ.NEXTVAL INTO :NEW.pd_no FROM DUAL;
-END IF;
-END;
-
-
 CREATE TABLE QNA(
 		q_no                          		NUMBER(10)		 NULL ,
 		q_title                       		VARCHAR2(100)		 NULL ,
@@ -178,27 +129,9 @@ DROP SEQUENCE QNA_q_no_SEQ;
 
 CREATE SEQUENCE QNA_q_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
-CREATE TRIGGER QNA_q_no_TRG
-BEFORE INSERT ON QNA
-FOR EACH ROW
-BEGIN
-IF :NEW.q_no IS NOT NULL THEN
-  SELECT QNA_q_no_SEQ.NEXTVAL INTO :NEW.q_no FROM DUAL;
-END IF;
-END;
 DROP SEQUENCE QNA_q_groupno_SEQ;
 
 CREATE SEQUENCE QNA_q_groupno_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
-
-CREATE TRIGGER QNA_q_groupno_TRG
-BEFORE INSERT ON QNA
-FOR EACH ROW
-BEGIN
-IF :NEW.q_groupno IS NOT NULL THEN
-  SELECT QNA_q_groupno_SEQ.NEXTVAL INTO :NEW.q_groupno FROM DUAL;
-END IF;
-END;
-
 
 CREATE TABLE review(
 		r_no                          		NUMBER(10)		 NULL ,
@@ -214,16 +147,6 @@ DROP SEQUENCE review_r_no_SEQ;
 
 CREATE SEQUENCE review_r_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
-CREATE TRIGGER review_r_no_TRG
-BEFORE INSERT ON review
-FOR EACH ROW
-BEGIN
-IF :NEW.r_no IS NOT NULL THEN
-  SELECT review_r_no_SEQ.NEXTVAL INTO :NEW.r_no FROM DUAL;
-END IF;
-END;
-
-
 CREATE TABLE notice(
 		n_no                          		NUMBER(10)		 NULL ,
 		n_title                       		VARCHAR2(100)		 NULL ,
@@ -234,16 +157,6 @@ CREATE TABLE notice(
 DROP SEQUENCE notice_n_no_SEQ;
 
 CREATE SEQUENCE notice_n_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
-
-CREATE TRIGGER notice_n_no_TRG
-BEFORE INSERT ON notice
-FOR EACH ROW
-BEGIN
-IF :NEW.n_no IS NOT NULL THEN
-  SELECT notice_n_no_SEQ.NEXTVAL INTO :NEW.n_no FROM DUAL;
-END IF;
-END;
-
 
 CREATE TABLE orders(
 		o_no                          		NUMBER(10)		 NULL ,
@@ -256,16 +169,6 @@ CREATE TABLE orders(
 DROP SEQUENCE orders_o_no_SEQ;
 
 CREATE SEQUENCE orders_o_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
-
-CREATE TRIGGER orders_o_no_TRG
-BEFORE INSERT ON orders
-FOR EACH ROW
-BEGIN
-IF :NEW.o_no IS NOT NULL THEN
-  SELECT orders_o_no_SEQ.NEXTVAL INTO :NEW.o_no FROM DUAL;
-END IF;
-END;
-
 
 CREATE TABLE wishList(
 		w_no                          		NUMBER(10)		 NULL ,
