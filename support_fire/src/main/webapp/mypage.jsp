@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -68,7 +69,7 @@
                                         <div class="card-body">
                                             <div class="shop__sidebar__categories">
                                                 <ul class="nice-scroll">
-                                                    <li><a href="#">구매내역</a></li>
+                                                    <li><a href="purchase_list">구매내역</a></li>
                                                     <li><a href="#">판매내역</a></li>
                                                     <li><a href="#">판매내역</a></li>
                                                     <li><a href="#">판매내역</a></li>
