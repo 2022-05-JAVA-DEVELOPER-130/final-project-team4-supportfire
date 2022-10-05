@@ -22,7 +22,6 @@ public interface ProductDao {
 	//제품 1개 구매최소가격 출력
 	Map selectBuyMinPriceByNo(int p_no);
 		
-		
 	//제품 1개 판매최소가격 출력
 	Map selectSellMinPriceByNo(int p_no);
 	

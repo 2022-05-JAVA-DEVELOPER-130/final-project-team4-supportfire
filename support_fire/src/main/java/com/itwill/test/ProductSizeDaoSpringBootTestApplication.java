@@ -37,6 +37,7 @@ public class ProductSizeDaoSpringBootTestApplication {
 		ConfigurableApplicationContext context=application.run(args);
 		ProductSizeDao productSizeDao=(ProductSizeDao)context.getBean(ProductSizeDao.class);
 		ProductDao productDao=(ProductDao)context.getBean(ProductDao.class);
+		/*
 		//System.out.println(productSizeDao.selectByNo(1));
 		//System.out.println(productSizeDao.delete(14));
 		System.out.println(productSizeDao.selectBuyMinPriceByNo(1));
