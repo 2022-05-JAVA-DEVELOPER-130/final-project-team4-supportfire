@@ -17,6 +17,7 @@ import com.itwill.dao.CategoryDao;
 import com.itwill.dao.CategoryDaoImp;
 import com.itwill.dao.OrdersDao;
 import com.itwill.dao.ProductDetailDao;
+import com.itwill.dto.Product;
 import com.itwill.dto.ProductDetail;
 import com.itwill.dto.ProductSize;
 import com.itwill.mapper.CategoryMapper;
@@ -38,8 +39,8 @@ public class ProductDetailDaoSpringBootTestApplication {
 		ConfigurableApplicationContext context=application.run(args);
 		ProductDetailDao productDetailDao=(ProductDetailDao)context.getBean(ProductDetailDao.class);
 		ProductDetail insertProductDetail=
-				new ProductDetail(0, 0, new Date(), new Date(), null, null, 0, 0);
-		//new ProductDetail(null, 0, new Date(), new Date(), new ProductSize(0, null, null), null, 0, 0);
+				new ProductDetail(0, 0, null, null, new ProductSize(1, "230", new Product(1, null, null, 0, null, 0)), "bongkyoun", 1, 1);
+				//new ProductDetail(0, 0, null, null, new ProductSize(0, null, new Product(0, null, null, 0, null, 0)), null, 0, 0);
 		System.out.println(productDetailDao.selectSellListByNo(1));
 		System.out.println(productDetailDao.insertSequence(insertProductDetail));
 		//System.out.println(productDetailDao.selectAll());
