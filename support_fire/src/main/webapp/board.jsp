@@ -26,8 +26,12 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/test.css" type="text/css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+</style>
     
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src ="js/qna_content.js"></script>
   <style>
   .fakeimg {
     height: 200px;
@@ -37,6 +41,18 @@
   .hiden {
   	display: none;
   }
+  
+  .sorting_1{
+  	font-size: 20px;
+  	font-family: 'Noto Sans KR', sans-serif;
+  }
+  
+  ul{
+   list-style:none;
+   }
+  
+  
+  
   </style>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -48,11 +64,13 @@ $(document).ready(function() {
     	success: function(result){             
         var html = "";
     	result.forEach(function(item){
-    		html+= "<tr> <td><a href = '#'>" + item.q_title + "</a>" +
-        			"<ul class='hiden'>" +
-        			"<br><br><br>" +
-        			"<li>" + item.q_date.substring(0,10) + "</li>" +
-        			"<li>" + item.q_content + "</li>"
+    		html+= "<tr> <td><a href = '#'>" + item.q_title + "</a>" + 
+    		  "<ul class='hiden'>" +
+    		   "<br>" +
+    		   "작성자 :" + item.m_id + "<br>" +
+    		 	"작성일 : " + item.q_date.substring(0,10) + "<br>" +
+    		 	"내용 : " + item.q_content + "<br>" +
+    		 "</ul>"
         			
         			
         })

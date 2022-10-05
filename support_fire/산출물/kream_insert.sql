@@ -269,18 +269,25 @@ insert into payment values(1, '지원준비', '01034567890', '인천', '안전�
 insert into payment values(2, '우치하', '01087654321', '나뭇잎 마을', '안전한 배송 부탁 드립니다.', 2, 3);
 
 /*********QNA***********/
-insert into qna values(QNA_Q_NO_SEQ.nextval, '제목1', '내용내용내용내용내용내용내용내용내용내용1', sysdate, QNA_Q_NO_SEQ.currval, 1, 0, 'seongmin');
-insert into qna values(QNA_Q_NO_SEQ.nextval, '제목2', '내용내용내용내용내용내용내용내용내용내용2', sysdate, QNA_Q_NO_SEQ.currval, 1, 0, 'seongmin');
-insert into qna values(QNA_Q_NO_SEQ.nextval, '제목3', '내용내용내용내용내용내용내용내용내용내용3', sysdate, QNA_Q_NO_SEQ.currval, 1, 0, 'seongmin');
-insert into qna values(QNA_Q_NO_SEQ.nextval, '제목4', '내용내용내용내용내용내용내용내용내용내용4', sysdate, QNA_Q_NO_SEQ.currval, 1, 0, 'seongmin');
-insert into qna values(QNA_Q_NO_SEQ.nextval, '제목5', '내용내용내용내용내용내용내용내용내용내용5', sysdate, QNA_Q_NO_SEQ.currval, 1, 0, 'seongmin');
-insert into qna values(QNA_Q_NO_SEQ.nextval, '제목6', '내용내용내용내용내용내용내용내용내용내용6', sysdate, QNA_Q_NO_SEQ.currval, 1, 0, 'seongmin');
-insert into qna values(QNA_Q_NO_SEQ.nextval, '제목7', '내용내용내용내용내용내용내용내용내용내용7', sysdate, QNA_Q_NO_SEQ.currval, 1, 0, 'seongmin');
-insert into qna values(QNA_Q_NO_SEQ.nextval, '제목8', '내용내용내용내용내용내용내용내용내용내용8', sysdate, QNA_Q_NO_SEQ.currval, 1, 0, 'seongmin');
-insert into qna values(QNA_Q_NO_SEQ.nextval, '제목8', '내용내용내용내용내용내용내용내용내용내용8', sysdate, QNA_Q_NO_SEQ.currval, 1, 0, 'seongmin');
-insert into qna values(QNA_Q_NO_SEQ.nextval, '제목8', '내용내용내용내용내용내용내용내용내용내용8', sysdate, QNA_Q_NO_SEQ.currval, 1, 0, 'seongmin');
-insert into qna values(QNA_Q_NO_SEQ.nextval, '제목8', '내용내용내용내용내용내용내용내용내용내용8', sysdate, QNA_Q_NO_SEQ.currval, 1, 0, 'seongmin');
+insert into qna values(QNA_Q_NO_SEQ.nextval, '제목1', '내용내용내용내용내용내용내용내용내용내용1', sysdate, 'seongmin');
+insert into qna values(QNA_Q_NO_SEQ.nextval, '제목2', '내용내용내용내용내용내용내용내용내용내용2', sysdate, 'seongmin');
+insert into qna values(QNA_Q_NO_SEQ.nextval, '제목3', '내용내용내용내용내용내용내용내용내용내용3', sysdate, 'seongmin');
+insert into qna values(QNA_Q_NO_SEQ.nextval, '제목4', '내용내용내용내용내용내용내용내용내용내용4', sysdate, 'seongmin');
+insert into qna values(QNA_Q_NO_SEQ.nextval, '제목5', '내용내용내용내용내용내용내용내용내용내용5', sysdate, 'seongmin');
+insert into qna values(QNA_Q_NO_SEQ.nextval, '제목6', '내용내용내용내용내용내용내용내용내용내용6', sysdate, 'seongmin');
+insert into qna values(QNA_Q_NO_SEQ.nextval, '제목7', '내용내용내용내용내용내용내용내용내용내용7', sysdate, 'seongmin');
+insert into qna values(QNA_Q_NO_SEQ.nextval, '제목8', '내용내용내용내용내용내용내용내용내용내용8', sysdate, 'seongmin');
+insert into qna values(QNA_Q_NO_SEQ.nextval, '제목8', '내용내용내용내용내용내용내용내용내용내용8', sysdate, 'seongmin');
+insert into qna values(QNA_Q_NO_SEQ.nextval, '제목8', '내용내용내용내용내용내용내용내용내용내용8', sysdate, 'seongmin');
+insert into qna values(QNA_Q_NO_SEQ.nextval, '제목8', '내용내용내용내용내용내용내용내용내용내용8', sysdate, 'seongmin');
 
+/********************REQNA*****************/
+insert into reqna values(reqna_r_no_seq.nextval, '답변답변답변답변답변1', sysdate, 1);
+insert into reqna values(reqna_r_no_seq.nextval, '답변답변답변답변답변2', sysdate, 2);
+insert into reqna values(reqna_r_no_seq.nextval, '답변답변답변답변답변3', sysdate, 3);
+insert into reqna values(reqna_r_no_seq.nextval, '답변답변답변답변답변4', sysdate, 4);
+insert into reqna values(reqna_r_no_seq.nextval, '답변답변답변답변답변5', sysdate, 5);
+insert into reqna values(reqna_r_no_seq.nextval, '답변답변답변답변답변6', sysdate, 6);
 
 /**********notice***********/
 insert into notice values(NOTICE_N_NO_SEQ.nextval, '제목1', '내용1', sysdate);
