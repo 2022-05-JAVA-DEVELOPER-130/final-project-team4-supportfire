@@ -1,5 +1,6 @@
 package com.itwill.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -16,32 +17,47 @@ public class ProductSizeServiceImp implements ProductSizeService{
 
 	@Override
 	public int insert(ProductSize productSize) {
-		return 0;
+		return productSizeDao.insert(productSize);
 	}
 
 	@Override
 	public int delete(int ps_no) {
-		return 0;
+		return productSizeDao.delete(ps_no);
 	}
 
 	@Override
 	public ProductSize selectByNo(int ps_no) {
-		return null;
+		return productSizeDao.selectByNo(ps_no);
 	}
 
 	@Override
-	public List<Map> selectBuyMinPriceByNo(int p_no) {
+	public List<ProductSize> selectByNoAll(int p_no) {
+		return productSizeDao.selectByNoAll(p_no);
+	}
+	
+	@Override
+	public Map selectBuyMinPriceByNo(int p_no) {
 		List<Map> map = productSizeDao.selectBuyMinPriceByNo(p_no);
-		
+		System.out.println(map);
+		Map sizeMap = new HashMap();
 		for (Map map2 : map) {
-			map2.get("pd_no");
+			String size = (String)map2.get("S_SIZE");
+			sizeMap.put(size, map2.get("min_price"));
 		}
-		return map;
+		return sizeMap;
 	}
 
 	@Override
-	public List<Map> selectSellMinPriceByNo(int p_no) {
-		return null;
+	public Map selectSellMinPriceByNo(int p_no) {
+		List<Map> map = productSizeDao.selectSellMinPriceByNo(p_no);
+		System.out.println(map);
+		Map sizeMap = new HashMap();
+		for (Map map2 : map) {
+			String size = (String)map2.get("S_SIZE");
+			sizeMap.put(size, map2.get("min_price"));
+		}
+		return sizeMap;
 	}
+
 	
 }

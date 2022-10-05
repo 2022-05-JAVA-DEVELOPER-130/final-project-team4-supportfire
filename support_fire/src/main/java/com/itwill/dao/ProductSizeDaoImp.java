@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.itwill.dto.ProductSize;
+import com.itwill.mapper.ProductMapper;
 import com.itwill.mapper.ProductSizeMapper;
 @Repository
 public class ProductSizeDaoImp implements ProductSizeDao{
@@ -26,6 +27,12 @@ public class ProductSizeDaoImp implements ProductSizeDao{
 	public ProductSize selectByNo(int ps_no) {
 		return productSizeMapper.selectByNo(ps_no);
 	}
+	
+	@Override
+	public List<ProductSize> selectByNoAll(int p_no) {
+		return productSizeMapper.selectByNoAll(p_no);
+	}
+	
 	@Override
 	public List<Map> selectBuyMinPriceByNo(int p_no) {
 		return productSizeMapper.selectBuyMinPriceByNo(p_no);

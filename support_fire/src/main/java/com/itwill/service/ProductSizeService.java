@@ -16,9 +16,12 @@ public interface ProductSizeService {
 	//ps_no로 사이즈 1개 출력
 	ProductSize selectByNo(int ps_no);
 	
+	//제품 번호로 사이즈 전체출력
+	List<ProductSize> selectByNoAll(int p_no);
+	
 	//제품 사이즈 구매 최소 가격 출력
-	List<Map> selectBuyMinPriceByNo(int p_no);
+	Map selectBuyMinPriceByNo(int p_no);
 	
 	//제품 사이즈 판매 최소 가격 출력
-	List<Map> selectSellMinPriceByNo(int p_no);
+	Map selectSellMinPriceByNo(int p_no);
 }

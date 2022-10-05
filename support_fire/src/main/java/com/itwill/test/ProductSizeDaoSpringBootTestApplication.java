@@ -70,6 +70,14 @@ public class ProductSizeDaoSpringBootTestApplication {
 			sizeMap.put(size, map2.get("min_price"));
 		}
 		System.out.println(sizeMap);
+		System.out.println(sizeMap.get("220"));
+		System.out.println(productSizeDao.selectByNo(1));
+		List<ProductSize> psSize = productSizeDao.selectByNoAll(2);
+		System.out.println(productSizeDao.selectByNo(1));
+		for (int i=0; i<psSize.size(); i++) {
+			System.out.println("size:" + psSize.get(i).getS_size());
+			System.out.println("price : " + sizeMap.get(psSize.get(i).getS_size()));
+		}
 	}
 
 }
