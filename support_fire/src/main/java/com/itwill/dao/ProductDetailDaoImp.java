@@ -60,7 +60,8 @@ public class ProductDetailDaoImp  implements ProductDetailDao{
 
 	@Override
 	public int insertSequence(ProductDetail productDetail) {
-		return productDetailMapper.insertSequence(productDetail);
+		productDetailMapper.insertSequence(productDetail);
+		return productDetail.getPd_no();
 	}
 	
 	

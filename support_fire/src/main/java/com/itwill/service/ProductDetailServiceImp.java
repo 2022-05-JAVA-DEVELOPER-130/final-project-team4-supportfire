@@ -53,6 +53,11 @@ public class ProductDetailServiceImp implements ProductDetailService{
 	public List<ProductDetail> selectAll() {
 		return productDetailDao.selectAll();
 	}
+
+	@Override
+	public int insertSequence(ProductDetail productDetail) {
+		return productDetailDao.insertSequence(productDetail);
+	}
 	
 	
 }

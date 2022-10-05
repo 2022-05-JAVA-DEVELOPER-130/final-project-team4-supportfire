@@ -23,19 +23,16 @@ public interface ProductDetailMapper {
 		
 		//제품상태업데이트
 		@Update("update productdetail set b_no=#{b_no} where pd_no=#{pd_no}")
-		int updateByBidStatus(int b_no, Integer pd_no);
+		int updateByBidStatus(int b_no, int pd_no);
 		
 		//제품삭제
 		@Delete("delete from productdetail where pd_no=#{pd_no}")
-		int delete(Integer pd_no);
-		
-		@Select("select * from productdetail where pd_no=#{pd_no}")
-		int selectByNoInt(Integer pd_no);
+		int delete(int pd_no);
 		
 		//제품넘버로찾기
 		@Select("select * from productDetail pd left outer join productsize ps on pd.ps_no = ps.ps_no left outer join product p on ps.p_no = p.p_no where pd.pd_no=#{pd_no}")
 		@ResultMap("productDetail")
-		ProductDetail selectByNo(Integer pd_no);
+		ProductDetail selectByNo(int pd_no);
 		
 		//회원아이디로찾기
 		@Select("select * from productDetail pd left outer join productsize ps on pd.ps_no = ps.ps_no left outer join product p on ps.p_no = p.p_no where pd.m_id=#{m_id}")
@@ -58,7 +55,7 @@ public interface ProductDetailMapper {
 		List<ProductDetail> selectSellListByNo(int p_no);
 		
 		//pd_no 생성 및 PK 출력
-		@Insert("insert into productdetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, #{pd_price}, sysdate, sysdate+7, #{productsize.ps_no}, #{m_id}, #{bt_no}, #{b_no})")
+		@Insert("insert into productdetail values(#{pd_no}, #{pd_price}, sysdate, sysdate+7, #{productsize.ps_no}, #{m_id}, #{bt_no}, #{b_no})")
 		@SelectKey(statement = "select PRODUCTDETAIL_PD_NO_SEQ.nextval from dual",
 				   keyProperty = "pd_no",
 				   before = true,

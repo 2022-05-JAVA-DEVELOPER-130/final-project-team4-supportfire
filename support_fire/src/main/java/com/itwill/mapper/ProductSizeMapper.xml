@@ -18,7 +18,7 @@
 	</resultMap>
 	
 	<resultMap type="hashmap" id="selectMap">
-        <result column="ps.ps_no" property="ps_no"/>
+        <result column="size" property="size"/>
         <result column="min(pd.pd_price)" property="min_price"/>
     </resultMap>
 

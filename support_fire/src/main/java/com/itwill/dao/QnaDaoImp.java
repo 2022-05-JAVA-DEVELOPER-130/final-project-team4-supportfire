@@ -28,7 +28,8 @@ public class QnaDaoImp implements QnaDao{
 
 	@Override
 	public int qna_insert(Qna qna) {
-		return qnaMapper.qna_insert(qna);
+		qnaMapper.qna_insert(qna);
+		return qna.getQ_no();
 	}
 
 	@Override

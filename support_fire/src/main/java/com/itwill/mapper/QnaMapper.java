@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.SelectKey;
 import org.apache.ibatis.annotations.Update;
 
 import com.itwill.dto.Qna;
@@ -15,7 +16,11 @@ import com.itwill.dto.Qna;
 public interface QnaMapper {
 	
 	//QNA 추가
-	@Insert("insert into qna (q_no, q_title, q_contents, q_date, q_groupno, q_step, q_depth, m_id) values(qna_q_no_seq.nextval, #{q_title}, #{q_contents}, sysdate, qna_q_no_seq.currval, 1, 0, #{m_id})")
+	@Insert("insert into qna (q_no, q_title, q_content, q_date, q_groupno, q_step, q_depth, m_id) values(#{q_no}, #{q_title}, #{q_content}, sysdate, qna_q_no_seq.currval, 1, 0, #{m_id})")
+	@SelectKey(statement = "select qna_q_no_seq.nextval from dual",
+				keyProperty = "q_no",
+				before = true,
+				resultType = int.class)
 	public int qna_insert(Qna qna);
 	
 	//QNA 리스트 출력 (정렬해서 출력)

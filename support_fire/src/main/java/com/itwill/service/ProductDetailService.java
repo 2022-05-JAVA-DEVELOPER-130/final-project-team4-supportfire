@@ -28,4 +28,7 @@ public interface ProductDetailService {
 	
 	//전체출력
 	List<ProductDetail> selectAll();
+	
+	//pd_no 생성 및 PK 출력
+	int insertSequence(ProductDetail productDetail);
 }

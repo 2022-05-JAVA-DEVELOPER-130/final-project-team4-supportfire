@@ -1,5 +1,6 @@
 package com.itwill.test;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -42,14 +43,14 @@ public class ProductSizeDaoSpringBootTestApplication {
 		System.out.println(productSizeDao.selectSellMinPriceByNo(1));
 		Product product_no = productDao.selectByNo(1);
 		System.out.println(product_no);
-		ProductSize productSizeInsert = new ProductSize(0, "230", product_no);
-		System.out.println(productSizeDao.insert(productSizeInsert));
+		//ProductSize productSizeInsert = new ProductSize(0, "230", product_no);
+		//System.out.println(productSizeDao.insert(productSizeInsert));
 		/*
 		System.out.println(productSizeDao.insert(insertProductSize));
 		*/
 		/*
 		System.out.println(productDao.selectAll());
-		System.out.println(productDao.selectAllMinPrice());
+		
 		System.out.println(productDao.selectBuyMinPriceByNo(1));
 		System.out.println(productDao.selectSellMinPriceByNo(1));
 		
@@ -58,7 +59,17 @@ public class ProductSizeDaoSpringBootTestApplication {
 			System.out.println("P_no = " +map2.get("P_NO") + " : min_price =" + map2.get("min_price"));
 		}
 		 */
-		
+		System.out.println(productDao.selectAllMinPrice());
+		List<Map> map = productSizeDao.selectBuyMinPriceByNo(1);
+		System.out.println(map);
+		Map sizeMap = new HashMap();
+		for (Map map2 : map) {
+			String p_no = (String)map2.get("p_no");
+			String size = (String)map2.get("S_SIZE");
+			System.out.println(map2.get("min_price"));
+			sizeMap.put(size, map2.get("min_price"));
+		}
+		System.out.println(sizeMap);
 	}
 
 }
