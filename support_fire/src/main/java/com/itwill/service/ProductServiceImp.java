@@ -1,5 +1,6 @@
 package com.itwill.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -42,20 +43,19 @@ public class ProductServiceImp implements ProductService{
 	public List<Product> selectAll() {
 		return productDao.selectAll();
 	}
-	/* 작성중
-	public void check () {
-		g
-		String a = "구매 입찰";
-		if(min_price == null) {
-			
-		 }
-	}
-	*/
+	// min_price 값이 null 일때 구매 입찰로 표시 구현중
 	@Override
 	public List<Map> selectAllMinPrice() {
+		/*
+		List<Map> map = productDao.selectAllMinPrice();
+		Map minPriceMap = new HashMap();
+		for (Map map2 : map) {
+			int p_no = (int)map2.get("p_no");
+			minPriceMap.put(p_no, map2.get("min_price"));
+		}
+		*/
 		return productDao.selectAllMinPrice();
 	}
-
 	@Override
 	public List<Product> searchAll(String p_name) {
 		return productDao.searchAll(p_name);
