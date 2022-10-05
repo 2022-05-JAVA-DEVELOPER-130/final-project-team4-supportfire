@@ -17,3 +17,14 @@ function qna_list(qna) {
 		</div>
 	`
 }
+
+function qna_app(item) {
+	return `
+<div class="c_list" id="id_list" >
+  <ul class='hiden'>
+ 	<li>${item.q_date.substring(0,10)}</li>
+ 	<li>${item.q_content}</li>
+ </ul>
+</div>
+	`
+}

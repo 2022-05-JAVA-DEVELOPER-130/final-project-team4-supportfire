@@ -1,3 +1,4 @@
+DROP TABLE REQNA CASCADE CONSTRAINTS;
 DROP TABLE payment CASCADE CONSTRAINTS;
 DROP TABLE paymentList CASCADE CONSTRAINTS;
 DROP TABLE wishList CASCADE CONSTRAINTS;
@@ -16,6 +17,9 @@ DROP TABLE category CASCADE CONSTRAINTS;
 DROP TABLE deliveryAddress CASCADE CONSTRAINTS;
 DROP TABLE member CASCADE CONSTRAINTS;
 
+/**********************************/
+/* Table Name: member */
+/**********************************/
 CREATE TABLE member(
 		m_id                          		VARCHAR2(20)		 NOT NULL,
 		m_password                    		VARCHAR2(10)		 NOT NULL,
@@ -32,7 +36,21 @@ DROP SEQUENCE member_m_id_SEQ;
 
 CREATE SEQUENCE member_m_id_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
+COMMENT ON TABLE member is 'member';
+COMMENT ON COLUMN member.m_id is 'm_id';
+COMMENT ON COLUMN member.m_password is 'm_password';
+COMMENT ON COLUMN member.m_name is 'm_name';
+COMMENT ON COLUMN member.m_phone is 'm_phone';
+COMMENT ON COLUMN member.m_birth is 'm_birth';
+COMMENT ON COLUMN member.m_email is 'm_email';
+COMMENT ON COLUMN member.m_gender is 'm_gender';
+COMMENT ON COLUMN member.m_point is 'm_point';
+COMMENT ON COLUMN member.m_address is 'm_address';
 
+
+/**********************************/
+/* Table Name: deliveryAddress */
+/**********************************/
 CREATE TABLE deliveryAddress(
 		da_name                       		VARCHAR2(30)		 NULL ,
 		da_zipcode                    		VARCHAR2(20)		 NULL ,
@@ -41,13 +59,30 @@ CREATE TABLE deliveryAddress(
 		m_id                          		VARCHAR2(20)		 NULL 
 );
 
+COMMENT ON TABLE deliveryAddress is 'deliveryAddress';
+COMMENT ON COLUMN deliveryAddress.da_name is 'da_name';
+COMMENT ON COLUMN deliveryAddress.da_zipcode is 'da_zipcode';
+COMMENT ON COLUMN deliveryAddress.da_streetAddr is 'da_streetAddr';
+COMMENT ON COLUMN deliveryAddress.da_detailAddr is 'da_detailAddr';
+COMMENT ON COLUMN deliveryAddress.m_id is 'm_id';
 
+
+/**********************************/
+/* Table Name: category */
+/**********************************/
 CREATE TABLE category(
 		c_no                          		NUMBER(10)		 NULL ,
 		c_name                        		VARCHAR2(30)		 NULL 
 );
 
+COMMENT ON TABLE category is 'category';
+COMMENT ON COLUMN category.c_no is 'c_no';
+COMMENT ON COLUMN category.c_name is 'c_name';
 
+
+/**********************************/
+/* Table Name: brands */
+/**********************************/
 CREATE TABLE brands(
 		br_no                         		NUMBER(10)		 NULL ,
 		br_name                       		VARCHAR2(30)		 NULL ,
@@ -58,12 +93,22 @@ DROP SEQUENCE brands_br_no_SEQ;
 
 CREATE SEQUENCE brands_br_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
+
+COMMENT ON TABLE brands is 'brands';
+COMMENT ON COLUMN brands.br_no is 'br_no';
+COMMENT ON COLUMN brands.br_name is 'br_name';
+COMMENT ON COLUMN brands.c_no is 'c_no';
+
+
+/**********************************/
+/* Table Name: product */
+/**********************************/
 CREATE TABLE product(
 		p_no                          		NUMBER(10)		 NOT NULL,
-		p_name                        		VARCHAR2(80)		 NULL ,
+		p_name                        		VARCHAR2(100)		 NULL ,
 		p_date                        		VARCHAR2(15)		 NULL ,
 		p_price                       		NUMBER(20)		 NULL ,
-		p_image                       		VARCHAR2(80)		 NULL ,
+		p_image                       		VARCHAR2(100)		 NULL ,
 		br_no                         		NUMBER(10)		 NULL 
 );
 
@@ -71,12 +116,32 @@ DROP SEQUENCE product_p_no_SEQ;
 
 CREATE SEQUENCE product_p_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
+
+COMMENT ON TABLE product is 'product';
+COMMENT ON COLUMN product.p_no is 'p_no';
+COMMENT ON COLUMN product.p_name is 'p_name';
+COMMENT ON COLUMN product.p_date is 'p_date';
+COMMENT ON COLUMN product.p_price is 'p_price';
+COMMENT ON COLUMN product.p_image is 'p_image';
+COMMENT ON COLUMN product.br_no is 'br_no';
+
+
+/**********************************/
+/* Table Name: sizes */
+/**********************************/
 CREATE TABLE sizes(
 		s_size                        		VARCHAR2(30)		 NULL ,
 		c_no                          		NUMBER(10)		 NULL 
 );
 
+COMMENT ON TABLE sizes is 'sizes';
+COMMENT ON COLUMN sizes.s_size is 's_size';
+COMMENT ON COLUMN sizes.c_no is 'c_no';
 
+
+/**********************************/
+/* Table Name: productSize */
+/**********************************/
 CREATE TABLE productSize(
 		ps_no                         		VARCHAR2(20)		 NULL ,
 		s_size                        		VARCHAR2(30)		 NULL ,
@@ -87,18 +152,42 @@ DROP SEQUENCE productSize_ps_no_SEQ;
 
 CREATE SEQUENCE productSize_ps_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
+
+COMMENT ON TABLE productSize is 'productSize';
+COMMENT ON COLUMN productSize.ps_no is 'ps_no';
+COMMENT ON COLUMN productSize.s_size is 's_size';
+COMMENT ON COLUMN productSize.p_no is 'p_no';
+
+
+/**********************************/
+/* Table Name: bidType */
+/**********************************/
 CREATE TABLE bidType(
 		bt_no                         		NUMBER(10)		 NULL ,
 		bt_type                       		VARCHAR2(20)		 NULL 
 );
 
+COMMENT ON TABLE bidType is 'bidType';
+COMMENT ON COLUMN bidType.bt_no is 'bt_no';
+COMMENT ON COLUMN bidType.bt_type is 'bt_type';
 
+
+/**********************************/
+/* Table Name: bidStatus */
+/**********************************/
 CREATE TABLE bidStatus(
 		b_no                          		NUMBER(10)		 NULL ,
 		b_status                      		VARCHAR2(20)		 NULL 
 );
 
+COMMENT ON TABLE bidStatus is 'bidStatus';
+COMMENT ON COLUMN bidStatus.b_no is 'b_no';
+COMMENT ON COLUMN bidStatus.b_status is 'b_status';
 
+
+/**********************************/
+/* Table Name: productDetail */
+/**********************************/
 CREATE TABLE productDetail(
 		pd_no                         		NUMBER(10)		 NOT NULL,
 		pd_price                      		NUMBER(20)		 NULL ,
@@ -114,14 +203,26 @@ DROP SEQUENCE productDetail_pd_no_SEQ;
 
 CREATE SEQUENCE productDetail_pd_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
+
+COMMENT ON TABLE productDetail is 'productDetail';
+COMMENT ON COLUMN productDetail.pd_no is 'pd_no';
+COMMENT ON COLUMN productDetail.pd_price is 'pd_price';
+COMMENT ON COLUMN productDetail.pd_start is 'pd_start';
+COMMENT ON COLUMN productDetail.pd_end is 'pd_end';
+COMMENT ON COLUMN productDetail.ps_no is 'ps_no';
+COMMENT ON COLUMN productDetail.m_id is 'm_id';
+COMMENT ON COLUMN productDetail.bt_no is 'bt_no';
+COMMENT ON COLUMN productDetail.b_no is 'b_no';
+
+
+/**********************************/
+/* Table Name: QNA */
+/**********************************/
 CREATE TABLE QNA(
 		q_no                          		NUMBER(10)		 NULL ,
 		q_title                       		VARCHAR2(100)		 NULL ,
 		q_content                     		VARCHAR2(1000)		 NULL ,
 		q_date                        		DATE		 NULL ,
-		q_groupno                     		NUMBER(10)		 NULL ,
-		q_step                        		NUMBER(10)		 NULL ,
-		q_depth                       		NUMBER(10)		 NULL ,
 		m_id                          		VARCHAR2(20)		 NULL 
 );
 
@@ -129,10 +230,18 @@ DROP SEQUENCE QNA_q_no_SEQ;
 
 CREATE SEQUENCE QNA_q_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
-DROP SEQUENCE QNA_q_groupno_SEQ;
 
-CREATE SEQUENCE QNA_q_groupno_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
+COMMENT ON TABLE QNA is 'QNA';
+COMMENT ON COLUMN QNA.q_no is 'q_no';
+COMMENT ON COLUMN QNA.q_title is 'q_title';
+COMMENT ON COLUMN QNA.q_content is 'q_content';
+COMMENT ON COLUMN QNA.q_date is 'q_date';
+COMMENT ON COLUMN QNA.m_id is 'm_id';
 
+
+/**********************************/
+/* Table Name: review */
+/**********************************/
 CREATE TABLE review(
 		r_no                          		NUMBER(10)		 NULL ,
 		r_title                       		VARCHAR2(100)		 NULL ,
@@ -147,6 +256,20 @@ DROP SEQUENCE review_r_no_SEQ;
 
 CREATE SEQUENCE review_r_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
+
+COMMENT ON TABLE review is 'review';
+COMMENT ON COLUMN review.r_no is 'r_no';
+COMMENT ON COLUMN review.r_title is 'r_title';
+COMMENT ON COLUMN review.r_content is 'r_content';
+COMMENT ON COLUMN review.r_date is 'r_date';
+COMMENT ON COLUMN review.r_star is 'r_star';
+COMMENT ON COLUMN review.m_id is 'm_id';
+COMMENT ON COLUMN review.p_no is 'p_no';
+
+
+/**********************************/
+/* Table Name: notice */
+/**********************************/
 CREATE TABLE notice(
 		n_no                          		NUMBER(10)		 NULL ,
 		n_title                       		VARCHAR2(100)		 NULL ,
@@ -158,6 +281,17 @@ DROP SEQUENCE notice_n_no_SEQ;
 
 CREATE SEQUENCE notice_n_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
+
+COMMENT ON TABLE notice is 'notice';
+COMMENT ON COLUMN notice.n_no is 'n_no';
+COMMENT ON COLUMN notice.n_title is 'n_title';
+COMMENT ON COLUMN notice.n_content is 'n_content';
+COMMENT ON COLUMN notice.n_date is 'n_date';
+
+
+/**********************************/
+/* Table Name: orders */
+/**********************************/
 CREATE TABLE orders(
 		o_no                          		NUMBER(10)		 NULL ,
 		o_date                        		DATE		 NULL ,
@@ -170,19 +304,46 @@ DROP SEQUENCE orders_o_no_SEQ;
 
 CREATE SEQUENCE orders_o_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
+
+COMMENT ON TABLE orders is 'orders';
+COMMENT ON COLUMN orders.o_no is 'o_no';
+COMMENT ON COLUMN orders.o_date is 'o_date';
+COMMENT ON COLUMN orders.pd_no_purchase is 'pd_no_purchase';
+COMMENT ON COLUMN orders.pd_no_sell is 'pd_no_sell';
+COMMENT ON COLUMN orders.o_status is 'o_status';
+
+
+/**********************************/
+/* Table Name: wishList */
+/**********************************/
 CREATE TABLE wishList(
 		w_no                          		NUMBER(10)		 NULL ,
 		p_no                          		NUMBER(10)		 NULL ,
 		m_id                          		VARCHAR2(20)		 NULL 
 );
 
+COMMENT ON TABLE wishList is 'wishList';
+COMMENT ON COLUMN wishList.w_no is 'w_no';
+COMMENT ON COLUMN wishList.p_no is 'p_no';
+COMMENT ON COLUMN wishList.m_id is 'm_id';
 
+
+/**********************************/
+/* Table Name: paymentList */
+/**********************************/
 CREATE TABLE paymentList(
 		pl_no                         		NUMBER(10)		 NULL ,
 		pl_method                     		VARCHAR2(100)		 NULL 
 );
 
+COMMENT ON TABLE paymentList is 'paymentList';
+COMMENT ON COLUMN paymentList.pl_no is 'pl_no';
+COMMENT ON COLUMN paymentList.pl_method is 'pl_method';
 
+
+/**********************************/
+/* Table Name: payment */
+/**********************************/
 CREATE TABLE payment(
 		pm_no                         		NUMBER(10)		 NULL ,
 		pm_name                       		VARCHAR2(20)		 NULL ,
@@ -192,6 +353,37 @@ CREATE TABLE payment(
 		o_no                          		NUMBER(10)		 NULL ,
 		pl_no                         		NUMBER(10)		 NULL 
 );
+
+COMMENT ON TABLE payment is 'payment';
+COMMENT ON COLUMN payment.pm_no is 'pm_no';
+COMMENT ON COLUMN payment.pm_name is 'pm_name';
+COMMENT ON COLUMN payment.pm_phone is 'pm_phone';
+COMMENT ON COLUMN payment.pm_address is 'pm_address';
+COMMENT ON COLUMN payment.pm_memo is 'pm_memo';
+COMMENT ON COLUMN payment.o_no is 'o_no';
+COMMENT ON COLUMN payment.pl_no is 'pl_no';
+
+
+/**********************************/
+/* Table Name: REQNA */
+/**********************************/
+CREATE TABLE REQNA(
+		rq_no                         		NUMBER(10)		 NOT NULL,
+		rq_content                    		VARCHAR2(1000)		 NULL ,
+		rq_date                       		DATE		 DEFAULT sysdate		 NULL ,
+		q_no                          		NUMBER(10)		 NULL 
+);
+
+DROP SEQUENCE REQNA_rq_no_SEQ;
+
+CREATE SEQUENCE REQNA_rq_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
+
+
+COMMENT ON TABLE REQNA is 'REQNA';
+COMMENT ON COLUMN REQNA.rq_no is 'rq_no';
+COMMENT ON COLUMN REQNA.rq_content is 'rq_content';
+COMMENT ON COLUMN REQNA.rq_date is 'rq_date';
+COMMENT ON COLUMN REQNA.q_no is 'q_no';
 
 
 
@@ -247,4 +439,7 @@ ALTER TABLE paymentList ADD CONSTRAINT IDX_paymentList_PK PRIMARY KEY (pl_no);
 ALTER TABLE payment ADD CONSTRAINT IDX_payment_PK PRIMARY KEY (pm_no);
 ALTER TABLE payment ADD CONSTRAINT IDX_payment_FK0 FOREIGN KEY (o_no) REFERENCES orders (o_no);
 ALTER TABLE payment ADD CONSTRAINT IDX_payment_FK1 FOREIGN KEY (pl_no) REFERENCES paymentList (pl_no);
+
+ALTER TABLE REQNA ADD CONSTRAINT IDX_REQNA_PK PRIMARY KEY (rq_no);
+ALTER TABLE REQNA ADD CONSTRAINT IDX_REQNA_FK0 FOREIGN KEY (q_no) REFERENCES QNA (q_no);
 
