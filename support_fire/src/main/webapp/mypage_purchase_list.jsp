@@ -75,8 +75,9 @@
                                         <div class="card-body">
                                             <div class="shop__sidebar__categories">
                                                 <ul class="nice-scroll">
-                                                    <li><a href="mypage_purchase_list">구매내역</a></li>
-                                                    <li><a href="mypage_sell_list">판매내역</a></li>
+                                                    <li><a href="mypage_purchase_list.jsp">구매내역</a></li>
+                                                    <li><a href="mypage_sell_list.jsp">판매내역</a></li>
+                                                   
                                                    
                                                     
                                                 </ul>
@@ -142,16 +143,10 @@
                             </div>
                         </div>
             
-                       
-                                    <!-- end -->
-                                </div>
-                                
-                            </div>
-                        </div>
                         <div>
-                                   <div class="section-title">
-                                            <h4>판매내역</h4>
-			                      </div>
+                                    <div class="section-title">
+                                            <h4>구매내역</h4>
+			                       </div>
                         </div>
                         <div class="col-lg-12 col-md-6 col-sm-6">
                             <div class="product__item">
@@ -208,6 +203,7 @@
 				                        </table>
                     				</div>
                                     <!-- end -->
+                                
                                 </div>
                                 
                             </div>
