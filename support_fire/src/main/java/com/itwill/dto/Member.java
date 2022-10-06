@@ -19,4 +19,6 @@ public class Member {
 	private Integer m_point;
 	private String m_address;
 	private String m_test;
+
+	//intellij github test
 }
