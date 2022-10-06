@@ -12,7 +12,7 @@ import com.itwill.mapper.QnaMapper;
 @Repository
 public class QnaDaoImp implements QnaDao{
 
-	//@Autowired
+	@Autowired
 	private QnaMapper qnaMapper;
 
 	public QnaDaoImp() {

@@ -13,7 +13,7 @@ import com.itwill.dto.Qna;
 @Service
 public class QnaServiceImp implements QnaService{
 	
-	//@Autowired
+	@Autowired
 	private QnaDao qnaDao;
 
 	public void setQnaDao(QnaDao qnaDao) {

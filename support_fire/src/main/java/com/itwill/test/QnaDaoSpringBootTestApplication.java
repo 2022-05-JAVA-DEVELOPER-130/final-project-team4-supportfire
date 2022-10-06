@@ -21,6 +21,7 @@ import com.itwill.dao.QnaDao;
 import com.itwill.dto.ProductDetail;
 import com.itwill.dto.ProductSize;
 import com.itwill.dto.Qna;
+import com.itwill.dto.ReQna;
 import com.itwill.mapper.CategoryMapper;
 import com.itwill.mapper.OrdersMapper;
 import com.itwill.mapper.ProductDetailMapper;
@@ -40,10 +41,12 @@ public class QnaDaoSpringBootTestApplication {
 		application.setWebApplicationType(WebApplicationType.NONE);
 		ConfigurableApplicationContext context=application.run(args);
 		QnaDao qnaDao=(QnaDao)context.getBean(QnaDao.class);
-		//Qna qna = new Qna(0, "제몬", "내욘", null, 0, 0, 0, "seongmin");
-		//Qna qnaUpdate = new Qna(15, "제몬수정", "내욘수접", null, 0, 0, 0, "seongmin");
+		//Qna qna = new Qna(0, "제몬", "내욘", null, "seongmin", new ReQna(1, null, null));
+		//Qna qnaUpdate = new Qna(15, "제몬수정", "내욘수접", null, "seongmin",new ReQna(1, null, null));
 		//System.out.println(qnaDao.qna_insert(qna));
 		//System.out.println(qnaDao.qna_update(qnaUpdate));
+		System.out.println(qnaDao.selectAll());
+		System.out.println(qnaDao.qna_selectByNo(3));
 	}
 
 }
