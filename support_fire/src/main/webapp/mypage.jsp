@@ -75,8 +75,8 @@
                                         <div class="card-body">
                                             <div class="shop__sidebar__categories">
                                                 <ul class="nice-scroll">
-                                                    <li><a href="mypage_purchase_list">구매내역</a></li>
-                                                    <li><a href="mypage_sell_list">판매내역</a></li>
+                                                    <li><a href="mypage_purchase_list.jsp">구매내역</a></li>
+                                                    <li><a href="mypage_sell_list.jsp">판매내역</a></li>
                                                    
                                                     
                                                 </ul>
