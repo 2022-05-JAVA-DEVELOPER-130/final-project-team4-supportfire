@@ -1,10 +1,6 @@
 package com.itwill.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,5 +18,5 @@ public class Member {
 	private String m_gender;
 	private Integer m_point;
 	private String m_address;
-	
+	private String m_test;
 }
