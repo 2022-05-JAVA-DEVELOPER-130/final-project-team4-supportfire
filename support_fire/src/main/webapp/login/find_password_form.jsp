@@ -51,7 +51,7 @@
                         <h4>로그인</h4>
                         <div class="breadcrumb__links">
                             <a href="./login_form.jsp">로그인</a>
-                            <span>아이디찾기</span>
+                            <span>비밀번호찾기</span>
                         </div>
                     </div>
                 </div>
@@ -63,10 +63,10 @@
 					<div class="content lg">
 						<div class="help_area">
 							<div>
-								<h2 class="help_title">아이디 찾기</h2>
+								<h2 class="help_title">비밀번호 찾기</h2>
 								<div class="help_notice">
 									<p class="notice_txt">
-										가입 시 등록한 휴대폰 번호를 입력하면<br> 아이디의 일부를 알려드립니다.
+										가입 시 등록하신 휴대폰 번호와 아이디를 입력하시면,<br>휴대폰으로 임시 비밀번호를 전송해 드립니다.
 									</p>
 								</div>
 								<div class="input_box" data-v-6c561060>
@@ -75,14 +75,23 @@
 										<input type="text" placeholder="가입하신 휴대폰 번호"
 											autocomplete="off" value="" class="input_txt" data-v-6c561060>
 									</div>
+									<p class="input_error" data-v-6c561060>휴대폰 번호를 정확히 입력해주세요.</p>
+								</div>
+								<div class="input_box" data-v-6c561060>
+									<h3 class="input_title" data-v-6c561060>아이디 주소</h3>
+									<div class="input_item" data-v-6c561060>
+										<input type="text" placeholder="예) kream@kream.co.kr"
+											autocomplete="off" value="" class="input_txt" data-v-6c561060>
+									</div>
+									<p class="input_error" data-v-6c561060>아이디를 정확히 입력해주세요.</p>
 								</div>
 								<div class="help_btn_box">
 									<a disabled="disabled" href="#" class="btn full solid disabled"
-										data-v-3d1bcc82 data-v-3d1bcc82> 아이디 찾기 </a>
+										data-v-3d1bcc82 data-v-3d1bcc82> 문자 발송하기 </a>
 								</div>
 							</div>
 						</div>
-				</div>	
+					</div>
 							<!---->
       <!-- <div class="card login-card">
         <img src="assets/images/login.jpg" alt="login" class="login-card-img">
