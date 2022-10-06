@@ -1,5 +1,6 @@
 package com.itwill.dao;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.itwill.dto.ReQna;
@@ -7,7 +8,7 @@ import com.itwill.mapper.ReQnaMapper;
 
 @Repository
 public class ReQnaDaoImp implements ReQnaDao{
-	
+	@Autowired
 	private ReQnaMapper reQnaMapper;
 
 	@Override

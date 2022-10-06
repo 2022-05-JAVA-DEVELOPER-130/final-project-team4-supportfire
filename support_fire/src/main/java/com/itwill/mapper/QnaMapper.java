@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectKey;
 import org.apache.ibatis.annotations.Update;
@@ -31,15 +32,18 @@ public interface QnaMapper {
 	 */
 	
 	//QNA 리스트 출력
-	@Select("select * from QNa order by desc")
+	@Select("select * from QNa q left outer join reqna r on q.rq_no = r.rq_no order by q_no asc")
+	@ResultMap("QnaSelect")
 	public List<Qna> selectAll();
 	
 	//QNA id로 찾기
-	@Select("select * from qna where m_id = #{m_id}")
+	@Select("select * from qna q left outer join reqna r on q.rq_no = r.rq_no where m_id = #{m_id}")
+	@ResultMap("QnaSelect")
 	public Qna qna_selectById(int m_id);
 	
 	//QNA 상세
-	@Select("select * from qna where q_no = #{q_no}")
+	@Select("select * from qna q left outer join reqna r on q.rq_no = r.rq_no where q_no = #{q_no}")
+	@ResultMap("QnaSelect")
 	public Qna qna_selectByNo(int q_no);
 	
 	//QNA 업데이트

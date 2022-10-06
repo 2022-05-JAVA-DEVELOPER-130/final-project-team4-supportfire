@@ -13,7 +13,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class ReQna {
+public class ReQna { 	
 	
 	private int rq_no;
 	private String rq_content;

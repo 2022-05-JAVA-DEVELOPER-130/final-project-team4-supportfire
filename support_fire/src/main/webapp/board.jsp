@@ -51,7 +51,15 @@
    list-style:none;
    }
   
+  .sorting_desc{
+  aria-label:"제목: activate to sort column ascending";
+  aria-sort: "descending";
+  }
   
+  .sorting_asc{
+  aria-label:"제목: activate to sort column ascending";
+  aria-sort: "descending";
+  }
   
   </style>
 <script type="text/javascript">
@@ -80,9 +88,9 @@ $(document).ready(function() {
       		   "작성자 :" + item.m_id + "<br>" +
       		 	"작성일 : " + item.q_date.substring(0,10) + "<br>" +
       		 	"내용 : " + item.q_content + "<br><br><br>" +
-      		 	"<hr>" +
-      		 	"작성일 : " + item.reQna.rq_date +
-      		 	"답변내용 :" + item.reQna.rq_content +
+      		 	"<hr><br>" +
+      		 	"작성일 : " + item.reQna.rq_date.substring(0,10) +
+      		 	"<br>답변내용 : " + item.reQna.rq_content +
       		 "</ul>"
     		}
         			

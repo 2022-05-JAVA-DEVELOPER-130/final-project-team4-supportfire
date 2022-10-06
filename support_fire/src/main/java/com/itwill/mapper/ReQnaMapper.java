@@ -2,12 +2,13 @@ package com.itwill.mapper;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectKey;
 import org.apache.ibatis.annotations.Update;
 
 import com.itwill.dto.ReQna;
-
+@Mapper
 public interface ReQnaMapper {
 	
 	@Insert("insert into reqna values(#{rq_no}, #{rq_content}, sysdate)")
