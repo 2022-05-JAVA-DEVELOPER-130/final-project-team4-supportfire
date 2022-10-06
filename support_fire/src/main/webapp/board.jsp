@@ -64,6 +64,8 @@ $(document).ready(function() {
     	success: function(result){             
         var html = "";
     	result.forEach(function(item){
+    		
+    		if(item.reQna == null){
     		html+= "<tr> <td><a href = '#'>" + item.q_title + "</a>" + 
     		  "<ul class='hiden'>" +
     		   "<br>" +
@@ -71,6 +73,18 @@ $(document).ready(function() {
     		 	"작성일 : " + item.q_date.substring(0,10) + "<br>" +
     		 	"내용 : " + item.q_content + "<br>" +
     		 "</ul>"
+    		}else {
+    			html+= "<tr> <td><a href = '#'>" + item.q_title + "</a>" + 
+      		  "<ul class='hiden'>" +
+      		   "<br>" +
+      		   "작성자 :" + item.m_id + "<br>" +
+      		 	"작성일 : " + item.q_date.substring(0,10) + "<br>" +
+      		 	"내용 : " + item.q_content + "<br><br><br>" +
+      		 	"<hr>" +
+      		 	"작성일 : " + item.reQna.rq_date +
+      		 	"답변내용 :" + item.reQna.rq_content +
+      		 "</ul>"
+    		}
         			
         			
         })

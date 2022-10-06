@@ -12,7 +12,7 @@ import com.itwill.mapper.QnaMapper;
 @Repository
 public class QnaDaoImp implements QnaDao{
 
-	@Autowired
+	//@Autowired
 	private QnaMapper qnaMapper;
 
 	public QnaDaoImp() {
@@ -32,10 +32,6 @@ public class QnaDaoImp implements QnaDao{
 		return qna.getQ_no();
 	}
 
-	@Override
-	public List<Qna> qna_list(int start, int last) {
-		return qnaMapper.qna_list(start, last);
-	}
 	
 	@Override
 	public List<Qna> selectAll() {
@@ -68,8 +64,8 @@ public class QnaDaoImp implements QnaDao{
 	}
 
 	@Override
-	public int qna_reply_insert(Qna qna) {
-		return qnaMapper.qna_reply_insert(qna);
+	public int qna_reply_update(Qna qna) {
+		return qnaMapper.qna_reply_update(qna);
 	}
 
 }

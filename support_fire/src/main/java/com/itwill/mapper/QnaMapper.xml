@@ -1,3 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.itwill.mapper.QnaMapper"></mapper>
+<mapper namespace="com.itwill.mapper.QnaMapper">
+
+
+<resultMap id="QnaSelect"
+				type="com.itwill.dto.Qna">
+			<result column="q_no" property="q_no"/>
+			<result column="q_title" property="q_title"/>
+			<result column="q_content" property="q_content"/>
+			<result column="q_date" property="q_date"/>
+			<result column="m_id" property="m_id"/>
+			<association property="reQna"
+						 javaType="com.itwill.dto.ReQna">
+						 <result column="rq_no" property="rq_no"/>
+						 <result column="rq_content" property="rq_content"/>
+						 <result column="rq_date" property="rq_date"/>
+			</association>
+	</resultMap>
+	
+</mapper>
