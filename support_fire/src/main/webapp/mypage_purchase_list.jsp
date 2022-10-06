@@ -1,8 +1,17 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
+<%@taglib prefix="s"  uri="http://www.springframework.org/tags"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="zxx">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+<script type="text/javascript">
 
+    
+</script>
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Male_Fashion Template">
@@ -153,7 +162,7 @@
                                 <div class="product__item__pic set-bg" >
                                     <!---start----> 
                                     <div class="shopping__cart__table">
-				                        <table>
+				                        <table id="example">
 				                            <thead>
 				                                <tr>
 				                                    <th>이미지</th>
@@ -164,8 +173,10 @@
 				                                    <th>상태</th>
 				                                </tr>
 				                            </thead>
-				                            <tbody>
-				                                <tr>
+				                            <tbody id=content>
+				                             
+				                               
+				                               <tr>
 				                                    <td class="product__cart__item">
 				                                        <div class="product__cart__item__pic">
 				                                            <img src="img/shopping-cart/cart-1.jpg" alt="">
@@ -173,37 +184,37 @@
 				                                    </td>
 				                                    <td class="product__cart__item">
 				                                        <div class="product__cart__item__text">
-				                                            <h6>T-shirt</h6>
+				                                            <h6>""</h6>
 				                                           
 				                                        </div>
 				                                    </td>
 				                                     <td class="product__cart__item">
 				                                        <div class="product__cart__item__text">
 				                                           
-				                                            <h5>$98.49</h5>
+				                                            <h5>""</h5>
 				                                        </div>
 				                                    </td>
 				                                    <td class="product__cart__item">
 				                                        <div class="product__cart__item__text">
-				                                            <h5>10/12</h5>
+				                                            <h5>""</h5>
 				                                        </div>
 				                                    </td>
 				                                    <td class="product__cart__item"> 
 				                                    	<div class="product__cart__item__text">
-				                                            <h5>10/15</h5>
+				                                            <h5>""</h5>
 				                                        </div></td>
 				                                    <td class="product__cart__item">
 				                                    	 <div class="product__cart__item__text">
-				                                            <h5>입찰중</h5>
+				                                            <h5>""</h5>
 				                                        </div>
 				                                    </td>
 				                                </tr>
 				                                
+                                 
 				                            </tbody>
 				                        </table>
                     				</div>
                                     <!-- end -->
-                                
                                 </div>
                                 
                             </div>
@@ -306,6 +317,7 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    
 </body>
 
 </html>
