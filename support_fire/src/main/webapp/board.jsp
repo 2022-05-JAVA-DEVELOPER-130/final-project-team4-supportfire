@@ -80,6 +80,8 @@ $(document).ready(function() {
     		   "작성자 :" + item.m_id + "<br>" +
     		 	"작성일 : " + item.q_date.substring(0,10) + "<br>" +
     		 	"내용 : " + item.q_content + "<br>" +
+    		 	
+    		 	"<div style='width:100px;float: right;'> <button type='button' class='btn btn-primary' id = 'reWrite'>답변하기</button></div>" +
     		 "</ul>"
     		}else {
     			html+= "<tr> <td><a href = '#'>" + item.q_title + "</a>" + 
