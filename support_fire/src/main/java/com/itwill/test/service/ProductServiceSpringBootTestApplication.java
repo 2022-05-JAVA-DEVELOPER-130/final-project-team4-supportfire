@@ -45,6 +45,15 @@ public class ProductServiceSpringBootTestApplication {
 		System.out.println(productService.selectAllMinPrice());
 		List<Map> map = productService.selectAllMinPrice();
 		for (Map map2 : map) {
+			System.out.println("----------------------------------------------------------");
+			System.out.println("P_no = " +map2.get("P_NO") + " : min_price =" + map2.get("min_price"));
+		}
+		List<Map> map1 = productService.selectAllMinPrice();
+		for (Map map2 : map) {
+			if(map2.get("min_price") == null) {
+				System.out.println("---------------------------TEST-------------------------------");
+			System.out.println("등록된 상품이 없어용");
+			}
 			System.out.println("P_no = " +map2.get("P_NO") + " : min_price =" + map2.get("min_price"));
 		}
 		 
