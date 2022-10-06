@@ -40,10 +40,10 @@ public class QnaDaoSpringBootTestApplication {
 		application.setWebApplicationType(WebApplicationType.NONE);
 		ConfigurableApplicationContext context=application.run(args);
 		QnaDao qnaDao=(QnaDao)context.getBean(QnaDao.class);
-		Qna qna = new Qna(0, "제몬", "내욘", null, 0, 0, 0, "seongmin");
-		Qna qnaUpdate = new Qna(15, "제몬수정", "내욘수접", null, 0, 0, 0, "seongmin");
-		System.out.println(qnaDao.qna_insert(qna));
-		System.out.println(qnaDao.qna_update(qnaUpdate));
+		//Qna qna = new Qna(0, "제몬", "내욘", null, 0, 0, 0, "seongmin");
+		//Qna qnaUpdate = new Qna(15, "제몬수정", "내욘수접", null, 0, 0, 0, "seongmin");
+		//System.out.println(qnaDao.qna_insert(qna));
+		//System.out.println(qnaDao.qna_update(qnaUpdate));
 	}
 
 }

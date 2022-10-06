@@ -16,19 +16,22 @@ import com.itwill.dto.Qna;
 public interface QnaMapper {
 	
 	//QNA 추가
-	@Insert("insert into qna (q_no, q_title, q_content, q_date, q_groupno, q_step, q_depth, m_id) values(#{q_no}, #{q_title}, #{q_content}, sysdate, qna_q_no_seq.currval, 1, 0, #{m_id})")
+	@Insert("insert into qna (q_no, q_title, q_content, q_date, m_id) values(#{q_no}, #{q_title}, #{q_content}, sysdate, #{m_id})")
 	@SelectKey(statement = "select qna_q_no_seq.nextval from dual",
 				keyProperty = "q_no",
 				before = true,
 				resultType = int.class)
 	public int qna_insert(Qna qna);
 	
-	//QNA 리스트 출력 (정렬해서 출력)
-	@Select("select * from (select ROWNUM idx, s.* from (select * from qna ORDER BY q_groupno DESC, q_step ASC)s)WHERE idx >= #{start} AND idx <= #{last}")
-	public List<Qna> qna_list(int start, int last);
+	/*
+	 * //QNA 리스트 출력 (정렬해서 출력)
+	 * 
+	 * @Select("select * from (select ROWNUM idx, s.* from (select * from qna ORDER BY q_groupno DESC, q_step ASC)s)WHERE idx >= #{start} AND idx <= #{last}"
+	 * ) public List<Qna> qna_list(int start, int last);
+	 */
 	
 	//QNA 리스트 출력
-	@Select("select * from QNa")
+	@Select("select * from QNa order by desc")
 	public List<Qna> selectAll();
 	
 	//QNA id로 찾기
@@ -51,8 +54,9 @@ public interface QnaMapper {
 	@Select("select count(*) from qna")
 	public int qna_countAll();
 
-	//QNA 답글달기
-	public int qna_reply_insert(Qna qna);
+	//QNA 답글업데이트
+	@Update("update qna set rq_no=#{rq_no} where q_no=#{q_no}")
+	public int qna_reply_update(Qna qna);
 
 	
 }
