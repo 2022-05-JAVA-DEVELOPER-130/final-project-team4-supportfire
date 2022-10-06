@@ -56,10 +56,10 @@ public class ProductServiceSpringBootTestApplication {
 		System.out.println("---------------------------TEST-------------------------------");
 		Map minPriceMap = new HashMap();
 		for (Map map : map1) {
-			/*
+			
 			String p_no = (String)map.get("p_no");
-			minPriceMap.put(p_no, map.get("min_price"));
-			*/
+			minPriceMap.put(map.get("p_no"), map.get("min_price"));
+			
 		}
 		System.out.println(minPriceMap);
 		System.out.println("----------------------------------------------------------");
