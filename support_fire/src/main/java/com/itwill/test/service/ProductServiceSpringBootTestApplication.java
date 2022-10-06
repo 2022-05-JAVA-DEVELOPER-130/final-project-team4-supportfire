@@ -1,5 +1,6 @@
 package com.itwill.test.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -42,20 +43,34 @@ public class ProductServiceSpringBootTestApplication {
 		//System.out.println(productService.searchAll("nike"));
 		//System.out.println(productService.selectSellMinPriceByNo(1));
 		//System.out.println(productService.selectByNo(1));
+		/*
 		System.out.println(productService.selectAllMinPrice());
 		List<Map> map = productService.selectAllMinPrice();
 		for (Map map2 : map) {
 			System.out.println("----------------------------------------------------------");
 			System.out.println("P_no = " +map2.get("P_NO") + " : min_price =" + map2.get("min_price"));
 		}
+		*/
 		List<Map> map1 = productService.selectAllMinPrice();
-		for (Map map2 : map) {
-			if(map2.get("min_price") == null) {
-				System.out.println("---------------------------TEST-------------------------------");
-			System.out.println("등록된 상품이 없어용");
-			}
-			System.out.println("P_no = " +map2.get("P_NO") + " : min_price =" + map2.get("min_price"));
+		System.out.println(map1);
+		System.out.println("---------------------------TEST-------------------------------");
+		Map minPriceMap = new HashMap();
+		for (Map map : map1) {
+			/*
+			String p_no = (String)map.get("p_no");
+			minPriceMap.put(p_no, map.get("min_price"));
+			*/
 		}
+		System.out.println(minPriceMap);
+		System.out.println("----------------------------------------------------------");
+			
+			/*
+			if(map2.get("min_price") == null) {
+			
+			//System.out.println(map2.get("min_price")+" : 등록된 상품이 없어용");
+			}
+			System.out.println("P_no = " +map2.get("P_NO") + " : min_price = " + map2.get("min_price"));
+			 */
 		 
 		 
 		

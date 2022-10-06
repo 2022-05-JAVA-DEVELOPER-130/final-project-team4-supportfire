@@ -32,7 +32,6 @@ public interface ProductMapper {
 	@ResultMap("selectMap")
 	Map selectBuyMinPriceByNo(int p_no);
 	
-	
 	//제품 1개 판매최소가격 출력
 	@Select("select p.p_no, min(pd.pd_price) from productsize ps left outer join (select * from productdetail where bt_no = 2 and b_no = 1) pd on ps.ps_no = pd.ps_no join product p on ps.p_no = p.p_no where p.p_no = #{p_no} group by p.p_no")
 	@ResultMap("selectMap")

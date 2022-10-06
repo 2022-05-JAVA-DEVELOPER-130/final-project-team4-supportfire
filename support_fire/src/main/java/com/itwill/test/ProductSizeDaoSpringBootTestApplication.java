@@ -59,19 +59,20 @@ public class ProductSizeDaoSpringBootTestApplication {
 		for (Map map2 : map) {
 			System.out.println("P_no = " +map2.get("P_NO") + " : min_price =" + map2.get("min_price"));
 		}
-		 */
 		System.out.println(productDao.selectAllMinPrice());
+		 */
 		List<Map> map = productSizeDao.selectBuyMinPriceByNo(1);
-		System.out.println(map);
+		//System.out.println(map);
 		Map sizeMap = new HashMap();
 		for (Map map2 : map) {
 			String p_no = (String)map2.get("p_no");
 			String size = (String)map2.get("S_SIZE");
-			System.out.println(map2.get("min_price"));
+			//System.out.println(map2.get("min_price"));
 			sizeMap.put(size, map2.get("min_price"));
 		}
 		System.out.println(sizeMap);
-		System.out.println(sizeMap.get("220"));
+		//System.out.println(sizeMap.get("220"));
+		/*
 		System.out.println(productSizeDao.selectByNo(1));
 		List<ProductSize> psSize = productSizeDao.selectByNoAll(2);
 		System.out.println(productSizeDao.selectByNo(1));
@@ -79,6 +80,7 @@ public class ProductSizeDaoSpringBootTestApplication {
 			System.out.println("size:" + psSize.get(i).getS_size());
 			System.out.println("price : " + sizeMap.get(psSize.get(i).getS_size()));
 		}
+		*/
 	}
 
 }
