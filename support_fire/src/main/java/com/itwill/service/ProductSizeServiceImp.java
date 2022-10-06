@@ -45,7 +45,7 @@ public class ProductSizeServiceImp implements ProductSizeService{
 			sizeMap.put(size, map2.get("min_price"));
 		}
 		return sizeMap;
-	}
+	}	
 
 	@Override
 	public Map selectSellMinPriceByNo(int p_no) {

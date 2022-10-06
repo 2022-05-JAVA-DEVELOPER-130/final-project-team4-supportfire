@@ -1,4 +1,4 @@
-package com.itwill.test;
+package com.itwill.test.service;
 
 import java.util.List;
 import java.util.Map;
@@ -18,35 +18,36 @@ import com.itwill.dto.ProductDetail;
 import com.itwill.dto.ProductSize;
 import com.itwill.mapper.ProductDetailMapper;
 import com.itwill.mapper.ProductMapper;
+import com.itwill.service.ProductService;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.itwill"}, includeFilters = {
         @Filter(
                 type = FilterType.ASSIGNABLE_TYPE, 
-                classes = {ProductDao.class,ProductMapper.class}
+                classes = {ProductDao.class,ProductMapper.class,ProductService.class}
             )
         } )
-public class ProductDaoSpringBootTestApplication {
+public class ProductServiceSpringBootTestApplication {
 
 	public static void main(String[] args) {
 		SpringApplication application = 
-				new SpringApplication(ProductDaoSpringBootTestApplication.class);
+				new SpringApplication(ProductServiceSpringBootTestApplication.class);
 		application.setWebApplicationType(WebApplicationType.NONE);
 		ConfigurableApplicationContext context=application.run(args);
-		ProductDao productDao=(ProductDao)context.getBean(ProductDao.class);
-		//System.out.println(productDao.insert(new Product(0, "갤럭시제트제트플립플립플립", "30/09/30", 2000000, "img", 3)));
-		//System.out.println(productDao.delete(6));
-		//System.out.println(productDao.selectAll());
-		System.out.println(productDao.selectAllMinPrice());
-		//System.out.println(productDao.selectBuyMinPriceByNo(1));
-		//System.out.println(productDao.searchAll("nike"));
-		//System.out.println(productDao.selectSellMinPriceByNo(1));
-		//System.out.println(productDao.selectByNo(1));
-		
-		List<Map> map = productDao.selectAllMinPrice();
+		ProductService productService=(ProductService)context.getBean(ProductService.class);
+		//System.out.println(productService.insert(new Product(0, "갤럭시제트제트플립플립플립", "30/09/30", 2000000, "img", 3)));
+		//System.out.println(productService.delete(6));
+		//System.out.println(productService.selectAll());
+		//System.out.println(productService.selectBuyMinPriceByNo(1));
+		//System.out.println(productService.searchAll("nike"));
+		//System.out.println(productService.selectSellMinPriceByNo(1));
+		//System.out.println(productService.selectByNo(1));
+		System.out.println(productService.selectAllMinPrice());
+		List<Map> map = productService.selectAllMinPrice();
 		for (Map map2 : map) {
 			System.out.println("P_no = " +map2.get("P_NO") + " : min_price =" + map2.get("min_price"));
 		}
+		 
 		 
 		
 	}
