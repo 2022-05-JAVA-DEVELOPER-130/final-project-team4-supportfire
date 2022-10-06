@@ -1,8 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!doctype html>
 <html data-n-head-ssr lang="ko"
 	data-n-head="%7B%22lang%22:%7B%22ssr%22:%22ko%22%7D%7D">
 
-<!-- Mirrored from kream.co.kr/login/find_password by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Sep 2022 07:58:48 GMT -->
+<!-- Mirrored from kream.co.kr/login/find_email by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Sep 2022 07:58:47 GMT -->
 <!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <!-- /Added by HTTrack -->
@@ -37,24 +39,7 @@
 <link data-n-head="ssr" rel="preconnect"
 	href="http://kream-phinf.pstatic.net/">
 <script data-n-head="ssr" type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","name":"KREAM","url":"https://kream.co.kr/","logo":"https://kream.co.kr/images/logo.png","sameAs":["https://apps.apple.com/app/id1490580239","https://play.google.com/store/apps/details?id=com.fstudio.kream","https://www.instagram.com/kream.co.kr/","https://www.youtube.com/channel/UCHbInfTxnIbWlUFin7drigw"]}</script>
-<link rel="preload" href="../_nuxt/1a261af.js" as="script">
-<link rel="preload" href="../_nuxt/53c96b8.js" as="script">
-<link rel="preload" href="../_nuxt/de27c52.js" as="script">
-<link rel="preload" href="../_nuxt/css/1381ce9.css" as="style">
-<link rel="preload" href="../_nuxt/450907d.js" as="script">
-<link rel="preload" href="../_nuxt/css/734fa9a.css" as="style">
-<link rel="preload" href="../_nuxt/a1269c3.js" as="script">
-<link rel="preload" href="../_nuxt/2b9e52a.js" as="script">
-<link rel="preload" href="../_nuxt/css/171b9ac.css" as="style">
-<link rel="preload" href="../_nuxt/cb1aeb7.js" as="script">
-<link rel="preload" href="../_nuxt/css/a3c2917.css" as="style">
-<link rel="preload" href="../_nuxt/0014a78.js" as="script">
-<link rel="preload" href="../_nuxt/css/4e3da1f.css" as="style">
-<link rel="preload" href="../_nuxt/ab99dd1.js" as="script">
-<link rel="preload" href="../_nuxt/css/6502f07.css" as="style">
-<link rel="preload" href="../_nuxt/63d6556.js" as="script">
-<link rel="preload" href="../_nuxt/css/0036557.css" as="style">
-<link rel="preload" href="../_nuxt/7f3d242.js" as="script">
+
 <link rel="stylesheet" href="../_nuxt/css/1381ce9.css">
 <link rel="stylesheet" href="../_nuxt/css/734fa9a.css">
 <link rel="stylesheet" href="../_nuxt/css/171b9ac.css">
@@ -228,10 +213,10 @@
 					<div class="content lg">
 						<div class="help_area">
 							<div>
-								<h2 class="help_title">비밀번호 찾기</h2>
+								<h2 class="help_title">이메일 아이디 찾기</h2>
 								<div class="help_notice">
 									<p class="notice_txt">
-										가입 시 등록하신 휴대폰 번호와 이메일을 입력하시면,<br>휴대폰으로 임시 비밀번호를 전송해 드립니다.
+										가입 시 등록한 휴대폰 번호를 입력하면<br> 이메일 주소의 일부를 알려드립니다.
 									</p>
 								</div>
 								<div class="input_box" data-v-6c561060>
@@ -240,19 +225,10 @@
 										<input type="text" placeholder="가입하신 휴대폰 번호"
 											autocomplete="off" value="" class="input_txt" data-v-6c561060>
 									</div>
-									<p class="input_error" data-v-6c561060>휴대폰 번호를 정확히 입력해주세요.</p>
-								</div>
-								<div class="input_box" data-v-6c561060>
-									<h3 class="input_title" data-v-6c561060>이메일 주소</h3>
-									<div class="input_item" data-v-6c561060>
-										<input type="text" placeholder="예) kream@kream.co.kr"
-											autocomplete="off" value="" class="input_txt" data-v-6c561060>
-									</div>
-									<p class="input_error" data-v-6c561060>이메일 주소를 정확히 입력해주세요.</p>
 								</div>
 								<div class="help_btn_box">
 									<a disabled="disabled" href="#" class="btn full solid disabled"
-										data-v-3d1bcc82 data-v-3d1bcc82> 문자 발송하기 </a>
+										data-v-3d1bcc82 data-v-3d1bcc82> 이메일 아이디 찾기 </a>
 								</div>
 							</div>
 							<!---->
@@ -436,20 +412,10 @@
 			</div>
 		</div>
 	</div>
-	<
+	
 	</script>
-	<script src="../_nuxt/1a261af.js" defer></script>
-	<script src="../_nuxt/a1269c3.js" defer></script>
-	<script src="../_nuxt/2b9e52a.js" defer></script>
-	<script src="../_nuxt/cb1aeb7.js" defer></script>
-	<script src="../_nuxt/0014a78.js" defer></script>
-	<script src="../_nuxt/ab99dd1.js" defer></script>
-	<script src="../_nuxt/63d6556.js" defer></script>
-	<script src="../_nuxt/7f3d242.js" defer></script>
-	<script src="../_nuxt/53c96b8.js" defer></script>
-	<script src="../_nuxt/de27c52.js" defer></script>
-	<script src="../_nuxt/450907d.js" defer></script>
+
 </body>
 
-<!-- Mirrored from kream.co.kr/login/find_password by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Sep 2022 07:58:49 GMT -->
+<!-- Mirrored from kream.co.kr/login/find_email by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Sep 2022 07:58:48 GMT -->
 </html>
