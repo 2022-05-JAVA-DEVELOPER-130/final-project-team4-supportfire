@@ -223,7 +223,7 @@ CREATE TABLE QNA(
 		q_content                     		VARCHAR2(1000)		 NULL ,
 		q_date                        		DATE		 NULL ,
 		m_id                          		VARCHAR2(20)		 NULL, 
-        rq_no                         		NUMBER(10)		 NOT NULL
+        rq_no                         		NUMBER(10)
 );
 
 DROP SEQUENCE QNA_q_no_SEQ;

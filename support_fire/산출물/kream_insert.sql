@@ -269,12 +269,12 @@ insert into payment values(1, '지원준비', '01034567890', '인천', '안전�
 insert into payment values(2, '우치하', '01087654321', '나뭇잎 마을', '안전한 배송 부탁 드립니다.', 2, 3);
 
 /********************REQNA*****************/
-insert into reqna values(reqna_r_no_seq.nextval, '답변답변답변답변답변1', sysdate);
-insert into reqna values(reqna_r_no_seq.nextval, '답변답변답변답변답변2', sysdate);
-insert into reqna values(reqna_r_no_seq.nextval, '답변답변답변답변답변3', sysdate);
-insert into reqna values(reqna_r_no_seq.nextval, '답변답변답변답변답변4', sysdate);
-insert into reqna values(reqna_r_no_seq.nextval, '답변답변답변답변답변5', sysdate);
-insert into reqna values(reqna_r_no_seq.nextval, '답변답변답변답변답변6', sysdate);
+insert into reqna values(reqna_rq_no_seq.nextval, '답변답변답변답변답변1', sysdate);
+insert into reqna values(reqna_rq_no_seq.nextval, '답변답변답변답변답변2', sysdate);
+insert into reqna values(reqna_rq_no_seq.nextval, '답변답변답변답변답변3', sysdate);
+insert into reqna values(reqna_rq_no_seq.nextval, '답변답변답변답변답변4', sysdate);
+insert into reqna values(reqna_rq_no_seq.nextval, '답변답변답변답변답변5', sysdate);
+insert into reqna values(reqna_rq_no_seq.nextval, '답변답변답변답변답변6', sysdate);
 
 /*********QNA***********/
 insert into qna values(QNA_Q_NO_SEQ.nextval, '제목1', '내용내용내용내용내용내용내용내용내용내용1', sysdate, 'seongmin', 1);
