@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<!doctype html>
 <!doctype html>
 <html data-n-head-ssr lang="ko"
 	data-n-head="%7B%22lang%22:%7B%22ssr%22:%22ko%22%7D%7D">
