@@ -13,7 +13,7 @@ import com.itwill.dto.Qna;
 @Service
 public class QnaServiceImp implements QnaService{
 	
-	@Autowired
+	//@Autowired
 	private QnaDao qnaDao;
 
 	public void setQnaDao(QnaDao qnaDao) {
@@ -35,10 +35,7 @@ public class QnaServiceImp implements QnaService{
 		return qnaDao.qna_insert(qna);
 	}
 
-	@Override
-	public List<Qna> qna_list(int start, int last) {
-		return qnaDao.qna_list(start, last);
-	}
+
 
 	@Override
 	public Qna qna_selectById(int m_id) {
@@ -66,27 +63,10 @@ public class QnaServiceImp implements QnaService{
 	}
 
 	@Override
-	public int qna_reply_insert(Qna qna) {
-		return qnaDao.qna_reply_insert(qna);
+	public int qna_reply_update(Qna qna) {
+		return qnaDao.qna_reply_update(qna);
 	}
 
-	@Override
-	public QnaPageMakerDto qna_list(int currentPage) {
-		//1.전체글의 갯수
-				int totalRecordCount = qnaDao.qna_countAll();
-				//2.paging계산(PageMaker 유틸클래스)
-				PageMaker pageMaker=new PageMaker(totalRecordCount,currentPage);
-				
-				//3.게시물데이타 얻기
-				List<Qna> boardList=
-						qnaDao.qna_list(pageMaker.getPageBegin(),
-													pageMaker.getPageEnd());
-				
-				QnaPageMakerDto pageMakerBoardList=new QnaPageMakerDto();
-				pageMakerBoardList.totRecordCount=totalRecordCount;
-				pageMakerBoardList.itemList=boardList;
-				pageMakerBoardList.pageMaker=pageMaker;
-				return pageMakerBoardList;
-	}
+
 	
 }

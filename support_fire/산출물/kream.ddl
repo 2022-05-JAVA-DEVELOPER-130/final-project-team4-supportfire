@@ -16,7 +16,6 @@ DROP TABLE brands CASCADE CONSTRAINTS;
 DROP TABLE category CASCADE CONSTRAINTS;
 DROP TABLE deliveryAddress CASCADE CONSTRAINTS;
 DROP TABLE member CASCADE CONSTRAINTS;
-
 /**********************************/
 /* Table Name: member */
 /**********************************/
@@ -223,7 +222,8 @@ CREATE TABLE QNA(
 		q_title                       		VARCHAR2(100)		 NULL ,
 		q_content                     		VARCHAR2(1000)		 NULL ,
 		q_date                        		DATE		 NULL ,
-		m_id                          		VARCHAR2(20)		 NULL 
+		m_id                          		VARCHAR2(20)		 NULL, 
+        rq_no                         		NUMBER(10)		 NOT NULL
 );
 
 DROP SEQUENCE QNA_q_no_SEQ;
@@ -370,8 +370,7 @@ COMMENT ON COLUMN payment.pl_no is 'pl_no';
 CREATE TABLE REQNA(
 		rq_no                         		NUMBER(10)		 NOT NULL,
 		rq_content                    		VARCHAR2(1000)		 NULL ,
-		rq_date                       		DATE		 DEFAULT sysdate		 NULL ,
-		q_no                          		NUMBER(10)		 NULL 
+		rq_date                       		DATE		 DEFAULT sysdate		 NULL
 );
 
 DROP SEQUENCE REQNA_rq_no_SEQ;
@@ -383,9 +382,6 @@ COMMENT ON TABLE REQNA is 'REQNA';
 COMMENT ON COLUMN REQNA.rq_no is 'rq_no';
 COMMENT ON COLUMN REQNA.rq_content is 'rq_content';
 COMMENT ON COLUMN REQNA.rq_date is 'rq_date';
-COMMENT ON COLUMN REQNA.q_no is 'q_no';
-
-
 
 ALTER TABLE member ADD CONSTRAINT IDX_member_PK PRIMARY KEY (m_id);
 
@@ -417,8 +413,11 @@ ALTER TABLE productDetail ADD CONSTRAINT IDX_productDetail_FK1 FOREIGN KEY (bt_n
 ALTER TABLE productDetail ADD CONSTRAINT IDX_productDetail_FK2 FOREIGN KEY (b_no) REFERENCES bidStatus (b_no);
 ALTER TABLE productDetail ADD CONSTRAINT IDX_productDetail_FK3 FOREIGN KEY (m_id) REFERENCES member (m_id);
 
+ALTER TABLE REQNA ADD CONSTRAINT IDX_REQNA_PK PRIMARY KEY (rq_no);
+
 ALTER TABLE QNA ADD CONSTRAINT IDX_QNA_PK PRIMARY KEY (q_no);
 ALTER TABLE QNA ADD CONSTRAINT IDX_QNA_FK0 FOREIGN KEY (m_id) REFERENCES member (m_id);
+ALTER TABLE QNA ADD CONSTRAINT IDX_QNA_FK1 FOREIGN KEY (rq_no) REFERENCES REQNA (rq_no);
 
 ALTER TABLE review ADD CONSTRAINT IDX_review_PK PRIMARY KEY (r_no);
 ALTER TABLE review ADD CONSTRAINT IDX_review_FK0 FOREIGN KEY (p_no) REFERENCES product (p_no);
@@ -440,6 +439,6 @@ ALTER TABLE payment ADD CONSTRAINT IDX_payment_PK PRIMARY KEY (pm_no);
 ALTER TABLE payment ADD CONSTRAINT IDX_payment_FK0 FOREIGN KEY (o_no) REFERENCES orders (o_no);
 ALTER TABLE payment ADD CONSTRAINT IDX_payment_FK1 FOREIGN KEY (pl_no) REFERENCES paymentList (pl_no);
 
-ALTER TABLE REQNA ADD CONSTRAINT IDX_REQNA_PK PRIMARY KEY (rq_no);
-ALTER TABLE REQNA ADD CONSTRAINT IDX_REQNA_FK0 FOREIGN KEY (q_no) REFERENCES QNA (q_no);
 
+
+COMMIT;
