@@ -71,6 +71,9 @@ public class ProductSizeDaoSpringBootTestApplication {
 			sizeMap.put(size, map2.get("min_price"));
 		}
 		System.out.println(sizeMap);
+		
+		
+		
 		//System.out.println(sizeMap.get("220"));
 		/*
 		System.out.println(productSizeDao.selectByNo(1));

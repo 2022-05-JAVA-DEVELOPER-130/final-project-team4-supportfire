@@ -32,7 +32,7 @@ public class MemberDaoSpringBootTestApplication {
 		application.setWebApplicationType(WebApplicationType.NONE);
 		ConfigurableApplicationContext context=application.run(args);
 		MemberDao member = context.getBean(MemberDao.class);
-		System.out.println(member.updateMember(new Member("newMember", "1234", "newName", "01099999999", "909090", "newMail@mail.com", "남자", 2000, "서울시 강북구")));
+		//System.out.println(member.updateMember(new Member("newMember", "1234", "newName", "01099999999", "909090", "newMail@mail.com", "남자", 2000, "서울시 강북구")));
 		System.out.println(member.selectAllMembers());
 //		System.out.println(member.insertMember(new Member("test","test","test","test","test","test","test",1000,"test")));
 //		System.out.println(member.deleteMember("test"));

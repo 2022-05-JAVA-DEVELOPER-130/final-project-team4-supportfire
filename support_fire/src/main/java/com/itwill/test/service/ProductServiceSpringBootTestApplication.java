@@ -51,19 +51,25 @@ public class ProductServiceSpringBootTestApplication {
 			System.out.println("P_no = " +map2.get("P_NO") + " : min_price =" + map2.get("min_price"));
 		}
 		*/
+		//System.out.println(map1);
+		/*
 		List<Map> map1 = productService.selectAllMinPrice();
-		System.out.println(map1);
-		System.out.println("---------------------------TEST-------------------------------");
 		Map minPriceMap = new HashMap();
 		for (Map map : map1) {
 			String p_no = String.valueOf(map.get("p_no"));
-			System.out.println(p_no);
-			System.out.println(map.get("min_price"));
-			minPriceMap.put(p_no, map.get("min_price"));
-		}
-		System.out.println(minPriceMap);
-		System.out.println("----------------------------------------------------------");
+			String p_price = String.valueOf(map.get("min_price"));
+			if(p_price == "null") {
+				p_price = "구매 입찰";
+				minPriceMap.put(p_no, p_price);
+				System.out.println("p_no : "+p_no+"  제품 가격 : "+ p_price);
+			} else {
+				minPriceMap.put(p_no, p_price);
+				System.out.println("p_no : "+p_no+"  제품 가격 : "+ p_price);
+			}
 			
+		}
+		*/
+			System.out.println(productService.selectAllMinPrice());
 			/*
 			if(map2.get("min_price") == null) {
 			
