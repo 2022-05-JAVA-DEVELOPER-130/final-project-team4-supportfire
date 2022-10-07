@@ -1,5 +1,6 @@
 package com.itwill.test;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -44,10 +45,27 @@ public class ProductDaoSpringBootTestApplication {
 		//System.out.println(productDao.selectByNo(1));
 		
 		List<Map> map = productDao.selectAllMinPrice();
+		Map sellMap = new HashMap<String, String>();
 		for (Map map2 : map) {
-			System.out.println("P_no = " +map2.get("P_NO") + " : min_price =" + map2.get("min_price"));
+			System.out.println("P_no = " +map2.get("p_no") + " : min_price =" + map2.get("min_price"));
 		}
 		 
+		
+		List<Map> map1 = productDao.selectAllMinPrice();
+		System.out.println(map1);
+		System.out.println("---------------------------TEST-------------------------------");
+		Map minPriceMap = new HashMap<String, String>();
+		for (Map map2 : map1) {
+			System.out.println(map2.get("p_no"));
+			String p_no = String.valueOf(map2.get("p_no"));
+			//System.out.println(p_no);
+			System.out.println(map2.get("min_price"));
+			//minPriceMap.put(p_no, map.get("min_price"));
+			
+		}
+		System.out.println(minPriceMap);
+		System.out.println("----------------------------------------------------------");
+		
 		
 	}
 

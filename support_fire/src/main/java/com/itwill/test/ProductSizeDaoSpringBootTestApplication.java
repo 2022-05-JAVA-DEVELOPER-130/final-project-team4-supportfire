@@ -62,10 +62,10 @@ public class ProductSizeDaoSpringBootTestApplication {
 		System.out.println(productDao.selectAllMinPrice());
 		 */
 		List<Map> map = productSizeDao.selectBuyMinPriceByNo(1);
+		System.out.println(map);
 		//System.out.println(map);
 		Map sizeMap = new HashMap();
 		for (Map map2 : map) {
-			String p_no = (String)map2.get("p_no");
 			String size = (String)map2.get("S_SIZE");
 			//System.out.println(map2.get("min_price"));
 			sizeMap.put(size, map2.get("min_price"));

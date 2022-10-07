@@ -38,7 +38,6 @@ public class ProductSizeServiceImp implements ProductSizeService{
 	@Override
 	public Map selectBuyMinPriceByNo(int p_no) {
 		List<Map> map = productSizeDao.selectBuyMinPriceByNo(p_no);
-		System.out.println(map);
 		Map sizeMap = new HashMap();
 		for (Map map2 : map) {
 			String size = (String)map2.get("S_SIZE");
@@ -50,7 +49,6 @@ public class ProductSizeServiceImp implements ProductSizeService{
 	@Override
 	public Map selectSellMinPriceByNo(int p_no) {
 		List<Map> map = productSizeDao.selectSellMinPriceByNo(p_no);
-		System.out.println(map);
 		Map sizeMap = new HashMap();
 		for (Map map2 : map) {
 			String size = (String)map2.get("S_SIZE");
