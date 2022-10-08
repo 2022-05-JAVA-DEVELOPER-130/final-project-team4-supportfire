@@ -1478,7 +1478,7 @@
 											<!---->
 										</div>
 									</div>
-									<div  class="product_detail">
+									<div data-v-16a54f91="" class="product_detail">
 										<p data-v-16a54f91="" class="code">315122-111/CW2288-111</p>
 										<p data-v-16a54f91="" class="name">Nike Air Force 1 '07
 											Low White</p>
