@@ -49,6 +49,7 @@
 
 
 
+
 </head>
 <body>
 	<!-- Page Preloder -->
@@ -1421,6 +1422,8 @@
 
 .vc-is-dark .vc-am-pm button.active[data-v-7c48e3bc]:focus {
 	border-color: var(- -accent-500)
+	
+	
 }
 </style>
 <script type="text/javascript" async=""

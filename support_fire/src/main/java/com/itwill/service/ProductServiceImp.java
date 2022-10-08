@@ -45,8 +45,21 @@ public class ProductServiceImp implements ProductService{
 	}
 	// min_price 값이 null 일때 구매 입찰로 표시 구현중
 	@Override
-	public List<Map> selectAllMinPrice() {
-		return productDao.selectAllMinPrice();
+	public Map selectAllMinPrice() {
+		List<Map> map1 = productDao.selectAllMinPrice();
+		Map minPriceMap = new HashMap();
+		for (Map map : map1) {
+			String p_no = String.valueOf(map.get("p_no"));
+			String p_price = String.valueOf(map.get("min_price"));
+			if(p_price == "null") {
+				p_price = "구매입찰";
+				minPriceMap.put(p_no, p_price);
+			} else {
+				minPriceMap.put(p_no, p_price);
+			}
+			
+		}
+			return minPriceMap;
 	}
 	@Override
 	public List<Product> searchAll(String p_name) {

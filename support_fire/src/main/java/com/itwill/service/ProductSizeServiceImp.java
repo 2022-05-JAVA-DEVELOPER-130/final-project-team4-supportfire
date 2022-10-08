@@ -34,28 +34,42 @@ public class ProductSizeServiceImp implements ProductSizeService{
 	public List<ProductSize> selectByNoAll(int p_no) {
 		return productSizeDao.selectByNoAll(p_no);
 	}
-	
+
 	@Override
 	public Map selectBuyMinPriceByNo(int p_no) {
 		List<Map> map = productSizeDao.selectBuyMinPriceByNo(p_no);
 		Map sizeMap = new HashMap();
 		for (Map map2 : map) {
+			//String size = String.valueOf(map2.get("S_SIZE"));
 			String size = (String)map2.get("S_SIZE");
+			String p_price = String.valueOf(map2.get("min_price"));
 			sizeMap.put(size, map2.get("min_price"));
+			if(p_price =="null") {
+				p_price = "구매입찰";
+				sizeMap.put(size, p_price);
+			}else {
+				sizeMap.put(size, p_price);
+			}
 		}
 		return sizeMap;
 	}	
 
 	@Override
 	public Map selectSellMinPriceByNo(int p_no) {
-		List<Map> map = productSizeDao.selectSellMinPriceByNo(p_no);
+		List<Map> map = productSizeDao.selectBuyMinPriceByNo(p_no);
 		Map sizeMap = new HashMap();
 		for (Map map2 : map) {
+			//String size = String.valueOf(map2.get("S_SIZE"));
 			String size = (String)map2.get("S_SIZE");
+			String p_price = String.valueOf(map2.get("min_price"));
 			sizeMap.put(size, map2.get("min_price"));
+			if(p_price =="null") {
+				p_price = "판매입찰";
+				sizeMap.put(size, p_price);
+			}else {
+				sizeMap.put(size, p_price);
+			}
 		}
 		return sizeMap;
-	}
-
-	
+	}	
 }

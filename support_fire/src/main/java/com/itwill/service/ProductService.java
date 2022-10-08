@@ -25,8 +25,9 @@ public interface ProductService {
 	List<Product> selectAll();
 	
 	//제품 최소 판매가 전체 출력
-	List<Map> selectAllMinPrice();
+	Map selectAllMinPrice();
 	
 	//제품명 검색
 	List<Product> searchAll(String p_name);
-	}
+	
+}
