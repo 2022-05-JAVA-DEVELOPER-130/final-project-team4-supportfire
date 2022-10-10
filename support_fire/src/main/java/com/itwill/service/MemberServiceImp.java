@@ -75,5 +75,30 @@ public class MemberServiceImp implements MemberService{
 		return memberDao.deleteMember(m_id);
 	}
 	
+	/*
+	 * 로그인
+	 */
+	@Override
+	public int login(String m_id, String password) throws Exception {
+		int result=-1;
+		//1.아이디 존재여부
+		Member member = memberDao.selectMemberById(m_id);
+		if(member==null) {
+			//아이디존재안함
+			result=0;
+		}else {
+			//아이디존재함
+			if(member.getM_password() == password) {
+				//패쓰워드일치(로그인성공)
+				result=2;
+			}else {
+				//패쓰워드불일치
+				result=1;
+			}
+		}
+		
+		return result;
+	}
+	
 	
 }

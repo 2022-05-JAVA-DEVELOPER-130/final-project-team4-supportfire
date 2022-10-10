@@ -69,4 +69,28 @@ public class MemberController {
 		int updateMemberRowCount = memberService.updateMember(member);
 		return "member_modify_action";
 	}
+	
+	@RequestMapping("member_login_form")
+	public String login_form() {
+		
+		return "member_login_form";
+	}
+	
+	@RequestMapping("member_login_action")
+	public String login_action(@ModelAttribute Member member, Model model) throws Exception{
+		int rowCount = memberService.login(member.getM_id(), member.getM_password());
+		String forwardPath = "";
+		if(rowCount == 0) {
+			model.addAttribute("msg", "아이디가 존재하지 않습니다.");
+			forwardPath = "member_login_form";
+		}else if(rowCount == 1) {
+			model.addAttribute("msg", "비밀번호가 일치하지 않습니다.");
+			forwardPath = "member_login_form";
+		}else {
+			forwardPath = "index";
+		}
+		
+		
+		return forwardPath;
+	}
 }

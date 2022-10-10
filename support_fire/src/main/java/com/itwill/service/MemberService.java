@@ -17,4 +17,6 @@ public interface MemberService {
 	
 	int deleteMember(String m_id) throws Exception;
 	
+	int login(String m_id, String password) throws Exception;
+	
 }

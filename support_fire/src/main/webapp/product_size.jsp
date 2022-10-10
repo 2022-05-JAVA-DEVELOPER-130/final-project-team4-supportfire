@@ -47,7 +47,17 @@
 <link href="./_nuxt/css/efe128e.css" rel="stylesheet" type="text/css">
 <link href="./_nuxt/css/cdddabb.css" rel="stylesheet" type="text/css">
 
+<style type="text/css">
+.container.buy[data-v-ed431aec] {
+     background-color: #fff;
+}
 
+
+#cassd{
+	background-color: #fff;
+}
+
+</style>
 
 </head>
 <body>
@@ -1470,6 +1480,8 @@
                                     srcset="https://kream-phinf.pstatic.net/MjAyMjA2MTVfMjYw/MDAxNjU1MjgzNjk2Mzk3.gh8n5rs7p-pWVqzIhNh7yj_KdyjLFBeJr9QbsDumoFEg.KdvPfvgBYmjm7MKKhcbIEQIP6FGeuof_GnmcDUgrvyAg.PNG/a_baa1ccea3726495badba419dfede63f9.png?type=m_webp">
                                  <source data-v-6c8b3524=""
                                     srcset="https://kream-phinf.pstatic.net/MjAyMjA2MTVfMjYw/MDAxNjU1MjgzNjk2Mzk3.gh8n5rs7p-pWVqzIhNh7yj_KdyjLFBeJr9QbsDumoFEg.KdvPfvgBYmjm7MKKhcbIEQIP6FGeuof_GnmcDUgrvyAg.PNG/a_baa1ccea3726495badba419dfede63f9.png?type=m">
+                                    
+                                 <!-- 상품이미지 -->
                                  <img data-v-6c8b3524="" alt="상품 이미지"
                                     src="https://kream-phinf.pstatic.net/MjAyMjA2MTVfMjYw/MDAxNjU1MjgzNjk2Mzk3.gh8n5rs7p-pWVqzIhNh7yj_KdyjLFBeJr9QbsDumoFEg.KdvPfvgBYmjm7MKKhcbIEQIP6FGeuof_GnmcDUgrvyAg.PNG/a_baa1ccea3726495badba419dfede63f9.png?type=m"
                                     class="image"></picture>
@@ -1480,12 +1492,12 @@
                            </div>
                            <div  class="product_detail">
                               <p data-v-16a54f91="" class="code">315122-111/CW2288-111</p>
-                              <p data-v-16a54f91="" class="name">Nike Air Force 1 '07
+                              <p data-v-16a54f91="" class="name">&nbsp;&nbsp; Nike Air Force 1 '07
                                  Low White</p>
-                              <p data-v-16a54f91="" class="translated_name">나이키 에어포스 1
+                              <p data-v-16a54f91="" class="translated_name">&nbsp;&nbsp; 나이키 에어포스 1
                                  '07 로우 화이트</p>
                               <!---->
-                              <div data-v-6da6dff3="" data-v-16a54f91=""
+                              &nbsp;&nbsp;<div data-v-6da6dff3="" data-v-16a54f91=""
                                  class="badge badge_product shipping_express">빠른배송</div>
                            </div>
                         </div>
@@ -1493,16 +1505,18 @@
                            <div data-v-7ade2d82="" data-v-ed431aec=""
                               class="select_area md">
                               <!---->
+                              <!-- 상품사이즈 -->
                               <ul data-v-7ade2d82="" class="select_list">
-                                 <li data-v-7ade2d82="" class="select_item"><button
-                                       data-v-7ade2d82="" role="button" aria-selected="false"
-                                       class="select_link buy bid">
+                                 <li data-v-7ade2d82="" class="select_item">
+                                 <button data-v-7ade2d82="" role="button" aria-selected="false" class="select_link buy bid">
                                        <div data-v-7ade2d82="" class="link_inner">
                                           <span data-v-7ade2d82="" class="size">
                                              <!----> 235
                                           </span><span data-v-7ade2d82="" class="price">구매입찰</span>
                                        </div>
                                     </button></li>
+                              <!-- 상품사이즈 -->
+                                    
                                  <li data-v-7ade2d82="" class="select_item"><button
                                        data-v-7ade2d82="" role="button" aria-selected="false"
                                        class="select_link buy">
@@ -1542,7 +1556,7 @@
                                              250 </span><span data-v-7ade2d82="" class="price">136,000</span>
                                        </div>
                                     </button></li>
-                                 <li data-v-7ade2d82="" class="select_item"><button
+                                 <li data-v-7ade2d82="" class="select_item"><button id="cassd"
                                        data-v-7ade2d82="" role="button" aria-selected="false"
                                        class="select_link buy">
                                        <div data-v-7ade2d82="" class="link_inner">
