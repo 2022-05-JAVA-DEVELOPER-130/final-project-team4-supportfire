@@ -46,7 +46,13 @@
 <link href="./_nuxt/css/61299ed.css" rel="stylesheet" type="text/css">
 <link href="./_nuxt/css/efe128e.css" rel="stylesheet" type="text/css">
 <link href="./_nuxt/css/cdddabb.css" rel="stylesheet" type="text/css">
+<style type="text/css">
 
+	ul{
+   list-style:none;
+  	 }
+
+</style>
 
 
 </head>
@@ -182,12 +188,10 @@
 									<div data-v-b6b2883e="" data-v-158ed304=""
 										class="tab_area buy_tab">
 										<ul data-v-b6b2883e="" role="tablist" class="tab_list">
-											<li data-v-b6b2883e="" role="tab" aria-selected="true"
-												aria-controls="panel1" class="item on"><a
-												data-v-b6b2883e="" href="#" class="item_link">구매 입찰</a></li>
-											<li data-v-b6b2883e="" role="tab" aria-selected="false"
-												aria-controls="panel2" class="item disabled"><a
-												data-v-b6b2883e="" href="#" class="item_link">즉시 구매</a></li>
+											<li data-v-b6b2883e="" role="tab" aria-selected="true" aria-controls="panel1" class="item on">
+												<a data-v-b6b2883e="" href="#" class="item_link">구매 입찰</a></li>
+											<li data-v-b6b2883e="" role="tab" aria-selected="false" aria-controls="panel2" class="item disabled">
+												<a data-v-b6b2883e="" href="#" class="item_link">즉시 구매</a></li>
 										</ul>
 										<!---->
 										<!---->
@@ -201,7 +205,7 @@
 													pattern="([0-9]+.{0,1}[0-9]*,{0,1})*[0-9]"
 													required="required" placeholder="희망가 입력" autocomplete="off"
 													class="input_amount"><span data-v-15aa5096=""
-													class="unit">원</span>
+													class="unit"> 원</span>
 											</dd>
 										</dl>
 										<div data-v-15aa5096="" class="price_warning"
@@ -225,15 +229,11 @@
 										<p data-v-6bc9d8c2="" class="deadline_txt">30일 (2022/11/08
 											마감)</p>
 										<div data-v-6bc9d8c2="" class="deadline_tab">
-											<a data-v-3d1bcc82="" data-v-6bc9d8c2="" href="#"
-												class="btn outlinegrey medium"> 1일 </a><a data-v-3d1bcc82=""
-												data-v-6bc9d8c2="" href="#" class="btn outlinegrey medium">
-												3일 </a><a data-v-3d1bcc82="" data-v-6bc9d8c2="" href="#"
-												class="btn outlinegrey medium"> 7일 </a><a data-v-3d1bcc82=""
-												data-v-6bc9d8c2="" href="#"
-												class="btn outlinegrey medium is_active"> 30일 </a><a
-												data-v-3d1bcc82="" data-v-6bc9d8c2="" href="#"
-												class="btn outlinegrey medium"> 60일 </a>
+											<a data-v-3d1bcc82="" data-v-6bc9d8c2="" href="#" class="btn outlinegrey medium"> 1일 </a>
+											<a data-v-3d1bcc82="" data-v-6bc9d8c2="" href="#" class="btn outlinegrey medium"> 3일 </a>
+											<a data-v-3d1bcc82="" data-v-6bc9d8c2="" href="#" class="btn outlinegrey medium"> 7일 </a>
+											<a data-v-3d1bcc82="" data-v-6bc9d8c2="" href="#" class="btn outlinegrey medium is_active"> 30일 </a>
+											<a data-v-3d1bcc82="" data-v-6bc9d8c2="" href="#" class="btn outlinegrey medium"> 60일 </a>
 										</div>
 									</div>
 								</div>
@@ -377,16 +377,7 @@
 </footer>
 <!-- Footer Section End -->
 
-<!-- Search Begin -->
-<div class="search-model">
-	<div class="h-100 d-flex align-items-center justify-content-center">
-		<div class="search-close-switch">+</div>
-		<form class="search-model-form">
-			<input type="text" id="search-input" placeholder="Search here.....">
-		</form>
-	</div>
-</div>
-<!-- Search End -->
+
 
 <!-- Js Plugins -->
 <script src="js/jquery-3.3.1.min.js"></script>
