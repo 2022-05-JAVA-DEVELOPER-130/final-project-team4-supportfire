@@ -19,6 +19,94 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/test.css" type="text/css">
+    <link rel="stylesheet" href="_nuxt/css/1381ce9.css">
+	<link rel="stylesheet" href="_nuxt/css/734fa9a.css">
+	<link rel="stylesheet" href="_nuxt/css/171b9ac.css">
+	<link rel="stylesheet" href="_nuxt/css/a3c2917.css">
+	<link rel="stylesheet" href="_nuxt/css/4e3da1f.css">
+	<link rel="stylesheet" href="_nuxt/css/6502f07.css">
+	<link rel="stylesheet" href="_nuxt/css/0036557.css">
+<script type="text/javascript" src="js/login_content.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+<script type="text/javascript">
+$(function(){
+	//로그인 화면
+	$('#content').html(login_form());
+	
+	//로그인 버튼 클릭
+	$(document).on('click','#login_btn' ,function(e){
+		$.ajax({
+		    url:'member_login_action',
+		    method:'POST',
+		    data:$('#login_form').serialize(),
+		    success:function(jsonResult){
+		    	console.log(jsonResult.data);
+				var data = jsonResult.data;
+				if(data==0){
+				$('#msg_id').html(jsonResult.msg);
+				$('#msg_pass').html("");
+				}else if(data==1){
+				$('#msg_id').html("");
+				$('#msg_pass').html(jsonResult.msg);
+				}else if(data==2){
+					location.href = jsonResult.url;
+				}
+		    }
+		});
+		e.preventDefault();
+    });
+	
+	//아이디 찾기
+	$(document).on('click','#id_search' ,function(e){
+		$('#content').html(id_search());
+		e.preventDefault();
+    });
+	
+	//아이디 찾기, 휴대폰 번호 맞을시 버튼 on
+	$(document).on('keyup', '#phone_search_id', function() {
+		   var phone = $('#phone_search_id').val();
+			console.log(phone);
+			console.log(phone.length);
+			if(phone.length > 9 && phone.length < 12){
+				$('#id_search_form').html(id_search_btn());
+			}else{
+				$('#id_search_form').html(id_search_btn1());
+			}
+	});
+	
+	//비밀번호 찾기
+	$(document).on('click','#pass_search' ,function(e){
+		$('#content').html(pass_search());
+		e.preventDefault();
+    });
+	
+	//비밀번호 찾기, 휴대폰 번호 맞을시 버튼 on
+	$(document).on('keyup', '#phone_search_pass, #m_id', function() {
+		   var phone = $('#phone_search_pass').val();
+		   var id = $('#m_id').val();
+			console.log(phone);
+			console.log(phone.length);
+			if((phone.length > 9 && phone.length < 12) && (id.length > 4 && id.length < 13)){
+				$('#pass_search_form').html(pass_search_btn());
+			}else{
+				$('#pass_search_form').html(pass_search_btn1());
+			}
+	});
+	
+	
+	
+	
+	
+	
+	
+	
+	
+});
+
+</script>
+    
+    
 </head>
 <body>
 <!-- Offcanvas Menu Begin -->
@@ -32,86 +120,9 @@
 	<jsp:include page="header.jsp" />
 	
 	 <!-- Header Section End -->
-	 <section class="breadcrumb-option">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb__text">
-                        <h4>로그인</h4>
-                        <div class="breadcrumb__links">
-                            <a href="./login_form.jsp">로그인</a>
-                            <span>로그인</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-  <main class="ssd">
-    <div class="container">
-      <div class="card login-card">
-        <div class="row no-gutters">
-          <div class="col-md-5">
-            <img src="img/login.jpg" alt="login" class="login-card-img">
-          </div>
-          <div class="col-md-7">
-            <div class="card-body">
-              <div class="brand-wrapper">
-                <img src="img/logo.svg" alt="logo" class="logo">
-              </div>
-              <p class="login-card-description">Sign into your account</p>
-              <form action="#!">
-                  <div class="form-group">
-                    <label for="email" class="sr-only">Email</label>
-                    <input type="email" name="email" id="email" class="form-control" placeholder="Email address">
-                  </div>
-                  <div class="form-group mb-4">
-                    <label for="password" class="sr-only">Password</label>
-                    <input type="password" name="password" id="password" class="form-control" placeholder="***********">
-                  </div>
-                  <input name="login" id="login" class="btn btn-block login-btn mb-4" type="button" value="Login">
-                </form>
-                <a href="#!" class="forgot-password-link">Forgot password?</a>
-                <p class="login-card-footer-text">Don't have an account? <a href="#!" class="text-reset">Register here</a></p>
-                <nav class="login-card-footer-nav">
-                  <a href="#!">Terms of use.</a>
-                  <a href="#!">Privacy policy</a>
-                </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- <div class="card login-card">
-        <img src="assets/images/login.jpg" alt="login" class="login-card-img">
-        <div class="card-body">
-          <h2 class="login-card-title">Login</h2>
-          <p class="login-card-description">Sign in to your account to continue.</p>
-          <form action="#!">
-            <div class="form-group">
-              <label for="email" class="sr-only">Email</label>
-              <input type="email" name="email" id="email" class="form-control" placeholder="Email">
-            </div>
-            <div class="form-group">
-              <label for="password" class="sr-only">Password</label>
-              <input type="password" name="password" id="password" class="form-control" placeholder="Password">
-            </div>
-            <div class="form-prompt-wrapper">
-              <div class="custom-control custom-checkbox login-card-check-box">
-                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                <label class="custom-control-label" for="customCheck1">Remember me</label>
-              </div>              
-              <a href="#!" class="text-reset">Forgot password?</a>
-            </div>
-            <input name="login" id="login" class="btn btn-block login-btn mb-4" type="button" value="Login">
-          </form>
-          <p class="login-card-footer-text">Don't have an account? <a href="#!" class="text-reset">Register here</a></p>
-        </div>
-      </div> -->
-    </div>
-  </main>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	
+	<div id="content">
+	</div>
   <!-- Offcanvas Menu Begin -->
     
     <jsp:include page="footer.jsp" />

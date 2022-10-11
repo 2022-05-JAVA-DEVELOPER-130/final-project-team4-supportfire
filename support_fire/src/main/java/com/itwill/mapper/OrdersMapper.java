@@ -39,7 +39,7 @@ public interface OrdersMapper {
 	
 	//주문정보한개업데이트(주문상태변경)
 	@Update("update orders set o_status=#{o_status} where o_no=#{o_no}")
-	public int updateByNo(String o_status,int o_no);
+	public int updateByNo(Orders orders);
 	
 	//주문한개생성
 	@Insert("insert into orders (o_no, o_date, pd_no_purchase,pd_no_sell,o_status) values (orders_o_no_seq.nextval, TO_DATE(SYSDATE),#{pd_no_purchase},#{pd_no_sell},#{o_status})")
