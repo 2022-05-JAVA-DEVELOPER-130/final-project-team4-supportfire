@@ -88,7 +88,7 @@ public class MemberServiceImp implements MemberService{
 			result=0;
 		}else {
 			//아이디존재함
-			if(member.getM_password() == password) {
+			if(member.getM_password().equals(password)) {
 				//패쓰워드일치(로그인성공)
 				result=2;
 			}else {

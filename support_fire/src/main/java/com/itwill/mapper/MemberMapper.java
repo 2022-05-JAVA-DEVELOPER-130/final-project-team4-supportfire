@@ -28,4 +28,9 @@ public interface MemberMapper {
 	@Delete("delete from member where m_id = #{m_id}")
 	public int deleteMember(String m_id);
 	
+	@Select("select RPAD(substr(m_id, 1, 4), lengthb(m_id), '*') m_id from member where m_phone=#{m_phone}")
+	public String selectMemberByPhone(String m_phone);
+	
+	@Select("")
+	public String selectMemberByPhoneId(String m_phone, String m_id);
 }
