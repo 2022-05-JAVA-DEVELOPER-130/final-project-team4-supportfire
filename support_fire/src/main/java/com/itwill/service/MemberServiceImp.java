@@ -37,7 +37,7 @@ public class MemberServiceImp implements MemberService{
 	 */
 	@Override
 	public List<Member> selectAllmembers() throws Exception {
-		return memberDao.selectAllMembers();
+		return memberDao.selectAllMembers(); 
 	}
 
 	/**
