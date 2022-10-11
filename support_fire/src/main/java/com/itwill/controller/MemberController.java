@@ -109,15 +109,23 @@ public class MemberController {
 	
 	
 	@RequestMapping(value = "id_search_action")
-	public Map id_search() {
+	public Map id_search(String m_phone) throws Exception{
 		Map resultMap = new HashMap();
-		int code=0;
+		int code=1;
 		String url="";
 		String msg="";
+		String data = memberService.selectMemberByPhone(m_phone);
+		System.out.println(data);
+		if(data == null) {
+			code = 0;
+			msg = "일치하는 아이디가 없습니다";
+			data = "아이디찾기 실패";
+		}
 		
-		
-		
-		
+		resultMap.put("code",code);
+	    resultMap.put("url",url);
+	    resultMap.put("msg",msg);
+	    resultMap.put("data",data);
 		return resultMap;
 	}
 	

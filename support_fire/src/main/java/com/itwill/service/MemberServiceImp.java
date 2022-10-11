@@ -99,6 +99,11 @@ public class MemberServiceImp implements MemberService{
 		
 		return result;
 	}
+
+	@Override
+	public String selectMemberByPhone(String m_phone) throws Exception{
+		return memberDao.selectMemberByPhone(m_phone);
+	}
 	
 	
 }

@@ -36,6 +36,7 @@ public class MemberDaoSpringBootTestApplication {
 		System.out.println(member.selectAllMembers());
 //		System.out.println(member.insertMember(new Member("test","test","test","test","test","test","test",1000,"test")));
 //		System.out.println(member.deleteMember("test"));
+		System.out.println(member.selectMemberByPhone("01023456789"));
 	
 	}
 
