@@ -175,7 +175,7 @@ $(document).on('click','#address_btn' ,function(e){
 								<div data-v-6a5da210="" class="section_unit">
 									<div data-v-6a5da210="" class="section_title">
 										<h3 data-v-6a5da210="" class="title_txt">배송 주소</h3>
-										<a data-v-6a5da210="" href="#"  class="add_more_btn" >+ 새 주소
+										<a data-v-6a5da210="" href="address.jsp"  class="add_more_btn" >+ 새 주소
 											추가</a>
 									</div>
 									<div id="content" data-v-6a5da210="" class="section_content">
