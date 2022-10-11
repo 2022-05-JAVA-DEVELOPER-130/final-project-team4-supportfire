@@ -20,14 +20,13 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 	private Product product;
-	public ProductController() {
-		//System.out.println("생성자 생성 test");
-	}
-	@RequestMapping("/product_list")
-	public String product_list(HttpServletRequest request) {
+	
+	@RequestMapping("shop")
+	@ResponseBody
+	public String product_list(HttpServletRequest request, Model model) {
 		String forwardPath = "";
 		List<Product> productList = productService.selectAll();
-		request.setAttribute("productList", productList);
+		model.addAttribute("productList", productList);
 		forwardPath = "shop";
 		return forwardPath;
 	}
