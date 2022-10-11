@@ -264,7 +264,7 @@
 												class="price_addition">
 												<dt data-v-3a2a7b6b="" class="price_title">
 													<span data-v-3a2a7b6b="">수수료</span>
-													<button data-v-3a2a7b6b="" class="btn_title">
+												
 														<svg data-v-3a2a7b6b="" xmlns="http://www.w3.org/2000/svg"
 															class="icon sprite-icons info-circle-white">
 															<use data-v-3a2a7b6b=""
@@ -337,7 +337,7 @@
 												<div data-v-35b707e2="" class="pay_box">
 													<div data-v-35b707e2="" class="pay_title">
 														<p data-v-35b707e2="" class="main_title">계좌이체</p>
-														<p data-v-35b707e2="" class="sub_title">최대 5만 포인트 적립</p>
+														
 													</div>
 													<!---->
 												</div>
@@ -364,90 +364,9 @@
 														class="pay_img">
 												</div>
 											</div>
-											<div data-v-35b707e2="" class="pay_item tosspay disabled">
-												<div data-v-35b707e2="" class="pay_box">
-													<div data-v-35b707e2="" class="pay_title">
-														<p data-v-35b707e2="" class="main_title">토스</p>
-														<!---->
-													</div>
-													<img data-v-35b707e2=""
-														src="/_nuxt/img/buy_pay_tosspay.0788584.png" alt="토스"
-														class="pay_img">
-												</div>
-											</div>
-											<div data-v-35b707e2="" class="pay_item payco disabled">
-												<div data-v-35b707e2="" class="pay_box">
-													<div data-v-35b707e2="" class="pay_title">
-														<p data-v-35b707e2="" class="main_title">페이코</p>
-														<!---->
-													</div>
-													<img data-v-35b707e2=""
-														src="/_nuxt/img/buy_pay_payco.af9c8b7.png" alt="페이코"
-														class="pay_img">
-												</div>
-											</div>
+											
 										</div>
-										<div data-v-2e66a968="" data-v-8215c5a4="" class="pay_benefit">
-											<h5 data-v-2e66a968="" class="benefit_title">결제 혜택</h5>
-											<ul data-v-2e66a968="" class="benefit_list">
-												<li data-v-2e66a968="" class="benefit_item"><img
-													data-v-2e66a968=""
-													src="https://kream-phinf.pstatic.net/MjAyMjA2MTZfMTE5/MDAxNjU1MzkxNTE5Mjg2.QP9CB9xrNaPm4gSffUbHuPZXgC9Cu5sOic5zsDucNSwg.sgZqI0kBmJo7WdILHaEdmER13nI-ZsHdEj2EcF6gd8Yg.PNG/d_823b047c489341cfb30142125aa812b9.png"
-													alt="계좌 이체" class="benefit_img">
-												<p data-v-2e66a968="" class="benefit_desc">
-														<span data-v-2e66a968="" class="blind">계좌 이체</span>결제 시 최대
-														5만 포인트 적립
-													</p>
-													<a data-v-2e66a968=""
-													href="https://kream.co.kr/promotions/276" target="_blank"
-													class="btn_more">더보기</a></li>
-												<li data-v-2e66a968="" class="benefit_item"><img
-													data-v-2e66a968=""
-													src="https://kream-phinf.pstatic.net/MjAyMTA3MjNfMjE2/MDAxNjI3MDQ0NjUxNTc5.NRYELauTh0NQalDifk1g8-txKLJVL0KO_wiheYsEPwkg.38cKqkZvp2V0zXr2WJfXgCdZTpvWl55pbhxfI5uCzigg.PNG/d_b3ac7ff93d8f46c38b1e14c3f7908685.png"
-													alt="카카오페이" class="benefit_img">
-												<p data-v-2e66a968="" class="benefit_desc">
-														<span data-v-2e66a968="" class="blind">카카오페이</span>20만원 이상
-														결제 시 즉시할인 6%
-													</p>
-													<a data-v-2e66a968=""
-													href="https://kream.co.kr/promotions/467" target="_blank"
-													class="btn_more">더보기</a></li>
-												<li data-v-2e66a968="" class="benefit_item"><img
-													data-v-2e66a968=""
-													src="https://kream-phinf.pstatic.net/MjAyMTA3MDlfNDgg/MDAxNjI1NzU3MTQzNzM0.p8zHdL65rwPY6QDndISSntdesa9onmDokshSgtr0brkg.A5Vayjl-8XaTtJtcJKVdZbwwAvrYQHS7PqeqIZQA6Akg.PNG/p_8f5e108b4c74409ba3a04d9273827180.png"
-													alt="신한카드" class="benefit_img">
-												<p data-v-2e66a968="" class="benefit_desc">
-														<span data-v-2e66a968="" class="blind">신한카드</span>20만원 이상
-														결제 시 즉시할인 6%
-													</p>
-													<a data-v-2e66a968=""
-													href="https://kream.co.kr/promotions/472" target="_blank"
-													class="btn_more">더보기</a></li>
-												<li data-v-2e66a968="" class="benefit_item"><img
-													data-v-2e66a968=""
-													src="https://kream-phinf.pstatic.net/MjAyMjA1MzFfNzkg/MDAxNjUzOTY3NTI1MDMz.9K10E5A_3PnRkhUnTXSTlSAx2j9vb6TJNJPB6Wp0prwg.yYQwdt6D4SZhgOEToJ8FWw7nV6mJ97rhiZDlxW8ntkkg.PNG/d_dd5312bd03744c03a282bebd96e9535d.png"
-													alt="페이코" class="benefit_img">
-												<p data-v-2e66a968="" class="benefit_desc">
-														<span data-v-2e66a968="" class="blind">페이코</span>페이코 포인트로
-														결제 시 5% 적립
-													</p>
-													<a data-v-2e66a968=""
-													href="https://kream.co.kr/promotions/466" target="_blank"
-													class="btn_more">더보기</a></li>
-												<li data-v-2e66a968="" class="benefit_item"><img
-													data-v-2e66a968=""
-													src="https://kream-phinf.pstatic.net/MjAyMjA5MDdfMjQx/MDAxNjYyNTI4NzQ5NDQw.p-0fd3kE7i9zwCK8QPiVXyfPA0GwYFSlS1fMH6rP9EEg.PY-L_eFD7aJc6MiCsH_Br_WvlG5UmWMld7XxJ7tCUDcg.PNG/d_c8ac89898765434292d3c01b4197b87c.png"
-													alt="토스" class="benefit_img">
-												<p data-v-2e66a968="" class="benefit_desc">
-														<span data-v-2e66a968="" class="blind">토스</span>첫 결제시 3천원
-														캐시백
-													</p>
-													<a data-v-2e66a968=""
-													href="https://kream.co.kr/promotions/465" target="_blank"
-													class="btn_more">더보기</a></li>
-											</ul>
-										</div>
-									</div>
+										
 									<!---->
 								</div>
 								<!---->

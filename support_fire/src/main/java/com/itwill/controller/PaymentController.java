@@ -59,7 +59,7 @@ public class PaymentController {
 	}
 	
 	//결제번호로 배송지 업데이트
-	@RequestMapping(value="update_by_no")
+	//@RequestMapping(value="update_by_no")
 	public int update_by_no(Payment payment) throws Exception{
 		int updateRowCount=paymentService.updateByNo(payment);
 		return updateRowCount;
@@ -67,13 +67,13 @@ public class PaymentController {
 	}
 	
 	//결제번호로결제내역삭제
-	@RequestMapping(value="delete_by_no")
+	//@RequestMapping(value="delete_by_no")
 	public int delete_by_no(@RequestParam int pm_no) throws Exception{
 		int deleteRowCount= paymentService.deleteByNo(pm_no);
 		return deleteRowCount;
 	}
 	
-	@RequestMapping(value="insert_payment")
+	//@RequestMapping(value="insert_payment")
 	public int insert_payment(Payment payment) throws Exception{
 		int insertRowCount= paymentService.insertPayment(payment);
 		return insertRowCount;
