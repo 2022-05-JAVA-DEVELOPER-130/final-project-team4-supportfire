@@ -21,7 +21,7 @@ public interface OrdersService {
 	int deleteByNo(int o_no) throws Exception;
 	
 	//주문정보한개업데이트(주문상태변경)
-	int updateByNo(String o_status,int o_no) throws Exception;
+	int updateByNo(Orders orders) throws Exception;
 	
 	//주문한개생성
 	int insertOrder(Orders orders) throws Exception;

@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -101,13 +102,15 @@ public class OrdersRestController {
 		return orders;
 	}
 	
-	//@RequestMapping(value="update_by_no")
-	public int update_by_no(String o_status,int o_no) throws Exception{
-		int updateRowCount=ordersService.updateByNo(o_status, o_no);
-		return updateRowCount;
+	@PostMapping(value="update_by_no")
+	public int update_by_no(Orders orders) throws Exception{
+		int updateRowCount=ordersService.updateByNo(orders);
+		 return updateRowCount;
 				
 	}
-	//@RequestMapping(value="orders_delete_by_no")
+	
+	
+	@RequestMapping(value="orders_delete_by_no")
 	public Map delete_by_no(@RequestParam int o_no) throws Exception{
 		int code=0;
 		String url="";

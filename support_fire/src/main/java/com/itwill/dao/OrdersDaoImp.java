@@ -50,8 +50,8 @@ public class OrdersDaoImp implements OrdersDao {
 	}
 
 	@Override
-	public int updateByNo(String o_status,int o_no) throws Exception {
-		return ordersMapper.updateByNo(o_status,o_no);
+	public int updateByNo(Orders orders) throws Exception {
+		return ordersMapper.updateByNo(orders);
 	}
 
 	@Override

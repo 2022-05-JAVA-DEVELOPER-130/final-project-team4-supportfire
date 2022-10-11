@@ -61,9 +61,9 @@ public class OrdersServiceImp implements OrdersService{
 	}
 
 	@Override
-	public int updateByNo(String o_status, int o_no) throws Exception {
+	public int updateByNo(Orders orders) throws Exception {
 		// TODO Auto-generated method stub
-		return ordersDao.updateByNo(o_status, o_no);
+		return ordersDao.updateByNo(orders);
 	}
 	
 	/**즉시구매,즉시판매,구매입찰,판매입찰  
