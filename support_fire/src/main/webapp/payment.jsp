@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+
 <html lang="zxx">
 
 <head>
@@ -42,8 +44,17 @@
 <link href="./_nuxt/css/61299ed.css" rel="stylesheet" type="text/css">
 <link href="./_nuxt/css/efe128e.css" rel="stylesheet" type="text/css">
 <link href="./_nuxt/css/cdddabb.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="js/guest_html_content.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
 
+$(document).on('click','#address_btn' ,function(e){
+	console.log('클릭');
+	$('#content').html(address_form());
+}
 
+</script>
 
 </head>
 <body>
@@ -164,10 +175,10 @@
 								<div data-v-6a5da210="" class="section_unit">
 									<div data-v-6a5da210="" class="section_title">
 										<h3 data-v-6a5da210="" class="title_txt">배송 주소</h3>
-										<a data-v-6a5da210="" href="#" class="add_more_btn">+ 새 주소
+										<a data-v-6a5da210="" href="#"  class="add_more_btn" >+ 새 주소
 											추가</a>
 									</div>
-									<div data-v-6a5da210="" class="section_content">
+									<div id="content" data-v-6a5da210="" class="section_content">
 										<a data-v-6a5da210="" href="#" class="empty_delivery_info"><span
 											data-v-6a5da210="" class="guide_txt">주소를 추가해주세요.</span>
 										<svg data-v-6a5da210="" xmlns="http://www.w3.org/2000/svg"
@@ -197,13 +208,7 @@
 									<div data-v-7ba61ae8="" class="info_point">
 										<div data-v-7ba61ae8="">
 											<span data-v-7ba61ae8="" class="text_current">보유 포인트</span>
-											<button data-v-7ba61ae8="" class="btn_question">
-												<svg data-v-7ba61ae8="" xmlns="http://www.w3.org/2000/svg"
-													class="info-circle-white icon sprite-icons">
-													<use data-v-7ba61ae8=""
-														href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-info-circle-white"
-														xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-info-circle-white"></use></svg>
-											</button>
+											
 											<div data-v-7ba61ae8="" class="value_current">
 												<span data-v-7ba61ae8="" class="point">0</span><span
 													data-v-7ba61ae8="" class="unit">P</span>
@@ -342,17 +347,7 @@
 													<!---->
 												</div>
 											</div>
-											<div data-v-35b707e2="" class="pay_item naverpay disabled">
-												<div data-v-35b707e2="" class="pay_box">
-													<div data-v-35b707e2="" class="pay_title">
-														<p data-v-35b707e2="" class="main_title">네이버페이</p>
-														<!---->
-													</div>
-													<img data-v-35b707e2=""
-														src="/_nuxt/img/buy_pay_npay.425fb05.png" alt="네이버페이"
-														class="pay_img">
-												</div>
-											</div>
+											
 											<div data-v-35b707e2="" class="pay_item kakaopay disabled">
 												<div data-v-35b707e2="" class="pay_box">
 													<div data-v-35b707e2="" class="pay_title">
@@ -360,7 +355,7 @@
 														<!---->
 													</div>
 													<img data-v-35b707e2=""
-														src="/_nuxt/img/buy_pay_kakaopay.b4ed775.png" alt="카카오페이"
+														src=".png" alt="카카오페이"
 														class="pay_img">
 												</div>
 											</div>
