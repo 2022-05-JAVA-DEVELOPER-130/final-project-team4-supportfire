@@ -29,7 +29,7 @@ public class CategoryDaoSpringBootTestApplication {
 		application.setWebApplicationType(WebApplicationType.NONE);
 		ConfigurableApplicationContext context=application.run(args);
 		CategoryDao carCategoryDao=(CategoryDao)context.getBean(CategoryDao.class);
-		System.out.println(carCategoryDao.selectAll());
+		//System.out.println(carCategoryDao.selectAll());
 
 	}
 

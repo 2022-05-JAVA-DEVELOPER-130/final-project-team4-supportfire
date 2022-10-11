@@ -13,13 +13,7 @@ import com.itwill.service.ProductDetailService;
 public class ProductDetailController {
 	@Autowired
 	private ProductDetailService productDetailService;
-	
-	@RequestMapping(value = "test")
-	@ResponseBody
-	public ProductDetail test() {
-		ProductDetail product = productDetailService.selectByNo(1);
-		System.out.println("product : " + product);
-		return product;
-		
+	public ProductDetailController() {
+		//System.out.println("생성자 생성 test");
 	}
 }
