@@ -102,7 +102,7 @@ function showDelivery() {
                  guideTextBox.style.display = 'none';
              }
          }
-	    }).open({autoClose:'true'});
+	    }).open();
  
 }
 </script>
