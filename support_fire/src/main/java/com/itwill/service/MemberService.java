@@ -19,4 +19,7 @@ public interface MemberService {
 	
 	int login(String m_id, String password) throws Exception;
 	
+	//핸드폰번호로 아이디찾기
+	public String selectMemberByPhone(String m_phone) throws Exception;
+	
 }

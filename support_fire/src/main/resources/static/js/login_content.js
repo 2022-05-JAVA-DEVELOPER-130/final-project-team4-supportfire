@@ -92,6 +92,7 @@ function login_form(){
 									<div class="input_item" data-v-6c561060>
 										<input type="number" placeholder="가입하신 휴대폰 번호"
 											autocomplete="off" value="" class="input_txt" data-v-6c561060 id="phone_search_id">
+											<font id="msg_pass" color="red"></font>
 									</div>
 								</div>
 								<div class="help_btn_box" id="id_search_form">
@@ -107,7 +108,7 @@ function login_form(){
 	function id_search_btn(){
 		return `
 		<a disabled="disabled" href="#" class="btn full solid"
-		data-v-3d1bcc82 data-v-3d1bcc82 id="id_search_btn"> 아이디 찾기 </a>
+		data-v-3d1bcc82 data-v-3d1bcc82 id="id_search_btn" id="id_search_btn"> 아이디 찾기 </a>
 		`;
 	}
 	
@@ -158,7 +159,7 @@ function login_form(){
 									<h3 class="input_title" data-v-6c561060>아이디 주소</h3>
 									<div class="input_item" data-v-6c561060>
 										<input type="text" placeholder="예) kream@kream.co.kr"
-											autocomplete="off" value="" class="input_txt" data-v-6c561060 id="m_id">
+											autocomplete="off" value="" class="input_txt" data-v-6c561060 id="m_id1">
 									</div>
 									<p class="input_error" data-v-6c561060>아이디를 정확히 입력해주세요.</p>
 								</div>
@@ -175,7 +176,7 @@ function login_form(){
 	function pass_search_btn(){
 		return `
 		<a disabled="disabled" href="#" class="btn full solid"
-				data-v-3d1bcc82 data-v-3d1bcc82> 문자 발송하기 </a>
+				data-v-3d1bcc82 data-v-3d1bcc82 id="pass_search_btn"> 문자 발송하기 </a>
 		`;
 	}
 	
@@ -185,3 +186,51 @@ function login_form(){
 				data-v-3d1bcc82 data-v-3d1bcc82> 문자 발송하기 </a>
 		`;
 	}
+	
+	function id_search_com(id){
+		return `
+		<section class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__text">
+                        <h4>로그인</h4>
+                        <div class="breadcrumb__links">
+                            <a href="./login_form.jsp">로그인</a>
+                            <span>아이디찾기</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+	<div data-v-3007c576="" class="container help">
+		<div class="content mo">
+			<div class="help_area">
+				<!---->
+				<div>
+					<h2 class="help_title success">
+						<div>이메일 주소 찾기에</div> <div>성공하였습니다.</div>
+					</h2>
+					<div class="success_notice">
+						<dl>
+							<dt class="notice_title">이메일 주소</dt>
+							<dd class="notice_txt">${id}</dd>
+						</dl>
+					</div>
+					<div class="success_btn_box">
+						<a data-v-3d1bcc82="" href="/login/find_password"
+							class="btn outline large" type="button"> 비밀번호 찾기 </a><a
+							data-v-3d1bcc82="" href="/login"
+							class="btn nuxt-link-active solid large" type="button"> 로그인 </a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		`;
+		
+		
+	}
+	

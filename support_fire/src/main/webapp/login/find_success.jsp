@@ -49,7 +49,22 @@
 	<jsp:include page="../header.jsp" />
 
 	<!-- Header Section End -->
-	
+	<!-- Header Section End -->
+	 <section class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__text">
+                        <h4>로그인</h4>
+                        <div class="breadcrumb__links">
+                            <a href="./login_form.jsp">로그인</a>
+                            <span>아이디찾기</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 	
 	<div data-v-3007c576="" class="container help">
 		<div class="content mo">

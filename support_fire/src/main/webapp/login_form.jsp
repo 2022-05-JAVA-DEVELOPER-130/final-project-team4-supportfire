@@ -82,9 +82,9 @@ $(function(){
     });
 	
 	//비밀번호 찾기, 휴대폰 번호 맞을시 버튼 on
-	$(document).on('keyup', '#phone_search_pass, #m_id', function() {
+	$(document).on('keyup', '#phone_search_pass, #m_id1', function() {
 		   var phone = $('#phone_search_pass').val();
-		   var id = $('#m_id').val();
+		   var id = $('#m_id1').val();
 			console.log(phone);
 			console.log(phone.length);
 			if((phone.length > 9 && phone.length < 12) && (id.length > 4 && id.length < 13)){
@@ -94,10 +94,26 @@ $(function(){
 			}
 	});
 	
+	$(document).on('click', '#id_search_btn', function(){
+		console.log("m_phone=" + $('#phone_search_id').val());
+		$.ajax({
+		    url:'id_search_action',
+		    method:'GET',
+		    data:"m_phone=" + $('#phone_search_id').val(),
+		    success:function(jsonResult){
+		    	var id = jsonResult.data;
+		    	console.log(id);
+		    	if(jsonResult.code == 1){
+		    	$('#content').html(id_search_com(id));
+		   	 	}else if(jsonResult.code == 0){
+		   	 		$('#msg_pass').html(jsonResult.msg);
+		   	 	}
+		    }
+		
+	});
 	
 	
-	
-	
+	});
 	
 	
 	

@@ -46,4 +46,9 @@ public class MemberDaoImp implements MemberDao{
 		return memberMapper.deleteMember(m_id);
 	}
 
+	@Override
+	public String selectMemberByPhone(String m_phone) throws Exception{
+		return memberMapper.selectMemberByPhone(m_phone);
+	}
+
 }
