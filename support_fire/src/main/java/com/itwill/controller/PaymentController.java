@@ -60,21 +60,24 @@ public class PaymentController {
 	
 	//결제번호로 배송지 업데이트
 	//@RequestMapping(value="update_by_no")
-	public int update_by_no(Payment payment) throws Exception{
+	public String update_by_no(Payment payment) throws Exception{
 		int updateRowCount=paymentService.updateByNo(payment);
-		return updateRowCount;
+		return "update_by_no";
 				
 	}
 	
 	//결제번호로결제내역삭제
 	//@RequestMapping(value="delete_by_no")
-	public int delete_by_no(@RequestParam int pm_no) throws Exception{
+	public String delete_by_no(@RequestParam int pm_no) throws Exception{
 		int deleteRowCount= paymentService.deleteByNo(pm_no);
-		return deleteRowCount;
+		return "delete_by_no";
 	}
 	
 	/**
-	 * 결제하기 누름>>
+	 * 구매하기
+	 * 해당제품의 pd_no 구매하면 판매자의pd_no 나옴
+	 * 결제가 이루어진 다음에 
+	 * 원래있던 판매자정보와 구매하기의 구매자정보 넣어서 오더 생성
 	 */
 	//@RequestMapping(value="insert_payment")
 	

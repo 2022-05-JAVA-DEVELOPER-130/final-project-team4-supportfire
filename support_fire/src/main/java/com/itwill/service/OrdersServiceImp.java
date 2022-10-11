@@ -77,7 +77,7 @@ public class OrdersServiceImp implements OrdersService{
 	@Override
 	public int insertOrder(Orders orders) throws Exception {
 		 	
-		
+		/*
 		
 		 	//즉시구매 
 			if(orders.getPd_no_sell()!=0 && orders.getPd_no_purchase()==0) {
@@ -93,7 +93,7 @@ public class OrdersServiceImp implements OrdersService{
 				System.out.println("즉시판매가 완료되었습니다");
 				return ordersDao.insertOrder(sellOrder);
 			}
-		
+		*/
 			return 0;
 
 		

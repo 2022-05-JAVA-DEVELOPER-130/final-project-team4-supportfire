@@ -36,9 +36,9 @@ public class PaymentDaoSpringBootTestApplication {
 		//System.out.println(paymentDao.selectByPMNo(2));
 		//System.out.println(paymentDao.updateByNo(new Payment(1, "김지원", "01011111111", "서울시강동구", "문앞에", 1, 0)));
 		
-		//Payment insertPayment=new Payment(3,"하하하","01022222222", "서울시강남구", "개조심", 3, 3);
-		//System.out.println(paymentDao.insertPayment(insertPayment));
-		System.out.println(paymentDao.deleteByNo(4));
+		Payment insertPayment=new Payment(3,"하하하","01022222222", "서울시강남구", "개조심", 2, 3);
+		System.out.println(paymentDao.insertPayment(insertPayment));
+		//System.out.println(paymentDao.deleteByNo(4));
 	
 	}
 

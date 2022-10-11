@@ -97,15 +97,15 @@ public class OrdersRestController {
 	}
 	
 	@RequestMapping(value="orders_select_by_no")
-	public Orders select_by_no(@RequestParam int o_no) throws Exception{
+	public String select_by_no(@RequestParam int o_no) throws Exception{
 		Orders orders = ordersService.selectByNo(o_no);
-		return orders;
+		return "orders_select_by_no";
 	}
 	
-	@PostMapping(value="update_by_no")
-	public int update_by_no(Orders orders) throws Exception{
+	@RequestMapping(value="update_by_no")
+	public String update_by_no(Orders orders) throws Exception{
 		int updateRowCount=ordersService.updateByNo(orders);
-		 return updateRowCount;
+		 return "update_by_no";
 				
 	}
 	
