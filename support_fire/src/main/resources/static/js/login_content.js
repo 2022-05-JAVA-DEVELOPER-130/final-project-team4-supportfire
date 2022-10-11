@@ -205,7 +205,12 @@ function login_form(){
         </div>
     </section>
 	
-	<div data-v-3007c576="" class="container help">
+	<div data-v-3007c576="" class="container help" style="
+												    margin-left: 750px;
+												    padding-right: 600px;
+												    margin-top: 50px;
+												    margin-bottom: 50px;
+												">
 		<div class="content mo">
 			<div class="help_area">
 				<!---->
@@ -233,4 +238,58 @@ function login_form(){
 		
 		
 	}
+	
+	
+function join_form(){
+	return `
+	<section class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__text">
+                        <h4>회원가입</h4>
+                        <div class="breadcrumb__links">
+                            <a href="./join_form.jsp">회원가입</a>
+                            <span>회원가입</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section Begin -->
+    <section class="contact spad">
+        <div class="container" style="margin-left: 750px;">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="contact__form">
+                        <form action="#" id="join_form1">
+                            <div class="row">
+                                <div>
+		                            <span><p>아이디</p></span><input type="text" name="m_id" id="m_id" placeholder="ID" value="tester"><font id="msg_id" color="red"></font>
+                                    <span><p>비밀번호</p></span><input type="text" name="m_password" id="m_password" placeholder="password" value="1234">
+                                    <span>비밀번호 확인</span><input type="text" name="m_password_acc" placeholder="password" value="1234">
+                                    <span>이름</span><input type="text" name="m_name" id="m_name" placeholder="ex) 홍길동" value="테스터">
+                                    <span>핸드폰 번호</span><input type="text" name="m_phone" id="m_phone" placeholder="ex) 01012345678" value="01011112222">
+                                    <span>생년월일</span><input type="text" name="m_birth" id="m_birth" placeholder="ex) 970902" value="990101">
+                                    <span>이메일</span><input type="text" name="m_email" id="m_email" placeholder="Email" value="test@naver.com">
+                                    <span>남<input type="radio" name="m_gender"  id="radi" value="남" checked="checked"  style="width: 50px"/></span>
+									<span>여<input type="radio" name="m_gender"  id="radi" value="여" style="width: 50px"/></span>
+									<div></div>
+                                    <span>주소</span><input type="text" name="m_address" id="m_address" placeholder="address" value="서울시">
+                                </div>
+                                <div class="col-lg-12">
+                                    <button type="submit" class="site-btn" id="write_action_btn">회원가입</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+	`;
+	
+}
 	

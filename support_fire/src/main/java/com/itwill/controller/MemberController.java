@@ -46,9 +46,34 @@ public class MemberController {
 	}
 	
 	@PostMapping("member_write_action")
-	public String member_write_action(@ModelAttribute Member member) throws Exception{
+	public Map member_write_action(@ModelAttribute Member member) throws Exception{
+		Map resultMap = new HashMap();
+		int code=0;
+		String url="";
+		String msg="";
+		int data=0;
+		System.out.println(member);
+		try {
 		int insertRowCount = memberService.insertMember(member);
-		return "member_write_action";
+		if(insertRowCount == 1) {
+			code=1;
+			url="login_form";
+			msg="";
+		}else {
+			msg="존재하는 아이디입니다.";
+		}
+		}catch (Exception e) {
+			e.printStackTrace();
+			code=2;
+			msg="존재하는 아이디입니다.";
+		}
+		System.out.println(msg);
+		resultMap.put("code",code);
+	    resultMap.put("url",url);
+	    resultMap.put("msg",msg);
+	    resultMap.put("data",data);
+	    
+	    return resultMap;
 	}
 	
 	@GetMapping("member_delete_action")

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="UTF-8">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,11 +26,118 @@
 	<link rel="stylesheet" href="_nuxt/css/4e3da1f.css">
 	<link rel="stylesheet" href="_nuxt/css/6502f07.css">
 	<link rel="stylesheet" href="_nuxt/css/0036557.css">
+<style type="text/css">
+/*****************form validator css추가************/
+input.error,textarea.error{
+	border: 1px solid red;
+	
+}
+label.error{
+	color:orange;
+}
+.valid{
+	border: 1px solid green;
+}
+
+	.aad{
+	margin-bottom: 0px;
+	}
+</style>	
+	
 <script type="text/javascript" src="js/login_content.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
 
+<style type="text/css">
+ #radi{
+ 	height: 20px;
+ 	width: 100%;
+ -webkit-appearance: button;
+ 
+ }
+
+</style>
 <script type="text/javascript">
 $(function(){
+	
+	/* validator객체변수선언 */
+	var validator = null;
+	/*validator객체 디폴트속성 설정*/
+     $.validator.setDefaults({
+			rules:{
+				m_id:{
+					required:true,
+					minlength: 6,
+					maxlength: 12
+				},
+				m_password:{
+					required: true,
+					minlength: 4,
+					maxlength: 12
+				},
+				m_name:{
+					required: true
+				},
+				m_phone:{
+					required: true
+				},
+				m_birth:{
+					required: true
+				},
+				m_email:{
+					required: true,
+					email:true
+				},
+				m_gender:{
+					required: true
+				},
+				m_address:{
+					required: true
+				}
+				
+			},
+			messages:{
+				m_id:{
+					required: "아이디를 입력하세요"
+				},
+				m_name:{
+					required: "이름을 입력하세요",
+					minlength: "이름은 {0} 글자이상입니다.",
+					maxlength: "이름은 {0} 글자이하입니다."
+				},
+				m_password:{
+					required: "비밀번호를 입력해주세요",
+					minlength: "비밀번호는 {0} 글자이상입니다.",
+					maxlength: "비밀번호는 {0} 글자이하입니다."
+				},
+				m_phone:{
+					required: "휴대폰 번호는 '01012345678' 형식으로 입력해주세요"
+				},
+				m_birth:{
+					required: "생년월일은 '990101 형식으로 입력해주세요"
+				},
+				m_email:{
+					required: "이메일을 입력해 주세요",
+					email:'이메일 형식이 맞지않습니다.'
+				},
+				m_gender:{
+					required: "성별을 선택해주세요"
+				},
+				m_address:{
+					required: "주소를 입력해주세요"
+				}
+			},
+			errorClass:'error',
+			validClass:'valid'
+    });
+	
+	
+	
+	
+	
+	
+	
+	
 	//로그인 화면
 	$('#content').html(login_form());
 	
@@ -110,14 +217,54 @@ $(function(){
 		   	 		$('#msg_pass').html(jsonResult.msg);
 		   	 	}
 		    }
+		});
+	});
+	
+	$(document).on('click', '#join_form', function(e){
+		$('#content').html(join_form());
+		validator = $('#join_form1').validate({
+	 		rules:{
+	 			m_id:{
+	 				required:true,
+	 				minlength:6,
+	 				maxlength:12
+	 			}
+	 		},
+	 		messages:{
+	 			m_id:{
+	 				required:'아이디를 입력하세요',
+	 				minlength:'아이디는 {0}글자 이상 입니다.',
+	 				maxlength:'아이디는 {0}글자 이하 입니다.'
+	 			}
+	 		},
+	 		errorClass:'error',
+	 		validclass:'valid'
+	 	});
+		e.preventDefault();
 		
 	});
 	
-	
+	$(document).on('click', '#write_action_btn', function(e){
+		console.log($('#join_form1').serialize());
+		if(validator.form()){
+		$.ajax({
+		    url:'member_write_action',
+		    method:'POST',
+		    data:$('#join_form1').serialize(),
+		    success:function(jsonResult){
+		    	if(jsonResult.code == 1){
+			    	alert('회원가입이 완료되었습니다.');
+			    	$('#content').html(login_form());
+		    	}else if(jsonResult.code == 2){
+		    		$('#msg_id').html(jsonResult.msg);
+		    		$('#m_id').focus();
+		    		$('#m_id').val("");
+		    	}
+		    }
+		});
+		e.preventDefault();
+		}
 	});
-	
-	
-	
 	
 });
 
@@ -145,5 +292,14 @@ $(function(){
     <jsp:include page="footer.jsp" />
     
     <!-- Offcanvas Menu End -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
