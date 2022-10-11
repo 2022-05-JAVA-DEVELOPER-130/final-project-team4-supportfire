@@ -73,11 +73,10 @@ public class PaymentController {
 		return deleteRowCount;
 	}
 	
+	/**
+	 * 결제하기 누름>>
+	 */
 	//@RequestMapping(value="insert_payment")
-	public int insert_payment(Payment payment) throws Exception{
-		int insertRowCount= paymentService.insertPayment(payment);
-		return insertRowCount;
-	}
 	
 	
 	
