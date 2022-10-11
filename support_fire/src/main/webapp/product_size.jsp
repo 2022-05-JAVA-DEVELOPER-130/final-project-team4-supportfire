@@ -1455,8 +1455,25 @@
 <meta data-n-head="ssr" data-hid="og:image" name="og:image"
    property="og:image"
    content="https://kream.co.kr/images/index_og_kream.png">
+ <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+$.(function(){
+	
+
+
+$(document).on('click','#button123' ,function(e){
+	console.log(e);
+});
+
+});
+</script>
 </head>
+
+<script type="text/javascript" src="js/guest_html_content.js"></script>
+
+
 <body>
+
    <div id="__nuxt">
       <!---->
       <div id="__layout">
@@ -1508,11 +1525,11 @@
                               <!-- 상품사이즈 -->
                               <ul data-v-7ade2d82="" class="select_list">
                                  <li data-v-7ade2d82="" class="select_item">
-                                 <button data-v-7ade2d82="" role="button" aria-selected="false" class="select_link buy bid">
+                                 <button id="button123" data-v-7ade2d82="" role="button" aria-selected="false" class="select_link buy bid">
                                        <div data-v-7ade2d82="" class="link_inner">
                                           <span data-v-7ade2d82="" class="size">
                                              <!----> 235
-                                          </span><span data-v-7ade2d82="" class="price">구매입찰</span>
+                                          </span><span data-v-7ade2d82="" class="price" >구매입찰</span>
                                        </div>
                                     </button></li>
                               <!-- 상품사이즈 -->
@@ -1527,7 +1544,7 @@
                                                 <use data-v-7ade2d82=""
                                                    href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
                                                    xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             240 </span><span data-v-7ade2d82="" class="price">174,000</span>
+                                             240 </span><span data-v-7ade2d82="" class="price" id="price">174000</span>
                                        </div>
                                     </button></li>
                                  <li data-v-7ade2d82="" class="select_item"><button
@@ -1540,7 +1557,7 @@
                                                 <use data-v-7ade2d82=""
                                                    href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
                                                    xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             245 </span><span data-v-7ade2d82="" class="price">165,000</span>
+                                             245 </span><span data-v-7ade2d82="" class="price" id="price" >165000</span>
                                        </div>
                                     </button></li>
                                  <li data-v-7ade2d82="" class="select_item"><button
@@ -1553,7 +1570,7 @@
                                                 <use data-v-7ade2d82=""
                                                    href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
                                                    xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             250 </span><span data-v-7ade2d82="" class="price">136,000</span>
+                                             250 </span><span data-v-7ade2d82="" class="price" id="price">136000</span>
                                        </div>
                                     </button></li>
                                  <li data-v-7ade2d82="" class="select_item"><button id="cassd"
@@ -1566,7 +1583,7 @@
                                                 <use data-v-7ade2d82=""
                                                    href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
                                                    xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             255 </span><span data-v-7ade2d82="" class="price">138,000</span>
+                                             255 </span><span data-v-7ade2d82="" class="price" >138000</span>
                                        </div>
                                     </button></li>
                                  <li data-v-7ade2d82="" class="select_item"><button
@@ -1579,7 +1596,7 @@
                                                 <use data-v-7ade2d82=""
                                                    href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
                                                    xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             260 </span><span data-v-7ade2d82="" class="price">138,000</span>
+                                             260 </span><span data-v-7ade2d82="" class="price"  >138000</span>
                                        </div>
                                     </button></li>
                                  <li data-v-7ade2d82="" class="select_item"><button
@@ -1592,7 +1609,7 @@
                                                 <use data-v-7ade2d82=""
                                                    href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
                                                    xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             265 </span><span data-v-7ade2d82="" class="price">136,000</span>
+                                             265 </span><span data-v-7ade2d82="" class="price" >136000</span>
                                        </div>
                                     </button></li>
                                  <li data-v-7ade2d82="" class="select_item"><button
@@ -1605,7 +1622,7 @@
                                                 <use data-v-7ade2d82=""
                                                    href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
                                                    xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             270 </span><span data-v-7ade2d82="" class="price">137,000</span>
+                                             270 </span><span data-v-7ade2d82="" class="price" >137000</span>
                                        </div>
                                     </button></li>
                                  <li data-v-7ade2d82="" class="select_item"><button
@@ -1618,7 +1635,7 @@
                                                 <use data-v-7ade2d82=""
                                                    href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
                                                    xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             275 </span><span data-v-7ade2d82="" class="price">135,000</span>
+                                             275 </span><span data-v-7ade2d82="" class="price" >135000</span>
                                        </div>
                                     </button></li>
                                  <li data-v-7ade2d82="" class="select_item"><button
@@ -1631,7 +1648,7 @@
                                                 <use data-v-7ade2d82=""
                                                    href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
                                                    xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             280 </span><span data-v-7ade2d82="" class="price">138,000</span>
+                                             280 </span><span data-v-7ade2d82="" class="price" >138000</span>
                                        </div>
                                     </button></li>
                                  <li data-v-7ade2d82="" class="select_item"><button
@@ -1644,7 +1661,7 @@
                                                 <use data-v-7ade2d82=""
                                                    href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
                                                    xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             285 </span><span data-v-7ade2d82="" class="price">137,000</span>
+                                             285 </span><span data-v-7ade2d82="" class="price" >137000</span>
                                        </div>
                                     </button></li>
                                  <li data-v-7ade2d82="" class="select_item"><button
@@ -1657,7 +1674,7 @@
                                                 <use data-v-7ade2d82=""
                                                    href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
                                                    xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             290 </span><span data-v-7ade2d82="" class="price">136,000</span>
+                                             290 </span><span data-v-7ade2d82="" class="price" >136000</span>
                                        </div>
                                     </button></li>
                                  <li data-v-7ade2d82="" class="select_item"><button
@@ -1670,7 +1687,7 @@
                                                 <use data-v-7ade2d82=""
                                                    href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
                                                    xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             295 </span><span data-v-7ade2d82="" class="price">137,000</span>
+                                             295 </span><span data-v-7ade2d82="" class="price" >137000</span>
                                        </div>
                                     </button></li>
                                  <li data-v-7ade2d82="" class="select_item"><button
@@ -1683,7 +1700,7 @@
                                                 <use data-v-7ade2d82=""
                                                    href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
                                                    xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             300 </span><span data-v-7ade2d82="" class="price">131,000</span>
+                                             300 </span><span data-v-7ade2d82="" class="price" >131000</span>
                                        </div>
                                     </button></li>
                                  <li data-v-7ade2d82="" class="select_item"><button
@@ -1696,7 +1713,7 @@
                                                 <use data-v-7ade2d82=""
                                                    href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
                                                    xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             305 </span><span data-v-7ade2d82="" class="price">145,000</span>
+                                             305 </span><span data-v-7ade2d82="" class="price" >145000</span>
                                        </div>
                                     </button></li>
                                  <li data-v-7ade2d82="" class="select_item"><button
@@ -1709,7 +1726,7 @@
                                                 <use data-v-7ade2d82=""
                                                    href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
                                                    xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             310 </span><span data-v-7ade2d82="" class="price">140,000</span>
+                                             310 </span><span data-v-7ade2d82="" class="price" >140000</span>
                                        </div>
                                     </button></li>
                                  <li data-v-7ade2d82="" class="select_item"><button
@@ -1718,7 +1735,7 @@
                                        <div data-v-7ade2d82="" class="link_inner">
                                           <span data-v-7ade2d82="" class="size">
                                              <!----> 320
-                                          </span><span data-v-7ade2d82="" class="price">구매입찰</span>
+                                          </span><span data-v-7ade2d82="" class="price" >구매입찰</span>
                                        </div>
                                     </button></li>
                                  <li data-v-7ade2d82="" class="select_item"><button
@@ -1727,7 +1744,7 @@
                                        <div data-v-7ade2d82="" class="link_inner">
                                           <span data-v-7ade2d82="" class="size">
                                              <!----> 330
-                                          </span><span data-v-7ade2d82="" class="price">구매입찰</span>
+                                          </span><span data-v-7ade2d82="" class="price" >구매입찰</span>
                                        </div>
                                     </button></li>
                               </ul>

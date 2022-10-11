@@ -42,7 +42,7 @@ public interface OrdersMapper {
 	public int updateByNo(Orders orders);
 	
 	//주문한개생성
-	@Insert("insert into orders (o_no, o_date, pd_no_purchase,pd_no_sell,o_status) values (orders_o_no_seq.nextval, TO_DATE(SYSDATE),#{pd_no_purchase},#{pd_no_sell},#{o_status})")
+	@Insert("insert into orders (o_no, o_date, pd_no_purchase,pd_no_sell,o_status) values (orders_o_no_seq.nextval,todate(sysdate), #{pd_no_purchase}, #{pd_no_sell}, #{o_status})")
 	public int insertOrder(Orders orders);
 	
 }

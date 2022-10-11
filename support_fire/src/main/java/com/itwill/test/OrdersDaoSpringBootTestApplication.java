@@ -35,8 +35,8 @@ public class OrdersDaoSpringBootTestApplication {
 		//System.out.println(ordersDao.selectByIdSell("bongkyoun"));
 		//System.out.println(ordersDao.selectByNo(1));
 		//System.out.println(ordersDao.updateByNo("배송완료",2));
-		//Orders insertOrders=new Orders(10,null,3,2,"배송중");
-		//System.out.println(ordersDao.insertOrder(insertOrders));
+		Orders insertOrders=new Orders(10,null,3,2,"배송중");
+		System.out.println(ordersDao.insertOrder(insertOrders));
 		//System.out.println(ordersDao.deleteByNo(3));
 		
 		

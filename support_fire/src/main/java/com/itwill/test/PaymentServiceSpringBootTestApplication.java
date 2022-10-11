@@ -10,8 +10,10 @@ import org.springframework.context.annotation.ComponentScan.Filter;
 
 import com.itwill.dao.OrdersDao;
 import com.itwill.dto.Orders;
+import com.itwill.dto.Payment;
 import com.itwill.mapper.OrdersMapper;
 import com.itwill.service.OrdersService;
+import com.itwill.service.PaymentService;
 
 
 	@SpringBootApplication
@@ -20,26 +22,17 @@ import com.itwill.service.OrdersService;
 					classes = {OrdersService.class,OrdersDao.class,OrdersMapper.class}
 					)
 	})
-	public class OrdersServiceSpringBootTestApplication {
+	public class PaymentServiceSpringBootTestApplication {
 
 		public static void main(String[] args) throws Exception {
 			// TODO Auto-generated method stub
 			SpringApplication application = 
-					new SpringApplication(OrdersServiceSpringBootTestApplication.class);
+					new SpringApplication(PaymentServiceSpringBootTestApplication.class);
 			application.setWebApplicationType(WebApplicationType.NONE);
 			ConfigurableApplicationContext context=application.run(args);
-			OrdersService ordersService=(OrdersService)context.getBean(OrdersService.class);
-			//6번상품구매
-			//Orders newPurchase= new Orders(0, null, 0, 6, null);
-			//System.out.println(ordersService.insertOrder(newPurchase));
+			PaymentService paymentService=(PaymentService)context.getBean(PaymentService.class);
+			System.out.println(paymentService.insertPayment(new Payment(0,"김지원","01020202020","강동","문앞", 17, 2)));
 			
-			//3번상품판매
-			//Orders newSell= new Orders(0,null,3,0,null);
-			//System.out.println(ordersService.insertOrder(newSell));
-			
-			//없는번호 구매
-			Orders newPurchase= new Orders(0, null, 0, 11, "배송중");
-			System.out.println(ordersService.insertOrder(newPurchase));
 			
 		}
 	}

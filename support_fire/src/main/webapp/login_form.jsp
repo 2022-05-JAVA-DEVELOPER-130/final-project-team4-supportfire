@@ -36,6 +36,7 @@ $(function(){
 	
 	//로그인 버튼 클릭
 	$(document).on('click','#login_btn' ,function(e){
+		console.log($('#login_form').serialize());
 		$.ajax({
 		    url:'member_login_action',
 		    method:'POST',
