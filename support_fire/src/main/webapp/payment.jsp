@@ -47,14 +47,12 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="js/guest_html_content.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
 <script>
-
-$(document).on('click','#address_btn' ,function(e){
-	console.log('클릭');
-	$('#content').html(address_form());
-}
-
+    
 </script>
+
+
 
 </head>
 <body>
@@ -62,7 +60,7 @@ $(document).on('click','#address_btn' ,function(e){
 	<div id="preloder">
 		<div class="loader"></div>
 	</div>
-
+s
 	<!-- Offcanvas Menu Begin -->
 
 	<jsp:include page="/top.jsp" />
@@ -175,7 +173,7 @@ $(document).on('click','#address_btn' ,function(e){
 								<div data-v-6a5da210="" class="section_unit">
 									<div data-v-6a5da210="" class="section_title">
 										<h3 data-v-6a5da210="" class="title_txt">배송 주소</h3>
-										<a data-v-6a5da210="" href="address.jsp"  class="add_more_btn" >+ 새 주소
+										<a data-v-6a5da210="" href="#" class="add_more_btn" >+ 새 주소
 											추가</a>
 									</div>
 									<div id="content" data-v-6a5da210="" class="section_content">
