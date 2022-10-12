@@ -258,7 +258,7 @@ function join_form(){
         </div>
     </section>
     <!-- Contact Section Begin -->
-    <section class="contact spad">
+    <section class="contact spad" style="padding-top: 15px;">
         <div class="container" style="margin-left: 750px;">
             <div class="row">
                 <div class="col-lg-6 col-md-6">
@@ -266,12 +266,12 @@ function join_form(){
                         <form action="#" id="join_form1">
                             <div class="row">
                                 <div>
-		                            <span><p>아이디</p></span><input type="text" name="m_id" id="m_id" placeholder="ID" value="tester"><font id="msg_id" color="red"></font>
-                                    <span><p>비밀번호</p></span><input type="text" name="m_password" id="m_password" placeholder="password" value="1234">
-                                    <span>비밀번호 확인</span><input type="text" name="m_password_acc" placeholder="password" value="1234">
+		                            <span>아이디</span><input type="text" name="m_id" id="m_id" placeholder="ID" value="tester"><font id="msg_id" color="red"></font>
+                                    <span>비밀번호</span><input type="password" name="m_password" id="m_password" placeholder="password" value="1234">
+                                    <span>비밀번호 확인</span><input type="password" name="m_password_acc" placeholder="password" value="1234">
                                     <span>이름</span><input type="text" name="m_name" id="m_name" placeholder="ex) 홍길동" value="테스터">
-                                    <span>핸드폰 번호</span><input type="text" name="m_phone" id="m_phone" placeholder="ex) 01012345678" value="01011112222">
-                                    <span>생년월일</span><input type="text" name="m_birth" id="m_birth" placeholder="ex) 970902" value="990101">
+                                    <span>핸드폰 번호</span><input type="number"  name="m_phone" id="m_phone" placeholder="ex) 01012345678" value="01011112222">
+                                    <span>생년월일</span><input type="number" name="m_birth" id="m_birth" placeholder="ex) 970902" value="990101">
                                     <span>이메일</span><input type="text" name="m_email" id="m_email" placeholder="Email" value="test@naver.com">
                                     <span>남<input type="radio" name="m_gender"  id="radi" value="남" checked="checked"  style="width: 50px"/></span>
 									<span>여<input type="radio" name="m_gender"  id="radi" value="여" style="width: 50px"/></span>
