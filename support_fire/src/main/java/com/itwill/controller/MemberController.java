@@ -1,8 +1,12 @@
 package com.itwill.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -23,6 +27,43 @@ public class MemberController {
 	
 	@Autowired
 	private MemberService memberService;
+	
+	@LoginCheck
+	@PostMapping(value = "session_check")
+	public Map user_session_check_json(HttpSession session) throws Exception{
+		Map resultMap=new HashMap();
+		int code=1;
+		String url="user_main";
+		String msg="세션존재함";
+		String sUserId=(String)session.getAttribute("sUserId");
+		
+		resultMap.put("code", code);
+		resultMap.put("url", url);
+		resultMap.put("msg", msg);
+		resultMap.put("data",sUserId);
+		return resultMap;
+		
+	}
+	
+	@RequestMapping("mypage_form")
+	public Map mypage_form(HttpSession session) throws Exception{
+		Map resultMap = new HashMap();
+		int code=0;
+		String url="";
+		String msg="";
+		String sUserId = (String)session.getAttribute("sUserId");
+		List<Member> result = new ArrayList<Member>();
+		Member member = memberService.selectById(sUserId);
+		result.add(member);
+		System.out.println(member);
+		
+		resultMap.put("code",code);
+	    resultMap.put("url",url);
+	    resultMap.put("msg",msg);
+	    resultMap.put("data",result);
+	    
+	    return resultMap;
+	}
 	
 	
 	@GetMapping("member_list")
@@ -52,7 +93,6 @@ public class MemberController {
 		String url="";
 		String msg="";
 		int data=0;
-		System.out.println(member);
 		try {
 		int insertRowCount = memberService.insertMember(member);
 		if(insertRowCount == 1) {
@@ -96,15 +136,11 @@ public class MemberController {
 		return "member_modify_action";
 	}
 	
-	@RequestMapping("member_login_form")
-	public String login_form() {
-		
-		return "member_login_form";
-	}
+	
 	
 	//로그인 액션
 	@RequestMapping(value = "member_login_action", method = RequestMethod.POST)
-	public Map login_action(@ModelAttribute Member member, Model model) throws Exception{
+	public Map login_action(@ModelAttribute Member member, HttpServletRequest request) throws Exception{
 		Map resultMap = new HashMap();
 		int code=0;
 		String url="";
@@ -120,6 +156,7 @@ public class MemberController {
 			url = "member_login_form";
 			data=rowCount;
 		}else {
+			request.getSession().setAttribute("sUserId", member.getM_id());
 			url = "main";
 			data=2;
 		}
@@ -131,6 +168,7 @@ public class MemberController {
 	    
 	    return resultMap;
 	}
+	
 	
 	
 	@RequestMapping(value = "id_search_action")

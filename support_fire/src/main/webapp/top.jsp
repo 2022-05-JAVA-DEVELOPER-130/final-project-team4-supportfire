@@ -4,7 +4,7 @@
     <div class="offcanvas-menu-wrapper">
         <div class="offcanvas__option">
             <div class="offcanvas__links">
-                <a href="login_form.jsp">Sign in</a>
+                <a href="logout_action">Logout</a>
                 <a href="board.jsp">FAQs</a>
             </div>
             <div class="offcanvas__top__hover">
@@ -24,7 +24,7 @@
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__text">
-            <p>Free shipping, 30-day return or refund guarantee.</p>
+            <p>${sUserId}님 환영합니다.</p>
         </div>
     </div>
     <!-- Offcanvas Menu End -->
@@ -35,13 +35,13 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-7">
                         <div class="header__top__left">
-                            <p>Free shipping, 30-day return or refund guarantee.</p>
+                            <p>${sUserId}님 환영합니다.</p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-5">
                         <div class="header__top__right">
                             <div class="header__top__links">
-                                <a href="login_form.jsp">Sign in</a>
+                                <a href="logout_action">Logout</a>
                                 <a href="board.jsp">FAQs</a>
                             </div>
                             <div class="header__top__hover">

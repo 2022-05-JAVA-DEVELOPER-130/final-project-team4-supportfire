@@ -25,14 +25,62 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script type="text/javascript" src="js/top_content.js"></script>
+    <script type="text/javascript" src="js/mypage_content.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    
+<script type="text/javascript">
+$(function(){
+$.ajax({
+	url:'session_check',
+	method:'POST',
+	dataType:'json',
+	success:function(jsonResult){
+	    if(jsonResult.code==1){
+	    	var member = jsonResult.data;
+		 	$('#top_content').html(login_top(member));
+	    }else if(jsonResult.code==2){
+		 	$('#top_content').html(logout_top());
+	    }
+	   
+	}
+});
+
+
+$.ajax({
+	url:'mypage_form',
+	method:'POST',
+	dataType:'json',
+	success:function(jsonResult){
+		console.log(jsonResult.data[0]);
+		$('#mypage_form').html(mypage_form(jsonResult.data[0]))
+	}
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+});
+</script>    
 </head>
 
 
 <body>
 	<!-- Offcanvas Menu Begin -->
-    
+    <div id="top_content">
     <jsp:include page="top.jsp" />
-    
+    </div>
+
     <!-- Offcanvas Menu End -->
 
     <!-- Header Section Begin -->
@@ -93,8 +141,8 @@
                                         <div class="card-body">
                                             <div class="shop__sidebar__brand">
                                                 <ul>
-                                                    <li><a href="#">프로필정보</a></li>
-                                                    <li><a href="#">주소록</a></li>
+                                                    <li><a href="#">아이디</a></li>
+                                                    <li><a href="#">이메일</a></li>
                                                   
                                                 </ul>
                                             </div>
@@ -107,257 +155,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-9">
-                    
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div style="height: 170px;width: 170px" class="product__item__pic set-bg" data-setbg="img/product/product-2.jpg">
-                                  
-                                </div>
                 
-                            </div>
-                        </div>
-                        <div class="col-lg-8 col-md-6 col-sm-6">
-                            <div class="product__item sale">
-                                <div class="product__item__pic set-bg">
-                                    
-                                    <ul>
-			                            <li>
-			                                <h4></h4>
-			                                <p><br></p>
-			                            </li>
-			                            <li>
-			                                <h4>guard</h4>
-			                                <p>guard@guard@naver.com<br></p>
-			                            </li>
-                        			</ul>
-                                    <div class="">
-                                    <h4></h4>
-                                    <h5></h5>
-                                    <button  class="primary-btn">프로필수정</button>
-                                
-                                </div> 
-                                </div>
-                                
-                            </div>
-                        </div>
-             <div>
-                                    <div class="section-title">
-                                            <h4>구매내역</h4>
-			                       </div>
-                        </div>
-                        <div class="col-lg-12 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" >
-                                    <!---start----> 
-                                    <div class="shopping__cart__table">
-				                        <table>
-				                            <thead>
-				                                <tr>
-				                                    <th>이미지</th>
-				                                    <th>이름</th>
-				                                    <th>가격</th>
-				                                    <th>신청일</th>
-				                                    <th>종료일</th>
-				                                    <th>상태</th>
-				                                </tr>
-				                            </thead>
-				                            <tbody>
-				                                <tr>
-				                                    <td class="product__cart__item">
-				                                        <div class="product__cart__item__pic">
-				                                            <img src="img/shopping-cart/cart-1.jpg" alt="">
-				                                        </div>
-				                                    </td>
-				                                    <td class="product__cart__item">
-				                                        <div class="product__cart__item__text">
-				                                            <h6>T-shirt</h6>
-				                                           
-				                                        </div>
-				                                    </td>
-				                                     <td class="product__cart__item">
-				                                        <div class="product__cart__item__text">
-				                                           
-				                                            <h5>$98.49</h5>
-				                                        </div>
-				                                    </td>
-				                                    <td class="product__cart__item">
-				                                        <div class="product__cart__item__text">
-				                                            <h5>10/12</h5>
-				                                        </div>
-				                                    </td>
-				                                    <td class="product__cart__item"> 
-				                                    	<div class="product__cart__item__text">
-				                                            <h5>10/15</h5>
-				                                        </div></td>
-				                                    <td class="product__cart__item">
-				                                    	 <div class="product__cart__item__text">
-				                                            <h5>입찰중</h5>
-				                                        </div>
-				                                    </td>
-				                                </tr>
-				                                
-				                            </tbody>
-				                        </table>
-                    				</div>
-                                    <!-- end -->
-                       
-                                    <!-- end -->
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div>
-                                   <div class="section-title">
-                                            <h4>판매내역</h4>
-			                      </div>
-                        </div>
-                        <div class="col-lg-12 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" >
-                                    <!---start----> 
-                                    <div class="shopping__cart__table">
-				                        <table>
-				                            <thead>
-				                                <tr>
-				                                    <th>이미지</th>
-				                                    <th>이름</th>
-				                                    <th>가격</th>
-				                                    <th>신청일</th>
-				                                    <th>종료일</th>
-				                                    <th>상태</th>
-				                                </tr>
-				                            </thead>
-				                            <tbody>
-				                                <tr>
-				                                    <td class="product__cart__item">
-				                                        <div class="product__cart__item__pic">
-				                                            <img src="img/shopping-cart/cart-1.jpg" alt="">
-				                                        </div>
-				                                    </td>
-				                                    <td class="product__cart__item">
-				                                        <div class="product__cart__item__text">
-				                                            <h6>T-shirt</h6>
-				                                           
-				                                        </div>
-				                                    </td>
-				                                     <td class="product__cart__item">
-				                                        <div class="product__cart__item__text">
-				                                           
-				                                            <h5>$98.49</h5>
-				                                        </div>
-				                                    </td>
-				                                    <td class="product__cart__item">
-				                                        <div class="product__cart__item__text">
-				                                            <h5>10/12</h5>
-				                                        </div>
-				                                    </td>
-				                                    <td class="product__cart__item"> 
-				                                    	<div class="product__cart__item__text">
-				                                            <h5>10/15</h5>
-				                                        </div></td>
-				                                    <td class="product__cart__item">
-				                                    	 <div class="product__cart__item__text">
-				                                            <h5>입찰중</h5>
-				                                        </div>
-				                                    </td>
-				                                </tr>
-				                                
-				                            </tbody>
-				                        </table>
-                    				</div>
-                                    <!-- end -->
-                                </div>
-                                
-                            </div>
-                        </div>
+    <div class="col-lg-9" id="mypage_form">
     
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
     <!-- Shop Section End -->
 
     <!-- Footer Section Begin -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__about">
-                        <div class="footer__logo">
-                            <a href="#"><img src="img/footer-logo.png" alt=""></a>
-                        </div>
-                        <p>The customer is at the heart of our unique business model, which includes design.</p>
-                        <a href="#"><img src="img/payment.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
-                    <div class="footer__widget">
-                        <h6>Shopping</h6>
-                        <ul>
-                            <li><a href="#">Clothing Store</a></li>
-                            <li><a href="#">Trending Shoes</a></li>
-                            <li><a href="#">Accessories</a></li>
-                            <li><a href="#">Sale</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-6">
-                    <div class="footer__widget">
-                        <h6>Shopping</h6>
-                        <ul>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Payment Methods</a></li>
-                            <li><a href="#">Delivary</a></li>
-                            <li><a href="#">Return & Exchanges</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
-                    <div class="footer__widget">
-                        <h6>NewLetter</h6>
-                        <div class="footer__newslatter">
-                            <p>Be the first to know about new arrivals, look books, sales & promos!</p>
-                            <form action="#">
-                                <input type="text" placeholder="Your email">
-                                <button type="submit"><span class="icon_mail_alt"></span></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="footer__copyright__text">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        <p>Copyright ©
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script>2020
-                            All rights reserved | This template is made with <i class="fa fa-heart-o"
-                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                        </p>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <jsp:include page="footer.jsp" />
     <!-- Footer Section End -->
 
-    <!-- Search Begin -->
-    <div class="search-model">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-            <div class="search-close-switch">+</div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Search here.....">
-            </form>
-        </div>
-    </div>
-    <!-- Search End -->
+ 
 
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
