@@ -22,10 +22,10 @@ public class ProductController {
 	private Product product;
 	
 	@RequestMapping("shop")
-	@ResponseBody
 	public String product_list(HttpServletRequest request, Model model) {
 		String forwardPath = "";
 		List<Product> productList = productService.selectAll();
+		System.out.println(productList);
 		model.addAttribute("productList", productList);
 		forwardPath = "shop";
 		return forwardPath;
