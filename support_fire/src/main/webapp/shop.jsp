@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+
 </head>
 
 <body>
@@ -298,15 +299,9 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6>${product.p_name}</h6>
-                                    <a href="shop-details.jsp?p_no=${product.p_no}" class="add-cart">+ Add To Cart</a>
-                                    <div class="rating">
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
+                                    <a href="shop-details.jsp?p_no=${product.p_no}" class="add-cart">제품 상세보기</a>
                                     <h5>${product.p_price}원</h5>
+                                	<h7>Nike</h7>
                                     <div class="product__color__select">
                                         <label for="pc-4">
                                             <input type="radio" id="pc-4">

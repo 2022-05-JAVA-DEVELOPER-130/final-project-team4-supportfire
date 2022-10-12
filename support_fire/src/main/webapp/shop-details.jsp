@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+
 </head>
 
 <body>
@@ -89,7 +90,7 @@
                         <div class="product__details__breadcrumb">
                             <a href="./index.jsp">Home</a>
                             <a href="./shop">Shop</a>
-                            <span>Product Details</span>
+                            <span>${product.p_name}</span>
                         </div>
                     </div>
                 </div>
@@ -97,17 +98,17 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-3">
                         <ul class="nav nav-tabs" role="tablist">
-            	  <c:forEach items="${productList}" var="product">
+            	  <!--<c:forEach items="${productList}" var="product">-->
                             <li class="nav-item">
                                 <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
                                     <div class="product__thumb__pic set-bg" data-setbg="img/product/${product.p_image}">
                                     </div>
                                 </a>
                             </li>
-                  </c:forEach>
+                 <!--</c:forEach>-->
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-2.png">
+                                    <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-1.png">
                                     </div>
                                 </a>
                             </li>
@@ -131,12 +132,12 @@
                         <div class="tab-content">
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
                                 <div class="product__details__pic__item">
-                                    <img src="img/shop-details/product-big-2.png" alt="">
+                                    <img src="img/product/${product.p_image}" alt="">
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-2" role="tabpanel">
                                 <div class="product__details__pic__item">
-                                    <img src="img/shop-details/product-big-3.png" alt="">
+                                    <img src="img/product/${product.p_image}" alt="">
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-3" role="tabpanel">
@@ -162,7 +163,7 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-8">
                         <div class="product__details__text">
-                            <h4>Hooded thermal anorak</h4>
+                            <h4>${product.p_name}</h4>
                             <div class="rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -171,21 +172,18 @@
                                 <i class="fa fa-star-o"></i>
                                 <span> - 5 Reviews</span>
                             </div>
-                            <h3>$270.00 <span>70.00</span></h3>
-                            <p>Coat with quilted lining and an adjustable hood. Featuring long sleeves with adjustable
-                                cuff tabs, adjustable asymmetric hem with elastic side tabs and a front zip fastening
-                            with placket.</p>
+                            <h3>${product.p_price}</h3>
+                            <p>까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득
+                            까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득
+                            까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득</p>
                             <div class="product__details__option">
                                 
                                 
                             </div>
                             <div class="product__details__cart__option">
-                                <div class="quantity">
-                                    <div class="pro-qty">
-                                        <input type="text" value="1">
-                                    </div>
-                                </div>
-                                <a href="product_size.jsp" class="primary-btn">사이즈선택</a>
+                               
+                                <a href="product_size.jsp" class="primary-btn">구매</a>
+                                <a href="product_size.jsp" class="primary-btn">판매</a>
                             </div>
                             <div class="product__details__btns__option">
                                 <a href="#"><i class="fa fa-heart"></i> add to wishlist</a>

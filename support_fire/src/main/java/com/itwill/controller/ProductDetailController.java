@@ -19,12 +19,4 @@ public class ProductDetailController {
 	@Autowired
 	private ProductDetailService productDetailService;
 	
-	@RequestMapping ("shop_detail")
-	public String productDetail_view(@RequestParam int pd_no, HttpServletRequest request, Model model) {
-	String forwardPath = "";
-	ProductDetail productDetail = productDetailService.selectByNo(pd_no);
-	model.addAttribute("productDetail", productDetail);
-	forwardPath = "shop_detail";
-	return forwardPath;
-	}
 }

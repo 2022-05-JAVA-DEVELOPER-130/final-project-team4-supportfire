@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.itwill.dto.Product;
@@ -28,6 +29,15 @@ public class ProductController {
 		System.out.println(productList);
 		model.addAttribute("productList", productList);
 		forwardPath = "shop";
+		return forwardPath;
+	}
+	@RequestMapping(value = "shop-details", params = "p_no")
+	public String product_view(@RequestParam int p_no, Model model) {
+		String forwardPath = "";
+		Product productView = productService.selectByNo(p_no);
+		System.out.println(productView);
+		model.addAttribute("productView", productView);
+		forwardPath = "shop-details";
 		return forwardPath;
 	}
 }
