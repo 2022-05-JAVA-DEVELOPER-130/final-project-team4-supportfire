@@ -206,7 +206,7 @@ function showDelivery() {
                             <div class="checkout__input">
                                 <p>배송메모<span>*</span></p>
                                 <input type="text"
-                                placeholder="배송메">
+                                placeholder="배송메모">
                             </div>
                             <div class="checkout__input__checkbox">
                                 <label for="acc">
