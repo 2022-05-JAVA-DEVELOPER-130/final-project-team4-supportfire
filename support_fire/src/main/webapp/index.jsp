@@ -24,15 +24,34 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    
+    <script type="text/javascript" src="js/top_content.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+$.ajax({
+	url:'session_check',
+	method:'POST',
+	dataType:'json',
+	success:function(jsonResult){
+	    if(jsonResult.code==1){
+	    	var member = jsonResult.data;
+		 	$('#top_content').html(login_top(member));
+	    }else if(jsonResult.code==2){
+		 	$('#top_content').html(logout_top());
+	    }
+	   
+	}
+});
+});
+</script>
 </head>
 
 <body>
 	
 	<!-- Offcanvas Menu Begin -->
-    
+    <div id="top_content">
     <jsp:include page="top.jsp" />
-    
+    </div>
     <!-- Offcanvas Menu End -->
 	
 	<!-- Header Section Begin -->
