@@ -47,17 +47,17 @@ insert into brands values(BRANDS_BR_NO_SEQ.nextval, 'Apple', 4);
 insert into brands values(BRANDS_BR_NO_SEQ.nextval, 'Samsung', 4);
 
 /************제품***************/
-insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Nike Air Force 1 07 WB Flax', '19/09/10', 169000 ,'Nike Air Force 1 07 WB Flax.png', 1);
-insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Nike Dunk Low Retro Black', '21/01/14', 129000, 'Nike Dunk Low Retro Black.png', 1);
-insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Nike Dunk Low Light Smoke Grey', '22/05/07', 129000, 'Nike Dunk Low Light Smoke Grey.png', 1);
-insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Nike Dunk Low Retro Gym Red', '22/09/21', 129000, 'Nike Dunk Low Retro Gym Red.png', 1);
-insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Nike x J.Crew Killshot 2 Sail Midnight Navy', '17/02/26', 109000, 'Nike x J.Crew Killshot 2 Sail Midnight Navy.png', 1);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Nike Air Force 1 07 WB Flax', '19/09/10', 169000 ,'Nike_Air_Force_1_07_WB_Flax.png', 1);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Nike Dunk Low Retro Black', '21/01/14', 129000, 'Nike_Dunk_Low_Retro_Black.png', 1);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Nike Dunk Low Light Smoke Grey', '22/05/07', 129000, 'Nike_Dunk_Low_Light_Smoke_Grey.png', 1);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Nike Dunk Low Retro Gym Red', '22/09/21', 129000, 'Nike_Dunk_Low_Retro_Gym_Red.png', 1);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Nike x J.Crew Killshot 2 Sail Midnight Navy', '17/02/26', 109000, 'Nike_x_J.Crew_Killshot_2_Sail_Midnight_Navy.png', 1);
 
-insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Jordan 1 Mid Light Smoke Grey', '20/01/11', 139000 ,'Jordan 1 Mid Light Smoke Grey.png', 1);
-insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Jordan 1 x Travis Scott Retro Low OG SP Sail and Ridgerock', '22/07/21', 189000 ,'Jordan 1 x Travis Scott Retro Low OG SP Sail and Ridgerock.png', 1);
-insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Jordan 1 Retro Low OG Black and Dark Powder Blue', '22/07/27', 159000 ,'Jordan 1 Retro Low OG Black and Dark Powder Blue.png', 1);
-insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Jordan 1 Retro High OG Black Mocha', '20/11/13', 199000 ,'Jordan 1 Retro High OG Black Mocha.png', 1);
-insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Jordan 1 Mid Light Smoke Grey Anthracite', '22/01/24', 149000 ,'Jordan 1 Mid Light Smoke Grey Anthracite.png', 1);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Jordan 1 Mid Light Smoke Grey', '20/01/11', 139000 ,'Jordan_1_Mid_Light_Smoke_Grey.png', 1);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Jordan 1 x Travis Scott Retro Low OG SP Sail and Ridgerock', '22/07/21', 189000 ,'Jordan_1_x_Travis_Scott_Retro_Low_OG_SP_Sail_and_Ridgerock.png', 1);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Jordan 1 Retro Low OG Black and Dark Powder Blue', '22/07/27', 159000 ,'Jordan_1_Retro_Low_OG_Black_and_Dark_Powder_Blue.png', 1);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Jordan 1 Retro High OG Black Mocha', '20/11/13', 199000 ,'Jordan_1_Retro_High_OG_Black_Mocha.png', 1);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Jordan 1 Mid Light Smoke Grey Anthracite', '22/01/24', 149000 ,'Jordan_1_Mid_Light_Smoke_Grey_Anthracite.png', 1);
 /**************제품사이즈**************/
 insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 1);
 insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 1);
