@@ -314,7 +314,7 @@ $.ajax({
                                                 <ul>
                                                     <li><a href="#">프로필정보</a></li>
                                                     <li><a href="#">주소록</a></li>
-                                                  
+                                                   
                                                 </ul>
                                             </div>
                                         </div>
