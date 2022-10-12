@@ -214,40 +214,15 @@ function showDelivery() {
 						<p data-v-795b6767="" data-v-6c561060="" class="input_error">정확한
 							휴대폰 번호를 입력해주세요.</p>
 					</div>
-					<div data-v-6c561060="" data-v-795b6767="" class="input_box"
-						data-v-1f7c6d3f="">
-						<h4 data-v-795b6767="" data-v-6c561060="" class="input_title" >우편번호</h4>
-						<div data-v-6c561060="" class="input_item">
-							<input data-v-6c561060="" type="text" placeholder="우편 번호를 검색하세요"
-								readonly="readonly" autocomplete="off" class="input_txt" id="sample4_postcodes">
-								<a data-v-3d1bcc82="" data-v-795b6767="" href="#"
-								class="btn btn_zipcode outline small" data-v-6c561060="" onclick="showDelivery()" >
-								우편번호 </a>
-						</div>
-					</div>
-					<div data-v-6c561060="" data-v-795b6767="" class="input_box"
-						data-v-1f7c6d3f="">
-						<h4 data-v-795b6767="" data-v-6c561060="" class="input_title">주소</h4>
-						<div data-v-6c561060="" class="input_item">
-							<input data-v-6c561060="" type="text"
-								placeholder="우편 번호 검색 후, 자동입력 됩니다" readonly="readonly"
-								autocomplete="off" class="input_txt">
-						</div>
-					</div>
-					<div data-v-6c561060="" data-v-795b6767="" class="input_box"
-						data-v-1f7c6d3f="">
-						<h4 data-v-795b6767="" data-v-6c561060="" class="input_title">상세
-							주소</h4>
-						<div data-v-6c561060="" class="input_item">
-							<input data-v-6c561060="" type="text"
-								placeholder="건물, 아파트, 동/호수 입력" autocomplete="off"
-								class="input_txt">
-						</div>
-					</div>
-				</div>
-				<div data-v-795b6767="" data-v-1f7c6d3f="" class="delivery_check">
-					<div data-v-4c714e9f="" data-v-795b6767="" class="checkbox_item"
-						data-v-1f7c6d3f="">
+					<input data-v-6c561060="" type="text" id="sample4_postcode" placeholder="우편번호">
+					<input type="button" onclick="showDelivery()" value="우편번호 찾기"><br>
+					<input data-v-6c561060="" type="text" id="sample4_roadAddress" placeholder="도로명주소">
+					<input  data-v-6c561060="" type="text" id="sample4_jibunAddress" placeholder="지번주소">
+					<span id="guide" style="color:#999;display:none"></span>
+					<input data-v-6c561060="" type="text" id="sample4_detailAddress" placeholder="상세주소">
+					<input data-v-6c561060="" type="text" id="sample4_extraAddress" placeholder="참고항목">
+					<div data-v-795b6767="" data-v-1f7c6d3f="" class="delivery_check">
+					
 						<input data-v-4c714e9f="" id="check1" type="checkbox" name=""
 							class="blind"><label data-v-4c714e9f="" for="check1"
 							class="check_label"><svg data-v-4c714e9f=""
