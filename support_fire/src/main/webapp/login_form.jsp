@@ -42,6 +42,12 @@ label.error{
 	.aad{
 	margin-bottom: 0px;
 	}
+	
+	input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 </style>	
 	
 <script type="text/javascript" src="js/login_content.js"></script>
@@ -54,10 +60,32 @@ label.error{
  #radi{
  	height: 20px;
  	width: 100%;
+ 	display: inline;
  -webkit-appearance: button;
  
  }
+ 
+ .contact__form input{
+	margin-left: 70px;
+	margin-bottom: 5px;
+	width : 600px;
+    border: 0;
+    border-bottom: 1px solid #ebebeb;
+    display: block;
+    }
 
+form span{
+	width: auto;
+	margin-top: 25px;
+	margin-left: 50px;
+	display: block;
+
+}
+
+.error{
+	margin-left: 60px;
+
+}
 </style>
 <script type="text/javascript">
 $(function(){
@@ -90,6 +118,10 @@ $(function(){
 					required: true,
 					minlength: 4,
 					maxlength: 12
+				},
+				m_password_acc:{
+					required: true,
+					equalTo : "#m_password"
 				},
 				m_name:{
 					required: true
@@ -125,6 +157,10 @@ $(function(){
 					required: "비밀번호를 입력해주세요",
 					minlength: "비밀번호는 {0} 글자이상입니다.",
 					maxlength: "비밀번호는 {0} 글자이하입니다."
+				},
+				m_password_acc : {
+				    required : '비밀번호를 입력하세요',
+				    equalTo:'비밀번호와 비밀번호 확인은 일치하여야 합니다'
 				},
 				m_phone:{
 					required: "휴대폰 번호는 '01012345678' 형식으로 입력해주세요"

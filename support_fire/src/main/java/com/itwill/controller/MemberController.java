@@ -55,7 +55,6 @@ public class MemberController {
 		List<Member> result = new ArrayList<Member>();
 		Member member = memberService.selectById(sUserId);
 		result.add(member);
-		System.out.println(member);
 		
 		resultMap.put("code",code);
 	    resultMap.put("url",url);
@@ -122,18 +121,40 @@ public class MemberController {
 		return "member_delete_action";
 	}
 	
-	@GetMapping("member_modify_form/{m_id}")
-	public String member_modify_form(@PathVariable("m_id") String m_id,
-									 Model model) throws Exception{
+	@RequestMapping("modify_form")
+	public Map member_modify_form(HttpSession session) throws Exception{
+		Map resultMap = new HashMap();
+		int code=0;
+		String url="";
+		String msg="";
+		List<Member> resultList = new ArrayList<Member>();
+		String m_id = (String)session.getAttribute("sUserId");
 		Member member = memberService.selectById(m_id);
-		model.addAttribute("member", member);
-		return "member_modify_form";
+		resultList.add(member);
+		
+		resultMap.put("code",code);
+	    resultMap.put("url",url);
+	    resultMap.put("msg",msg);
+	    resultMap.put("data",member);
+	    
+	    return resultMap;
 	}
 	
-	@PostMapping("member_modify_action")
-	public String member_modify_action(@ModelAttribute Member member) throws Exception{
+	@RequestMapping("modify_action")
+	public Map member_modify_action(@ModelAttribute Member member) throws Exception{
+		Map resultMap = new HashMap();
+		int code=0;
+		String url="";
+		String msg="";
 		int updateMemberRowCount = memberService.updateMember(member);
-		return "member_modify_action";
+		
+		
+		resultMap.put("code",code);
+	    resultMap.put("url",url);
+	    resultMap.put("msg",msg);
+	    resultMap.put("data",member);
+	    
+	    return resultMap;
 	}
 	
 	
