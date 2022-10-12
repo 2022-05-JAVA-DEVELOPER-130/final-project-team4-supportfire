@@ -80,7 +80,7 @@ s
 				<nav class="header__menu mobile-menu">
 					<ul>
 						<li><a href="./index.jsp">Home</a></li>
-						<li class="active"><a href="./shop.jsp">Shop</a></li>
+						<li class="active"><a href="./shop">Shop</a></li>
 						<li><a href="#">Pages</a>
 							<ul class="dropdown">
 								<li><a href="./about.jsp">About Us</a></li>
@@ -119,7 +119,7 @@ s
 					<div class="breadcrumb__text">
 						<h4>배송/결제</h4>
 						<div class="breadcrumb__links">
-							<a href="./index.jsp">Home</a> <a href="./shop.jsp">Shop</a> <span>배송/결제</span>
+							<a href="./index.jsp">Home</a> <a href="./shop">Shop</a> <span>배송/결제</span>
 						</div>
 					</div>
 				</div>

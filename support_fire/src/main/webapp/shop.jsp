@@ -53,7 +53,7 @@
                     <nav class="header__menu mobile-menu">
                         <ul>
                             <li><a href="./index.jsp">Home</a></li>
-                            <li class="active"><a href="./shop.jsp">Shop</a></li>
+                            <li class="active"><a href="./shop">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                     <li><a href="./about.jsp">About Us</a></li>
