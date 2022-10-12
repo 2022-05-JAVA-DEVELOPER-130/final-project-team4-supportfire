@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -92,15 +93,18 @@
                         </div>
                     </div>
                 </div>
+               
                 <div class="row">
                     <div class="col-lg-3 col-md-3">
                         <ul class="nav nav-tabs" role="tablist">
+            	  <c:forEach items="${productList}" var="product">
                             <li class="nav-item">
                                 <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-1.png">
+                                    <div class="product__thumb__pic set-bg" data-setbg="img/product/${product.p_image}">
                                     </div>
                                 </a>
                             </li>
+                  </c:forEach>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
                                     <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-2.png">
@@ -122,6 +126,7 @@
                             </li>
                         </ul>
                     </div>
+       
                     <div class="col-lg-6 col-md-9">
                         <div class="tab-content">
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
@@ -147,9 +152,11 @@
                             </div>
                         </div>
                     </div>
+            
                 </div>
             </div>
         </div>
+
         <div class="product__details__content">
             <div class="container">
                 <div class="row d-flex justify-content-center">
@@ -310,6 +317,7 @@
                                                 breathable. Velvet is a great choice for dinner party jacket and can be
                                             worn all year round.</p>
                                         </div>
+  
                                     </div>
                                 </div>
                             </div>
@@ -318,6 +326,7 @@
                 </div>
             </div>
         </div>
+       
     </section>
     <!-- Shop Details Section End -->
 
