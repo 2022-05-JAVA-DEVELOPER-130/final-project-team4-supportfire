@@ -45,7 +45,7 @@ public class ProductSizeServiceImp implements ProductSizeService{
 			String p_price = String.valueOf(map2.get("min_price"));
 			sizeMap.put(size, map2.get("min_price"));
 			if(p_price =="null") {
-				p_price = "구매입찰";
+				p_price = "판매입찰";
 				sizeMap.put(size, p_price);
 			}else {
 				sizeMap.put(size, p_price);
@@ -64,7 +64,7 @@ public class ProductSizeServiceImp implements ProductSizeService{
 			String p_price = String.valueOf(map2.get("min_price"));
 			sizeMap.put(size, map2.get("min_price"));
 			if(p_price =="null") {
-				p_price = "판매입찰";
+				p_price = "구매입찰";
 				sizeMap.put(size, p_price);
 			}else {
 				sizeMap.put(size, p_price);

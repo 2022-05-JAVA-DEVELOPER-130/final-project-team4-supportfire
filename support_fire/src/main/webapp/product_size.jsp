@@ -1383,24 +1383,24 @@
  <script type="text/javascript" src ="js/product_content.js"></script>
 <script type="text/javascript">
 $(function(){
+	var v = window.location.search;
+	console.log(v);
+	a = v.replace('?','');
+	console.log(a);
 	
-$(document).on('click','#button123' ,function(e){
-	console.log(e);
-	
-});
 html="";
 $.ajax({
 	url:'product_size',
-	method:'POST',
+	method:'GET',
 	dataType:'json',
-	data:"p_no=1&bt_no=1&c_no=1",
+	data: a,
 	success:function(jsonResult){
 		var map = jsonResult.data;
 		for(var i=0; i<jsonResult.sizeList.length; i++){
 			html += productSizeForm(jsonResult.sizeList[i], map[i]);
 		}
 		$('#productSize').html(html);
-		$('#top_text').html(msg);
+		$('#top_text').html(jsonResult.msg);
 	}
 });
 

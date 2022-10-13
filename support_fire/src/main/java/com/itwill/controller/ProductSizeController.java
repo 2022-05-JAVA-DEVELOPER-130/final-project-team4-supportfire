@@ -42,11 +42,11 @@ public class ProductSizeController {
 		String msg="";
 		List<Sizes> sizeList = sizesService.selectAll(c_no);
 		if(bt_no==1) {
-			msg = "판매하기";
-			map = productSizeService.selectBuyMinPriceByNo(p_no);
-		}else {
 			msg = "구매하기";
 			map = productSizeService.selectSellMinPriceByNo(p_no);
+		}else {
+			msg = "판매하기";
+			map = productSizeService.selectBuyMinPriceByNo(p_no);
 		}
 		List<String> stringList = new ArrayList<String>();
 		for (Sizes sizes : sizeList) {
