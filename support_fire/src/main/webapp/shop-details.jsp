@@ -30,7 +30,7 @@
 
 <style type="text/css">
 .btn{
-	width : 30%;
+	width : 35%;
 	border-radius: 10px;
   	padding-top: 10px;
 	height: 50px;
@@ -252,11 +252,11 @@ $(function(){
                                 
                             </div>
                             <div class="product__details__cart__option" id ="aad">
-                                <a href="product_size.jsp" class="btn btn-danger">
+                                <a href="product_sizes?p_no=${product.p_no}&bt_no=1&c_no=1" class="btn btn-danger">
                                 <strong>구매</strong>
                                 <div id="aas"><span style="font-size: 12px;"><strong>${sellmin.get('min_price')}</strong></span></div>
                                 </a>
-                                <a href="product_size.jsp" class="btn btn-success">
+                                <a href="product_sizes?p_no=${product.p_no}&bt_no=2&c_no=1" class="btn btn-success">
                                 <strong>판매</strong>
                                 <div id="aas"><span style="font-size: 12px;"><strong>${buymin.get('min_price')}</strong></span></div>
                                 </a>

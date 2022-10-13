@@ -29,4 +29,9 @@ public class MainController {
 	public String mypage() {
 		return "mypage";
 	}
+	
+	@RequestMapping("product_sizes")
+	public String product_sizes() {
+		return "product_size";
+	}
 }
