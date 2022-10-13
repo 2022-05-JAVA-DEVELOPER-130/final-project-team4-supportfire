@@ -33,19 +33,32 @@
 <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
 <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
 <link rel="stylesheet" href="css/test.css" type="text/css">
-<link href="./_nuxt/css/74432ba.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/db982ae.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/dd20fa4.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/ee18271.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/09348cd.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/734fa9a.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/c3bbf15.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/d62dccd.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/4e9a7cc.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/63fac4d.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/61299ed.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/efe128e.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/cdddabb.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/74432ba.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/db982ae.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/dd20fa4.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/ee18271.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/09348cd.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/734fa9a.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/c3bbf15.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/d62dccd.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/4e9a7cc.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/63fac4d.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/61299ed.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/efe128e.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/cdddabb.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/74432ba.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/c3bbf15.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/db982ae.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/d62dccd.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/ee18271.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/09348cd.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/734fa9a.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/dd20fa4.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/4e9a7cc.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/63fac4d.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/61299ed.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/efe128e.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/cdddabb.css" rel="stylesheet" type="text/css">
 <style type="text/css">
 ul {
 	list-style: none;
@@ -217,43 +230,6 @@ ul {
 		<!---->
 		<!---->
 	</div>
-	</div>
-
-	<script src="/_nuxt/fef4d9c.js" defer=""></script>
-	<script src="/_nuxt/556c755.js" defer=""></script>
-	<script src="/_nuxt/81d286e.js" defer=""></script>
-	<script src="/_nuxt/6a3e066.js" defer=""></script>
-	<script src="/_nuxt/7e0f7fa.js" defer=""></script>
-	<script src="/_nuxt/270a4cb.js" defer=""></script>
-	<script src="/_nuxt/10c7052.js" defer=""></script>
-	<script src="/_nuxt/85b8288.js" defer=""></script>
-	<script src="/_nuxt/2578e8a.js" defer=""></script>
-	<script src="/_nuxt/788dfab.js" defer=""></script>
-	<script src="/_nuxt/d071840.js" defer=""></script>
-	<script src="/_nuxt/75ca0dd.js" defer=""></script>
-
-
-	<link href="/_nuxt/css/74432ba.css" rel="stylesheet" type="text/css">
-	<link href="/_nuxt/css/c3bbf15.css" rel="stylesheet" type="text/css">
-	<link href="/_nuxt/css/db982ae.css" rel="stylesheet" type="text/css">
-	<link href="/_nuxt/css/d62dccd.css" rel="stylesheet" type="text/css">
-	<link href="/_nuxt/css/ee18271.css" rel="stylesheet" type="text/css">
-	<link href="/_nuxt/css/09348cd.css" rel="stylesheet" type="text/css">
-	<link href="/_nuxt/css/734fa9a.css" rel="stylesheet" type="text/css">
-	<link href="/_nuxt/css/dd20fa4.css" rel="stylesheet" type="text/css">
-	<link href="/_nuxt/css/4e9a7cc.css" rel="stylesheet" type="text/css">
-	<link href="/_nuxt/css/63fac4d.css" rel="stylesheet" type="text/css">
-	<link href="/_nuxt/css/61299ed.css" rel="stylesheet" type="text/css">
-	<link href="/_nuxt/css/efe128e.css" rel="stylesheet" type="text/css">
-	<link href="/_nuxt/css/cdddabb.css" rel="stylesheet" type="text/css">
-</body>
-
-
-
-
-
-
-
 
 
 <!-- Footer Section Begin -->
