@@ -30,12 +30,21 @@
 
 <style type="text/css">
 .btn{
-	width : 200px;
+	width : 30%;
 	border-radius: 10px;
-	align-items: center;
+  	padding-top: 10px;
+	height: 50px;
+	margin-top: 10px;
+	
+}
+
+.btn-danger{
 	background-color: #ef6253;
-	
-	
+}
+
+.btn-success{
+	background-color: #41b979;
+	margin-left: 30px;
 }
 
 #aas{
@@ -214,7 +223,6 @@ $(function(){
                                 <i class="fa fa-star-o"></i>
                                 <span> - 5 Reviews</span>
                             </div>
-                            <h3>${product.p_price}</h3>
                             <div class="shopping__cart__table">
                             <table>
                           		  <thead>
@@ -232,8 +240,8 @@ $(function(){
                           		  <thead>
 				                        <tr>
 		                                    <th>${brand.br_name}</th>
-		                                    <th>${product.p_price}</th>
 		                                    <th>${product.p_date}</th>
+		                                    <th>${product.p_price}</th>
 		                                    <th>상태</th>
 				                        </tr>
 				                  </thead>
@@ -246,9 +254,13 @@ $(function(){
                             <div class="product__details__cart__option" id ="aad">
                                 <a href="product_size.jsp" class="btn btn-danger">
                                 <strong>구매</strong>
-                                <div id="aas"><span>가격</span></div>
+                                <div id="aas"><span style="font-size: 12px;"><strong>즉시구매가 : ${sellmin.get('min_price')}</strong></span></div>
                                 </a>
-                                <a href="product_size.jsp" class="primary-btn">판매</a>
+                                <a href="product_size.jsp" class="btn btn-success">
+                                <strong>판매</strong>
+                                <div id="aas"><span style="font-size: 12px;"><strong>즉시판매가 : ${buymin.get('min_price')}</strong></span></div>
+                                </a>
+                                
                             </div>
                             <div class="product__details__btns__option">
                                 <a href="#"><i class="fa fa-heart"></i> add to wishlist</a>
