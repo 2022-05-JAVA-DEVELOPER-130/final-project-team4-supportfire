@@ -1399,9 +1399,8 @@ $.ajax({
 		for(var i=0; i<jsonResult.sizeList.length; i++){
 			html += productSizeForm(jsonResult.sizeList[i], map[i]);
 		}
-		console.log(jsonResult.sizeList[1]);
-		console.log(jsonResult.data.queryDataList);
 		$('#productSize').html(html);
+		$('#top_text').html(msg);
 	}
 });
 
@@ -1475,7 +1474,7 @@ $.ajax({
          <div class="row">
             <div class="col-lg-12">
                <div class="breadcrumb__text">
-                  <h4>구매하기
+                  <h4 id = "top_text">구매하기
                   </h4>
                   <div class="breadcrumb__links">
                      <a href="./index.jsp">Home</a> <a href="./shop.jsp">Shop</a> <span>구매하기</span>

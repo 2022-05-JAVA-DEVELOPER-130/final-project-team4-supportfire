@@ -10,7 +10,3 @@ function productSizeForm(productSize, data) {
         </button></li>
         `;
 }
-
-function size_top(){
-	
-}
