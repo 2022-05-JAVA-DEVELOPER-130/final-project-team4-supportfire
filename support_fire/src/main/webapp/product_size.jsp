@@ -1518,10 +1518,8 @@ $.ajax({
                                  <!---->
                               </div>
                            </div>
-                           <div  class="product_detail">
+                           <div class="product_detail">
                               <p data-v-16a54f91="" class="code">315122-111/CW2288-111</p>
-                              <p data-v-16a54f91="" class="name">&nbsp;&nbsp; Nike Air Force 1 '07
-                                 Low White</p>
                               <p data-v-16a54f91="" class="translated_name">&nbsp;&nbsp; 나이키 에어포스 1
                                  '07 로우 화이트</p>
                               <!---->

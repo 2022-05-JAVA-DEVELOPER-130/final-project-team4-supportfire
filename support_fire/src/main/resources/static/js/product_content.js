@@ -10,3 +10,8 @@ function productSizeForm(productSize, data) {
         </button></li>
         `;
 }
+
+function productSizeNameForm(productSize) {
+	return ` 
+        `;
+}
