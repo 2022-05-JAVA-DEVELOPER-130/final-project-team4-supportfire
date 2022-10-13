@@ -56,7 +56,7 @@ public class ProductSizeServiceImp implements ProductSizeService{
 
 	@Override
 	public Map selectSellMinPriceByNo(int p_no) {
-		List<Map> map = productSizeDao.selectBuyMinPriceByNo(p_no);
+		List<Map> map = productSizeDao.selectSellMinPriceByNo(p_no);
 		Map sizeMap = new HashMap();
 		for (Map map2 : map) {
 			//String size = String.valueOf(map2.get("S_SIZE"));

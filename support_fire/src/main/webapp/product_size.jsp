@@ -18,7 +18,7 @@
 
 <!-- Css Styles -->
 <link
-   href="../https://fonts.googleapis.com/css?family=Karla:400,700&display=swap"
+   href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap"
    rel="stylesheet">
 <link rel="stylesheet"
    href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
@@ -33,19 +33,20 @@
 <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
 <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
 <link rel="stylesheet" href="css/test.css" type="text/css">
-<link href="./_nuxt/css/74432ba.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/db982ae.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/dd20fa4.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/ee18271.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/09348cd.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/734fa9a.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/c3bbf15.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/d62dccd.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/4e9a7cc.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/63fac4d.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/61299ed.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/efe128e.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/cdddabb.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/74432ba.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/db982ae.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/dd20fa4.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/ee18271.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/09348cd.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/734fa9a.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/c3bbf15.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/d62dccd.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/4e9a7cc.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/63fac4d.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/61299ed.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/efe128e.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/cdddabb.css" rel="stylesheet" type="text/css">
+
 
 <style type="text/css">
 .container.buy[data-v-ed431aec] {
@@ -59,91 +60,17 @@
 
 </style>
 
-</head>
-<body>
-   <!-- Page Preloder -->
-   <div id="preloder">
-      <div class="loader"></div>
-   </div>
+   
 
-   <!-- Offcanvas Menu Begin -->
+<link rel="stylesheet" href="_nuxt/css/d3988c3.css">
+<link rel="stylesheet" href="_nuxt/css/734fa9a.css">
+<link rel="stylesheet" href="_nuxt/css/ee18271.css">
+<link rel="stylesheet" href="_nuxt/css/09348cd.css">
+<link rel="stylesheet" href="_nuxt/css/d62dccd.css">
+<link rel="stylesheet" href="_nuxt/css/74432ba.css">
+<link rel="stylesheet" href="_nuxt/css/c3bbf15.css">
+<link rel="stylesheet" href="_nuxt/css/db982ae.css">
 
-   <jsp:include page="/top.jsp" />
-
-   <!-- Offcanvas Menu End -->
-
-
-   <!-- Header Section Begin -->
-   <div class="container">
-      <div class="row">
-         <div class="col-lg-3 col-md-3">
-            <div class="header__logo">
-               <a href="./index.jsp"><img src="img/logo.png" alt=""></a>
-            </div>
-         </div>
-         <div class="col-lg-6 col-md-6">
-            <nav class="header__menu mobile-menu">
-               <ul>
-                  <li><a href="./index.jsp">Home</a></li>
-                  <li class="active"><a href="./shop.jsp">Shop</a></li>
-                  <li><a href="#">Pages</a>
-                     <ul class="dropdown">
-                        <li><a href="./about.jsp">About Us</a></li>
-                        <li><a href="./shop-details.jsp">Shop Details</a></li>
-                        <li><a href="./shopping-cart.jsp">Shopping Cart</a></li>
-                        <li><a href="./checkout.jsp">Check Out</a></li>
-                        <li><a href="./blog-details.jsp">Blog Details</a></li>
-                     </ul></li>
-                  <li><a href="./blog.jsp">Blog</a></li>
-                  <li><a href="./contact.jsp">Contacts</a></li>
-               </ul>
-            </nav>
-         </div>
-         <div class="col-lg-3 col-md-3">
-            <div class="header__nav__option">
-               <a href="#" class="search-switch"><img
-                  src="img/icon/search.png" alt=""></a> <a href="#"><img
-                  src="img/icon/heart.png" alt=""></a> <a href="#"><img
-                  src="img/icon/cart.png" alt=""> <span>0</span></a>
-               <div class="price">$0.00</div>
-            </div>
-         </div>
-      </div>
-      <div class="canvas__open">
-         <i class="fa fa-bars"></i>
-      </div>
-   </div>
-   </header>
-   <!-- Header Section End -->
-
-   <!-- Breadcrumb Section Begin -->
-   <section class="breadcrumb-option">
-      <div class="container">
-         <div class="row">
-            <div class="col-lg-12">
-               <div class="breadcrumb__text">
-                  <h4>구매하기
-                  </h4>
-                  <div class="breadcrumb__links">
-                     <a href="./index.jsp">Home</a> <a href="./shop.jsp">Shop</a> <span>구매하기</span>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </section>
-   <!-- Breadcrumb Section End -->
-<html lang="ko">
-<head>
-
-<link rel="stylesheet" href="/_nuxt/css/d3988c3.css">
-<link rel="stylesheet" href="/_nuxt/css/734fa9a.css">
-<link rel="stylesheet" href="/_nuxt/css/ee18271.css">
-<link rel="stylesheet" href="/_nuxt/css/09348cd.css">
-<link rel="stylesheet" href="/_nuxt/css/d62dccd.css">
-<link rel="stylesheet" href="/_nuxt/css/74432ba.css">
-<link rel="stylesheet" href="/_nuxt/css/c3bbf15.css">
-<link rel="stylesheet" href="/_nuxt/css/db982ae.css">
 <style type="text/css"> /*# sourceMappingURL=contenteditable.vue.map */
 </style>
 <style type="text/css">
@@ -1438,14 +1365,10 @@
 <script
    src="https://www.googletagmanager.com/gtag/js?l=dataLayer&amp;id=G-SRFKTMTR0R"
    async=""></script>
-<script charset="utf-8" src="/_nuxt/0e2df8d.js"></script>
-<link rel="preload" as="style" href="/_nuxt/css/dd20fa4.css">
-<script charset="utf-8" src="/_nuxt/e93fcae.js"></script>
-<link rel="preload" as="style" href="/_nuxt/css/4e9a7cc.css">
-<link rel="preload" as="style" href="/_nuxt/css/63fac4d.css">
-<script charset="utf-8" src="/_nuxt/1bb252b.js"></script>
-<link rel="preload" as="style" href="/_nuxt/css/61299ed.css">
-<script charset="utf-8" src="/_nuxt/2a5222f.js"></script>
+<link rel="preload" as="style" href="_nuxt/css/dd20fa4.css">
+<link rel="preload" as="style" href="_nuxt/css/4e9a7cc.css">
+<link rel="preload" as="style" href="_nuxt/css/63fac4d.css">
+<link rel="preload" as="style" href="_nuxt/css/61299ed.css">
 <meta data-n-head="ssr" data-hid="description" name="description"
    content="한정판 거래의 FLEX, KICKS RULE EVERYTHING AROUND ME">
 <meta data-n-head="ssr" data-hid="og:title" name="og:title"
@@ -1456,24 +1379,113 @@
    property="og:image"
    content="https://kream.co.kr/images/index_og_kream.png">
  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+ <!-- js 등록 -->
+ <script type="text/javascript" src ="js/product_content.js"></script>
 <script type="text/javascript">
-$.(function(){
+$(function(){
 	
-
-
 $(document).on('click','#button123' ,function(e){
 	console.log(e);
+	
+});
+html="";
+$.ajax({
+	url:'product_size',
+	method:'POST',
+	dataType:'json',
+	data:"p_no=1&bt_no=1&c_no=1",
+	success:function(jsonResult){
+		var map = jsonResult.data;
+		for(var i=0; i<jsonResult.sizeList.length; i++){
+			html += productSizeForm(jsonResult.sizeList[i], map[i]);
+		}
+		console.log(jsonResult.sizeList[1]);
+		console.log(jsonResult.data.queryDataList);
+		$('#productSize').html(html);
+	}
 });
 
 });
+
+
 </script>
 </head>
 
-<script type="text/javascript" src="js/guest_html_content.js"></script>
 
 
 <body>
+<!-- Page Preloder -->
+   <div id="preloder">
+      <div class="loader"></div>
+   </div>
 
+   <!-- Offcanvas Menu Begin -->
+
+   <jsp:include page="/top.jsp" />
+
+   <!-- Offcanvas Menu End -->
+
+
+   <!-- Header Section Begin -->
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-3 col-md-3">
+            <div class="header__logo">
+               <a href="./index.jsp"><img src="img/logo.png" alt=""></a>
+            </div>
+         </div>
+         <div class="col-lg-6 col-md-6">
+            <nav class="header__menu mobile-menu">
+               <ul>
+                  <li><a href="./index.jsp">Home</a></li>
+                  <li class="active"><a href="./shop.jsp">Shop</a></li>
+                  <li><a href="#">Pages</a>
+                     <ul class="dropdown">
+                        <li><a href="./about.jsp">About Us</a></li>
+                        <li><a href="./shop-details.jsp">Shop Details</a></li>
+                        <li><a href="./shopping-cart.jsp">Shopping Cart</a></li>
+                        <li><a href="./checkout.jsp">Check Out</a></li>
+                        <li><a href="./blog-details.jsp">Blog Details</a></li>
+                     </ul></li>
+                  <li><a href="./blog.jsp">Blog</a></li>
+                  <li><a href="./contact.jsp">Contacts</a></li>
+               </ul>
+            </nav>
+         </div>
+         <div class="col-lg-3 col-md-3">
+            <div class="header__nav__option">
+               <a href="#" class="search-switch"><img
+                  src="img/icon/search.png" alt=""></a> <a href="#"><img
+                  src="img/icon/heart.png" alt=""></a> <a href="#"><img
+                  src="img/icon/cart.png" alt=""> <span>0</span></a>
+               <div class="price">$0.00</div>
+            </div>
+         </div>
+      </div>
+      <div class="canvas__open">
+         <i class="fa fa-bars"></i>
+      </div>
+   </div>
+   </header>
+   <!-- Header Section End -->
+
+   <!-- Breadcrumb Section Begin -->
+   <section class="breadcrumb-option">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb__text">
+                  <h4>구매하기
+                  </h4>
+                  <div class="breadcrumb__links">
+                     <a href="./index.jsp">Home</a> <a href="./shop.jsp">Shop</a> <span>구매하기</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- Breadcrumb Section End -->
    <div id="__nuxt">
       <!---->
       <div id="__layout">
@@ -1490,7 +1502,7 @@ $(document).on('click','#button123' ,function(e){
                         <div data-v-16a54f91="" data-v-ed431aec="" class="product_info">
                            <div data-v-16a54f91="" class="product_thumb">
                               <div data-v-edf7886c="" data-v-16a54f91="" class="product"
-                                 style="background-color: rgb(235, 240, 245);">
+                                 style="background-color: rgb(235, 240, 245); padding-bottom: 20px;">
                                  <picture data-v-6c8b3524="" data-v-edf7886c=""
                                     class="picture product_img">
                                  <source data-v-6c8b3524="" type="image/webp"
@@ -1523,9 +1535,9 @@ $(document).on('click','#button123' ,function(e){
                               class="select_area md">
                               <!---->
                               <!-- 상품사이즈 -->
-                              <ul data-v-7ade2d82="" class="select_list">
+                              <ul data-v-7ade2d82="" class="select_list" id="productSize">
                                  <li data-v-7ade2d82="" class="select_item">
-                                 <button id="button123" data-v-7ade2d82="" role="button" aria-selected="false" class="select_link buy bid">
+                                 <button id="cassd" data-v-7ade2d82="" role="button" aria-selected="false" class="select_link buy bid">
                                        <div data-v-7ade2d82="" class="link_inner">
                                           <span data-v-7ade2d82="" class="size">
                                              <!----> 235
@@ -1533,46 +1545,6 @@ $(document).on('click','#button123' ,function(e){
                                        </div>
                                     </button></li>
                               <!-- 상품사이즈 -->
-                                    
-                                 <li data-v-7ade2d82="" class="select_item"><button
-                                       data-v-7ade2d82="" role="button" aria-selected="false"
-                                       class="select_link buy">
-                                       <div data-v-7ade2d82="" class="link_inner">
-                                          <span data-v-7ade2d82="" class="size"><svg
-                                                data-v-7ade2d82="" xmlns="http://www.w3.org/2000/svg"
-                                                class="ico-express icon sprite-icons">
-                                                <use data-v-7ade2d82=""
-                                                   href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
-                                                   xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             240 </span><span data-v-7ade2d82="" class="price" id="price">174000</span>
-                                       </div>
-                                    </button></li>
-                                 <li data-v-7ade2d82="" class="select_item"><button
-                                       data-v-7ade2d82="" role="button" aria-selected="false"
-                                       class="select_link buy">
-                                       <div data-v-7ade2d82="" class="link_inner">
-                                          <span data-v-7ade2d82="" class="size"><svg
-                                                data-v-7ade2d82="" xmlns="http://www.w3.org/2000/svg"
-                                                class="ico-express icon sprite-icons">
-                                                <use data-v-7ade2d82=""
-                                                   href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
-                                                   xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             245 </span><span data-v-7ade2d82="" class="price" id="price" >165000</span>
-                                       </div>
-                                    </button></li>
-                                 <li data-v-7ade2d82="" class="select_item"><button
-                                       data-v-7ade2d82="" role="button" aria-selected="false"
-                                       class="select_link buy">
-                                       <div data-v-7ade2d82="" class="link_inner">
-                                          <span data-v-7ade2d82="" class="size"><svg
-                                                data-v-7ade2d82="" xmlns="http://www.w3.org/2000/svg"
-                                                class="ico-express icon sprite-icons">
-                                                <use data-v-7ade2d82=""
-                                                   href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
-                                                   xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             250 </span><span data-v-7ade2d82="" class="price" id="price">136000</span>
-                                       </div>
-                                    </button></li>
                                  <li data-v-7ade2d82="" class="select_item"><button id="cassd"
                                        data-v-7ade2d82="" role="button" aria-selected="false"
                                        class="select_link buy">
@@ -1581,170 +1553,9 @@ $(document).on('click','#button123' ,function(e){
                                                 data-v-7ade2d82="" xmlns="http://www.w3.org/2000/svg"
                                                 class="ico-express icon sprite-icons">
                                                 <use data-v-7ade2d82=""
-                                                   href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
-                                                   xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
+                                                   href="_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
+                                                   xlink:href="_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
                                              255 </span><span data-v-7ade2d82="" class="price" >138000</span>
-                                       </div>
-                                    </button></li>
-                                 <li data-v-7ade2d82="" class="select_item"><button
-                                       data-v-7ade2d82="" role="button" aria-selected="false"
-                                       class="select_link buy">
-                                       <div data-v-7ade2d82="" class="link_inner">
-                                          <span data-v-7ade2d82="" class="size"><svg
-                                                data-v-7ade2d82="" xmlns="http://www.w3.org/2000/svg"
-                                                class="ico-express icon sprite-icons">
-                                                <use data-v-7ade2d82=""
-                                                   href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
-                                                   xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             260 </span><span data-v-7ade2d82="" class="price"  >138000</span>
-                                       </div>
-                                    </button></li>
-                                 <li data-v-7ade2d82="" class="select_item"><button
-                                       data-v-7ade2d82="" role="button" aria-selected="false"
-                                       class="select_link buy">
-                                       <div data-v-7ade2d82="" class="link_inner">
-                                          <span data-v-7ade2d82="" class="size"><svg
-                                                data-v-7ade2d82="" xmlns="http://www.w3.org/2000/svg"
-                                                class="ico-express icon sprite-icons">
-                                                <use data-v-7ade2d82=""
-                                                   href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
-                                                   xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             265 </span><span data-v-7ade2d82="" class="price" >136000</span>
-                                       </div>
-                                    </button></li>
-                                 <li data-v-7ade2d82="" class="select_item"><button
-                                       data-v-7ade2d82="" role="button" aria-selected="false"
-                                       class="select_link buy">
-                                       <div data-v-7ade2d82="" class="link_inner">
-                                          <span data-v-7ade2d82="" class="size"><svg
-                                                data-v-7ade2d82="" xmlns="http://www.w3.org/2000/svg"
-                                                class="ico-express icon sprite-icons">
-                                                <use data-v-7ade2d82=""
-                                                   href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
-                                                   xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             270 </span><span data-v-7ade2d82="" class="price" >137000</span>
-                                       </div>
-                                    </button></li>
-                                 <li data-v-7ade2d82="" class="select_item"><button
-                                       data-v-7ade2d82="" role="button" aria-selected="false"
-                                       class="select_link buy">
-                                       <div data-v-7ade2d82="" class="link_inner">
-                                          <span data-v-7ade2d82="" class="size"><svg
-                                                data-v-7ade2d82="" xmlns="http://www.w3.org/2000/svg"
-                                                class="ico-express icon sprite-icons">
-                                                <use data-v-7ade2d82=""
-                                                   href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
-                                                   xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             275 </span><span data-v-7ade2d82="" class="price" >135000</span>
-                                       </div>
-                                    </button></li>
-                                 <li data-v-7ade2d82="" class="select_item"><button
-                                       data-v-7ade2d82="" role="button" aria-selected="false"
-                                       class="select_link buy">
-                                       <div data-v-7ade2d82="" class="link_inner">
-                                          <span data-v-7ade2d82="" class="size"><svg
-                                                data-v-7ade2d82="" xmlns="http://www.w3.org/2000/svg"
-                                                class="ico-express icon sprite-icons">
-                                                <use data-v-7ade2d82=""
-                                                   href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
-                                                   xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             280 </span><span data-v-7ade2d82="" class="price" >138000</span>
-                                       </div>
-                                    </button></li>
-                                 <li data-v-7ade2d82="" class="select_item"><button
-                                       data-v-7ade2d82="" role="button" aria-selected="false"
-                                       class="select_link buy">
-                                       <div data-v-7ade2d82="" class="link_inner">
-                                          <span data-v-7ade2d82="" class="size"><svg
-                                                data-v-7ade2d82="" xmlns="http://www.w3.org/2000/svg"
-                                                class="ico-express icon sprite-icons">
-                                                <use data-v-7ade2d82=""
-                                                   href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
-                                                   xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             285 </span><span data-v-7ade2d82="" class="price" >137000</span>
-                                       </div>
-                                    </button></li>
-                                 <li data-v-7ade2d82="" class="select_item"><button
-                                       data-v-7ade2d82="" role="button" aria-selected="false"
-                                       class="select_link buy">
-                                       <div data-v-7ade2d82="" class="link_inner">
-                                          <span data-v-7ade2d82="" class="size"><svg
-                                                data-v-7ade2d82="" xmlns="http://www.w3.org/2000/svg"
-                                                class="ico-express icon sprite-icons">
-                                                <use data-v-7ade2d82=""
-                                                   href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
-                                                   xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             290 </span><span data-v-7ade2d82="" class="price" >136000</span>
-                                       </div>
-                                    </button></li>
-                                 <li data-v-7ade2d82="" class="select_item"><button
-                                       data-v-7ade2d82="" role="button" aria-selected="false"
-                                       class="select_link buy">
-                                       <div data-v-7ade2d82="" class="link_inner">
-                                          <span data-v-7ade2d82="" class="size"><svg
-                                                data-v-7ade2d82="" xmlns="http://www.w3.org/2000/svg"
-                                                class="ico-express icon sprite-icons">
-                                                <use data-v-7ade2d82=""
-                                                   href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
-                                                   xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             295 </span><span data-v-7ade2d82="" class="price" >137000</span>
-                                       </div>
-                                    </button></li>
-                                 <li data-v-7ade2d82="" class="select_item"><button
-                                       data-v-7ade2d82="" role="button" aria-selected="false"
-                                       class="select_link buy">
-                                       <div data-v-7ade2d82="" class="link_inner">
-                                          <span data-v-7ade2d82="" class="size"><svg
-                                                data-v-7ade2d82="" xmlns="http://www.w3.org/2000/svg"
-                                                class="ico-express icon sprite-icons">
-                                                <use data-v-7ade2d82=""
-                                                   href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
-                                                   xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             300 </span><span data-v-7ade2d82="" class="price" >131000</span>
-                                       </div>
-                                    </button></li>
-                                 <li data-v-7ade2d82="" class="select_item"><button
-                                       data-v-7ade2d82="" role="button" aria-selected="false"
-                                       class="select_link buy">
-                                       <div data-v-7ade2d82="" class="link_inner">
-                                          <span data-v-7ade2d82="" class="size"><svg
-                                                data-v-7ade2d82="" xmlns="http://www.w3.org/2000/svg"
-                                                class="ico-express icon sprite-icons">
-                                                <use data-v-7ade2d82=""
-                                                   href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
-                                                   xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             305 </span><span data-v-7ade2d82="" class="price" >145000</span>
-                                       </div>
-                                    </button></li>
-                                 <li data-v-7ade2d82="" class="select_item"><button
-                                       data-v-7ade2d82="" role="button" aria-selected="false"
-                                       class="select_link buy">
-                                       <div data-v-7ade2d82="" class="link_inner">
-                                          <span data-v-7ade2d82="" class="size"><svg
-                                                data-v-7ade2d82="" xmlns="http://www.w3.org/2000/svg"
-                                                class="ico-express icon sprite-icons">
-                                                <use data-v-7ade2d82=""
-                                                   href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"
-                                                   xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-express"></use></svg>
-                                             310 </span><span data-v-7ade2d82="" class="price" >140000</span>
-                                       </div>
-                                    </button></li>
-                                 <li data-v-7ade2d82="" class="select_item"><button
-                                       data-v-7ade2d82="" role="button" aria-selected="false"
-                                       class="select_link buy bid">
-                                       <div data-v-7ade2d82="" class="link_inner">
-                                          <span data-v-7ade2d82="" class="size">
-                                             <!----> 320
-                                          </span><span data-v-7ade2d82="" class="price" >구매입찰</span>
-                                       </div>
-                                    </button></li>
-                                 <li data-v-7ade2d82="" class="select_item"><button
-                                       data-v-7ade2d82="" role="button" aria-selected="false"
-                                       class="select_link buy bid">
-                                       <div data-v-7ade2d82="" class="link_inner">
-                                          <span data-v-7ade2d82="" class="size">
-                                             <!----> 330
-                                          </span><span data-v-7ade2d82="" class="price" >구매입찰</span>
                                        </div>
                                     </button></li>
                               </ul>
@@ -1775,8 +1586,8 @@ $(document).on('click','#button123' ,function(e){
                      <svg data-v-66ae1b7c="" xmlns="http://www.w3.org/2000/svg"
                         class="icon sprite-icons toast-icon toast-success">
                         <use data-v-66ae1b7c=""
-                           href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-toast-success"
-                           xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-toast-success"></use></svg>
+                           href="_nuxt/777fad20721a1250a960608094a991d9.svg#i-toast-success"
+                           xlink:href="_nuxt/777fad20721a1250a960608094a991d9.svg#i-toast-success"></use></svg>
                      <div data-v-66ae1b7c="" class="toast-content">
                         <p data-v-66ae1b7c="">내용</p>
                      </div>
@@ -1788,18 +1599,7 @@ $(document).on('click','#button123' ,function(e){
    </div>
    
 
-   <script src="/_nuxt/fef4d9c.js" defer=""></script>
-   <script src="/_nuxt/556c755.js" defer=""></script>
-   <script src="/_nuxt/81d286e.js" defer=""></script>
-   <script src="/_nuxt/6a3e066.js" defer=""></script>
-   <script src="/_nuxt/7e0f7fa.js" defer=""></script>
-   <script src="/_nuxt/270a4cb.js" defer=""></script>
-   <script src="/_nuxt/10c7052.js" defer=""></script>
-   <script src="/_nuxt/85b8288.js" defer=""></script>
-   <script src="/_nuxt/2578e8a.js" defer=""></script>
-   <script src="/_nuxt/788dfab.js" defer=""></script>
-   <script src="/_nuxt/d071840.js" defer=""></script>
-   <script src="/_nuxt/75ca0dd.js" defer=""></script>
+
 
 
    
