@@ -37,7 +37,7 @@ function modify_form(member){
                         <form action="#" id="modi_form">
                             <div class="row">
                                 <div>
-		                            <span>아이디</span><input type="text" name="m_id" id="m_id" placeholder="ID" value="${member.m_id}"><font id="msg_id" color="red"></font>
+		                            <span>아이디</span><input type="text" name="m_id" id="m_id" placeholder="ID" value="${member.m_id}" readonly><font id="msg_id" color="red"></font>
                                     <span>비밀번호</span><input type="password" name="m_password" id="m_password" placeholder="password" value="${member.m_password}">
                                     <span>비밀번호 확인</span><input type="password" name="m_password_acc" placeholder="password" value="${member.m_password}">
                                     <span>이름</span><input type="text" name="m_name" id="m_name" placeholder="ex) 홍길동" value="${member.m_name}">

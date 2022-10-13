@@ -186,8 +186,9 @@ $(function(){
 	
 	
 	
-	
-	
+     $(document).on('click','#login_a' ,function(e){
+			$('#content').html(login_form());
+     });
 	
 	
 	//로그인 화면
@@ -195,13 +196,11 @@ $(function(){
 	
 	//로그인 버튼 클릭
 	$(document).on('click','#login_btn' ,function(e){
-		console.log($('#login_form').serialize());
 		$.ajax({
 		    url:'member_login_action',
 		    method:'POST',
 		    data:$('#login_form').serialize(),
 		    success:function(jsonResult){
-		    	console.log(jsonResult.data);
 				var data = jsonResult.data;
 				if(data==0){
 				$('#msg_id').html(jsonResult.msg);
@@ -226,8 +225,6 @@ $(function(){
 	//아이디 찾기, 휴대폰 번호 맞을시 버튼 on
 	$(document).on('keyup', '#phone_search_id', function() {
 		   var phone = $('#phone_search_id').val();
-			console.log(phone);
-			console.log(phone.length);
 			if(phone.length > 9 && phone.length < 12){
 				$('#id_search_form').html(id_search_btn());
 			}else{
@@ -236,7 +233,7 @@ $(function(){
 	});
 	
 	//비밀번호 찾기
-	$(document).on('click','#pass_search' ,function(e){
+	$(document).on('click','#pass_search, #pass_search_a' ,function(e){
 		$('#content').html(pass_search());
 		e.preventDefault();
     });
@@ -245,8 +242,6 @@ $(function(){
 	$(document).on('keyup', '#phone_search_pass, #m_id1', function() {
 		   var phone = $('#phone_search_pass').val();
 		   var id = $('#m_id1').val();
-			console.log(phone);
-			console.log(phone.length);
 			if((phone.length > 9 && phone.length < 12) && (id.length > 4 && id.length < 13)){
 				$('#pass_search_form').html(pass_search_btn());
 			}else{
@@ -254,15 +249,14 @@ $(function(){
 			}
 	});
 	
+	//아이디찾기 버튼클릭시
 	$(document).on('click', '#id_search_btn', function(){
-		console.log("m_phone=" + $('#phone_search_id').val());
 		$.ajax({
 		    url:'id_search_action',
 		    method:'GET',
 		    data:"m_phone=" + $('#phone_search_id').val(),
 		    success:function(jsonResult){
 		    	var id = jsonResult.data;
-		    	console.log(id);
 		    	if(jsonResult.code == 1){
 		    	$('#content').html(id_search_com(id));
 		   	 	}else if(jsonResult.code == 0){
@@ -272,6 +266,25 @@ $(function(){
 		});
 	});
 	
+	//비밀번호찾기 버튼클릭시
+	$(document).on('click', '#pass_search_btn', function(){
+		$.ajax({
+		    url:'pass_search_action',
+		    method:'POST',
+		    data:"m_phone=" + $('#phone_search_pass').val() + "&m_id=" + $('#m_id1').val(),
+		    
+		    success:function(jsonResult){
+		    	var pass = jsonResult.data;
+		    	if(jsonResult.code == 1){
+		    	$('#content').html(pass_search_com(pass));
+		   	 	}else if(jsonResult.code == 0){
+		   	 		$('#msg_pass').html(jsonResult.msg);
+		   	 	}
+		    }
+		});
+	});
+	
+	//회원가입폼
 	$(document).on('click', '#join_form', function(e){
 		$('#content').html(join_form());
 		validator = $('#join_form1').validate({
@@ -296,6 +309,7 @@ $(function(){
 		
 	});
 	
+	//회원가입 버튼클릭시
 	$(document).on('click', '#write_action_btn', function(e){
 		console.log($('#join_form1').serialize());
 		if(validator.form()){

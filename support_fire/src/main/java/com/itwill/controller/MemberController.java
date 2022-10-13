@@ -140,19 +140,25 @@ public class MemberController {
 	    return resultMap;
 	}
 	
+	//정보수정 액션
 	@RequestMapping("modify_action")
 	public Map member_modify_action(@ModelAttribute Member member) throws Exception{
 		Map resultMap = new HashMap();
 		int code=0;
 		String url="";
 		String msg="";
+		Member data = null;
 		int updateMemberRowCount = memberService.updateMember(member);
-		
+		if(updateMemberRowCount == 1) {
+			data = member;
+		}else {
+			msg="정보수정이 실패했습니다.";
+		}
 		
 		resultMap.put("code",code);
 	    resultMap.put("url",url);
 	    resultMap.put("msg",msg);
-	    resultMap.put("data",member);
+	    resultMap.put("data",data);
 	    
 	    return resultMap;
 	}
@@ -191,7 +197,7 @@ public class MemberController {
 	}
 	
 	
-	
+	//아이디찾기 액션
 	@RequestMapping(value = "id_search_action")
 	public Map id_search(String m_phone) throws Exception{
 		Map resultMap = new HashMap();
@@ -199,10 +205,9 @@ public class MemberController {
 		String url="";
 		String msg="";
 		String data = memberService.selectMemberByPhone(m_phone);
-		System.out.println(data);
 		if(data == null) {
 			code = 0;
-			msg = "일치하는 아이디가 없습니다";
+			msg = "가입된 아이디가 없습니다";
 			data = "아이디찾기 실패";
 		}
 		
@@ -213,6 +218,55 @@ public class MemberController {
 		return resultMap;
 	}
 	
+	//비밀번호찾기 액션
+	@RequestMapping("pass_search_action")
+	public Map pass_search(String m_phone, String m_id) throws Exception{
+		Map resultMap = new HashMap();
+		int code=0;
+		String url="";
+		String msg="";
+		System.out.println(m_phone);
+		System.out.println(m_id);
+		String data = memberService.selectMemberByPhone(m_phone);
+		Member member = memberService.selectById(m_id);
+		if(data == null) {
+			code = 0;
+			msg = "가입된 아이디가 없습니다.";
+			data = "비밀번호 찾기 실패";
+			
+			resultMap.put("code",code);
+			resultMap.put("url",url);
+			resultMap.put("msg",msg);
+			resultMap.put("data",data);
+			return resultMap;
+		}
+		
+		if(member == null) {
+			code = 0;
+			msg = "일치하는 아이디가 없습니다";
+			data = "비밀번호 찾기 실패";
+			
+			resultMap.put("code",code);
+			resultMap.put("url",url);
+			resultMap.put("msg",msg);
+			resultMap.put("data",data);
+			return resultMap;
+		}
+		
+		if(data != null && member != null){
+			
+			if(member.getM_phone().equals(m_phone)) {
+				data = member.getM_password();
+				code = 1;
+			}
+		}
+		
+		resultMap.put("code",code);
+		resultMap.put("url",url);
+		resultMap.put("msg",msg);
+		resultMap.put("data",data);
+		return resultMap;
+	}
 	
 	
 	
