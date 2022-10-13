@@ -79,7 +79,7 @@ public class OrdersServiceImp implements OrdersService{
 		 	
 		/*
 		
-		 	//즉시구매 
+		 	//즉시구매 >> 컨트롤러에서 구매자 인서트
 			if(orders.getPd_no_sell()!=0 && orders.getPd_no_purchase()==0) {
 				
 				Orders purchaseOrder= new Orders(0, null,0,orders.getPd_no_sell(), "배송준비중");
@@ -94,7 +94,7 @@ public class OrdersServiceImp implements OrdersService{
 				return ordersDao.insertOrder(sellOrder);
 			}
 		*/
-			return 0;
+			return ordersDao.insertOrder(orders);
 
 		
 	//만약에 상품디테일에 없는번호를 넣으려고 하면 입찰하겠냐는 메세지 띄우기..아무리 해봐도 안되네..
@@ -106,6 +106,12 @@ public class OrdersServiceImp implements OrdersService{
 	 * 즉시구매: 상품디테일 페이지에서 입찰종류가 판매로 되어있고,입찰가능 상태일때, orders테이블에 insert
 	 * 즉시판매: 상품디테일 페이지에서 입찰종류가 구매로 되어있고, 입찰가능 상태일때, orders insert
 	 */
+
+	@Override
+	public int insertSequence(Orders orders) throws Exception {
+		// TODO Auto-generated method stub
+		return ordersDao.insertSequence(orders);
+	}
 
 	
 	

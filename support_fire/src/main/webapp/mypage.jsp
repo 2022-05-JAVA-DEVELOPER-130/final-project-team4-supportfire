@@ -72,6 +72,12 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+  
+}
+
+.error{
+	color: red;
+
 }
 </style>    
     
@@ -193,46 +199,55 @@ $.ajax({
 		    success:function(jsonResult){
 		    	$('#fff').html(modify_form(jsonResult.data));
 		    	console.log(jsonResult);
+		    	/**********************/
+		    	validator = $('#modi_form').validate({
+			 		rules:{
+			 			m_id:{
+			 				required:true,
+			 				minlength:6,
+			 				maxlength:12
+			 			}
+			 		},
+			 		messages:{
+			 			m_id:{
+			 				required:'아이디를 입력하세요',
+			 				minlength:'아이디는 {0}글자 이상 입니다.',
+			 				maxlength:'아이디는 {0}글자 이하 입니다.'
+			 			}
+			 		},
+			 		errorClass:'error',
+			 		validclass:'valid',
+			 		submitHandler: function(form) {
+			 		  
+			 			
+				 		 $.ajax({
+				 		    url:'modify_action',
+				 		    method:'POST',
+				 		    data:$('#modi_form').serialize(),
+				 		    success:function(jsonResult){
+				 		    	if(jsonResult.code == 1){
+				 		    	alert('정보수정이 완료되었습니다.');
+				 		    	location.href="mypage";
+				 		    	}else if(jsonResult.code == 0){
+				 		    	alert('정보수정이 실패되었습니다.');
+				 		    	}
+				 		    }
+				 		});
+			 			
+			 		 }
+			 		
+			 	});
+		    	/**********************/
 		    }
 		});
 		
-		validator = $('#modi_form').validate({
-	 		rules:{
-	 			m_id:{
-	 				required:true,
-	 				minlength:6,
-	 				maxlength:12
-	 			}
-	 		},
-	 		messages:{
-	 			m_id:{
-	 				required:'아이디를 입력하세요',
-	 				minlength:'아이디는 {0}글자 이상 입니다.',
-	 				maxlength:'아이디는 {0}글자 이하 입니다.'
-	 			}
-	 		},
-	 		errorClass:'error',
-	 		validclass:'valid'
-	 	});
 		
-		e.preventDefault();
+		
+		//e.preventDefault();
 	});	
 	
 
-	$(document).on('click','#modify_btn' ,function(e){
-		
-		$.ajax({
-		    url:'modify_action',
-		    method:'POST',
-		    data:$('#modi_form').serialize(),
-		    success:function(jsonResult){
-		    	alert('정보수정이 완료되었습니다.');
-		    	$('#mypage_form').html(mypage_form(jsonResult.data[0]));
-		    }
-		});
-		
-	});
-
+	
 	
 
 

@@ -96,7 +96,7 @@ function login_form(){
 									</div>
 								</div>
 								<div class="help_btn_box" id="id_search_form">
-									<a disabled="disabled" href="#" class="btn full solid disabled"
+									<a disabled="disabled" href="" class="btn full solid disabled"
 										data-v-3d1bcc82 data-v-3d1bcc82 id="id_search_btn"> 아이디 찾기 </a>
 								</div>
 							</div>
@@ -107,14 +107,14 @@ function login_form(){
 	
 	function id_search_btn(){
 		return `
-		<a disabled="disabled" href="#" class="btn full solid"
+		<a disabled="disabled" href="" class="btn full solid"
 		data-v-3d1bcc82 data-v-3d1bcc82 id="id_search_btn" id="id_search_btn"> 아이디 찾기 </a>
 		`;
 	}
 	
 	function id_search_btn1(){
 		return `
-		<a disabled="disabled" href="#" class="btn full solid disabled"
+		<a disabled="disabled" href="" class="btn full solid disabled"
 		data-v-3d1bcc82 data-v-3d1bcc82 id="id_search_btn"> 아이디 찾기 </a>
 		`;
 	}
@@ -128,8 +128,8 @@ function login_form(){
                     <div class="breadcrumb__text">
                         <h4>로그인</h4>
                         <div class="breadcrumb__links">
-                            <a href="./login_form.jsp">로그인</a>
-                            <span>비밀번호찾기</span>
+                            <a href="login_from">로그인</a>
+                            <span>비밀번호 찾기</span>
                         </div>
                     </div>
                 </div>
@@ -162,10 +162,11 @@ function login_form(){
 											autocomplete="off" value="" class="input_txt" data-v-6c561060 id="m_id1">
 									</div>
 									<p class="input_error" data-v-6c561060>아이디를 정확히 입력해주세요.</p>
+									<font id="msg_pass" color="red"></font>
 								</div>
 								<div class="help_btn_box" id="pass_search_form">
-									<a disabled="disabled" href="#" class="btn full solid disabled"
-										data-v-3d1bcc82 data-v-3d1bcc82> 문자 발송하기 </a>
+									<a disabled="disabled" href="" class="btn full solid disabled"
+										data-v-3d1bcc82 data-v-3d1bcc82> 완료 </a>
 								</div>
 							</div>
 						</div>
@@ -175,15 +176,15 @@ function login_form(){
 	
 	function pass_search_btn(){
 		return `
-		<a disabled="disabled" href="#" class="btn full solid"
-				data-v-3d1bcc82 data-v-3d1bcc82 id="pass_search_btn"> 문자 발송하기 </a>
+		<a disabled="disabled" href="" class="btn full solid"
+				data-v-3d1bcc82 data-v-3d1bcc82 id="pass_search_btn"> 완료 </a>
 		`;
 	}
 	
 	function pass_search_btn1(){
 		return `
-		<a disabled="disabled" href="#" class="btn full solid disabled"
-				data-v-3d1bcc82 data-v-3d1bcc82> 문자 발송하기 </a>
+		<a disabled="disabled" href="" class="btn full solid disabled"
+				data-v-3d1bcc82 data-v-3d1bcc82> 완료 </a>
 		`;
 	}
 	
@@ -226,9 +227,60 @@ function login_form(){
 					</div>
 					<div class="success_btn_box">
 						<a data-v-3d1bcc82="" href="/login/find_password"
-							class="btn outline large" type="button"> 비밀번호 찾기 </a><a
-							data-v-3d1bcc82="" href="/login"
+							class="btn outline large" type="button" id="pass_search_a"> 비밀번호 찾기 </a><a
+							data-v-3d1bcc82="" href="" id="login_a"
 							class="btn nuxt-link-active solid large" type="button"> 로그인 </a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		`;
+		
+		
+	}
+	
+	
+	function pass_search_com(pass){
+		return `
+		<section class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__text">
+                        <h4>로그인</h4>
+                        <div class="breadcrumb__links">
+                            <a href="login_form">로그인</a>
+                            <span>비밀번호 찾기</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+	<div data-v-3007c576="" class="container help" style="
+												    margin-left: 750px;
+												    padding-right: 600px;
+												    margin-top: 50px;
+												    margin-bottom: 50px;
+												">
+		<div class="content mo">
+			<div class="help_area">
+				<!---->
+				<div>
+					<h2 class="help_title success">
+						<div>비밀번호 찾기에</div> <div>성공하였습니다.</div>
+					</h2>
+					<div class="success_notice">
+						<dl>
+							<dt class="notice_title">비밀번호</dt>
+							<dd class="notice_txt">${pass}</dd>
+						</dl>
+					</div>
+					<div class="success_btn_box">
+						<a data-v-3d1bcc82="" href=""
+							class="btn nuxt-link-active solid large" type="button" id="login_a"> 로그인 </a>
 					</div>
 				</div>
 			</div>

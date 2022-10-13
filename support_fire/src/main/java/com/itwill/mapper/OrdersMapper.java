@@ -7,9 +7,11 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.SelectKey;
 import org.apache.ibatis.annotations.Update;
 
 import com.itwill.dto.Orders;
+import com.itwill.dto.ProductDetail;
 
 @Mapper
 public interface OrdersMapper {
@@ -42,7 +44,13 @@ public interface OrdersMapper {
 	public int updateByNo(Orders orders);
 	
 	//주문한개생성
-	@Insert("insert into orders (o_no, o_date, pd_no_purchase,pd_no_sell,o_status) values (orders_o_no_seq.nextval,todate(sysdate), #{pd_no_purchase}, #{pd_no_sell}, #{o_status})")
+	@Insert("insert into orders (o_no, o_date, pd_no_purchase,pd_no_sell,o_status) values (orders_o_no_seq.nextval,sysdate, #{pd_no_purchase}, #{pd_no_sell}, #{o_status})")
 	public int insertOrder(Orders orders);
 	
+	@Insert("insert into orders values(#{o_no}, sysdate, #{pd_no_purchase}, #{pd_no_sell}, #{o_status})")
+	@SelectKey(statement = "select ORDERS_O_NO_SEQ.nextval from dual",
+			   keyProperty = "o_no",
+			   before = true,
+			   resultType = int.class)
+	int insertSequence(Orders orders);
 }

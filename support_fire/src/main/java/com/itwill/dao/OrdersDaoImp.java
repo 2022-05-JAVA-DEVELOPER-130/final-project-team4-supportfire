@@ -59,4 +59,11 @@ public class OrdersDaoImp implements OrdersDao {
 		return ordersMapper.insertOrder(orders);
 	}
 
+
+	@Override
+	public int insertSequence(Orders orders) throws Exception {
+		ordersMapper.insertSequence(orders);
+		return orders.getO_no();
+	}
+
 }
