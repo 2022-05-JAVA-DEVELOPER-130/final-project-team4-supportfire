@@ -254,11 +254,11 @@ $(function(){
                             <div class="product__details__cart__option" id ="aad">
                                 <a href="product_size.jsp" class="btn btn-danger">
                                 <strong>구매</strong>
-                                <div id="aas"><span style="font-size: 12px;"><strong>즉시구매가 : ${sellmin.get('min_price')}</strong></span></div>
+                                <div id="aas"><span style="font-size: 12px;"><strong>${sellmin.get('min_price')}</strong></span></div>
                                 </a>
                                 <a href="product_size.jsp" class="btn btn-success">
                                 <strong>판매</strong>
-                                <div id="aas"><span style="font-size: 12px;"><strong>즉시판매가 : ${buymin.get('min_price')}</strong></span></div>
+                                <div id="aas"><span style="font-size: 12px;"><strong>${buymin.get('min_price')}</strong></span></div>
                                 </a>
                                 
                             </div>
