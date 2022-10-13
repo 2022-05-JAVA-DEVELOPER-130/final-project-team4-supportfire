@@ -1,9 +1,6 @@
-
-
-
-
 function mypage_form(member){
 	return `
+	
                                     <ul>
 			                            <li>
 			                                <h4></h4>
@@ -48,7 +45,7 @@ function modify_form(member){
                                     <span>핸드폰 번호</span><input type="number" name="m_phone" id="m_phone" placeholder="ex) 01012345678" value="${member.m_phone}">
                                     <span>생년월일</span><input type="number" name="m_birth" id="m_birth" placeholder="ex) 970902" value="${member.m_birth}">
                                     <span>이메일</span><input type="text" name="m_email" id="m_email" placeholder="Email" value="${member.m_email}">
-                                    <span>주소</span><input type="text" onclick="showDelivery()" name="m_address" id="m_address" placeholder="address" value="${member.m_address}">
+                                    <span>주소</span><input type="text" name="m_address" id="m_address" placeholder="address" value="${member.m_address}">
                                     <input type="hidden" id="m_gender" name="m_gender" value="${member.m_gender}">
 									<div></div>
                                 </div>
