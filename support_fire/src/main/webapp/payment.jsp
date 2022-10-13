@@ -48,9 +48,9 @@
 <script type="text/javascript" src="js/guest_html_content.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
-<script>
-    
-</script>
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+
+
 
 
 
@@ -352,8 +352,8 @@ s
 														<p data-v-35b707e2="" class="main_title">카카오페이</p>
 														<!---->
 													</div>
-													<img data-v-35b707e2=""
-														src=".png" alt="카카오페이"
+													<img 
+														src="payment_icon_yellow_small.png" alt="카카오페이"
 														class="pay_img">
 												</div>
 											</div>
