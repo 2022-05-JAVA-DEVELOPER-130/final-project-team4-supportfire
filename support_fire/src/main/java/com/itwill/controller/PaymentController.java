@@ -7,6 +7,8 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -58,12 +60,61 @@ public class PaymentController {
 	    return resultMap;
 	}
 	
+	@PostMapping(value = "/guest_modify_form",
+			produces = "application/json;charset=UTF-8")
+	public Map payment_modify_form_json(@RequestParam int pm_no) {
+		Map resultMap=new HashMap();
+		int code=2;
+		String url="";
+		String msg="";
+		List<Payment> resultList=new ArrayList<Payment>();
+		try {
+			code=1;
+			url="";
+			msg="";
+			Payment payment=paymentService.selectByPMNo(pm_no);
+			resultList.add(payment);
+		} catch (Exception e) {
+			code=2;
+			url="";
+			msg="수정폼실패";
+			e.printStackTrace();
+		}
+		resultMap.put("code", code);
+		resultMap.put("url", url);
+		resultMap.put("msg", msg);
+		resultMap.put("data",resultList);
+		
+		return resultMap;
+	}
+	
+	
 	//결제번호로 배송지 업데이트
-	@RequestMapping(value="payment_update_by_no")
-	public int update_by_no(int pm_no) throws Exception{
-		int updateRowCount=paymentService.updateByNo(new Payment(pm_no," "," "," "," ",0,0));
-		return updateRowCount;
-				
+	@PostMapping(value = "/payment_modify_action",
+			produces = "application/json;charset=UTF-8")
+	public Map guest_modify_action_json(@ModelAttribute Payment payment) {
+		Map resultMap=new HashMap();
+		int code=2;
+		String url="";
+		String msg="";
+		List<Payment> resultList=new ArrayList<Payment>();
+		try {
+			code=1;
+			url="";
+			msg="";
+			int row_count=paymentService.updateByNo(payment);
+		} catch (Exception e) {
+			code=2;
+			url="";
+			msg="수정실패";
+			e.printStackTrace();
+		}
+		resultMap.put("code", code);
+		resultMap.put("url", url);
+		resultMap.put("msg", msg);
+		resultMap.put("data",resultList);
+		
+		return resultMap;
 	}
 	
 	//결제번호로결제내역삭제

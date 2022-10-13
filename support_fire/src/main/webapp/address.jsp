@@ -83,18 +83,35 @@ function showDelivery() {
 	    }).open();
  
 }
+/*********guest_modify_form***********/
+
 //버튼클릭시db update 및 저장
-function insertAddress(){
-	$ajax({
-		url:'update',
-		method:'POST',
-		dataType:'json',
-		success:function(jsonResult){
-		    console.log(jsonResult)
-		}
-	})
-	location.href="payment.jsp";
-}
+  $(document).on('click','#btn_modify_action',function(e){
+		    var param=$('#guest_modify_form').serialize();
+			$.ajax({
+			    url:'guest_modify_action_json',
+			    method:'POST',
+			    data:param,
+			    dataType:'json',
+			    success:function(jsonResult){
+					if(jsonResult.code==1){
+					    var param='guest_no='+$("#guest_modify_form input[name='guest_no']").val();
+					    console.log(param);
+						$.ajax({
+						    url:'guest_detail_json',
+						    method:'GET',
+						    dataType:'json',
+						   	data:param,
+						    success:function(jsonResult){
+								$('#content').html(guest_view_content(jsonResult.data[0]));
+						    }
+						});
+					}else if(jsonResult.code==2){
+					    alert(jsonResult.msg);
+					}
+			    }
+			});
+	});
 </script>
 
 
@@ -175,10 +192,11 @@ function insertAddress(){
     <!-- Breadcrumb Section End -->
 
     <!-- Checkout Section Begin -->
-    <section class="checkout spad">
+<input type="hidden" name="guest_no" value="${payment.pm_no}">
+	<section class="checkout spad">
         <div class="container">
             <div class="checkout__form">
-                <form action="#">
+                <form name="f" id="payment_modify_form" method="post">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
                             
@@ -232,6 +250,9 @@ function insertAddress(){
                         </div>
                        
     </section>
+	</form>
+	
+	
     <!-- Checkout Section End -->
 
     <!-- Footer Section Begin -->
