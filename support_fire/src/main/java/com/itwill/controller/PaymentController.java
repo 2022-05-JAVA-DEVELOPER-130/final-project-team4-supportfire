@@ -79,8 +79,11 @@ public class PaymentController {
 	 * 결제가 이루어진 다음에 
 	 * 원래있던 판매자정보와 구매하기의 구매자정보 넣어서 오더 생성
 	 */
-	//@RequestMapping(value="insert_payment")
-	
+	@RequestMapping(value="payment")
+	public String insert_payment(Payment payment ) throws Exception{
+		int insertRowCount=paymentService.insertPayment(payment);
+		return "payment";
+	}
 	
 	
 }
