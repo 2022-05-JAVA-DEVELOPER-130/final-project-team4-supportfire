@@ -149,7 +149,9 @@ public class MemberController {
 		String msg="";
 		Member data = null;
 		int updateMemberRowCount = memberService.updateMember(member);
+		System.out.println(member);
 		if(updateMemberRowCount == 1) {
+			code=1;
 			data = member;
 		}else {
 			msg="정보수정이 실패했습니다.";

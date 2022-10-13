@@ -72,6 +72,12 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+  
+}
+
+.error{
+	color: red;
+
 }
 </style>    
     
@@ -213,7 +219,6 @@ $.ajax({
 			 		validclass:'valid',
 			 		submitHandler: function(form) {
 			 		  
-			 		  alert('submit');
 			 			
 				 		 $.ajax({
 				 		    url:'modify_action',
@@ -222,7 +227,7 @@ $.ajax({
 				 		    success:function(jsonResult){
 				 		    	if(jsonResult.code == 1){
 				 		    	alert('정보수정이 완료되었습니다.');
-				 		    	$('#mypage_form').html(mypage_form(jsonResult.data[0]));
+				 		    	location.href="mypage";
 				 		    	}else if(jsonResult.code == 0){
 				 		    	alert('정보수정이 실패되었습니다.');
 				 		    	}
