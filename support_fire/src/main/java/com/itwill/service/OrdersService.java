@@ -3,6 +3,7 @@ package com.itwill.service;
 import java.util.List;
 
 import com.itwill.dto.Orders;
+import com.itwill.dto.ProductDetail;
 
 public interface OrdersService {
 	//고객한명구매내역전체보기
@@ -25,4 +26,6 @@ public interface OrdersService {
 	
 	//주문한개생성
 	int insertOrder(Orders orders) throws Exception;
+	
+	int insertSequence(Orders orders) throws Exception;
 }

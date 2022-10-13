@@ -11,7 +11,7 @@
 	
 	$(function(){
 		$.ajax({
-			url : "payment",
+			url : "orders_sell",
 			data: "pd_no=1",
 			success : function(result) {
 				console.log(result);

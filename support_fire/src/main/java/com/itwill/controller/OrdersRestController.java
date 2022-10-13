@@ -20,8 +20,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.itwill.dto.Member;
 import com.itwill.dto.Orders;
+import com.itwill.dto.Payment;
 import com.itwill.dto.ProductDetail;
+import com.itwill.service.MemberService;
 import com.itwill.service.OrdersService;
+import com.itwill.service.PaymentService;
 import com.itwill.service.ProductDetailService;
 
 
@@ -32,7 +35,10 @@ public class OrdersRestController {
 	private OrdersService ordersService;
 	@Autowired
 	private ProductDetailService productDetailService;
-	
+	@Autowired
+	private PaymentService paymentService;
+	@Autowired
+	private MemberService memberservice;
 	
 	//구매내역
 	@RequestMapping(value="orders_purchase_list")
@@ -156,32 +162,45 @@ public class OrdersRestController {
 		int insertRowCount=productDetailService.insertSequence(newProductDetail);
 		//새로운오더 즉시구매오더생성
 		
-		Orders purchseOrders= new Orders(0, null,insertRowCount, pd_no, "배송준비중");
-		int insertOrders=ordersService.insertOrder(purchseOrders);
+		Orders purchaseOrders= new Orders(0, null,insertRowCount, pd_no, "배송준비중");
+		int insertOrders=ordersService.insertSequence(purchaseOrders);
+		System.out.println(purchaseOrders);
 		
-		return purchseOrders;
+		//결제생성
+		Member member=memberservice.selectById("seongmin");
+		System.out.println(member);
+		Payment purchasePayment= new Payment(0, member.getM_name(),member.getM_phone(),member.getM_address(),"",insertOrders,1);
+		int insertpayment=paymentService.insertPayment(purchasePayment);
+		
+		return purchaseOrders;
 	}
+	
+	
 	@RequestMapping(value="orders_sell")
 	public Orders insert_orders_sell (int pd_no,HttpServletRequest request) throws Exception{
-		//즉시구매
-		//원래있던 판매자의 pd_no 가져옴
+		
 		System.out.println(pd_no);
 		ProductDetail newProductDetail  = productDetailService.selectByNo(pd_no);
 		System.out.println(newProductDetail);
-		//구매자의 정보 셋팅
+		
 		String sUserId=(String)request.getSession().getAttribute("sUserId");
 		request.getSession().setAttribute("sUserId", sUserId);
 		newProductDetail.setM_id("seongmin");
-		newProductDetail.setBt_no(1);
+		newProductDetail.setBt_no(2);
 		newProductDetail.setB_no(3);
 		System.out.println(newProductDetail);
-		//pd에 새로 인서트
+		
 		int insertRowCount=productDetailService.insertSequence(newProductDetail);
-		//새로운오더 즉시구매오더생성
+		
 		
 		Orders sellOrders= new Orders(0, null,pd_no, insertRowCount, "발송준비중");
-		int insertOrders=ordersService.insertOrder(sellOrders);
+		int insertOrders=ordersService.insertSequence(sellOrders);
 		
+		Member member=memberservice.selectById("seongmin");
+		System.out.println(member);
+		Payment sellPayment= new Payment(0, member.getM_name(),member.getM_phone(),member.getM_address(),"",insertOrders,1);
+		int insertpayment=paymentService.insertPayment(sellPayment);
+	
 		return sellOrders;
 	}
 }

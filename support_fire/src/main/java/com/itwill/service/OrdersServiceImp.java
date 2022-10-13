@@ -107,6 +107,12 @@ public class OrdersServiceImp implements OrdersService{
 	 * 즉시판매: 상품디테일 페이지에서 입찰종류가 구매로 되어있고, 입찰가능 상태일때, orders insert
 	 */
 
+	@Override
+	public int insertSequence(Orders orders) throws Exception {
+		// TODO Auto-generated method stub
+		return ordersDao.insertSequence(orders);
+	}
+
 	
 	
 	

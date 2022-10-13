@@ -20,4 +20,5 @@ public interface OrdersDao {
 	
 	int insertOrder(Orders orders) throws Exception;
 	
+	int insertSequence(Orders orders) throws Exception;
 }
