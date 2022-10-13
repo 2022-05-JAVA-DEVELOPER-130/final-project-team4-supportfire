@@ -2317,6 +2317,7 @@ ol {
 	font-weight: 700;
 	text-transform: uppercase;
 	padding-bottom: 25px;
+	width: 200px;
 }
 
 .shopping__cart__table table tbody tr {

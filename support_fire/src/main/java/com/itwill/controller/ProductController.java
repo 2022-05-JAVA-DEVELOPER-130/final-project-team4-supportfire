@@ -13,20 +13,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.itwill.dto.Brands;
 import com.itwill.dto.Product;
+import com.itwill.service.BrandsService;
 import com.itwill.service.ProductService;
 
 @Controller
 public class ProductController {
 	@Autowired
 	private ProductService productService;
-	private Product product;
+	@Autowired
+	private BrandsService brandsService;
 	
 	@RequestMapping("shop")
 	public String product_list(HttpServletRequest request, Model model) {
 		String forwardPath = "";
 		List<Product> productList = productService.selectAll();
-		System.out.println(productList);
 		model.addAttribute("productList", productList);
 		forwardPath = "shop";
 		return forwardPath;
@@ -36,7 +38,9 @@ public class ProductController {
 		String forwardPath = "";
 		Product productView = productService.selectByNo(p_no);
 		System.out.println(productView);
-		model.addAttribute("productView", productView);
+		Brands brand = brandsService.selectByNo(productView.getBr_no());
+		model.addAttribute("product", productView);
+		model.addAttribute("brand", brand);
 		forwardPath = "shop-details";
 		return forwardPath;
 	}

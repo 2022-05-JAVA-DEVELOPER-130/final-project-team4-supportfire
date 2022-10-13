@@ -1,5 +1,8 @@
 package com.itwill.service;
 
-public interface BrandsService {
 
+import com.itwill.dto.Brands;
+public interface BrandsService {
+	
+	Brands selectByNo(int p_no);
 }

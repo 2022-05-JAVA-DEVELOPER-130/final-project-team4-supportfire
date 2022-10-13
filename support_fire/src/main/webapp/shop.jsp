@@ -25,6 +25,31 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+	<script type="text/javascript" src="js/top_content.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+	$.ajax({
+		url:'session_check',
+		method:'POST',
+		dataType:'json',
+		success:function(jsonResult){
+		    if(jsonResult.code==1){
+		    	var member = jsonResult.data;
+			 	$('#top_content').html(login_top(member));
+		    }else if(jsonResult.code==2){
+			 	$('#top_content').html(logout_top());
+		    }
+		   
+		}
+	});
+	
+});
+
+</script>
+
+
 
 </head>
 
@@ -37,9 +62,9 @@
     </div>
 
     <!-- Offcanvas Menu Begin -->
-    
+    <div id="top_content">
     <jsp:include page="top.jsp" />
-    
+    </div>
     <!-- Offcanvas Menu End -->
 
     <!-- Header Section Begin -->
@@ -53,8 +78,8 @@
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li><a href="./index.jsp">Home</a></li>
-                            <li class="active"><a href="./shop">Shop</a></li>
+                            <li><a href="main">Home</a></li>
+                            <li class="active"><a href="shop">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                     <li><a href="./about.jsp">About Us</a></li>
@@ -299,7 +324,7 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6>${product.p_name}</h6>
-                                    <a href="shop-details.jsp?p_no=${product.p_no}" class="add-cart">제품 상세보기</a>
+                                    <a href="shop-details?p_no=${product.p_no}" class="add-cart">제품 상세보기</a>
                                     <h5>${product.p_price}원</h5>
                                 	<h7>Nike</h7>
                                     <div class="product__color__select">
@@ -413,7 +438,6 @@
     <!-- Search End -->
 
     <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.nice-select.min.js"></script>
     <script src="js/jquery.nicescroll.min.js"></script>

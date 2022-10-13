@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/test.css" type="text/css">
+    <script type="text/javascript" src="js/top_content.js"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 </style>
@@ -64,6 +65,22 @@
   </style>
 <script type="text/javascript">
 $(document).ready(function() {
+	$.ajax({
+		url:'session_check',
+		method:'POST',
+		dataType:'json',
+		success:function(jsonResult){
+		    if(jsonResult.code==1){
+		    	var member = jsonResult.data;
+			 	$('#top_content').html(login_top(member));
+		    }else if(jsonResult.code==2){
+			 	$('#top_content').html(logout_top());
+		    }
+		   
+		}
+	});
+	
+	
     $("#writeBtn").click(function(){
     	location.href ="write";
     })
@@ -142,9 +159,9 @@ $(document).ready(function() {
 </head>
 <body>
 <!-- Offcanvas Menu Begin -->
-    
+    <div id="top_content">
     <jsp:include page="top.jsp" />
-    
+    </div>
     <!-- Offcanvas Menu End -->
 <div>
 <jsp:include page="header.jsp" />
