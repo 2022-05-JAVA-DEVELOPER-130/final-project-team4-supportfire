@@ -59,10 +59,10 @@ public class PaymentController {
 	}
 	
 	//결제번호로 배송지 업데이트
-	//@RequestMapping(value="update_by_no")
-	public String update_by_no(Payment payment) throws Exception{
-		int updateRowCount=paymentService.updateByNo(payment);
-		return "update_by_no";
+	@RequestMapping(value="payment_update_by_no")
+	public int update_by_no(int pm_no) throws Exception{
+		int updateRowCount=paymentService.updateByNo(new Payment(pm_no," "," "," "," ",0,0));
+		return updateRowCount;
 				
 	}
 	

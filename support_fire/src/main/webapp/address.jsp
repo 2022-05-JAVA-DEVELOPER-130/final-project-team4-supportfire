@@ -83,9 +83,16 @@ function showDelivery() {
 	    }).open();
  
 }
-
+//버튼클릭시db update 및 저장
 function insertAddress(){
-	
+	$ajax({
+		url:'update',
+		method:'POST',
+		dataType:'json',
+		success:function(jsonResult){
+		    console.log(jsonResult)
+		}
+	})
 	location.href="payment.jsp";
 }
 </script>

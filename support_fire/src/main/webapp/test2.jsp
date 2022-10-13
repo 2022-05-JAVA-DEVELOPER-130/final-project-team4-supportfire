@@ -11,11 +11,12 @@
 	
 	$(function(){
 		$.ajax({
-			url : "orders_sell",
-			data: "pd_no=1",
+			url : "payment_update_by_no",
+			data: "pm_no=1",
+			
 			success : function(result) {
 				console.log(result);
-				console.log(result.o_no);
+				
 			
 			}
 
