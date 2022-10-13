@@ -60,7 +60,7 @@
 	<div id="preloder">
 		<div class="loader"></div>
 	</div>
-s
+
 	<!-- Offcanvas Menu Begin -->
 
 	<jsp:include page="/top.jsp" />

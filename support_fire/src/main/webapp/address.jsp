@@ -83,6 +83,11 @@ function showDelivery() {
 	    }).open();
  
 }
+
+function insertAddress(){
+	
+	location.href="payment.jsp";
+}
 </script>
 
 
@@ -214,9 +219,9 @@ function showDelivery() {
                                     <input type="checkbox" id="acc">
                                     <span class="checkmark"></span>
                                 </label>
+                            <input type="button" onclick="insertAddress()" value="저장하기" class="input_txt" id="insertAddress">
                                
                             </div>
-                           
                         </div>
                        
     </section>
