@@ -83,35 +83,10 @@ function showDelivery() {
 	    }).open();
  
 }
-/*********guest_modify_form***********/
+/*********modify_form***********/
 
 //버튼클릭시db update 및 저장
-  $(document).on('click','#btn_modify_action',function(e){
-		    var param=$('#guest_modify_form').serialize();
-			$.ajax({
-			    url:'guest_modify_action_json',
-			    method:'POST',
-			    data:param,
-			    dataType:'json',
-			    success:function(jsonResult){
-					if(jsonResult.code==1){
-					    var param='guest_no='+$("#guest_modify_form input[name='guest_no']").val();
-					    console.log(param);
-						$.ajax({
-						    url:'guest_detail_json',
-						    method:'GET',
-						    dataType:'json',
-						   	data:param,
-						    success:function(jsonResult){
-								$('#content').html(guest_view_content(jsonResult.data[0]));
-						    }
-						});
-					}else if(jsonResult.code==2){
-					    alert(jsonResult.msg);
-					}
-			    }
-			});
-	});
+ 
 </script>
 
 
