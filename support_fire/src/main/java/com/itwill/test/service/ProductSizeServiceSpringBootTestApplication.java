@@ -42,6 +42,7 @@ public class ProductSizeServiceSpringBootTestApplication {
 		
 		System.out.println(productSizeService.selectBuyMinPriceByNo(1));
 		System.out.println(productSizeService.selectSellMinPriceByNo(1));
+		System.out.println(productSizeService.selectByNoAll(1));
 	}
 
 }
