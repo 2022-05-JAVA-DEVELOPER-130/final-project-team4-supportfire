@@ -167,7 +167,7 @@ public class OrdersRestController {
 		System.out.println(purchaseOrders);
 		
 		//결제생성
-		Member member=memberservice.selectById("seongmin");
+		Member member=memberservice.selectById(sUserId);
 		System.out.println(member);
 		Payment purchasePayment= new Payment(0, member.getM_name(),member.getM_phone(),member.getM_address(),"",insertOrders,1);
 		int insertpayment=paymentService.insertPayment(purchasePayment);
@@ -196,7 +196,7 @@ public class OrdersRestController {
 		Orders sellOrders= new Orders(0, null,pd_no, insertRowCount, "발송준비중");
 		int insertOrders=ordersService.insertSequence(sellOrders);
 		
-		Member member=memberservice.selectById("seongmin");
+		Member member=memberservice.selectById(sUserId);
 		System.out.println(member);
 		Payment sellPayment= new Payment(0, member.getM_name(),member.getM_phone(),member.getM_address(),"",insertOrders,1);
 		int insertpayment=paymentService.insertPayment(sellPayment);

@@ -104,7 +104,7 @@ public class PaymentController {
 			code=1;
 			url="";
 			msg="";
-			int row_count=paymentService.updateByNo(payment);
+			int row_count=paymentService.updateByNo(new Payment(12, "김지원","", "", "", 0, 1));
 		} catch (Exception e) {
 			code=2;
 			url="";

@@ -112,7 +112,7 @@ function insertAddress(){
 					}else if(jsonResult.code==2){
 					    alert(jsonResult.msg);
 					}
-					window.open('','_self').close(); 
+					//window.open('','_self').close(); 
 					
 			    }
 			});
