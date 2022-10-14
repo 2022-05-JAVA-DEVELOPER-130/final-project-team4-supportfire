@@ -42,12 +42,12 @@ public class ProductController {
 		Brands brand = brandsService.selectByNo(productView.getBr_no());
 		Map buymin = productService.selectBuyMinPriceByNo(p_no);
 		Map sellmin = productService.selectSellMinPriceByNo(p_no);
-		if(String.valueOf(buymin.get("min_price")).equals("0") || String.valueOf(buymin.get("min_price")).equals("null")){
+		if(String.valueOf(buymin.get("min_price")).equals("null")){
 			buymin.put("min_price", "판매입찰");
 		}else {
 			buymin.put("min_price", "즉시판매가 : " + String.valueOf(buymin.get("min_price"))+" 원");
 		}
-		if(String.valueOf(sellmin.get("min_price")).equals("0") || String.valueOf(sellmin.get("min_price")).equals("null")) {
+		if(String.valueOf(sellmin.get("min_price")).equals("null")) {
 			sellmin.put("min_price", "구매입찰");
 		}else {
 			sellmin.put("min_price", "즉시구매가 : " + String.valueOf(sellmin.get("min_price"))+" 원");
