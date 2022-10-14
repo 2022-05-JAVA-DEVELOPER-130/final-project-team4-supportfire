@@ -56,7 +56,7 @@ function productSizeNameForm(product) {
 function sizeClick_p(productDetail, productSize, product, buymin){
 	return `
 	<div data-v-7598e8e5="" data-v-34b11929=""
-		class="container buy sm step-1">
+		class="container buy sm step-1 scp">
 		<input type="hidden" id="hiddenPd_no_buy" value="${productDetail.pd_no}">
 		<!---->
 		<div data-v-7598e8e5="" class="content">
@@ -150,7 +150,7 @@ function sizeClick_p(productDetail, productSize, product, buymin){
 function sizeClick_p_null(productSize, product, buymin){
 	return `
 	<div data-v-7598e8e5="" data-v-34b11929=""
-		class="container buy sm step-1">
+		class="container buy sm step-1" scp>
 		<input type="hidden" id="hiddenPd_no_buy" value="${productDetail.pd_no}">
 		<!---->
 		<div data-v-7598e8e5="" class="content">

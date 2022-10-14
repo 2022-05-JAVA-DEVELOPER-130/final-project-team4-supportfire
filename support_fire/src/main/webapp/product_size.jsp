@@ -59,6 +59,12 @@
 	background-color: #fff;
 }
 
+.scp{
+	margin-top: 50px;
+
+}
+
+
 </style>
 
    
@@ -310,7 +316,7 @@ $(document).on('click', '.on', function(e){
    <div id="__nuxt">
       <!---->
       <div id="__layout">
-         <div data-v-34b11929="" tabindex="0" class="wrap md etc">
+         <div data-v-34b11929="" tabindex="0" class="wrap md etc" style="padding-top: 50px;">
             <div data-v-34b11929="">
                <!---->
                
