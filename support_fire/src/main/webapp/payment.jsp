@@ -51,16 +51,20 @@
 <link rel="stylesheet" href="./_nuxt/css/dd20fa4.css">
 <link rel="stylesheet" href="./_nuxt/css/74432ba.css">
 <link rel="stylesheet" href="./_nuxt/css/db982ae.css">
+
+<script type="text/javascript" src="js/address.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script type="text/javascript" src="js/guest_html_content.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
-<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 <script type="text/javascript">
 
 $(document).on('click','#add_more_btn',function(e){
 	var add_address=window.open('address.jsp');
+	console.log('입력');
+	$('#content').html(address_form_content());
 });
+
+
 
 
 
