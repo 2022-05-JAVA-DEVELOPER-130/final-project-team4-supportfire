@@ -60,6 +60,8 @@
 
 $(document).on('click','#add_more_btn',function(e){
 	var add_address=window.open('address.jsp');
+	console.log('입력');
+	$('#content').html(address_form_content());
 });
 
 
