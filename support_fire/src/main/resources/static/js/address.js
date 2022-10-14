@@ -1,7 +1,7 @@
 function payment_modify_form_content(payment){
 	return`
 
-<input type="hidden" name="guest_no" value="${payment.pm_no}">
+
 	<section class="checkout spad">
         <div class="container">
             <div class="checkout__form">
@@ -62,5 +62,5 @@ function payment_modify_form_content(payment){
 	</form>
 	
 	
-	`
+	`;
 }
