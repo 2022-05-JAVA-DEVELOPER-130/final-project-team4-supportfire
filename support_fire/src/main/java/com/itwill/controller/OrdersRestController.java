@@ -154,7 +154,7 @@ public class OrdersRestController {
 		//구매자의 정보 셋팅
 		String sUserId=(String)request.getSession().getAttribute("sUserId");
 		request.getSession().setAttribute("sUserId", sUserId);
-		newProductDetail.setM_id("seongmin");
+		newProductDetail.setM_id(sUserId);
 		newProductDetail.setBt_no(1);
 		newProductDetail.setB_no(3);
 		System.out.println(newProductDetail);
@@ -185,7 +185,7 @@ public class OrdersRestController {
 		
 		String sUserId=(String)request.getSession().getAttribute("sUserId");
 		request.getSession().setAttribute("sUserId", sUserId);
-		newProductDetail.setM_id("seongmin");
+		newProductDetail.setM_id(sUserId);
 		newProductDetail.setBt_no(2);
 		newProductDetail.setB_no(3);
 		System.out.println(newProductDetail);

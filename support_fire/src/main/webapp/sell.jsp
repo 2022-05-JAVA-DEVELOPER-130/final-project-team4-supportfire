@@ -174,16 +174,14 @@ $(document).on('click','#add_more_btn',function(e){
 										<p data-v-2b95d831="" class="model_ko">나이키 덩크 로우 레트로 짐레드</p>
 										<div data-v-2b95d831="" class="model_desc">
 											<p data-v-2b95d831="" class="size_txt">250</p>
-											<div data-v-6da6dff3="" data-v-2b95d831=""
-												class="badge badge_product shipping_express">빠른배송</div>
-										</div>
+											
 									</div>
 								</div>
 							</div>
 							<section data-v-6a5da210="" data-v-0259aa53="">
 								<div data-v-6a5da210="" class="section_unit">
 									<div data-v-6a5da210="" class="section_title">
-										<h3 data-v-6a5da210="" class="title_txt">배송 주소</h3>
+										<h3 data-v-6a5da210="" class="title_txt">발송 주소</h3>
 										<a data-v-6a5da210="" href='#' class="add_more_btn" id="add_more_btn">+ 새 주소
 											추가</a>
 									</div>
@@ -205,32 +203,7 @@ $(document).on('click','#add_more_btn',function(e){
 								<!---->
 								<!---->
 							</section>
-							<section data-v-7ba61ae8="" data-v-0259aa53="">
-								<div data-v-7ba61ae8="" class="section_title">
-									<h3 data-v-7ba61ae8="" class="title_txt">포인트</h3>
-								</div>
-								<div data-v-7ba61ae8="" class="section_content">
-									<div data-v-7ba61ae8="" class="section_input">
-										<input data-v-7ba61ae8="" placeholder="0" disabled="disabled"
-											class="input_credit">
-										<button data-v-7ba61ae8="" class="btn_use_credit disabled">
-											모두 사용</button>
-									</div>
-									<div data-v-7ba61ae8="" class="info_point">
-										<div data-v-7ba61ae8="">
-											<span data-v-7ba61ae8="" class="text_current">보유 포인트</span>
-											
-											<div data-v-7ba61ae8="" class="value_current">
-												<span data-v-7ba61ae8="" class="point">0</span><span
-													data-v-7ba61ae8="" class="unit">P</span>
-											</div>
-										</div>
-										<!---->
-									</div>
-									<!---->
-									<!---->
-								</div>
-							</section>
+							
 							<section data-v-0259aa53="">
 								<div data-v-0259aa53="" class="section_title">
 									<h3 data-v-0259aa53="" class="title_txt">최종 주문 정보</h3>
@@ -241,7 +214,7 @@ $(document).on('click','#add_more_btn',function(e){
 										<div data-v-679d7250="" data-v-887ad490=""
 											class="price_total order_info">
 											<dl data-v-679d7250="" class="price_box">
-												<dt data-v-679d7250="" class="price_title">총 결제금액</dt>
+												<dt data-v-679d7250="" class="price_title">정산금액</dt>
 												<dd data-v-679d7250="" class="price empty_price">
 													<span data-v-679d7250="" class="amount">-</span><span
 														data-v-679d7250="" class="unit"></span>
@@ -252,22 +225,7 @@ $(document).on('click','#add_more_btn',function(e){
 											</em></span>
 										</div>
 										<div data-v-887ad490="" class="price_bind">
-											<dl data-v-3a2a7b6b="" data-v-887ad490=""
-												class="price_addition is_dark">
-												<dt data-v-3a2a7b6b="" class="price_title">
-													<span data-v-3a2a7b6b="">구매가</span>
-													<!---->
-												</dt>
-												<dd data-v-3a2a7b6b="" class="price_text">-</dd>
-											</dl>
-											<dl data-v-3a2a7b6b="" data-v-887ad490=""
-												class="price_addition">
-												<dt data-v-3a2a7b6b="" class="price_title">
-													<span data-v-3a2a7b6b="">포인트</span>
-													<!---->
-												</dt>
-												<dd data-v-3a2a7b6b="" class="price_text">-</dd>
-											</dl>
+											
 											<dl data-v-3a2a7b6b="" data-v-887ad490=""
 												class="price_addition">
 												<dt data-v-3a2a7b6b="" class="price_title">
@@ -305,7 +263,7 @@ $(document).on('click','#add_more_btn',function(e){
 							</section>
 							<section data-v-8215c5a4="" data-v-0259aa53="">
 								<div data-v-8215c5a4="" class="section_title">
-									<h3 data-v-8215c5a4="" class="title_txt">결제 방법</h3>
+									<h3 data-v-8215c5a4="" class="title_txt">패널티 결제 방법</h3>
 								</div>
 								<div data-v-8215c5a4="" class="section_content">
 									<div data-v-8215c5a4="" class="simple_payment">
@@ -326,121 +284,48 @@ $(document).on('click','#add_more_btn',function(e){
 															xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-arr-right-gray-thick"></use></svg>
 												</a>
 											</div>
+											<div data-v-14995178="" data-v-0259aa53=""
+												class="buy_total_confirm" is-instant="true">
+												<div data-v-679d7250="" data-v-14995178="" class="price_total">
+													<dl data-v-679d7250="" class="price_box">
+														<dt data-v-679d7250="" class="price_title">정산금액</dt>
+														<dd data-v-679d7250="" class="price empty_price">
+															<span data-v-679d7250="" class="amount">-</span><span
+																data-v-679d7250="" class="unit"></span>
+														</dd>
+													</dl>
+													<span data-v-679d7250="" class="price_warning"
+														style="display: none;"><em data-v-679d7250="">주의!
+													</em></span>
+												</div>
+												<div data-v-14995178="" class="btn_confirm">
+													<a data-v-3d1bcc82="" data-v-14995178="" disabled="disabled"
+														href="#" class="btn full solid false disabled"> 바로판매 하기 </a>
+												</div>
+											</div>
 											<div data-v-29138675="" class="other_card"
 												style="display: none;">
 												<ul data-v-29138675="" class="other_card_list"></ul>
 											</div>
 										</div>
 									</div>
-									<div data-v-8215c5a4="" class="general_payment">
-										<h4 data-v-8215c5a4="" class="method_title">
-											<div data-v-8215c5a4="" class="main_title">
-												<strong data-v-8215c5a4="">일반 결제</strong> <span
-													data-v-8215c5a4="" class="sub_title">일시불・할부</span>
-											</div>
-										</h4>
-										<div data-v-35b707e2="" data-v-8215c5a4="" class="pay_method">
-											<div data-v-35b707e2="" class="pay_item normal disabled">
-												<div data-v-35b707e2="" class="pay_box">
-													<div data-v-35b707e2="" class="pay_title">
-														<p data-v-35b707e2="" class="main_title">신용/체크카드</p>
-														<!---->
-													</div>
-													<!---->
-												</div>
-											</div>
-											<div data-v-35b707e2="" class="pay_item quickpay disabled">
-												<div data-v-35b707e2="" class="pay_box">
-													<div data-v-35b707e2="" class="pay_title">
-														<p data-v-35b707e2="" class="main_title">계좌이체</p>
-														
-													</div>
-													<!---->
-												</div>
-											</div>
-											
-											<div data-v-35b707e2="" class="pay_item kakaopay disabled">
-												<div data-v-35b707e2="" class="pay_box">
-													<div data-v-35b707e2="" class="pay_title">
-														<p data-v-35b707e2="" class="main_title">카카오페이</p>
-														<!---->
-													</div>
-													<img 
-														src="payment_icon_yellow_small.png" alt="카카오페이"
-														class="pay_img">
-												</div>
-											</div>
-											
+									
 										</div>
 										
 									<!---->
 								</div>
 								<!---->
 								<!---->
-							</section>
 							
 									<!---->
 									<!---->
 								</div>
-								<div data-v-14995178="" data-v-0259aa53=""
-									class="buy_total_confirm" is-instant="true">
-									<div data-v-679d7250="" data-v-14995178="" class="price_total">
-										<dl data-v-679d7250="" class="price_box">
-											<dt data-v-679d7250="" class="price_title">총 결제금액</dt>
-											<dd data-v-679d7250="" class="price empty_price">
-												<span data-v-679d7250="" class="amount">-</span><span
-													data-v-679d7250="" class="unit"></span>
-											</dd>
-										</dl>
-										<span data-v-679d7250="" class="price_warning"
-											style="display: none;"><em data-v-679d7250="">주의!
-										</em></span>
-									</div>
-									<div data-v-14995178="" class="btn_confirm">
-										<a data-v-3d1bcc82="" data-v-14995178="" disabled="disabled"
-											href="#" class="btn full solid false disabled"> 결제하기 </a>
-									</div>
-								</div>
+								
 						
 							<!---->
-							<div data-v-1f7c6d3f="" data-v-4ae17423="" data-v-0259aa53=""
-								class="layer_order_price_confirm layer lg"
-								style="display: none;">
-								<div data-v-1f7c6d3f="" class="layer_container">
-									<div data-v-1f7c6d3f="" class="layer_header"></div>
-									<div data-v-1f7c6d3f="" class="layer_content">
-										<div data-v-4ae17423="" data-v-1f7c6d3f="" class="alert_title">
-											<div data-v-4ae17423="" data-v-1f7c6d3f=""
-												class="alert_notice">
-												<p data-v-4ae17423="" data-v-1f7c6d3f="" class="notice">한번
-													더 확인하세요</p>
-												<span data-v-4ae17423="" data-v-1f7c6d3f=""
-													class="rectangle"></span>
-											</div>
-											<p data-v-4ae17423="" data-v-1f7c6d3f="" class="title">총
-												결제금액</p>
-											<p data-v-4ae17423="" data-v-1f7c6d3f="" class="price">-원</p>
-										</div>
-										<div data-v-4ae17423="" data-v-1f7c6d3f="" class="alert_box">
-											<p data-v-4ae17423="" data-v-1f7c6d3f="" class="alert_desc">
-												해당 거래는 개인간 거래로 단순변심 또는 실수에 따른 <em>체결 후 취소는 불가능합니다.</em>
-											</p>
-										</div>
-										<div data-v-4ae17423="" data-v-1f7c6d3f="" class="layer_btn">
-											<button data-v-3d1bcc82="" data-v-4ae17423="" type="button"
-												class="btn solid buy full large" data-v-1f7c6d3f="">
-												바로 결제하기</button>
-										</div>
-									</div>
-									<a data-v-4ae17423="" data-v-1f7c6d3f="" href="#"
-										class="btn_layer_close"><svg data-v-4ae17423=""
-											data-v-1f7c6d3f="" xmlns="http://www.w3.org/2000/svg"
-											class="ico-close icon sprite-icons">
-											<use data-v-4ae17423="" data-v-1f7c6d3f=""
-												href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-close"
-												xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-close"></use></svg></a>
-								</div>
+							
 							</div>
+							</section>
 							<!---->
 							<!---->
 							<!---->
