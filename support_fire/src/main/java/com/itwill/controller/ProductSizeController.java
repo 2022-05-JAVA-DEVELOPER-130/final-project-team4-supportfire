@@ -34,17 +34,17 @@ public class ProductSizeController {
 	public Map productSizePrice(int p_no ,int bt_no, int c_no) {
 		Map resultMap = new HashMap();
 		Map map = new HashMap();
-		System.out.println(p_no);
-		System.out.println(bt_no);
-		System.out.println(c_no);
+		Product product = productService.selectByNo(p_no);
 		int code=0;
 		String url="";
 		String msg="";
 		List<Sizes> sizeList = sizesService.selectAll(c_no);
 		if(bt_no==1) {
+			code=1;
 			msg = "구매하기";
 			map = productSizeService.selectSellMinPriceByNo(p_no);
 		}else {
+			code=2;
 			msg = "판매하기";
 			map = productSizeService.selectBuyMinPriceByNo(p_no);
 		}
@@ -59,6 +59,7 @@ public class ProductSizeController {
 	    resultMap.put("msg",msg);
 	    resultMap.put("data", stringList);
 	    resultMap.put("sizeList", sizeList);
+	    resultMap.put("product", product);
 		return resultMap;
 	}
 }
