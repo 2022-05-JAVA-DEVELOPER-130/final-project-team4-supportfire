@@ -35,4 +35,9 @@ public class MainController {
 	public String product_sizes() {
 		return "product_size";
 	}
+	
+	@RequestMapping("payment")
+	public String payment() {
+		return "payment";
+	}
 }

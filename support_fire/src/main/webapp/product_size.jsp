@@ -146,21 +146,32 @@ $.ajax({
 });
 
 
-$(document).on('click', '.buy', function(e){
-	$.ajax({
-		url:'sizeClick_p',
-		method:'POST',
-		dataType:'json',
-		data: {pd_no : e.currentTarget.value},
-		success:function(jsonResult){
-			$('#ipchal').html(sizeClick_p(jsonResult.productDetail, jsonResult.productSize, jsonResult.product, jsonResult.buymin));
-		}
+$(document).on('click', '.buy1', function(e){
+	if(e.currentTarget.value != null){
+		$.ajax({
+			url:'sizeClick_p',
+			method:'POST',
+			dataType:'json',
+			data: {pd_no : e.currentTarget.value},
+			success:function(jsonResult){
+				$('#ipchal').html(sizeClick_p(jsonResult.productDetail, jsonResult.productSize, jsonResult.product, jsonResult.buymin));
+			}
 
-	});
-
+		});
+	}else{
+		$.ajax({
+			url:'sizeClick_p',
+			method:'POST',
+			dataType:'json',
+			data: {pd_no : e.currentTarget.value},
+			success:function(jsonResult){
+				$('#ipchal').html(sizeClick_p(jsonResult.productDetail, jsonResult.productSize, jsonResult.product, jsonResult.buymin));
+			}
+	}
+	
 });
 
-$(document).on('click', '.sell', function(e){
+$(document).on('click', '.sell1', function(e){
 	$.ajax({
 		url:'sizeClick_s',
 		method:'POST',
@@ -171,13 +182,50 @@ $(document).on('click', '.sell', function(e){
 		}
 
 	});
+	e.preventDefault();
+});
+
+$(document).on('click', '#bid', function(e){
+	$.ajax({
+		success:function(jsonResult){
+		console.log(e.target);
+		$('#imm').removeClass('on');
+		$('#bid').addClass('on');
+		}
+	
+});
+	e.preventDefault();
+});
+
+$(document).on('click', '#imm', function(e){
+	$.ajax({
+		success:function(jsonResult){
+		$('#bid').removeClass('on');
+		$('#imm').addClass('on');
+		}
+	
+});
+	e.preventDefault();
+});
+
+$(document).on('click', '.on', function(e){
+	console.log($(this).attr('id'));
+	if($(this).attr('id') == 'imm'){
+		console.log($('#hiddenPd_no_buy').val());
+		location.href='payment?pd_no='+$('#hiddenPd_no_buy').val()
+	}else{
+		location.href='bid'
+	}
+	e.preventDefault();
+});
+
+
 
 });
 
 
 
 
-});
 
 
 </script>
