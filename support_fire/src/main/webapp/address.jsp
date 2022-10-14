@@ -83,9 +83,21 @@ function showDelivery() {
 	    }).open();
  
 }
-/*********modify_form***********/
+
 
 //버튼클릭시db update 및 저장
+function insertAddress(){
+	console.log('클릭');
+	
+	
+	
+	
+	
+	window.open('','_self').close();
+}
+
+
+
  
 </script>
 
@@ -219,7 +231,7 @@ function showDelivery() {
                                     <input type="checkbox" id="acc">
                                     <span class="checkmark"></span>
                                 </label>
-                            <input type="button" onclick="insertAddress()" value="저장하기" class="input_txt" id="insertAddress">
+                            <input type="button" onclick="insertAddress()" value="저장하기" id="insertAddress()">
                                
                             </div>
                         </div>

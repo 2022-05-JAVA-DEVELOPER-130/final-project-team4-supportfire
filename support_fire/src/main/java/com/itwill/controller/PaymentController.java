@@ -67,12 +67,14 @@ public class PaymentController {
 		int code=2;
 		String url="";
 		String msg="";
+		
 		List<Payment> resultList=new ArrayList<Payment>();
 		try {
 			code=1;
 			url="";
 			msg="";
 			Payment payment=paymentService.selectByPMNo(pm_no);
+			
 			resultList.add(payment);
 		} catch (Exception e) {
 			code=2;

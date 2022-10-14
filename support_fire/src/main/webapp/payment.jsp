@@ -52,17 +52,7 @@
 <script type="text/javascript">
 
 $(document).on('click','#add_more_btn',function(e){
-	
-	var param = 'pm_no='+$(e.target).attr('pm_no');
-	$.ajax({
-	    url:'payment_modify_form',
-	    data:param,
-	    dataType:'json',
-	    success:function(jsonResult){
-			$('#content').html(payment_modify_form_content(jsonResult.data[0]));
-	    }
-	});
-	
+	var add_address=window.open('address.jsp');
 });
 
 
@@ -189,8 +179,6 @@ $(document).on('click','#add_more_btn',function(e){
 										<h3 data-v-6a5da210="" class="title_txt">배송 주소</h3>
 										<a data-v-6a5da210="" href='#' class="add_more_btn" id="add_more_btn">+ 새 주소
 											추가</a>
-										<div id="content">
-										</div>
 									</div>
 									<div id="content" data-v-6a5da210="" class="section_content">
 										<a data-v-6a5da210="" href="#" class="empty_delivery_info"><span
@@ -202,6 +190,8 @@ $(document).on('click','#add_more_btn',function(e){
 													xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-arr-right-gray-s"></use></svg></a>
 									</div>
 								</div>
+										<div id="content">
+										</div>
 								
 												<!---->
 									
