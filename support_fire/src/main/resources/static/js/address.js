@@ -70,7 +70,7 @@ function payment_modify_form_content(){
 }
 
 
-function address_form_content(payment){
+function address_form_content(){
 	return`
 	
 	<div data-v-6a5da210="" class="section_content">
@@ -79,15 +79,15 @@ function address_form_content(payment){
 			<dl data-v-05a4f438="" class="info_list">
 				<div data-v-05a4f438="" class="info_box">
 					<dt data-v-05a4f438="" class="title">받는 분</dt>
-					<dd data-v-05a4f438="" class="desc">${payment.pm_name}</dd>
+					<dd data-v-05a4f438="" class="desc">김**</dd>
 				</div>
 				<div data-v-05a4f438="" class="info_box">
 					<dt data-v-05a4f438="" class="title">연락처</dt>
-					<dd data-v-05a4f438="" class="desc">${payment.pm_phone}</dd>
+					<dd data-v-05a4f438="" class="desc">010-4***-*829</dd>
 				</div>
 				<div data-v-05a4f438="" class="info_box">
 					<dt data-v-05a4f438="" class="title">배송 주소</dt>
-					<dd data-v-05a4f438="" class="desc">${payment.pm_address}</dd>
+					<dd data-v-05a4f438="" class="desc">서울 강동구 동남로 733 (길동) 202호</dd>
 				</div>
 			</dl>
 		</div>

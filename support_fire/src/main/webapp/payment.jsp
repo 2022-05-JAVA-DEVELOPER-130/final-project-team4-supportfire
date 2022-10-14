@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>	
+
 
 
 <html lang="zxx">
@@ -58,15 +60,31 @@
 
 <script type="text/javascript">
 
-$(document).on('click','#add_more_btn',function(e){
+ $(document).on('click','#add_more_btn',function(e){
 	var add_address=window.open('address.jsp');
 	console.log('입력');
 	
 	$('#content').html(address_form_content());
 });
 
-
-
+ $(function(){
+		
+		$.ajax({
+			url:'session_check',
+			method:'POST',
+			dataType:'json',
+			success:function(jsonResult){
+			    if(jsonResult.code==1){
+			    	var member = jsonResult.data;
+				 	$('#top_content').html(login_top(member));
+			    }else if(jsonResult.code==2){
+				 	$('#top_content').html(logout_top());
+			    }
+			   
+			}
+		});
+		
+	});
 
 
 </script>
@@ -165,7 +183,7 @@ $(document).on('click','#add_more_btn',function(e){
 										<source data-v-6c8b3524=""
 											srcset="https://kream-phinf.pstatic.net/MjAyMjA5MjdfOCAg/MDAxNjY0MjU5NTg2MDIy.wQktWmJWTwo83JVbleQzdaQ2OOfKTJp9RejdJvoeK-cg.Svg3Q-zegOeOgmjB6WpvyFAwXv51kpmljf-cvrybr08g.JPEG/a_9fe393b4a2c44008b1fecbc65adb407d.jpg?type=l">
 										<img data-v-6c8b3524="" alt="상품 이미지"
-											src="https://kream-phinf.pstatic.net/MjAyMjA5MjdfOCAg/MDAxNjY0MjU5NTg2MDIy.wQktWmJWTwo83JVbleQzdaQ2OOfKTJp9RejdJvoeK-cg.Svg3Q-zegOeOgmjB6WpvyFAwXv51kpmljf-cvrybr08g.JPEG/a_9fe393b4a2c44008b1fecbc65adb407d.jpg?type=l"
+											src="img/product/${product.p_image}"
 											class="image"></picture>
 										<!---->
 										<!---->
@@ -176,7 +194,7 @@ $(document).on('click','#add_more_btn',function(e){
 											data-v-2b95d831="" class="mark_95">95점</span>DD1391-602 </strong>
 										<p data-v-2b95d831="" class="model_title">Nike Dunk Low
 											Retro Gym Red</p>
-										<p data-v-2b95d831="" class="model_ko">나이키 덩크 로우 레트로 짐레드</p>
+										<p data-v-2b95d831="" class="model_ko">${product.p_name}</p>
 										<div data-v-2b95d831="" class="model_desc">
 											<p data-v-2b95d831="" class="size_txt">250</p>
 											<div data-v-6da6dff3="" data-v-2b95d831=""

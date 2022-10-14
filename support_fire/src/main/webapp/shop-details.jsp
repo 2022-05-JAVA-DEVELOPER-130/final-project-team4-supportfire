@@ -57,24 +57,7 @@
 </style>
 
 <script type="text/javascript">
-$(function(){
-	
-	$.ajax({
-		url:'session_check',
-		method:'POST',
-		dataType:'json',
-		success:function(jsonResult){
-		    if(jsonResult.code==1){
-		    	var member = jsonResult.data;
-			 	$('#top_content').html(login_top(member));
-		    }else if(jsonResult.code==2){
-			 	$('#top_content').html(logout_top());
-		    }
-		   
-		}
-	});
-	
-});
+
 
 </script>
 </head>
