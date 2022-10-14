@@ -35,7 +35,7 @@ public class BidController {
 	    resultMap.put("url",url);
 	    resultMap.put("msg",msg);
 	    resultMap.put("data", map);
-	    resultMap.put("data", map1);
+	    resultMap.put("map1", map1);
 	    resultMap.put("product", product);
 		
 		return resultMap;
