@@ -5,7 +5,8 @@ function productSizeForm_p(productSize, data) {
            <div data-v-7ade2d82="" class="link_inner">
               <span data-v-7ade2d82="" class="size">
                  <!----> ${productSize.s_size}
-              </span><span data-v-7ade2d82="" class="price" id="price_form_p" >${data}</span>
+                 <input type="hidden" id="pd_no" name="pd_no" value="${data.pd_no}">
+              </span><span data-v-7ade2d82="" class="price" id="price_form_p" >${data.min_price}</span>
            </div>
         </button></li>
         `;
@@ -17,7 +18,8 @@ function productSizeForm_s(productSize, data) {
            <div data-v-7ade2d82="" class="link_inner">
               <span data-v-7ade2d82="" class="size">
                  <!----> ${productSize.s_size}
-              </span><span data-v-7ade2d82="" class="price" id="price_form_s" >${data}</span>
+                 <input type="hidden" id="pd_no" name="pd_no" value="${data.pd_no}">
+              </span><span data-v-7ade2d82="" class="price" id="price_form_s" >${data.min_price}</span>
            </div>
         </button></li>
         `;

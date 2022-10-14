@@ -94,10 +94,28 @@
    property="og:image"
    content="https://kream.co.kr/images/index_og_kream.png">
  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+ <script type="text/javascript" src="js/top_content.js"></script>
  <!-- js 등록 -->
  <script type="text/javascript" src ="js/product_content.js"></script>
 <script type="text/javascript">
 $(function(){
+	
+	$.ajax({
+		url:'session_check',
+		method:'POST',
+		dataType:'json',
+		success:function(jsonResult){
+		    if(jsonResult.code==1){
+		    	var member = jsonResult.data;
+			 	$('#top_content').html(login_top(member));
+		    }else if(jsonResult.code==2){
+			 	$('#top_content').html(logout_top());
+		    }
+		   
+		}
+	});	
+	
+	
 	var v = window.location.search;
 	console.log(v);
 	a = v.replace('?','');
@@ -142,9 +160,9 @@ $.ajax({
    </div>
 
    <!-- Offcanvas Menu Begin -->
-
-   <jsp:include page="/top.jsp" />
-
+	<div id="top_content">
+    <jsp:include page="top.jsp" />
+    </div>
    <!-- Offcanvas Menu End -->
 
 

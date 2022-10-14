@@ -51,7 +51,7 @@ public class ProductSizeController {
 		}
 		List<PDDTO> stringList = new ArrayList<PDDTO>();
 		for (Sizes sizes : sizeList) {
-			PDDTO pddto = new PDDTO((String)map.get(sizes.getS_size()+"1"), (String)map.get(sizes.getS_size()));
+			PDDTO pddto = new PDDTO(String.valueOf(map.get(sizes.getS_size()+"1")), String.valueOf(map.get(sizes.getS_size())));
 			stringList.add(pddto);
 		}
 		

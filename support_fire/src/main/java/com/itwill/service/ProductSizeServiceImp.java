@@ -64,6 +64,7 @@ public class ProductSizeServiceImp implements ProductSizeService{
 			String size = (String)map2.get("S_SIZE");
 			String p_price = String.valueOf(map2.get("min_price"));
 			sizeMap.put(size, map2.get("min_price"));
+			sizeMap.put(size+"1", map2.get("pd_no"));
 			if(p_price =="null") {
 				p_price = "구매입찰";
 				sizeMap.put(size, p_price);
