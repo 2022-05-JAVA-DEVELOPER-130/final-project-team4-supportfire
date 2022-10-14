@@ -167,8 +167,8 @@ $(document).on('click', '.buy1', function(e){
 			success:function(jsonResult){
 				$('#ipchal').html(sizeClick_p(jsonResult.productDetail, jsonResult.productSize, jsonResult.product, jsonResult.buymin));
 			}
+	});
 	}
-	
 });
 
 $(document).on('click', '.sell1', function(e){
