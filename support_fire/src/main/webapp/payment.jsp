@@ -49,11 +49,25 @@
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+<script type="text/javascript">
+
+$(document).on('click','#add_more_btn',function(e){
+	
+	var param = 'pm_no='+$(e.target).attr('pm_no');
+	$.ajax({
+	    url:'payment_modify_form',
+	    data:param,
+	    dataType:'json',
+	    success:function(jsonResult){
+			$('#content').html(payment_modify_form_content(jsonResult.data[0]));
+	    }
+	});
+	
+});
 
 
 
-
-
+</script>
 </head>
 <body>
 	<!-- Page Preloder -->
@@ -173,8 +187,10 @@
 								<div data-v-6a5da210="" class="section_unit">
 									<div data-v-6a5da210="" class="section_title">
 										<h3 data-v-6a5da210="" class="title_txt">배송 주소</h3>
-										<a data-v-6a5da210="" href="address.jsp" class="add_more_btn" >+ 새 주소
+										<a data-v-6a5da210="" href='#' class="add_more_btn" id="add_more_btn">+ 새 주소
 											추가</a>
+										<div id="content">
+										</div>
 									</div>
 									<div id="content" data-v-6a5da210="" class="section_content">
 										<a data-v-6a5da210="" href="#" class="empty_delivery_info"><span
@@ -561,6 +577,8 @@
 	<script src="js/mixitup.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/address.js"></script>
+	
 </body>
 
 </html>

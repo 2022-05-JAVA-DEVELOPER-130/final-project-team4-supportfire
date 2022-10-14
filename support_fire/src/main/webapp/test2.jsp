@@ -11,7 +11,7 @@
 	
 	$(function(){
 		$.ajax({
-			url : "payment_update_by_no",
+			url : "payment_modify_form",
 			data: "pm_no=1",
 			
 			success : function(result) {

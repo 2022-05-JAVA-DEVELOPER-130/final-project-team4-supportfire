@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.itwill.dto.PDDTO;
 import com.itwill.dto.Product;
 import com.itwill.dto.ProductSize;
 import com.itwill.dto.Sizes;
@@ -48,10 +49,10 @@ public class ProductSizeController {
 			msg = "판매하기";
 			map = productSizeService.selectBuyMinPriceByNo(p_no);
 		}
-		List<String> stringList = new ArrayList<String>();
+		List<PDDTO> stringList = new ArrayList<PDDTO>();
 		for (Sizes sizes : sizeList) {
-			String price = String.valueOf(map.get(sizes.getS_size()));
-			stringList.add(price);
+			PDDTO pddto = new PDDTO(String.valueOf(map.get(sizes.getS_size()+"1")), String.valueOf(map.get(sizes.getS_size())));
+			stringList.add(pddto);
 		}
 		
 		resultMap.put("code",code);

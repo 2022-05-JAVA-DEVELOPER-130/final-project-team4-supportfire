@@ -60,9 +60,9 @@ public class PaymentController {
 	    return resultMap;
 	}
 	
-	@PostMapping(value = "/guest_modify_form",
+	@RequestMapping(value = "/payment_modify_form",
 			produces = "application/json;charset=UTF-8")
-	public Map payment_modify_form_json(@RequestParam int pm_no) {
+	public Map payment_modify_form(@RequestParam int pm_no) {
 		Map resultMap=new HashMap();
 		int code=2;
 		String url="";
@@ -90,9 +90,9 @@ public class PaymentController {
 	
 	
 	//결제번호로 배송지 업데이트
-	@PostMapping(value = "/payment_modify_action",
+	@RequestMapping(value = "/payment_modify_action",
 			produces = "application/json;charset=UTF-8")
-	public Map guest_modify_action_json(@ModelAttribute Payment payment) {
+	public Map payment_modify_action(@ModelAttribute Payment payment) {
 		Map resultMap=new HashMap();
 		int code=2;
 		String url="";
