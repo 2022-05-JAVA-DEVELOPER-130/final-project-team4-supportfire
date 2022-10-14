@@ -24,8 +24,10 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script>
+<script type="text/javascript">
 
 
 function showDelivery() {
@@ -87,14 +89,39 @@ function showDelivery() {
 
 //버튼클릭시db update 및 저장
 function insertAddress(){
-	console.log('클릭');
+			console.log('클릭')
+		    var param=$('#payment_modify_form').serialize();
+			$.ajax({
+			    url:'payment_modify_action',
+			    method:'POST',
+			    data:param,
+			    dataType:'json',
+			    success:function(jsonResult){
+					if(jsonResult.code==1){
+					    var param='pm_no='+$("#payment_modify_form input[name='pm_no']").val();
+					    console.log(param);
+						$.ajax({
+						    url:'payment_modify_form',
+						    method:'GET',
+						    dataType:'json',
+						   	data:param,
+						    success:function(jsonResult){
+								console.log(jsonResult.data[0]);
+						    }
+						});
+					}else if(jsonResult.code==2){
+					    alert(jsonResult.msg);
+					}
+					window.open('','_self').close(); 
+					
+			    }
+			});
+	};	
 	
 	
 	
 	
-	
-	window.open('','_self').close();
-}
+
 
 
 
@@ -231,7 +258,7 @@ function insertAddress(){
                                     <input type="checkbox" id="acc">
                                     <span class="checkmark"></span>
                                 </label>
-                            <input type="button" onclick="insertAddress()" value="저장하기" id="insertAddress()">
+                            <input type="button"  value="저장하기" id="insertAddress()" onclick="insertAddress()">
                                
                             </div>
                         </div>
