@@ -70,6 +70,7 @@ public class ProductServiceSpringBootTestApplication {
 		}
 		*/
 			System.out.println(productService.selectBuyMinPriceByNo(1));
+			System.out.println(productService.selectSellMinPriceByNo(1));
 			/*
 			if(map2.get("min_price") == null) {
 			

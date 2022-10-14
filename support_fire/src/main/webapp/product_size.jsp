@@ -145,6 +145,38 @@ $.ajax({
 	}
 });
 
+
+$(document).on('click', '.buy', function(e){
+	$.ajax({
+		url:'sizeClick_p',
+		method:'POST',
+		dataType:'json',
+		data: {pd_no : e.currentTarget.value},
+		success:function(jsonResult){
+			$('#ipchal').html(sizeClick_p(jsonResult.productDetail, jsonResult.productSize, jsonResult.product, jsonResult.buymin));
+		}
+
+	});
+
+});
+
+$(document).on('click', '.sell', function(e){
+	$.ajax({
+		url:'sizeClick_s',
+		method:'POST',
+		dataType:'json',
+		data: {pd_no : e.currentTarget.value},
+		success:function(jsonResult){
+			$('#ipchal').html(sizeClick_s(jsonResult.productDetail, jsonResult.productSize, jsonResult.product, jsonResult.buymin));
+		}
+
+	});
+
+});
+
+
+
+
 });
 
 
@@ -226,6 +258,7 @@ $.ajax({
       </div>
    </section>
    <!-- Breadcrumb Section End -->
+   <div id="ipchal">
    <div id="__nuxt">
       <!---->
       <div id="__layout">
@@ -335,18 +368,6 @@ $.ajax({
          </div>
       </div>
    </div>
-   
-
-
-
-
-   
-</body>
-</html>
-
-
-
-
 <!-- Footer Section Begin -->
 <footer class="footer">
    <div class="container">
@@ -420,16 +441,18 @@ $.ajax({
 </footer>
 <!-- Footer Section End -->
 
-<!-- Search Begin -->
-<div class="search-model">
-   <div class="h-100 d-flex align-items-center justify-content-center">
-      <div class="search-close-switch">+</div>
-      <form class="search-model-form">
-         <input type="text" id="search-input" placeholder="Search here.....">
-      </form>
-   </div>
-</div>
-<!-- Search End -->
+
+
+   
+</body>
+</html>
+
+
+
+
+
+
+
 
 <!-- Js Plugins -->
 <script src="js/jquery-3.3.1.min.js"></script>
