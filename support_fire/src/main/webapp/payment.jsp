@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>	
+
 
 
 <html lang="zxx">
@@ -31,55 +33,239 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/test.css" type="text/css">
-<link href="./_nuxt/css/74432ba.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/db982ae.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/dd20fa4.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/ee18271.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/09348cd.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/734fa9a.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/c3bbf15.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/d62dccd.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/4e9a7cc.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/63fac4d.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/61299ed.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/efe128e.css" rel="stylesheet" type="text/css">
-<link href="./_nuxt/css/cdddabb.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="./_nuxt/css/d3988c3.css">
-<link rel="stylesheet" href="./_nuxt/css/734fa9a.css">
-<link rel="stylesheet" href="./_nuxt/css/ee18271.css">
-<link rel="stylesheet" href="./_nuxt/css/09348cd.css">
-<link rel="stylesheet" href="./_nuxt/css/dd20fa4.css">
-<link rel="stylesheet" href="./_nuxt/css/74432ba.css">
-<link rel="stylesheet" href="./_nuxt/css/db982ae.css">
+<link href="_nuxt/css/74432ba.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/db982ae.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/dd20fa4.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/ee18271.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/09348cd.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/734fa9a.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/c3bbf15.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/d62dccd.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/4e9a7cc.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/63fac4d.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/61299ed.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/efe128e.css" rel="stylesheet" type="text/css">
+<link href="_nuxt/css/cdddabb.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="_nuxt/css/d3988c3.css">
+<link rel="stylesheet" href="_nuxt/css/734fa9a.css">
+<link rel="stylesheet" href="_nuxt/css/ee18271.css">
+<link rel="stylesheet" href="_nuxt/css/09348cd.css">
+<link rel="stylesheet" href="_nuxt/css/dd20fa4.css">
+<link rel="stylesheet" href="_nuxt/css/74432ba.css">
+<link rel="stylesheet" href="_nuxt/css/db982ae.css">
 
 <script type="text/javascript" src="js/address.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script type="text/javascript" src="js/top_content.js"></script>
+
+<style>
+      .modal {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        display: none;
+
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      .modal.show {
+        display: block;
+      }
+
+      .modal_body {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        width: 600px;
+        height: 800px;
+
+        padding: 20px;
+
+        text-align: center;
+
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+
+        transform: translateX(-50%) translateY(-50%);
+      }
+      
+    .contact__form input{
+	margin-bottom: 5px;
+	width : 90%;
+	height: 50px;
+    border: 0;
+    border-bottom: 1px solid #ebebeb;
+    display: inline-block;
+    }
+    
+    .contact__form span {
+    width:20%;
+    display:block;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    margin-right: auto;
+    }
+    </style>
+
 
 <script type="text/javascript">
+function showDelivery() {
+	new daum.Postcode(
+			{
+				oncomplete : function(data) {
+					// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 
-$(document).on('click','#add_more_btn',function(e){
-	var add_address=window.open('address.jsp');
-	console.log('입력');
-	$('#content').html(address_form_content());
+					// 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+					// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+					var roadAddr = data.roadAddress; // 도로명 주소 변수
+					var extraRoadAddr = ''; // 참고 항목 변수
+
+					// 법정동명이 있을 경우 추가한다. (법정리는 제외)
+					// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+					if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
+						extraRoadAddr += data.bname;
+					}
+					// 건물명이 있고, 공동주택일 경우 추가한다.
+					if (data.buildingName !== '' && data.apartment === 'Y') {
+						extraRoadAddr += (extraRoadAddr !== '' ? ', '
+								+ data.buildingName : data.buildingName);
+					}
+					// 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+					if (extraRoadAddr !== '') {
+						extraRoadAddr = ' (' + extraRoadAddr + ')';
+					}
+
+					// 우편번호와 주소 정보를 해당 필드에 넣는다.
+					document.getElementById('sample4_postcode').value = data.zonecode;
+					document.getElementById("sample4_roadAddress").value = roadAddr;
+					document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
+
+					// 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
+					if (roadAddr !== '') {
+						document.getElementById("sample4_extraAddress").value = extraRoadAddr;
+					} else {
+						document.getElementById("sample4_extraAddress").value = '';
+					}
+					var guideTextBox = document.getElementById("guide");
+					// 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
+					if (data.autoRoadAddress) {
+						var expRoadAddr = data.autoRoadAddress
+								+ extraRoadAddr;
+						guideTextBox.innerHTML = '(예상 도로명 주소 : '
+								+ expRoadAddr + ')';
+						guideTextBox.style.display = 'block';
+
+					} else if (data.autoJibunAddress) {
+						var expJibunAddr = data.autoJibunAddress;
+						guideTextBox.innerHTML = '(예상 지번 주소 : '
+								+ expJibunAddr + ')';
+						guideTextBox.style.display = 'block';
+					} else {
+						guideTextBox.innerHTML = '';
+						guideTextBox.style.display = 'none';
+					}
+				}
+			}).open();
+
+};
+
+ $(function(){
+		
+		$.ajax({
+			url:'session_check',
+			method:'POST',
+			dataType:'json',
+			success:function(jsonResult){
+			    if(jsonResult.code==1){
+			    	var member = jsonResult.data;
+				 	$('#top_content').html(login_top(member));
+			    }else if(jsonResult.code==2){
+				 	$('#top_content').html(logout_top());
+			    }
+			   
+			}
+		});
+		
+	$(document).on('click', '#address_btn', function(){
+	console.log($('#address_form').serialize());
+	 $.ajax({
+			url:'address_btn',
+			method:'POST',
+			data: $('#address_form').serialize(),
+			dataType:'json',
+			success:function(jsonResult){
+				$('#content').html(address_form_content(jsonResult));
+			}
+	 });
+	});
 });
 
-
-
-
+	 
 
 </script>
 </head>
 <body>
+<div class="modal">
+      <div class="modal_body"><section class="">
+		
+	<!-- Breadcrumb Section End -->
+
+	<!-- Checkout Section Begin -->
+	
+		
+						<div class="contact__form">
+							<form id="address_form">
+							<h6 class="checkout__title">주소추가하기</h6>
+								
+							<span>이름*</span><input type="text" class="asd" name="m_id" id="m_id" palceholder="수령">
+							<span>휴대전화*</span><input type="text" class="asd" name="m_phone" id="m_phone">
+
+							<div class="checkout__input">
+								<p>
+									<span>우편번호*</span>
+								</p>
+								<input type="button" class="asd" onclick="showDelivery()" value="우편번호 찾기"
+									class="input_txt"> <input type="text" class="asd"
+									id="sample4_postcode">
+							</div>
+									<span>주소*</span>
+								<input type="text" class="asd" placeholder="도로명주소"
+									class="checkout__input__add" name="sample4_roadAddress" id="sample4_roadAddress">
+								<input type="text" class="asd" placeholder="지번주소" id="sample4_jibunAddress">
+
+							<div class="checkout__input">
+								<p>
+									<span>배송메모*</span>
+								</p>
+								<input type="text" class="asd" placeholder="배송메모">
+							</div>
+							<div class="checkout__input__checkbox">
+								<label for="acc"> <span style="width: 30%">기본 배송지로설정</span> <input type="checkbox"
+									id="acc"> <span class="checkmark"></span>
+								</label><button type="button" class="site-btn" style="margin-top: 50px;" id="address_btn">저장</button>
+
+							</div>
+							</form>
+						</div>
+	</section>
+	</div>
+    </div>
 	<!-- Page Preloder -->
 	<div id="preloder">
 		<div class="loader"></div>
 	</div>
 
 	<!-- Offcanvas Menu Begin -->
-
-	<jsp:include page="/top.jsp" />
-
+	<div id="top_content">
+    <jsp:include page="top.jsp" />
+    </div>
 	<!-- Offcanvas Menu End -->
 	
 
@@ -88,7 +274,7 @@ $(document).on('click','#add_more_btn',function(e){
 		<div class="row">
 			<div class="col-lg-3 col-md-3">
 				<div class="header__logo">
-					<a href="./index.jsp"><img src="img/logo.png" alt=""></a>
+					<a href="./index.jsp"><img src="img/IMG_0608 (1).jpg" alt=""></a>
 				</div>
 			</div>
 			<div class="col-lg-6 col-md-6">
@@ -164,7 +350,7 @@ $(document).on('click','#add_more_btn',function(e){
 										<source data-v-6c8b3524=""
 											srcset="https://kream-phinf.pstatic.net/MjAyMjA5MjdfOCAg/MDAxNjY0MjU5NTg2MDIy.wQktWmJWTwo83JVbleQzdaQ2OOfKTJp9RejdJvoeK-cg.Svg3Q-zegOeOgmjB6WpvyFAwXv51kpmljf-cvrybr08g.JPEG/a_9fe393b4a2c44008b1fecbc65adb407d.jpg?type=l">
 										<img data-v-6c8b3524="" alt="상품 이미지"
-											src="https://kream-phinf.pstatic.net/MjAyMjA5MjdfOCAg/MDAxNjY0MjU5NTg2MDIy.wQktWmJWTwo83JVbleQzdaQ2OOfKTJp9RejdJvoeK-cg.Svg3Q-zegOeOgmjB6WpvyFAwXv51kpmljf-cvrybr08g.JPEG/a_9fe393b4a2c44008b1fecbc65adb407d.jpg?type=l"
+											src="img/product/${product.p_image}"
 											class="image"></picture>
 										<!---->
 										<!---->
@@ -175,7 +361,7 @@ $(document).on('click','#add_more_btn',function(e){
 											data-v-2b95d831="" class="mark_95">95점</span>DD1391-602 </strong>
 										<p data-v-2b95d831="" class="model_title">Nike Dunk Low
 											Retro Gym Red</p>
-										<p data-v-2b95d831="" class="model_ko">나이키 덩크 로우 레트로 짐레드</p>
+										<p data-v-2b95d831="" class="model_ko">${product.p_name}</p>
 										<div data-v-2b95d831="" class="model_desc">
 											<p data-v-2b95d831="" class="size_txt">250</p>
 											<div data-v-6da6dff3="" data-v-2b95d831=""
@@ -188,7 +374,7 @@ $(document).on('click','#add_more_btn',function(e){
 								<div data-v-6a5da210="" class="section_unit">
 									<div data-v-6a5da210="" class="section_title">
 										<h3 data-v-6a5da210="" class="title_txt">배송 주소</h3>
-										<a data-v-6a5da210="" href='#' class="add_more_btn" id="add_more_btn">+ 새 주소
+										<a data-v-6a5da210="" href='#' class="btn-open-popup" id="add_more_btn">+ 새 주소
 											추가</a>
 									</div>
 									<div id="content" data-v-6a5da210="" class="section_content">
@@ -566,7 +752,29 @@ $(document).on('click','#add_more_btn',function(e){
 		</div>
 	</div>
 	<!-- Search End -->
+ <script>
+      const body = document.querySelector('body');
+      const modal = document.querySelector('.modal');
+      const btnOpenPopup = document.querySelector('.btn-open-popup');
 
+      btnOpenPopup.addEventListener('click', () => {
+        modal.classList.toggle('show');
+
+        if (modal.classList.contains('show')) {
+          body.style.overflow = 'hidden';
+        }
+      });
+
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+          modal.classList.toggle('show');
+
+          if (!modal.classList.contains('show')) {
+            body.style.overflow = 'auto';
+          }
+        }
+      });
+    </script>
 	<!-- Js Plugins -->
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

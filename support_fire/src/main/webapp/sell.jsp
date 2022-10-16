@@ -60,6 +60,8 @@
 
 $(document).on('click','#add_more_btn',function(e){
 	var add_address=window.open('address.jsp');
+	console.log('입력');
+	$('#content').html(address_form_content());
 });
 
 
@@ -84,7 +86,7 @@ $(document).on('click','#add_more_btn',function(e){
 		<div class="row">
 			<div class="col-lg-3 col-md-3">
 				<div class="header__logo">
-					<a href="./index.jsp"><img src="img/logo.png" alt=""></a>
+					<a href="./index.jsp"><img src="img/IMG_0608 (1).jpg" alt=""></a>
 				</div>
 			</div>
 			<div class="col-lg-6 col-md-6">

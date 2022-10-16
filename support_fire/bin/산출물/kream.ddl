@@ -1,3 +1,4 @@
+DROP TABLE REQNA CASCADE CONSTRAINTS;
 DROP TABLE payment CASCADE CONSTRAINTS;
 DROP TABLE paymentList CASCADE CONSTRAINTS;
 DROP TABLE wishList CASCADE CONSTRAINTS;
@@ -13,9 +14,8 @@ DROP TABLE sizes CASCADE CONSTRAINTS;
 DROP TABLE product CASCADE CONSTRAINTS;
 DROP TABLE brands CASCADE CONSTRAINTS;
 DROP TABLE category CASCADE CONSTRAINTS;
-DROP TABLE address CASCADE CONSTRAINTS;
+DROP TABLE deliveryAddress CASCADE CONSTRAINTS;
 DROP TABLE member CASCADE CONSTRAINTS;
-
 /**********************************/
 /* Table Name: member */
 /**********************************/
@@ -27,7 +27,8 @@ CREATE TABLE member(
 		m_birth                       		VARCHAR2(10)		 NULL ,
 		m_email                       		VARCHAR2(50)		 NULL ,
 		m_gender                      		VARCHAR2(10)		 NOT NULL,
-		m_point                       		NUMBER(10)		 NULL 
+		m_point                       		NUMBER(10)		 NULL ,
+		m_address                     		VARCHAR2(100)		 NULL 
 );
 
 DROP SEQUENCE member_m_id_SEQ;
@@ -43,21 +44,26 @@ COMMENT ON COLUMN member.m_birth is 'm_birth';
 COMMENT ON COLUMN member.m_email is 'm_email';
 COMMENT ON COLUMN member.m_gender is 'm_gender';
 COMMENT ON COLUMN member.m_point is 'm_point';
+COMMENT ON COLUMN member.m_address is 'm_address';
 
 
 /**********************************/
-/* Table Name: address */
+/* Table Name: deliveryAddress */
 /**********************************/
-CREATE TABLE address(
-		a_no                          		NUMBER(10)		 NULL ,
-		address                       		VARCHAR2(50)		 NOT NULL,
+CREATE TABLE deliveryAddress(
+		da_name                       		VARCHAR2(30)		 NULL ,
+		da_zipcode                    		VARCHAR2(20)		 NULL ,
+		da_streetAddr                 		VARCHAR2(30)		 NULL ,
+		da_detailAddr                 		VARCHAR2(30)		 NULL ,
 		m_id                          		VARCHAR2(20)		 NULL 
 );
 
-COMMENT ON TABLE address is 'address';
-COMMENT ON COLUMN address.a_no is 'a_no';
-COMMENT ON COLUMN address.address is 'address';
-COMMENT ON COLUMN address.m_id is 'm_id';
+COMMENT ON TABLE deliveryAddress is 'deliveryAddress';
+COMMENT ON COLUMN deliveryAddress.da_name is 'da_name';
+COMMENT ON COLUMN deliveryAddress.da_zipcode is 'da_zipcode';
+COMMENT ON COLUMN deliveryAddress.da_streetAddr is 'da_streetAddr';
+COMMENT ON COLUMN deliveryAddress.da_detailAddr is 'da_detailAddr';
+COMMENT ON COLUMN deliveryAddress.m_id is 'm_id';
 
 
 /**********************************/
@@ -86,6 +92,7 @@ DROP SEQUENCE brands_br_no_SEQ;
 
 CREATE SEQUENCE brands_br_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
+
 COMMENT ON TABLE brands is 'brands';
 COMMENT ON COLUMN brands.br_no is 'br_no';
 COMMENT ON COLUMN brands.br_name is 'br_name';
@@ -97,16 +104,17 @@ COMMENT ON COLUMN brands.c_no is 'c_no';
 /**********************************/
 CREATE TABLE product(
 		p_no                          		NUMBER(10)		 NOT NULL,
-		p_name                        		VARCHAR2(50)		 NULL ,
+		p_name                        		VARCHAR2(100)		 NULL ,
 		p_date                        		VARCHAR2(15)		 NULL ,
-		p_price                       		VARCHAR2(20)		 NULL ,
-		p_image                       		VARCHAR2(50)		 NULL ,
+		p_price                       		NUMBER(20)		 NULL ,
+		p_image                       		VARCHAR2(100)		 NULL ,
 		br_no                         		NUMBER(10)		 NULL 
 );
 
 DROP SEQUENCE product_p_no_SEQ;
 
 CREATE SEQUENCE product_p_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
+
 
 COMMENT ON TABLE product is 'product';
 COMMENT ON COLUMN product.p_no is 'p_no';
@@ -138,6 +146,11 @@ CREATE TABLE productSize(
 		s_size                        		VARCHAR2(30)		 NULL ,
 		p_no                          		NUMBER(10)		 NULL 
 );
+
+DROP SEQUENCE productSize_ps_no_SEQ;
+
+CREATE SEQUENCE productSize_ps_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
+
 
 COMMENT ON TABLE productSize is 'productSize';
 COMMENT ON COLUMN productSize.ps_no is 'ps_no';
@@ -176,7 +189,7 @@ COMMENT ON COLUMN bidStatus.b_status is 'b_status';
 /**********************************/
 CREATE TABLE productDetail(
 		pd_no                         		NUMBER(10)		 NOT NULL,
-		pd_price                      		VARCHAR2(20)		 NULL ,
+		pd_price                      		NUMBER(20)		 NULL ,
 		pd_start                      		DATE		 DEFAULT sysdate		 NULL ,
 		pd_end                        		DATE		 NULL ,
 		ps_no                         		VARCHAR2(20)		 NULL ,
@@ -209,28 +222,20 @@ CREATE TABLE QNA(
 		q_title                       		VARCHAR2(100)		 NULL ,
 		q_content                     		VARCHAR2(1000)		 NULL ,
 		q_date                        		DATE		 NULL ,
-		q_groupno                     		NUMBER(10)		 NULL ,
-		q_step                        		NUMBER(10)		 NULL ,
-		q_depth                       		NUMBER(10)		 NULL ,
-		m_id                          		VARCHAR2(20)		 NULL 
+		m_id                          		VARCHAR2(20)		 NULL, 
+        rq_no                         		NUMBER(10)
 );
 
 DROP SEQUENCE QNA_q_no_SEQ;
 
 CREATE SEQUENCE QNA_q_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
-DROP SEQUENCE QNA_q_groupno_SEQ;
-
-CREATE SEQUENCE QNA_q_groupno_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
 COMMENT ON TABLE QNA is 'QNA';
 COMMENT ON COLUMN QNA.q_no is 'q_no';
 COMMENT ON COLUMN QNA.q_title is 'q_title';
 COMMENT ON COLUMN QNA.q_content is 'q_content';
 COMMENT ON COLUMN QNA.q_date is 'q_date';
-COMMENT ON COLUMN QNA.q_groupno is 'q_groupno';
-COMMENT ON COLUMN QNA.q_step is 'q_step';
-COMMENT ON COLUMN QNA.q_depth is 'q_depth';
 COMMENT ON COLUMN QNA.m_id is 'm_id';
 
 
@@ -250,6 +255,7 @@ CREATE TABLE review(
 DROP SEQUENCE review_r_no_SEQ;
 
 CREATE SEQUENCE review_r_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
+
 
 COMMENT ON TABLE review is 'review';
 COMMENT ON COLUMN review.r_no is 'r_no';
@@ -275,6 +281,7 @@ DROP SEQUENCE notice_n_no_SEQ;
 
 CREATE SEQUENCE notice_n_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
+
 COMMENT ON TABLE notice is 'notice';
 COMMENT ON COLUMN notice.n_no is 'n_no';
 COMMENT ON COLUMN notice.n_title is 'n_title';
@@ -286,7 +293,7 @@ COMMENT ON COLUMN notice.n_date is 'n_date';
 /* Table Name: orders */
 /**********************************/
 CREATE TABLE orders(
-		o_no                          		VARCHAR2(10)		 NULL ,
+		o_no                          		NUMBER(10)		 NULL ,
 		o_date                        		DATE		 NULL ,
 		pd_no_purchase                		NUMBER(10)		 NULL ,
 		pd_no_sell                    		NUMBER(10)		 NULL ,
@@ -296,6 +303,7 @@ CREATE TABLE orders(
 DROP SEQUENCE orders_o_no_SEQ;
 
 CREATE SEQUENCE orders_o_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
+
 
 COMMENT ON TABLE orders is 'orders';
 COMMENT ON COLUMN orders.o_no is 'o_no';
@@ -342,7 +350,7 @@ CREATE TABLE payment(
 		pm_phone                      		VARCHAR2(15)		 NULL ,
 		pm_address                    		VARCHAR2(50)		 NULL ,
 		pm_memo                       		VARCHAR2(100)		 NULL ,
-		o_no                          		VARCHAR2(10)		 NULL ,
+		o_no                          		NUMBER(10)		 NULL ,
 		pl_no                         		NUMBER(10)		 NULL 
 );
 
@@ -356,48 +364,81 @@ COMMENT ON COLUMN payment.o_no is 'o_no';
 COMMENT ON COLUMN payment.pl_no is 'pl_no';
 
 
+/**********************************/
+/* Table Name: REQNA */
+/**********************************/
+CREATE TABLE REQNA(
+		rq_no                         		NUMBER(10)		 NOT NULL,
+		rq_content                    		VARCHAR2(1000)		 NULL ,
+		rq_date                       		DATE		 DEFAULT sysdate		 NULL
+);
+
+DROP SEQUENCE REQNA_rq_no_SEQ;
+
+CREATE SEQUENCE REQNA_rq_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
+
+
+COMMENT ON TABLE REQNA is 'REQNA';
+COMMENT ON COLUMN REQNA.rq_no is 'rq_no';
+COMMENT ON COLUMN REQNA.rq_content is 'rq_content';
+COMMENT ON COLUMN REQNA.rq_date is 'rq_date';
 
 ALTER TABLE member ADD CONSTRAINT IDX_member_PK PRIMARY KEY (m_id);
 
-ALTER TABLE address ADD CONSTRAINT IDX_address_PK PRIMARY KEY (a_no);
-
+ALTER TABLE deliveryAddress ADD CONSTRAINT IDX_deliveryAddress_PK PRIMARY KEY (da_zipcode);
+ALTER TABLE deliveryAddress ADD CONSTRAINT IDX_deliveryAddress_FK0 FOREIGN KEY (m_id) REFERENCES member (m_id);
 
 ALTER TABLE category ADD CONSTRAINT IDX_category_PK PRIMARY KEY (c_no);
 
 ALTER TABLE brands ADD CONSTRAINT IDX_brands_PK PRIMARY KEY (br_no);
-
+ALTER TABLE brands ADD CONSTRAINT IDX_brands_FK0 FOREIGN KEY (c_no) REFERENCES category (c_no);
 
 ALTER TABLE product ADD CONSTRAINT IDX_product_PK PRIMARY KEY (p_no);
-
+ALTER TABLE product ADD CONSTRAINT IDX_product_FK0 FOREIGN KEY (br_no) REFERENCES brands (br_no);
 
 ALTER TABLE sizes ADD CONSTRAINT IDX_sizes_PK PRIMARY KEY (s_size);
-
+ALTER TABLE sizes ADD CONSTRAINT IDX_sizes_FK0 FOREIGN KEY (c_no) REFERENCES category (c_no);
 
 ALTER TABLE productSize ADD CONSTRAINT IDX_productSize_PK PRIMARY KEY (ps_no);
-
+ALTER TABLE productSize ADD CONSTRAINT IDX_productSize_FK0 FOREIGN KEY (s_size) REFERENCES sizes (s_size);
+ALTER TABLE productSize ADD CONSTRAINT IDX_productSize_FK1 FOREIGN KEY (p_no) REFERENCES product (p_no);
 
 ALTER TABLE bidType ADD CONSTRAINT IDX_bidType_PK PRIMARY KEY (bt_no);
 
 ALTER TABLE bidStatus ADD CONSTRAINT IDX_bidStatus_PK PRIMARY KEY (b_no);
 
 ALTER TABLE productDetail ADD CONSTRAINT IDX_productDetail_PK PRIMARY KEY (pd_no);
+ALTER TABLE productDetail ADD CONSTRAINT IDX_productDetail_FK0 FOREIGN KEY (ps_no) REFERENCES productSize (ps_no);
+ALTER TABLE productDetail ADD CONSTRAINT IDX_productDetail_FK1 FOREIGN KEY (bt_no) REFERENCES bidType (bt_no);
+ALTER TABLE productDetail ADD CONSTRAINT IDX_productDetail_FK2 FOREIGN KEY (b_no) REFERENCES bidStatus (b_no);
+ALTER TABLE productDetail ADD CONSTRAINT IDX_productDetail_FK3 FOREIGN KEY (m_id) REFERENCES member (m_id);
 
+ALTER TABLE REQNA ADD CONSTRAINT IDX_REQNA_PK PRIMARY KEY (rq_no);
 
 ALTER TABLE QNA ADD CONSTRAINT IDX_QNA_PK PRIMARY KEY (q_no);
-
+ALTER TABLE QNA ADD CONSTRAINT IDX_QNA_FK0 FOREIGN KEY (m_id) REFERENCES member (m_id);
+ALTER TABLE QNA ADD CONSTRAINT IDX_QNA_FK1 FOREIGN KEY (rq_no) REFERENCES REQNA (rq_no);
 
 ALTER TABLE review ADD CONSTRAINT IDX_review_PK PRIMARY KEY (r_no);
-
-
+ALTER TABLE review ADD CONSTRAINT IDX_review_FK0 FOREIGN KEY (p_no) REFERENCES product (p_no);
+ALTER TABLE review ADD CONSTRAINT IDX_review_FK1 FOREIGN KEY (m_id) REFERENCES member (m_id);
 
 ALTER TABLE notice ADD CONSTRAINT IDX_notice_PK PRIMARY KEY (n_no);
 
 ALTER TABLE orders ADD CONSTRAINT IDX_orders_PK PRIMARY KEY (o_no);
-
+ALTER TABLE orders ADD CONSTRAINT IDX_orders_FK0 FOREIGN KEY (pd_no_purchase) REFERENCES productDetail (pd_no);
+ALTER TABLE orders ADD CONSTRAINT IDX_orders_FK1 FOREIGN KEY (pd_no_sell) REFERENCES productDetail (pd_no);
 
 ALTER TABLE wishList ADD CONSTRAINT IDX_wishList_PK PRIMARY KEY (w_no);
+ALTER TABLE wishList ADD CONSTRAINT IDX_wishList_FK0 FOREIGN KEY (p_no) REFERENCES product (p_no);
+ALTER TABLE wishList ADD CONSTRAINT IDX_wishList_FK1 FOREIGN KEY (m_id) REFERENCES member (m_id);
 
 ALTER TABLE paymentList ADD CONSTRAINT IDX_paymentList_PK PRIMARY KEY (pl_no);
 
 ALTER TABLE payment ADD CONSTRAINT IDX_payment_PK PRIMARY KEY (pm_no);
+ALTER TABLE payment ADD CONSTRAINT IDX_payment_FK0 FOREIGN KEY (o_no) REFERENCES orders (o_no);
+ALTER TABLE payment ADD CONSTRAINT IDX_payment_FK1 FOREIGN KEY (pl_no) REFERENCES paymentList (pl_no);
 
+
+
+COMMIT;

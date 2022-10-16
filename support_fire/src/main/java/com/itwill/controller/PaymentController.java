@@ -138,5 +138,27 @@ public class PaymentController {
 		return "address";
 	}
 	
+	@RequestMapping("address_btn")
+	public Map address_btn(String m_id, String m_phone, String sample4_roadAddress) {
+		Map resultMap=new HashMap();
+		int code=2;
+		String url="";
+		String msg="";
+		String address = sample4_roadAddress;
+		
+		System.out.println(m_id);
+		System.out.println(m_phone);
+		System.out.println(address);
+		
+		resultMap.put("code", code);
+		resultMap.put("url", url);
+		resultMap.put("msg", msg);
+		resultMap.put("m_id",m_id);
+		resultMap.put("m_phone",m_phone);
+		resultMap.put("address",address);
+		
+		return resultMap;
+	}
 	
 }
+	

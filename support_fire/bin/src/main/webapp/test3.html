@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Modal</title>
+<style>
+#modal.modal-overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.25);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(1.5px);
+	-webkit-backdrop-filter: blur(1.5px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#modal .modal-window {
+	background: rgba(69, 139, 197, 0.70);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(13.5px);
+	-webkit-backdrop-filter: blur(13.5px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	width: 400px;
+	height: 500px;
+	position: relative;
+	top: -100px;
+	padding: 10px;
+}
+
+#modal .title {
+	padding-left: 10px;
+	display: inline;
+	text-shadow: 1px 1px 2px gray;
+	color: white;
+}
+
+#modal .title h2 {
+	display: inline;
+}
+
+#modal .close-area {
+	display: inline;
+	float: right;
+	padding-right: 10px;
+	cursor: pointer;
+	text-shadow: 1px 1px 2px gray;
+	color: white;
+}
+
+#modal .content {
+	margin-top: 20px;
+	padding: 0px 10px;
+	text-shadow: 1px 1px 2px gray;
+	color: white;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(document).on('click', '#item-user-request', function(e){
+		console.log(e.target)
+		$.ajax({
+			success:function(book){
+				
+				
+				var html1=
+							`<section class="breadcrumb-option">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="breadcrumb__text">
+						<h4>배송지추가</h4>
+						<div class="breadcrumb__links">
+							<a href="./index.jsp">Home</a> <a href="./shop">Shop</a> <span>배송지추가</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Breadcrumb Section End -->
+
+	<!-- Checkout Section Begin -->
+	
+	<section class="checkout spad">
+		<div class="container">
+			<div class="checkout__form">
+				<form name="f" id="payment_modify_form" method="post">
+					<div class="row">
+						<div class="col-lg-8 col-md-6">
+
+							<h6 class="checkout__title">주소추가하기</h6>
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="checkout__input">
+										<p>
+											이름<span>*</span>
+										</p>
+										<input type="text" palceholder="수령">
+									</div>
+								</div>
+
+							</div>
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="checkout__input">
+										<p>
+											휴대전화<span>*</span>
+										</p>
+										<input type="text">
+									</div>
+								</div>
+
+							</div>
+
+
+
+							<div class="checkout__input">
+								<p>
+									우편번호<span>*</span>
+								</p>
+								<input type="button" onclick="showDelivery()" value="우편번호 찾기"
+									class="input_txt"> <input type="text"
+									id="sample4_postcode">
+							</div>
+							<div class="checkout__input">
+								<p>
+									주소<span>*</span>
+								</p>
+								<input type="text" placeholder="도로명주소"
+									class="checkout__input__add" id="sample4_roadAddress">
+								<input type="text" placeholder="지번주소" id="sample4_jibunAddress">
+							</div>
+
+							<div class="checkout__input">
+								<p>
+									배송메모<span>*</span>
+								</p>
+								<input type="text" placeholder="배송메모">
+							</div>
+							<div class="checkout__input__checkbox">
+								<label for="acc"> 기본 배송지로설정 <input type="checkbox"
+									id="acc"> <span class="checkmark"></span>
+								</label> <input type="button" value="저장하기" id="insertAddress()"
+									onclick="insertAddress()">
+
+							</div>
+						</div>
+	</section>
+	`;
+				$(e.target).find('#modal-body-user-request').html(html1);
+				
+			}
+		});
+	});
+	
+});
+
+</script>
+
+
+</head>
+	<body class="page-template page-template-page-without-title page-template-page-without-title-php page page-id-2053 logged-in wp-custom-logo wp-embed-responsive has-fixed-top singular image-filters-enabled elementor-default elementor-kit-14083">
+	<!-- Modal -->
+
+	<div class="modal fade" id="item-user-request" tabindex="-1"
+		book_no="${book.book_no}" role="dialog"
+		aria-labelledby="item-user-request-title" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="item-user-request-title">신청 제목</h5>
+					<button type="button" class="close reset-iframe-content"
+						data-dismiss="modal" aria-label="닫기">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body item-overview-info-block-body active"
+					id="modal-body-user-request"></div>
+				<div class="modal-footer">
+					<button type="button"
+						class="btn btn-secondary reset-iframe-content"
+						data-dismiss="modal">닫기</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<a data-toggle="modal"data-target="#item-user-request" id="item-user-request" class="item-loc-service"	title="도서예약신청" href="">aa </a>
+	<div id="modal-body-user-request">
+	
+	</div>
+	
+</body>
+</html>
