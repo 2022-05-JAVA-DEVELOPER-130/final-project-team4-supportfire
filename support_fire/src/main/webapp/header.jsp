@@ -29,7 +29,7 @@
                                     <li><a href="./shop-details.jsp">Shop Details</a></li>
                                     <li><a href="./shopping-cart.jsp">Shopping Cart</a></li>
                                     <li><a href="./checkout.jsp">Check Out</a></li>
-                                    <li><a href="./blog-details.jsp">Blog Details</a></li>
+                                    <li><a href="./tables.jsp">Notice</a></li>
                                 </ul>
                             </li>
                             <li><a href="./blog.jsp">Blog</a></li>

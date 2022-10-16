@@ -37,7 +37,7 @@ public interface NoticeMapper {
 				+ "		(select rownum idx, s.* from\r\n"
 				+ "		(select * from notice order by notice_fix desc, notice_no desc)s\r\n"
 				+ "		)ss\r\n"
-				+ "		where ss.idx <![CDATA[ >= ]]> #{pageStart} and ss.idx <![CDATA[ <= ]]> #{pageEnd}")
+				+ "		where ss.idx #{pageStart} and ss.idx #{pageEnd}")
 		List<Notice> selectAll(int pageStart, int pageEnd);
 		/*
 		<select id = "selectAll" parameterType="map" resultType = "com.itwill.brown_carrot_market.dto.Notice">
