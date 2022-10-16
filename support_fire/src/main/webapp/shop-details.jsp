@@ -65,8 +65,19 @@
 </style>
 
 <script type="text/javascript">
-
-
+$(function(){
+	
+	$.ajax({
+		url:'session_check',
+		method:'POST',
+		dataType:'json',
+		success:function(jsonResult){
+		    	var member = jsonResult.data;
+			 	$('#top_content').html(login_top(member));
+		    
+		   
+		}
+	});
 
 
 </script>
@@ -249,7 +260,7 @@
 							        <code></code> 
 							    </p>
 							</figure>
-											            
+							<!-- ------ -->				            
 				            
 				            
 				            

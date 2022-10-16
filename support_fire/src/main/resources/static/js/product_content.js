@@ -299,7 +299,7 @@ function sizeClick_s(productDetail, productSize, product, buymin){
 									href="" class="item_link">판매 입찰</a></li>
 								<li data-v-b6b2883e="" role="tab" aria-selected="true"
 									aria-controls="panel2" class="item on" id="imm"><a
-									data-v-b6b2883e="" href="payment.jsp" class="item_link">즉시 판매</a></li>
+									data-v-b6b2883e="" href="sell.jsp" class="item_link">즉시 판매</a></li>
 							</ul>
 							<!---->
 							<!---->

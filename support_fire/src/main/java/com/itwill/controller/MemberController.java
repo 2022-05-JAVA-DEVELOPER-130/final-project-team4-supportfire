@@ -270,8 +270,7 @@ public class MemberController {
 		return resultMap;
 	}
 	
-	
-	
+
 	
 	
 	
