@@ -12,7 +12,7 @@ import com.itwill.dto.Notice;
 @Mapper
 public interface NoticeMapper {
 	
-	@Insert("insert into notice values(NOTICE_N_NO_SEQ.nextval, #{n_title}, #{n_content}, sysdate)")
+	@Insert("insert into notice values(NOTICE_N_NO_SEQ.nextval, #{n_title}, #{n_content}, sysdate, #{n_count}, #{n_fix})")
 	int insert(Notice notice);
 	
 	@Update("update notice set n_title=#{n_title}, n_content=#{n_content} where n_no = #{n_no}")
@@ -24,6 +24,13 @@ public interface NoticeMapper {
 	@Select("select * from notice where n_no = #{n_no}")
 	Notice selectByNo(int n_no);
 	
+	//
+	@Select("select count(*) from notice")
+	int SelectCount();
+	
+	@Update("update notice set n_count = n_count+1 where n_no = #{n_no}")
+	int updateCount(int n_no);
+	
 	@Select("select * from notice order by n_no desc")
-	List<Notice> selectAll();
+	List<Notice> selectAll(int pageStart, int pageEnd);
 }

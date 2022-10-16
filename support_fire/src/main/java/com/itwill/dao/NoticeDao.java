@@ -6,16 +6,19 @@ import java.util.List;
 import com.itwill.dto.Notice;
 
 public interface NoticeDao {
+
+	List<Notice> selectAll(int pageStart, int pageEnd) throws Exception;
 	
+	int insert(Notice notice) throws Exception;
 	
-	int insert(Notice notice);
+	Notice selectByNo(int notice_no) throws Exception;
 	
-	int update(Notice notice);
+	int delete(int notice_no) throws Exception;
 	
-	int delete(int n_no);
+	int update(Notice notice) throws Exception;
 	
-	Notice selectByNo(int n_no);
-	
-	List<Notice> selectAll();
+	int updateCount(int notice_no) throws Exception;
+
+	int selectCount() throws Exception;
 	
 }

@@ -5,17 +5,22 @@ public class Notice {
 	private String n_title;
 	private String n_content;
 	private String n_date;
+	private int n_count;
+	private int n_fix;
+	
 	
 	public Notice() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Notice(int n_no, String n_title, String n_content, String n_date) {
+	public Notice(int n_no, String n_title, String n_content, String n_date, int n_count, int n_fix) {
 		super();
 		this.n_no = n_no;
 		this.n_title = n_title;
 		this.n_content = n_content;
 		this.n_date = n_date;
+		this.n_count = n_count;
+		this.n_fix = n_fix;
 	}
 
 	public int getN_no() {
@@ -50,12 +55,27 @@ public class Notice {
 		this.n_date = n_date;
 	}
 
+	public int getN_count() {
+		return n_count;
+	}
+
+	public void setN_count(int n_count) {
+		this.n_count = n_count;
+	}
+
+	public int getN_fix() {
+		return n_fix;
+	}
+
+	public void setN_fix(int n_fix) {
+		this.n_fix = n_fix;
+	}
+
 	@Override
 	public String toString() {
 		return "Notice [n_no=" + n_no + ", n_title=" + n_title + ", n_content=" + n_content + ", n_date=" + n_date
-				+ "]";
+				+ ", n_count=" + n_count + ", n_fix=" + n_fix + "]";
 	}
 	
-	
-	
+
 }
