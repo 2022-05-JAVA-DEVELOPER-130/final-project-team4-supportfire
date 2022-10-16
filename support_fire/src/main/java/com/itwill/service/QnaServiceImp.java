@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.itwill.common.PageMaker;
+import com.itwill.common.NoticePageMaker;
 import com.itwill.common.QnaPageMakerDto;
 import com.itwill.dao.QnaDao;
 import com.itwill.dto.Qna;

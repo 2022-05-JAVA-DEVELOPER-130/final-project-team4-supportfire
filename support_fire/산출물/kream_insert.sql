@@ -292,12 +292,12 @@ insert into qna values(QNA_Q_NO_SEQ.nextval, '제목8', '내용내용내용내�
 
 
 /**********notice***********/
-insert into notice values(NOTICE_N_NO_SEQ.nextval, '제목1', '내용1', sysdate);
-insert into notice values(NOTICE_N_NO_SEQ.nextval, '제목2', '내용2', sysdate);
-insert into notice values(NOTICE_N_NO_SEQ.nextval, '제목3', '내용3', sysdate);
-insert into notice values(NOTICE_N_NO_SEQ.nextval, '제목4', '내용4', sysdate);
-insert into notice values(NOTICE_N_NO_SEQ.nextval, '제목5', '내용5', sysdate);
-insert into notice values(NOTICE_N_NO_SEQ.nextval, '제목6', '내용6', sysdate);
+insert into notice values(NOTICE_N_NO_SEQ.nextval, '야미1', '까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득1', sysdate, 0, 0);
+insert into notice values(NOTICE_N_NO_SEQ.nextval, '야미2', '빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득2', sysdate, 0, 0);
+insert into notice values(NOTICE_N_NO_SEQ.nextval, '야미3', '까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득3', sysdate, 0, 0);
+insert into notice values(NOTICE_N_NO_SEQ.nextval, '야미4', '빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득4', sysdate, 0, 0);
+insert into notice values(NOTICE_N_NO_SEQ.nextval, '야미5', '까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득5', sysdate, 0, 0);
+insert into notice values(NOTICE_N_NO_SEQ.nextval, '야미6', '빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득6', sysdate, 0, 0);
 
 /*********review**********/
 insert into review values(REVIEW_R_NO_SEQ.nextval, '제목1', '내용1', sysdate, '5', 'seongmin', '1');

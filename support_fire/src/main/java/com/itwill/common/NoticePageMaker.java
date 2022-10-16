@@ -1,9 +1,8 @@
 package com.itwill.common;
-
-public class PageMaker {
-	 
+public class NoticePageMaker {
+ 
     // 페이지당 게시물 수
-    private int pageScale = 5;
+    private int pageScale = 10;
     // 화면당 페이지 수
     private int blockScale = 10;
      
@@ -47,7 +46,7 @@ public class PageMaker {
      
     // 생성자
     // PageMaker(게시물 갯수, 현재 페이지 번호)
-    public PageMaker(int count, int curPage){
+    public NoticePageMaker(int count, int curPage){
         curBlock = 1;                   // 현재 페이지 블록 번호
         this.curPage = curPage;         // 현재 페이지 설정
         setTotPage(count);              // 전체 페이지 갯수 계산
@@ -56,7 +55,7 @@ public class PageMaker {
         setBlockRange();                // 페이지 블록의 시작, 끝 번호 계산
     }
      
-    public PageMaker(int count, int curPage, int pageScale, int blockScale){
+    public NoticePageMaker(int count, int curPage, int pageScale, int blockScale){
     	curBlock = 1;                   // 현재 페이지 블록 번호
     	this.curPage = curPage;         // 현재 페이지 설정
     	this.pageScale = pageScale;

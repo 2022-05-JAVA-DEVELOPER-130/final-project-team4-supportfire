@@ -2,18 +2,22 @@ package com.itwill.service;
 
 import java.util.List;
 
+import com.itwill.common.NoticePageMakerDto;
 import com.itwill.dto.Notice;
 
 public interface NoticeService {
-
-	int insert(Notice notice);
 	
-	int update(Notice notice);
+	int insert(Notice notice) throws Exception;
 	
-	int delete(int n_no);
+	int update(Notice notice) throws Exception;
 	
-	Notice selectByNo(int n_no);
+	int delete(int n_no) throws Exception;
 	
-	List<Notice> selectAll();
+	Notice selectByNo(int n_no) throws Exception;
 	
+	int updateCount(int n_no) throws Exception;
+	
+	int selectCount() throws Exception;
+	
+	NoticePageMakerDto<Notice> selectAll(int currentPage) throws Exception;
 }
