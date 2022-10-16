@@ -205,6 +205,8 @@ function showDelivery() {
 			}
 	 });
 	});
+	
+	
 });
 
 	 
@@ -410,7 +412,8 @@ function showDelivery() {
 											<span data-v-7ba61ae8="" class="text_current">보유 포인트</span>
 											
 											<div data-v-7ba61ae8="" class="value_current">
-												<span data-v-7ba61ae8="" class="point">0</span><span
+												<span data-v-7ba61ae8="" class="point"></span>
+												<span
 													data-v-7ba61ae8="" class="unit">P</span>
 											</div>
 										</div>
