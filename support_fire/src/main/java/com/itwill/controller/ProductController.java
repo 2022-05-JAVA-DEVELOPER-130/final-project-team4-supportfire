@@ -16,8 +16,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.itwill.dto.Brands;
 import com.itwill.dto.Product;
+import com.itwill.dto.ProductDetail;
+import com.itwill.dto.ProductSize;
 import com.itwill.service.BrandsService;
+import com.itwill.service.ProductDetailService;
 import com.itwill.service.ProductService;
+import com.itwill.service.ProductSizeService;
 
 @Controller
 public class ProductController {
@@ -25,6 +29,11 @@ public class ProductController {
 	private ProductService productService;
 	@Autowired
 	private BrandsService brandsService;
+	@Autowired
+	private ProductDetailService productDetailService;
+	@Autowired
+	private ProductSizeService productSizeService;
+
 	
 	@RequestMapping("shop")
 	public String product_list(HttpServletRequest request, Model model) {
@@ -57,6 +66,21 @@ public class ProductController {
 		model.addAttribute("buymin", buymin);
 		model.addAttribute("sellmin", sellmin);
 		forwardPath = "shop-details";
+		return forwardPath;
+	}
+	
+	@RequestMapping(value = "payment", params = "pd_no")
+	public String product_view_payment(@RequestParam int pd_no, Model model) {
+		System.out.println("글"+pd_no);
+		String forwardPath = "";
+		ProductDetail productDetail = productDetailService.selectByNo(pd_no);
+		Product product = productService.selectByNo(productDetail.getProductsize().getProduct().getP_no());
+		ProductSize productSize=productSizeService.selectByNo(productDetail.getProductsize().getPs_no());
+		//System.out.println(productView);
+		model.addAttribute("product", product);
+		model.addAttribute("productDetail",productDetail);
+		model.addAttribute("productSize",productSize);
+		forwardPath = "payment";
 		return forwardPath;
 	}
 }
