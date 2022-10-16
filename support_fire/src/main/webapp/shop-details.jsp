@@ -240,12 +240,13 @@
 				                  </thead>
 				            </table>
 				            </div>
+				            
+				            <!-- 그래프시세 -->
 				            <figure class="highcharts-figure">
 							    <div id="container"></div>
 							    <p class="highcharts-description">
-							        Basic line chart showing trends in a dataset. This chart includes the
-							        <code>series-label</code> module, which adds a label to each line for
-							        enhanced readability.
+							        
+							        <code></code> 
 							    </p>
 							</figure>
 											            
