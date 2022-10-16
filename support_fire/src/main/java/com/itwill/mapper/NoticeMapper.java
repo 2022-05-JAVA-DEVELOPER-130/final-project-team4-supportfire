@@ -12,6 +12,7 @@ import com.itwill.dto.Notice;
 @Mapper
 public interface NoticeMapper {
 	
+	
 	@Insert("insert into notice values(NOTICE_N_NO_SEQ.nextval, #{n_title}, #{n_content}, sysdate, #{n_count}, #{n_fix})")
 	int insert(Notice notice);
 	
@@ -24,13 +25,27 @@ public interface NoticeMapper {
 	@Select("select * from notice where n_no = #{n_no}")
 	Notice selectByNo(int n_no);
 	
-	//
+	//괴도
 	@Select("select count(*) from notice")
 	int SelectCount();
 	
 	@Update("update notice set n_count = n_count+1 where n_no = #{n_no}")
 	int updateCount(int n_no);
 	
-	@Select("select * from notice order by n_no desc")
-	List<Notice> selectAll(int pageStart, int pageEnd);
+	//페이징 처리하는 공지사항 전체조회(뭔지 모름)
+		@Select("select ss.* from \r\n"
+				+ "		(select rownum idx, s.* from\r\n"
+				+ "		(select * from notice order by notice_fix desc, notice_no desc)s\r\n"
+				+ "		)ss\r\n"
+				+ "		where ss.idx <![CDATA[ >= ]]> #{pageStart} and ss.idx <![CDATA[ <= ]]> #{pageEnd}")
+		List<Notice> selectAll(int pageStart, int pageEnd);
+		/*
+		<select id = "selectAll" parameterType="map" resultType = "com.itwill.brown_carrot_market.dto.Notice">
+			select ss.* from 
+			(select rownum idx, s.* from
+			(select * from notice order by notice_fix desc, notice_no desc)s
+			)ss
+			where ss.idx <![CDATA[ >= ]]> #{pageStart} and ss.idx <![CDATA[ <= ]]> #{pageEnd}
+		</select>
+		*/
 }
