@@ -1,3 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.itwill.mapper.MemberMapper"></mapper>
+<mapper namespace="com.itwill.mapper.MemberMapper">
+
+<resultMap id="member" type="com.itwill.dto.Member">
+	<result column="m_id" property="m_id"/>
+	<result column="m_password" property="m_password"/>
+	<result column="m_name" property="m_name"/>
+	<result column="m_phone" property="m_phone"/>
+	<result column="m_birth" property="m_birth"/>
+	<result column="m_email" property="m_email"/>
+	<result column="m_gender" property="m_gender"/>
+	<result column="m_point" property="m_point"/>
+	<result column="m_address" property="m_address"/>
+</resultMap>
+</mapper>
