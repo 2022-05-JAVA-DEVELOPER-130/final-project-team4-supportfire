@@ -5,6 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -13,8 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.itwill.dto.Member;
 import com.itwill.dto.Orders;
 import com.itwill.dto.Payment;
+import com.itwill.service.MemberService;
 import com.itwill.service.PaymentService;
 
 @RestController
@@ -22,6 +27,8 @@ public class PaymentController {
 	
 	@Autowired
 	private PaymentService paymentService;
+	@Autowired
+	private MemberService memberService;
 	
 	//pm_no로 결제내역조회
 	@RequestMapping(value="select_by_pm_no" ,params="pm_no")
@@ -159,6 +166,18 @@ public class PaymentController {
 		
 		return resultMap;
 	}
+	
+	//@RequestMapping("paymemt")
+	public Member member_view(HttpServletRequest request,Model model) throws Exception{
+		String sUserId=(String)request.getSession().getAttribute("sUserId");
+		request.getSession().setAttribute("sUserId", sUserId);
+		System.out.println("입력");
+		System.out.println(sUserId);
+		Member member = memberService.selectById(sUserId);
+		model.addAttribute("member", member);
+		return member;
+	}
+	
 	
 }
 	
