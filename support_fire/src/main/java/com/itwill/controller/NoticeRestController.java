@@ -47,9 +47,9 @@ public class NoticeRestController {
 	 * 게시글 삭제
 	 */
 	@RequestMapping("/notice_delete_rest")
-	public Map<String, Object> notice_delete_rest(Integer pageno, Integer notice_no, HttpSession session){
+	public Map<String, Object> notice_delete_rest(Integer pageno, Integer n_no, HttpSession session){
 		Map<String, Object> resultMap = new HashMap<>();
-		if (pageno == null || notice_no == null) {
+		if (pageno == null || n_no == null) {
 			resultMap.put("errorCode", -1);
 			resultMap.put("errorMsg", "잘못된 접근입니다");
 		}
@@ -60,7 +60,7 @@ public class NoticeRestController {
 		}
 		*/
 		try {
-			int result = noticeService.delete(notice_no);
+			int result = noticeService.delete(n_no);
 			if (result == 1) {
 				resultMap.put("errorCode", 1);
 				resultMap.put("errorMsg", "게시글을 삭제하였습니다");

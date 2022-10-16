@@ -26,33 +26,25 @@ public class NoticeController {
 	private NoticeService noticeService;
 	
 	//공지사항 전체조회
-	@RequestMapping("/notice_list")
+	@RequestMapping("tables")
 	public String notice_list(@RequestParam(required = false, defaultValue = "1") Integer pageno,Model model) throws Exception{
 		
-		try {
 		NoticePageMakerDto<Notice> noticeList = noticeService.selectAll(pageno);
 		model.addAttribute("noticeList", noticeList);
 		model.addAttribute("pageno", pageno);
-		
-		}catch(Exception e) {
-			e.printStackTrace();
-			return "error";
-		}
-		
-		
 		return "tables";
 	}
 	
 	
 	//공지사항 상세보기
 	@RequestMapping("/notice_view")
-	public String notice_view(@RequestParam Integer pageno, Integer notice_no, Model model) throws Exception{
-		if(pageno==null || notice_no==null) {
+	public String notice_view(@RequestParam Integer pageno, Integer n_no, Model model) throws Exception{
+		if(pageno==null || n_no==null) {
 			return "tables";
 		}
 		try {
-		Notice notice = noticeService.selectByNo(notice_no);
-		noticeService.updateCount(notice_no);
+		Notice notice = noticeService.selectByNo(n_no);
+		noticeService.updateCount(n_no);
 		model.addAttribute("notice", notice);
 		model.addAttribute("pageno", pageno);
 		}catch (Exception e){
@@ -122,16 +114,16 @@ public class NoticeController {
 	public String notice_update(@RequestParam Map<String, String> params) throws Exception{
 		//String sUserId = (String)session.getAttribute("sUserId");
 		String pageno = params.get("pageno");
-		String notice_no = params.get("notice_no");
-		if (pageno == null || notice_no == null) {
+		String n_no = params.get("n_no");
+		if (pageno == null || n_no == null) {
 			return "notice_list";
 		}
 		//try {
 			Notice notice = new Notice();
-			notice.setN_no(Integer.parseInt(notice_no));
-			notice.setN_title(params.get("notice_title"));
-			notice.setN_content(params.get("notice_content"));
-			notice.setN_fix(Integer.parseInt(params.get("notice_fix")));
+			notice.setN_no(Integer.parseInt(n_no));
+			notice.setN_title(params.get("n_title"));
+			notice.setN_content(params.get("n_content"));
+			notice.setN_fix(Integer.parseInt(params.get("n_fix")));
 			noticeService.update(notice);
 			
 		/*	
@@ -140,7 +132,7 @@ public class NoticeController {
 			return "error";
 		}
 		*/
-		return "redirect:notice_view?pageno=" + pageno + "&notice_no=" + notice_no;
+		return "redirect:notice_view?pageno=" + pageno + "&n_no=" + n_no;
 	}
 
 	/*
@@ -148,9 +140,9 @@ public class NoticeController {
 	 */
 	@LoginCheck
 	@RequestMapping("/notice_update_form")
-	public String notice_update_form(@RequestParam Integer pageno, Integer notice_no, Model model) throws Exception{
+	public String notice_update_form(@RequestParam Integer pageno, Integer n_no, Model model) throws Exception{
 		//String sUserId = (String)session.getAttribute("sUserId");
-		if (pageno == null || notice_no == null) {
+		if (pageno == null || n_no == null) {
 			return "notice_list";
 		}
 		/*
@@ -160,7 +152,7 @@ public class NoticeController {
 		*/
 		try {
 			
-			Notice notice = noticeService.selectByNo(notice_no);
+			Notice notice = noticeService.selectByNo(n_no);
 			model.addAttribute("notice", notice);
 			model.addAttribute("pageno", pageno);
 			

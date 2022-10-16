@@ -44,9 +44,7 @@
     </div>
  -->
     <!-- Header Area -->
-  <div id="top_content">
-    <jsp:include page="top.jsp" />
-    </div>
+  	
     <!-- Header Area End -->
     
     <!-- Breadcumb Area -->
@@ -108,7 +106,7 @@
                       
     <!-- Footer Area -->
     	<!-- include_common_bottom.jsp start-->
-	
+		
 		<!-- include_common_bottom.jsp end-->
     <!-- Footer Area -->
 

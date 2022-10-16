@@ -23,9 +23,16 @@
     <!-- include_common_top -->
     
      <!-- Style CSS -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/board.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.min.css">
+   <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+	<script type="text/javascript" src="js/top_content.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.all.min.js"></script>
 	
 	<!-- javaScript -->
@@ -33,7 +40,27 @@
 	<script type="text/javascript" src="js/user/UserHtmlContents.js"></script>
 	<script type="text/javascript" src="js/common/CommonHtmlContents.js"></script>
 	<script type="text/javascript" src="js/common/user_session_check.js"></script>
+	<script type="text/javascript">
+$(function(){
 	
+	$.ajax({
+		url:'session_check',
+		method:'POST',
+		dataType:'json',
+		success:function(jsonResult){
+		    if(jsonResult.code==1){
+		    	var member = jsonResult.data;
+			 	$('#top_content').html(login_top(member));
+		    }else if(jsonResult.code==2){
+			 	$('#top_content').html(logout_top());
+		    }
+		   
+		}
+	});
+	
+});
+
+</script>
 	<!-- toast -->
  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
@@ -54,28 +81,67 @@
 	 -->
 	 
     <!-- Header Area -->
-    <!-- include_common_header.jsp start-->
-			<div id="top_content">
-   	<jsp:include page="top.jsp" />
+     <div id="top_content">
+    <jsp:include page="top.jsp" />
     </div>
+    <!-- include_common_header.jsp start-->
+
 		<!-- include_common_header.jsp end-->
-  	
+  	        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__logo">
+                        <a href="./index.jsp"><img src="img/IMG_0608 (1).jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                            <li><a href="index.jsp">Home</a></li>
+                            <li class="active"><a href="shop">Shop</a></li>
+                            <li><a href="#">Pages</a>
+                                <ul class="dropdown">
+                                    <li><a href="./about.jsp">About Us</a></li>
+                                    <li><a href="./shop-details.jsp">Shop Details</a></li>
+                                    <li><a href="./shopping-cart.jsp">Shopping Cart</a></li>
+                                    <li><a href="./checkout.jsp">Check Out</a></li>
+                                    <li><a href="./blog-details.jsp">Blog Details</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./blog.jsp">Blog</a></li>
+                            <li><a href="./contact.jsp">Contacts</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__nav__option">
+                        <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+                        <a href="#"><img src="img/icon/heart.png" alt=""></a>
+                        <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+                        <div class="price">$0.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="canvas__open"><i class="fa fa-bars"></i></div>
+        </div>
     <!-- Header Area End -->
     
     <!-- Breadcumb Area -->
-    <div class="breadcumb_area">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <h5>Board</h5>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Board</li>
-                    </ol>
+   <section class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__text">
+                        <h4>Notice</h4>
+                        <div class="breadcrumb__links">
+                            <a href="./index.jsp">Home</a>
+                            <span>Notice</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <!-- Breadcumb Area -->
 
     <div class="shortcodes_area section_padding_100">
@@ -105,18 +171,18 @@
 	                                        <th scope="row">${notice.notice_no}</th>
 	                                         -->
 	                                         <th>
-	                                         	<c:if test="${notice.notice_fix eq '1'}">
+	                                         	<c:if test="${notice.n_fix eq '1'}">
 	                                        			&nbsp;&nbsp;<span class="badge badge-danger">중요</span>
 	                                        		</c:if>
-	                                        		<c:if test="${notice.notice_fix eq '0'}">
+	                                        		<c:if test="${notice.n_fix eq '0'}">
 	                                        			&nbsp;&nbsp;<span class="badge badge-normal">일반</span>
 	                                        		</c:if>
 	                                         </th>
 	                                        <td>
 	                                       
 	                                       
-	                                        	<a href="notice_view?notice_no=${notice.notice_no}&pageno=${noticeList.pageMaker.curPage}">
-	                                        		${notice.notice_title}
+	                                        	<a href="notice_view?n_no=${notice.n_no}&pageno=${noticeList.pageMaker.curPage}">
+	                                        		${notice.n_title}
 	                                        		
 	                                        		
 	                                        		 
@@ -124,8 +190,8 @@
 	                                        	
 	                                        
 	                                        </td>
-	                                        <td>${notice.notice_date}</td>
-	                                        <td>${notice.notice_count}</td>
+	                                        <td>${notice.n_date}</td>
+	                                        <td>${notice.n_count}</td>
 	                                    </tr>
                                     </c:forEach>
                                    <!-- board end -->
@@ -178,7 +244,7 @@
             
     <!-- Footer Area -->
     	<!-- include_common_bottom.jsp start-->
-
+		
 		<!-- include_common_bottom.jsp end-->
     <!-- Footer Area -->
 
@@ -207,7 +273,7 @@
 	<script src="js/notice/board.js" defer></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	
-	<style type="text/css">
+	<style type="css/text/css">
 #toast-container > .toast {
     background-image: none !important;
 }
