@@ -83,7 +83,11 @@ public class ProductController {
 		return forwardPath;
 	}
 	
-	
+	@RequestMapping(value = "sell", params = "pd_no")
+	public String sell() {
+		
+		return "sell";
+	}
 	
 }
 
