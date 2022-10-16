@@ -219,7 +219,7 @@
 										<p>
 											이름<span>*</span>
 										</p>
-										<input type="text" palceholder="수령">
+										<input type="text" palceholder="수령자" id="address_name">
 									</div>
 								</div>
 
