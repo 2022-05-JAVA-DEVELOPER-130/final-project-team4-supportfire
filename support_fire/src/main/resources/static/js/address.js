@@ -72,9 +72,9 @@ function payment_modify_form_content(){
 
 function address_form_content(){
 	return`
-	
+	 
 	<div data-v-6a5da210="" class="section_content">
-	<div data-v-6a5da210="" class="delivery_info">
+	<div data-v-6a5da210=""  class="delivery_info">
 		<div data-v-05a4f438="" data-v-6a5da210="" class="address_info">
 			<dl data-v-05a4f438="" class="info_list">
 				<div data-v-05a4f438="" class="info_box">
