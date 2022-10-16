@@ -71,7 +71,6 @@ public class ProductController {
 	
 	@RequestMapping(value = "payment", params = "pd_no")
 	public String product_view_payment(@RequestParam int pd_no, Model model) {
-		System.out.println("글"+pd_no);
 		String forwardPath = "";
 		ProductDetail productDetail = productDetailService.selectByNo(pd_no);
 		Product product = productService.selectByNo(productDetail.getProductsize().getProduct().getP_no());
