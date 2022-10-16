@@ -402,7 +402,7 @@ function showDelivery() {
 								</div>
 								<div data-v-7ba61ae8="" class="section_content">
 									<div data-v-7ba61ae8="" class="section_input">
-										<input data-v-7ba61ae8="" placeholder="0" disabled="disabled"
+										<input data-v-7ba61ae8="" placeholder="0" 
 											class="input_credit">
 										<button data-v-7ba61ae8="" class="btn_use_credit disabled">
 											모두 사용</button>

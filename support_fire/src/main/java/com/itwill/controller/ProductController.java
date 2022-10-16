@@ -15,10 +15,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.itwill.dto.Brands;
+import com.itwill.dto.Member;
 import com.itwill.dto.Product;
 import com.itwill.dto.ProductDetail;
 import com.itwill.dto.ProductSize;
 import com.itwill.service.BrandsService;
+import com.itwill.service.MemberService;
 import com.itwill.service.ProductDetailService;
 import com.itwill.service.ProductService;
 import com.itwill.service.ProductSizeService;
@@ -33,6 +35,8 @@ public class ProductController {
 	private ProductDetailService productDetailService;
 	@Autowired
 	private ProductSizeService productSizeService;
+	@Autowired
+	private MemberService memberService;
 
 	
 	@RequestMapping("shop")
@@ -70,9 +74,13 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value = "payment", params = "pd_no")
-	public String product_view_payment(@RequestParam int pd_no, Model model) {
+	public String product_view_payment(@RequestParam int pd_no, Model model,HttpServletRequest request) throws Exception{
 		String forwardPath = "";
 		ProductDetail productDetail = productDetailService.selectByNo(pd_no);
+		String sUserId=(String)request.getSession().getAttribute("sUserId");
+		request.getSession().setAttribute("sUserId", sUserId);
+		Member member = memberService.selectById(sUserId);
+		model.addAttribute("member", member);
 		
 		if(productDetail.getBt_no() == 2) {
 			Product product = productService.selectByNo(productDetail.getProductsize().getProduct().getP_no());
@@ -83,6 +91,13 @@ public class ProductController {
 			model.addAttribute("productSize",productSize);
 			forwardPath= "payment";
 		}else {
+			Product product = productService.selectByNo(productDetail.getProductsize().getProduct().getP_no());
+			ProductSize productSize=productSizeService.selectByNo(productDetail.getProductsize().getPs_no());
+			//System.out.println(productView);
+			model.addAttribute("product", product);
+			model.addAttribute("productDetail",productDetail);
+			model.addAttribute("productSize",productSize);
+			
 			forwardPath= "sell";
 		}
 		

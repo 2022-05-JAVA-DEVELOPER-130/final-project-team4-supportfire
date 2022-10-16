@@ -167,16 +167,7 @@ public class PaymentController {
 		return resultMap;
 	}
 	
-	//@RequestMapping("paymemt")
-	public Member member_view(HttpServletRequest request,Model model) throws Exception{
-		String sUserId=(String)request.getSession().getAttribute("sUserId");
-		request.getSession().setAttribute("sUserId", sUserId);
-		System.out.println("입력");
-		System.out.println(sUserId);
-		Member member = memberService.selectById(sUserId);
-		model.addAttribute("member", member);
-		return member;
-	}
+	
 	
 	
 	

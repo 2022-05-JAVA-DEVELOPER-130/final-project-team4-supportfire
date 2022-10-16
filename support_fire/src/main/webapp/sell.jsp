@@ -348,7 +348,7 @@ function showDelivery() {
 										<picture data-v-6c8b3524="" data-v-edf7886c=""
 											class="picture product_img">
 										<source data-v-6c8b3524="" type="image/webp"
-											srcset="https://kream-phinf.pstatic.net/MjAyMjA5MjdfOCAg/MDAxNjY0MjU5NTg2MDIy.wQktWmJWTwo83JVbleQzdaQ2OOfKTJp9RejdJvoeK-cg.Svg3Q-zegOeOgmjB6WpvyFAwXv51kpmljf-cvrybr08g.JPEG/a_9fe393b4a2c44008b1fecbc65adb407d.jpg?type=l_webp">
+											srcset="img/product/${product.p_image}">
 										<source data-v-6c8b3524=""
 											srcset="https://kream-phinf.pstatic.net/MjAyMjA5MjdfOCAg/MDAxNjY0MjU5NTg2MDIy.wQktWmJWTwo83JVbleQzdaQ2OOfKTJp9RejdJvoeK-cg.Svg3Q-zegOeOgmjB6WpvyFAwXv51kpmljf-cvrybr08g.JPEG/a_9fe393b4a2c44008b1fecbc65adb407d.jpg?type=l">
 										<img data-v-6c8b3524="" alt="상품 이미지"
@@ -360,12 +360,11 @@ function showDelivery() {
 									</div>
 									<div data-v-2b95d831="" class="product_detail">
 										<strong data-v-2b95d831="" class="model_number"><span
-											data-v-2b95d831="" class="mark_95">95점</span>DD1391-602 </strong>
-										<p data-v-2b95d831="" class="model_title">Nike Dunk Low
-											Retro Gym Red</p>
-										<p data-v-2b95d831="" class="model_ko">나이키 덩크 로우 레트로 짐레드</p>
+											data-v-2b95d831="" class="mark_95">95점</span>${productDetail.pd_no}</strong>
+										<p data-v-2b95d831="" class="model_title">${product.p_name}</p>
+										<p data-v-2b95d831="" class="model_ko">${product.p_name}</p>
 										<div data-v-2b95d831="" class="model_desc">
-											<p data-v-2b95d831="" class="size_txt">250</p>
+											<p data-v-2b95d831="" class="size_txt">${productSize.s_size}</p>
 											
 									</div>
 								</div>
