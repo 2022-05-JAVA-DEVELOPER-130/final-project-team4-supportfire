@@ -73,21 +73,23 @@ public class ProductController {
 	public String product_view_payment(@RequestParam int pd_no, Model model) {
 		String forwardPath = "";
 		ProductDetail productDetail = productDetailService.selectByNo(pd_no);
-		Product product = productService.selectByNo(productDetail.getProductsize().getProduct().getP_no());
-		ProductSize productSize=productSizeService.selectByNo(productDetail.getProductsize().getPs_no());
-		//System.out.println(productView);
-		model.addAttribute("product", product);
-		model.addAttribute("productDetail",productDetail);
-		model.addAttribute("productSize",productSize);
-		forwardPath = "payment";
+		
+		if(productDetail.getBt_no() == 2) {
+			Product product = productService.selectByNo(productDetail.getProductsize().getProduct().getP_no());
+			ProductSize productSize=productSizeService.selectByNo(productDetail.getProductsize().getPs_no());
+			//System.out.println(productView);
+			model.addAttribute("product", product);
+			model.addAttribute("productDetail",productDetail);
+			model.addAttribute("productSize",productSize);
+			forwardPath= "payment";
+		}else {
+			forwardPath= "sell";
+		}
+		
+		
 		return forwardPath;
 	}
 	
-	@RequestMapping(value = "sell", params = "pd_no")
-	public String sell() {
-		
-		return "sell";
-	}
 	
 }
 

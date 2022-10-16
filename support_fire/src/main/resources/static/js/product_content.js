@@ -246,7 +246,7 @@ function sizeClick_s(productDetail, productSize, product, buymin){
 	return `
 	<div data-v-7598e8e5="" data-v-34b11929=""
 		class="container sell sm step-1">
-		<input type="hidden" id="hiddenPd_no_sell" value="${productDetail.pd_no}">
+		<input type="hidden" id="hiddenPd_no_buy" value="${productDetail.pd_no}">
 		<!---->
 		<div data-v-7598e8e5="" class="content">
 			<div data-v-dc1edea6="" data-v-7598e8e5="" class="buy_immediate">
