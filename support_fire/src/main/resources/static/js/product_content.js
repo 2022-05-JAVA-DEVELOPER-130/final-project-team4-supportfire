@@ -2,6 +2,7 @@ function productSizeForm_p(productSize, data) {
 	return ` 
 	<li data-v-7ade2d82="" class="select_item">
      <button data-v-7ade2d82="" role="button" aria-selected="false" class="select_link buy1 bid p_${data.pd_no}" id="${data.pd_no}" value="${data.pd_no}">
+	<input type="hidden" class="p_size" value="${productSize.s_size}">
            <div data-v-7ade2d82="" class="link_inner">
               <span data-v-7ade2d82="" class="size">
                  <!----> ${productSize.s_size}
@@ -83,7 +84,7 @@ function sizeClick_p(productDetail, productSize, product, buymin){
 							</strong>
 							<p data-v-2b95d831="" class="model_title">${product.p_name}</p>
 							<div data-v-2b95d831="" class="model_desc">
-								<p data-v-2b95d831="" class="size_txt">${productSize.s_size}</p>
+								<p data-v-2b95d831="" class="size_txt">${productSize}</p>
 								<!---->
 							</div>
 						</div>
@@ -151,7 +152,7 @@ function sizeClick_p_null(productSize, product, buymin){
 	return `
 	<div data-v-7598e8e5="" data-v-34b11929=""
 		class="container buy sm step-1" scp>
-		<input type="hidden" id="hiddenPd_no_buy" value="${productDetail.pd_no}">
+		<input type="hidden" id="hiddenPd_no_buy" value="">
 		<!---->
 		<div data-v-7598e8e5="" class="content">
 			<div data-v-dc1edea6="" data-v-7598e8e5="" class="buy_immediate">
@@ -177,7 +178,7 @@ function sizeClick_p_null(productSize, product, buymin){
 							</strong>
 							<p data-v-2b95d831="" class="model_title">${product.p_name}</p>
 							<div data-v-2b95d831="" class="model_desc">
-								<p data-v-2b95d831="" class="size_txt">${productSize.s_size}</p>
+								<p data-v-2b95d831="" class="size_txt">${productSize}</p>
 								<!---->
 							</div>
 						</div>
@@ -188,7 +189,7 @@ function sizeClick_p_null(productSize, product, buymin){
 					<ul data-v-638c1354="" data-v-158ed304="" class="price_list">
 						<li data-v-638c1354="" class="list_item"><p
 								data-v-638c1354="" class="title">즉시 구매가</p>
-							<span data-v-638c1354="" class="price">${productDetail.pd_price}</span><span
+							<span data-v-638c1354="" class="price"> - </span><span
 							data-v-638c1354="" class="unit">원</span></li>
 						<li data-v-638c1354="" class="list_item"><p
 								data-v-638c1354="" class="title">즉시 판매가</p>
@@ -200,11 +201,11 @@ function sizeClick_p_null(productSize, product, buymin){
 							class="tab_area buy_tab">
 							<ul data-v-b6b2883e="" role="tablist" class="tab_list">
 								<li data-v-b6b2883e="" role="tab" aria-selected="false"
-									aria-controls="panel1" class="item" id="bid"><a data-v-b6b2883e=""
+									aria-controls="panel1" class="item on" id="bid"><a data-v-b6b2883e=""
 									href="" class="item_link">구매 입찰</a></li>
 								<li data-v-b6b2883e="" role="tab" aria-selected="true"
-									aria-controls="panel2" class="item on" id="imm"><a
-									data-v-b6b2883e="" href="payment.jsp" class="item_link">즉시 구매</a></li>
+									aria-controls="panel2" class="item"><a
+									data-v-b6b2883e="" class="item_link">즉시 구매</a></li>
 							</ul>
 							<!---->
 							<!---->
@@ -213,7 +214,7 @@ function sizeClick_p_null(productSize, product, buymin){
 							<dl data-v-15aa5096="" class="price_now_box">
 								<dt data-v-15aa5096="" class="price_now_title">즉시 구매가</dt>
 								<dd data-v-15aa5096="" class="price">
-									<span data-v-15aa5096="" class="amount">${productDetail.pd_price}</span><span
+									<span data-v-15aa5096="" class="amount"> - </span><span
 										data-v-15aa5096="" class="unit">원</span>
 								</dd>
 							</dl>

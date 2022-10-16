@@ -70,31 +70,66 @@ public class ProductSizeController {
 	
 	
 	@RequestMapping("sizeClick_p")
-	public Map sizeClick_p(int pd_no) {
-		System.out.println(pd_no);
+	public Map sizeClick_p(Integer pd_no, int p_no, int bt_no, int c_no, int s_size) {
+		
 		Map resultMap = new HashMap();
 		int code=0;
 		String url="";
 		String msg="";
 		String data="";
-		
-		ProductDetail productDetail = productDetailService.selectByNo(pd_no);
-		Product product = productService.selectByNo(productDetail.getProductsize().getProduct().getP_no());
-		ProductSize productSize = productSizeService.selectByNo(productDetail.getProductsize().getPs_no());
-		
-		String buymin= String.valueOf(productSizeService.selectBuyMinPriceByNo(productDetail.getProductsize().getProduct().getP_no()).get(productSize.getS_size()));
-		if(buymin == null){
+		Product product = productService.selectByNo(p_no);
+		int productSize = s_size;
+		String buymin= String.valueOf(productSizeService.selectBuyMinPriceByNo(p_no).get(s_size+""));
+		if(buymin.equals("null")){
+			buymin = "-";
+		}
+		if(buymin.equals("판매입찰")){
 			buymin = "-";
 		}
 		
+		if(pd_no != null) {
+			code = 1;
+		ProductDetail productDetail = productDetailService.selectByNo(pd_no);
+		
+		resultMap.put("productDetail", productDetail);
+		}else {
+			code = 2;
+			
+		}
 		
 		resultMap.put("code",code);
 	    resultMap.put("url",url);
 	    resultMap.put("msg",msg);
 	    resultMap.put("product", product);
-	    resultMap.put("productDetail", productDetail);
 	    resultMap.put("productSize", productSize);
 	    resultMap.put("buymin", buymin);
+		return resultMap;
+	}
+	
+	@RequestMapping("sizeClick_p_null")
+	public Map sizeClick_p_null(int p_no, int bt_no, int c_no, int s_size) {
+		
+		Map resultMap = new HashMap();
+		int code=0;
+		String url="";
+		String msg="";
+		String data="";
+		Product product = productService.selectByNo(p_no);
+		int productSize = s_size;
+		String buymin= String.valueOf(productSizeService.selectBuyMinPriceByNo(p_no).get(s_size+""));
+		if(buymin.equals("null")){
+			buymin = "-";
+		}
+		if(buymin.equals("판매입찰")){
+			buymin = "-";
+		}
+		
+		resultMap.put("code",code);
+		resultMap.put("url",url);
+		resultMap.put("msg",msg);
+		resultMap.put("product", product);
+		resultMap.put("productSize", productSize);
+		resultMap.put("buymin", buymin);
 		return resultMap;
 	}
 	
@@ -113,10 +148,12 @@ public class ProductSizeController {
 		ProductSize productSize = productSizeService.selectByNo(productDetail.getProductsize().getPs_no());
 		
 		String buymin= String.valueOf(productSizeService.selectSellMinPriceByNo(productDetail.getProductsize().getProduct().getP_no()).get(productSize.getS_size()));
-		if(buymin == null){
+		if(buymin.equals("null")){
 			buymin = "-";
 		}
-		
+		if(buymin.equals("판매입찰")){
+			buymin = "-";
+		}
 		
 		resultMap.put("code",code);
 		resultMap.put("url",url);

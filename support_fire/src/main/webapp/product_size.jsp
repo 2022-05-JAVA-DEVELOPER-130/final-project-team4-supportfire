@@ -104,6 +104,13 @@
  <!-- js 등록 -->
  <script type="text/javascript" src ="js/product_content.js"></script>
 <script type="text/javascript">
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
 $(function(){
 	
 	$.ajax({
@@ -153,28 +160,29 @@ $.ajax({
 
 
 $(document).on('click', '.buy1', function(e){
-	if(e.currentTarget.value != null){
+	if(e.currentTarget.value != 'null'){
 		$.ajax({
 			url:'sizeClick_p',
 			method:'POST',
 			dataType:'json',
-			data: {pd_no : e.currentTarget.value},
+			data: a + '&pd_no=' + e.currentTarget.value + '&s_size='+ this.querySelector('.p_size').value,
 			success:function(jsonResult){
 				$('#ipchal').html(sizeClick_p(jsonResult.productDetail, jsonResult.productSize, jsonResult.product, jsonResult.buymin));
 			}
 
 		});
-	}else{
-		$.ajax({
-			url:'sizeClick_p',
-			method:'POST',
-			dataType:'json',
-			data: {pd_no : e.currentTarget.value},
-			success:function(jsonResult){
-				$('#ipchal').html(sizeClick_p(jsonResult.productDetail, jsonResult.productSize, jsonResult.product, jsonResult.buymin));
+		
+		}else{
+			$.ajax({
+				url:'sizeClick_p_null',
+				method:'POST',
+				dataType:'json',
+				data: a + '&pd_no=' + '&s_size='+ this.querySelector('.p_size').value,
+				success:function(jsonResult){
+					$('#ipchal').html(sizeClick_p_null(jsonResult.productSize, jsonResult.product, jsonResult.buymin));
 			}
-	});
-	}
+		});
+	}	
 });
 
 $(document).on('click', '.sell1', function(e){
