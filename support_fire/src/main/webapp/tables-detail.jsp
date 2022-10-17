@@ -31,7 +31,10 @@
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.all.min.js"></script>
 
 	<!-- javaScript -->
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="js/user/UserHtmlContents.js"></script>
+	<script type="text/javascript" src="js/common/CommonHtmlContents.js"></script>
+	<script type="text/javascript" src="js/common/user_session_check.js"></script>
 	<script type="text/javascript">
 $(function(){
 	
@@ -60,8 +63,7 @@ $(function(){
   	 <div id="top_content">
     <jsp:include page="top.jsp" />
     </div>
-    
-       <div class="container">
+ <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo">
@@ -101,19 +103,21 @@ $(function(){
     <!-- Header Area End -->
     
     <!-- Breadcumb Area -->
-    <div class="breadcumb_area">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <h5>Board</h5>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active">Board</li>
-                    </ol>
+   <section class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__text">
+                        <h4>NoticeView</h4>
+                        <div class="breadcrumb__links">
+                            <a href="notice_list">Notice</a>
+                            <span>NoticeView</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <!-- Breadcumb Area -->
 
     <div class="shortcodes_area section_padding_100">
@@ -147,7 +151,6 @@ $(function(){
                         </div>
                     </div>
                     	<div id="notice_btn_container">
-
 							<input class="notice_btn list" type="button" pageno="${pageno}" value="목록" />
                     	</div>
                 </div>
@@ -179,7 +182,7 @@ $(function(){
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/jquery.nice-select.min.js"></script>
     <script src="js/wow.min.js"></script>
-    <script src="js/board.js"></script>
+    <script src="js/default/active.js"></script>
     
     <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

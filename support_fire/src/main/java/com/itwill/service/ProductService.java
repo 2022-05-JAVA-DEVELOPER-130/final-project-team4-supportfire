@@ -3,6 +3,7 @@ package com.itwill.service;
 import java.util.List;
 import java.util.Map;
 
+import com.itwill.common.ProductPageMakerDto;
 import com.itwill.dto.Product;
 
 public interface ProductService {
@@ -21,13 +22,16 @@ public interface ProductService {
 	//제품 1개 판매최소가격 출력
 	Map selectSellMinPriceByNo(int p_no);
 	
-	//상품 전체출력
-	List<Product> selectAll();
-	
 	//제품 최소 판매가 전체 출력
 	Map selectAllMinPrice();
 	
 	//제품명 검색
 	List<Product> searchAll(String p_name);
+	
+	List<Product> selectAll();
+	/*
+	//상품 전체출력(페이징)
+	ProductPageMakerDto<Product> selectAll(int currentPage) throws Exception;
+	*/
 	
 }

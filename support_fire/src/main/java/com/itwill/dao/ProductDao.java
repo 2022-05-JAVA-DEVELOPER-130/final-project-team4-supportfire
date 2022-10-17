@@ -25,12 +25,15 @@ public interface ProductDao {
 	//제품 1개 판매최소가격 출력
 	Map selectSellMinPriceByNo(int p_no);
 	
-	//상품 전체출력
-	List<Product> selectAll();
-	
 	//제품 최소 판매가 전체 출력
 	List<Map> selectAllMinPrice();
 	
 	//제품명 검색
 	List<Product> searchAll(String p_name);
+	
+	List<Product> selectAll();
+	/*
+	//상품 전체출력
+	List<Product> selectAll(int pageStart, int pageEnd) throws Exception;
+	*/
 }
