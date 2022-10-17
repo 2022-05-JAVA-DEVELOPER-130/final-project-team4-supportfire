@@ -42,7 +42,7 @@
         <result column="p_no" property="p_no"/>
         <result column="min(pd.pd_price)" property="min_price"/>
     </resultMap>
-<!--
+<!-- 
 <select id = "selectAll" parameterType="map" resultType = "com.itwill.dto.Product">
 		select ss.* from 
 		(select rownum idx, s.* from
