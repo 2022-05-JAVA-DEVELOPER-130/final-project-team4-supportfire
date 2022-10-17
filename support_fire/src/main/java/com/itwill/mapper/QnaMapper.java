@@ -62,5 +62,6 @@ public interface QnaMapper {
 	@Update("update qna set rq_no=#{rq_no} where q_no=#{q_no}")
 	public int qna_reply_update(Qna qna);
 
-	
+	//QNA 리스트 출력
+	List<Qna> selectAll_p(int pageStart, int pageEnd);
 }

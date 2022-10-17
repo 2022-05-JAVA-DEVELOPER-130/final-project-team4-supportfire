@@ -47,6 +47,7 @@ public class QnaDaoSpringBootTestApplication {
 		//System.out.println(qnaDao.qna_update(qnaUpdate));
 		System.out.println(qnaDao.selectAll());
 		System.out.println(qnaDao.qna_selectByNo(3));
+		System.out.println(qnaDao.selectAll_p(1,3));
 	}
 
 }

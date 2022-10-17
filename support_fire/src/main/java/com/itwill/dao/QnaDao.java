@@ -32,4 +32,7 @@ public interface QnaDao {
 
 	//QNA 답글업데이트
 	public int qna_reply_update(Qna qna);
+	
+	//QNA 리스트 출력
+	List<Qna> selectAll_p(int pageStart, int pageEnd);
 }

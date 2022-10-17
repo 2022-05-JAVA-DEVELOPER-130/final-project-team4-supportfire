@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.itwill.common.NoticePageMaker;
+import com.itwill.common.NoticePageMakerDto;
 import com.itwill.common.QnaPageMakerDto;
 import com.itwill.dao.QnaDao;
+import com.itwill.dto.Notice;
 import com.itwill.dto.Qna;
 
 @Service
@@ -67,6 +69,21 @@ public class QnaServiceImp implements QnaService{
 		return qnaDao.qna_reply_update(qna);
 	}
 
+	@Override
+	public NoticePageMakerDto<Qna> selectAll_p(int currentPage) {
+		int totQnaCount = qna_countAll();
+		NoticePageMaker pageMaker = new NoticePageMaker(totQnaCount, currentPage, 5, 5);
+		List<Qna> noticeList = qnaDao.selectAll_p(pageMaker.getPageBegin(), pageMaker.getPageEnd());
+		NoticePageMakerDto<Qna> pageMakerNoticeList = new NoticePageMakerDto<Qna>(noticeList, pageMaker, totQnaCount);
+		
+		//게시글 제목 수정
+		for(Qna qna:pageMakerNoticeList.getItemList()) {
+			//getTitleString(notice);
+		}
+		return pageMakerNoticeList;
+	}
+
+	
 
 	
 }

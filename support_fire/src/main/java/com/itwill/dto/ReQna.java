@@ -17,7 +17,7 @@ public class ReQna {
 	
 	private int rq_no;
 	private String rq_content;
-	private Date rq_date;
+	private String rq_date;
 	
 	
 }

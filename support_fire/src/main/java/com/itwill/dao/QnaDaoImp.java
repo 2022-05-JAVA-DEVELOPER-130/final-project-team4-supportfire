@@ -68,4 +68,10 @@ public class QnaDaoImp implements QnaDao{
 		return qnaMapper.qna_reply_update(qna);
 	}
 
+
+	@Override
+	public List<Qna> selectAll_p(int pageStart, int pageEnd) {
+		return qnaMapper.selectAll_p(pageStart, pageEnd);
+	}
+
 }

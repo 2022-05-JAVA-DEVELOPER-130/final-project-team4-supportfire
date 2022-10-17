@@ -18,4 +18,14 @@
 			</association>
 	</resultMap>
 	
+	
+	<select id = "selectAll_p" parameterType="map" resultType = "com.itwill.dto.Notice" resultMap="QnaSelect">
+		select ss.* from 
+		(select rownum idx, s.* from
+		(select * from qna q join reqna rq on q.rq_no = rq.rq_no order by q.q_no desc)s
+		)ss
+		where ss.idx <![CDATA[ >= ]]> #{pageStart} and ss.idx <![CDATA[ <= ]]> #{pageEnd}
+	</select>
+	
+	
 </mapper>

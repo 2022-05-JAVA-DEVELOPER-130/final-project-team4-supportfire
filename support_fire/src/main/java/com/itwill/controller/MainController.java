@@ -2,13 +2,20 @@ package com.itwill.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.itwill.common.NoticePageMakerDto;
+import com.itwill.dto.Qna;
+import com.itwill.service.QnaService;
 
 @Controller
 public class MainController {
-	
+	@Autowired
+	private QnaService qnaService;
 	
 	@RequestMapping("main")
 	public String main() {
@@ -40,4 +47,15 @@ public class MainController {
 	public String payment() {
 		return "payment";
 	}
+	
+	 //공지사항 전체조회
+  	@RequestMapping("qna_list")
+  	public String notice_list(@RequestParam(required = false, defaultValue = "1") Integer pageno,Model model) throws Exception{
+  		System.out.println(pageno);
+  		NoticePageMakerDto<Qna> qnaList = qnaService.selectAll_p(pageno);
+  		System.out.println(qnaList);
+  		model.addAttribute("qnaList", qnaList);
+  		model.addAttribute("pageno", pageno);
+  		return "qna_board";
+  	}
 }

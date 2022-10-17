@@ -2,7 +2,9 @@ package com.itwill.service;
 
 import java.util.List;
 
+import com.itwill.common.NoticePageMakerDto;
 import com.itwill.common.QnaPageMakerDto;
+import com.itwill.dto.Notice;
 import com.itwill.dto.Qna;
 
 
@@ -31,4 +33,7 @@ public interface QnaService {
 
 		//QNA 답글업데이트
 		public int qna_reply_update(Qna qna);
+		
+		//QNA 리스트 출력
+		NoticePageMakerDto<Qna> selectAll_p(int currentPage);
 }

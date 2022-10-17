@@ -17,7 +17,7 @@ public class Qna {
 	private int q_no;
 	private String q_title;
 	private String q_content;
-	private Date q_date;
+	private String q_date;
 	private String m_id;
 	private ReQna reQna;
 	

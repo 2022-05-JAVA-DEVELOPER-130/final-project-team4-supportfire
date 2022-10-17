@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.itwill.common.NoticePageMakerDto;
+import com.itwill.dto.Notice;
 import com.itwill.dto.Qna;
 import com.itwill.dto.ReQna;
 import com.itwill.service.QnaService;
@@ -97,5 +100,6 @@ public class QnaController {
 	    return resultMap;
     }
     
+ 
 }
 
