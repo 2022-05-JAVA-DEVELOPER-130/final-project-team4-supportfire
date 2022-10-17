@@ -326,6 +326,7 @@ $(function(){
                                     <h6>${product.p_name}</h6>
                                     <a href="shop-details?p_no=${product.p_no}" class="add-cart">제품 상세보기</a>
                                     <h5>${product.p_price}원</h5>
+                                    <h6>즉시구매가 - ${price.get((product.p_no))}</h6>
                                 	<h7>Nike</h7>
                                     <div class="product__color__select">
                                         <label for="pc-4">

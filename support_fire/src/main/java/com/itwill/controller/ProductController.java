@@ -43,7 +43,11 @@ public class ProductController {
 	public String product_list(HttpServletRequest request, Model model) {
 		String forwardPath = "";
 		List<Product> productList = productService.selectAll();
+		Map price = productService.selectAllMinPrice();
 		model.addAttribute("productList", productList);
+		model.addAttribute("price", price);
+		System.out.println(productList.get(1).getP_no());
+		System.out.println(price.get(productList.get(1).getP_no()));
 		forwardPath = "shop";
 		return forwardPath;
 	}

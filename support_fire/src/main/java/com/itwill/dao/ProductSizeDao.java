@@ -27,4 +27,6 @@ public interface ProductSizeDao {
 	//제품 사이즈 판매 최소 가격 출력
 	List<Map> selectSellMinPriceByNo(int p_no);
 	
+	//제품번호와 사이즈로 프로덕트 ps_no 찾기
+	int selectByPnoSize(int p_no, int s_size);
 }

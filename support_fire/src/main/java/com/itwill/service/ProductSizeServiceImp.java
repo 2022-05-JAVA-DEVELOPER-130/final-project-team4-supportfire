@@ -73,5 +73,10 @@ public class ProductSizeServiceImp implements ProductSizeService{
 			}
 		}
 		return sizeMap;
+	}
+
+	@Override
+	public int selectByPnoSize(int p_no, int s_size) {
+		return productSizeDao.selectByPnoSize(p_no, s_size);
 	}	
 }

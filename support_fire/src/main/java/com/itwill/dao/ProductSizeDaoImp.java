@@ -42,5 +42,9 @@ public class ProductSizeDaoImp implements ProductSizeDao{
 	public List<Map> selectSellMinPriceByNo(int p_no) {
 		return productSizeMapper.selectSellMinPriceByNo(p_no);
 	}
+	@Override
+	public int selectByPnoSize(int p_no, int s_size) {
+		return productSizeMapper.selectByPnoSize(p_no, s_size);
+	}
 	
 }

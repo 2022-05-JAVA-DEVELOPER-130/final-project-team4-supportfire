@@ -49,13 +49,14 @@ public class ProductServiceImp implements ProductService{
 		List<Map> map1 = productDao.selectAllMinPrice();
 		Map minPriceMap = new HashMap();
 		for (Map map : map1) {
-			String p_no = String.valueOf(map.get("p_no"));
+			String p_noStr = String.valueOf(map.get("p_no"));
+			int p_no = Integer.parseInt(p_noStr);
 			String p_price = String.valueOf(map.get("min_price"));
 			if(p_price == "null") {
 				p_price = "구매입찰";
 				minPriceMap.put(p_no, p_price);
 			} else {
-				minPriceMap.put(p_no, p_price);
+				minPriceMap.put(p_no, p_price+"원");
 			}
 			
 		}
