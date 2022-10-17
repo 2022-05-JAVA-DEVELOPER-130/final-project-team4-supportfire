@@ -81,7 +81,7 @@
         left: 50%;
 
         width: 600px;
-        height: 800px;
+        height: 850px;
 
         padding: 20px;
 
@@ -320,9 +320,9 @@ function showDelivery() {
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="breadcrumb__text">
-						<h4>배송/결제</h4>
+						<h4>발송/판매</h4>
 						<div class="breadcrumb__links">
-							<a href="./index.jsp">Home</a> <a href="./shop">Shop</a> <span>배송/결제</span>
+							<a href="./index.jsp">Home</a> <a href="./shop">Shop</a> <span>발송/판매</span>
 						</div>
 					</div>
 				</div>
@@ -638,7 +638,29 @@ function showDelivery() {
 		</div>
 	</div>
 	<!-- Search End -->
+ <script>
+      const body = document.querySelector('body');
+      const modal = document.querySelector('.modal');
+      const btnOpenPopup = document.querySelector('.btn-open-popup');
 
+      btnOpenPopup.addEventListener('click', () => {
+        modal.classList.toggle('show');
+
+        if (modal.classList.contains('show')) {
+          body.style.overflow = 'hidden';
+        }
+      });
+
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+          modal.classList.toggle('show');
+
+          if (!modal.classList.contains('show')) {
+            body.style.overflow = 'auto';
+          }
+        }
+      });
+    </script>
 	<!-- Js Plugins -->
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

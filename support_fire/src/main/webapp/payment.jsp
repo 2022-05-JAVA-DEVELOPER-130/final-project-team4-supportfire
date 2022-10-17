@@ -84,7 +84,7 @@
         left: 50%;
 
         width: 600px;
-        height: 800px;
+        height: 850px;
 
         padding: 20px;
 
@@ -234,8 +234,13 @@ function showDelivery() {
 	
 });
 
-	 
-
+function use_point(){
+	document.getElementById("mypoint").value=${member.m_point};
+	document.getElementById("point_m").innerHTML='0';
+	document.getElementById("point_view").innerHTML="<fmt:formatNumber  pattern="#,###" value="${member.m_point}"/>";
+	document.getElementById("total1").innerHTML="<fmt:formatNumber type="number"  pattern="0,000" value=" ${productDetail.pd_price-productDetail.pd_price*0.01-member.m_point-2000-3000 }" />";
+	document.getElementById("total2").innerHTML="<fmt:formatNumber type="number"  pattern="0,000" value=" ${productDetail.pd_price-productDetail.pd_price*0.01-member.m_point-2000-3000 }" />";
+}
 </script>
 </head>
 <body>
@@ -276,7 +281,7 @@ function showDelivery() {
 							<div class="checkout__input__checkbox">
 								<label for="acc"> <span style="width: 30%">기본 배송지로설정</span> <input type="checkbox"
 									id="acc"> <span class="checkmark"></span>
-								</label><button type="button" class="site-btn" style="margin-top: 50px;" id="address_btn">저장</button>
+								</label><button type="button" class="site-btn" style="margin-top: 0px;" id="address_btn">저장</button>
 
 							</div>
 							</form>
@@ -428,8 +433,8 @@ function showDelivery() {
 								<div data-v-7ba61ae8="" class="section_content">
 									<div data-v-7ba61ae8="" class="section_input">
 										<input data-v-7ba61ae8="" placeholder="0" 
-											class="input_credit">
-										<button class="w-btn w-btn-gray" >
+											class="input_credit"id="mypoint" value="">
+										<button class="w-btn w-btn-gray" onclick="use_point()">
 											모두 사용</button>
 									</div>
 									<div data-v-7ba61ae8="" class="info_point">
@@ -437,7 +442,7 @@ function showDelivery() {
 											<span data-v-7ba61ae8="" class="text_current">보유 포인트</span>
 											
 											<div data-v-7ba61ae8="" class="value_current">
-												<span data-v-7ba61ae8="" class="point">${member.m_point}</span>
+												<span data-v-7ba61ae8="" class="point" id="point_m"><fmt:formatNumber pattern="#,###" value="${member.m_point }" /></span>
 												<span
 													data-v-7ba61ae8="" class="unit">P</span>
 											</div>
@@ -460,7 +465,7 @@ function showDelivery() {
 											<dl data-v-679d7250="" class="price_box">
 												<dt data-v-679d7250="" class="price_title">총 결제금액</dt>
 												<dd data-v-679d7250="" class="price empty_price">
-													<span data-v-679d7250="" class="amount"></span><fmt:formatNumber type="number"  pattern="0,000" value=" ${productDetail.pd_price-productDetail.pd_price*0.01-2000-3000 }" /><span
+													<span data-v-679d7250="" class="amount" id="total1"><fmt:formatNumber type="number"  pattern="0,000" value=" ${productDetail.pd_price-productDetail.pd_price*0.01-2000-3000 }" /></span><span
 														data-v-679d7250="" class="unit"></span>
 												</dd>
 											</dl>
@@ -475,7 +480,7 @@ function showDelivery() {
 													<span data-v-3a2a7b6b="">구매가</span>
 													<!---->
 												</dt>
-												<dd data-v-3a2a7b6b="" class="price_text"><fmt:formatNumber type="number"  pattern="0,000" value="${productDetail.pd_price}"/></dd>
+												<dd data-v-3a2a7b6b="" class="price_text" "><fmt:formatNumber type="number"  pattern="0,000" value="${productDetail.pd_price}"/></dd>
 											</dl>
 											<dl data-v-3a2a7b6b="" data-v-887ad490=""
 												class="price_addition">
@@ -483,7 +488,7 @@ function showDelivery() {
 													<span data-v-3a2a7b6b="">포인트</span>
 													<!---->
 												</dt>
-												<dd data-v-3a2a7b6b="" class="price_text" id="">0</dd>
+												<dd data-v-3a2a7b6b="" class="price_text" id="point_view"><fmt:formatNumber  pattern="#,###" value="0"/></dd>
 											</dl>
 											<dl data-v-3a2a7b6b="" data-v-887ad490=""
 												class="price_addition">
@@ -602,7 +607,7 @@ function showDelivery() {
 										<dl data-v-679d7250="" class="price_box">
 											<dt data-v-679d7250="" class="price_title">총 결제금액</dt>
 											<dd data-v-679d7250="" class="price empty_price">
-												<span data-v-679d7250="" class="amount"><fmt:formatNumber type="number"  pattern="0,000" value=" ${productDetail.pd_price-productDetail.pd_price*0.01-2000-3000 }" /></span><span
+												<span data-v-679d7250="" class="amount" id="total2"><fmt:formatNumber type="number"  pattern="0,000" value=" ${productDetail.pd_price-productDetail.pd_price*0.01-2000-3000 }" /></span><span
 													data-v-679d7250="" class="unit"></span>
 											</dd>
 										</dl>
@@ -617,44 +622,7 @@ function showDelivery() {
 								</div>
 						
 							<!---->
-							<div data-v-1f7c6d3f="" data-v-4ae17423="" data-v-0259aa53=""
-								class="layer_order_price_confirm layer lg"
-								style="display: none;">
-								<div data-v-1f7c6d3f="" class="layer_container">
-									<div data-v-1f7c6d3f="" class="layer_header"></div>
-									<div data-v-1f7c6d3f="" class="layer_content">
-										<div data-v-4ae17423="" data-v-1f7c6d3f="" class="alert_title">
-											<div data-v-4ae17423="" data-v-1f7c6d3f=""
-												class="alert_notice">
-												<p data-v-4ae17423="" data-v-1f7c6d3f="" class="notice">한번
-													더 확인하세요</p>
-												<span data-v-4ae17423="" data-v-1f7c6d3f=""
-													class="rectangle"></span>
-											</div>
-											<p data-v-4ae17423="" data-v-1f7c6d3f="" class="title">총
-												결제금액</p>
-											<p data-v-4ae17423="" data-v-1f7c6d3f="" class="price">-원</p>
-										</div>
-										<div data-v-4ae17423="" data-v-1f7c6d3f="" class="alert_box">
-											<p data-v-4ae17423="" data-v-1f7c6d3f="" class="alert_desc">
-												해당 거래는 개인간 거래로 단순변심 또는 실수에 따른 <em>체결 후 취소는 불가능합니다.</em>
-											</p>
-										</div>
-										<div data-v-4ae17423="" data-v-1f7c6d3f="" class="layer_btn">
-											<button data-v-3d1bcc82="" data-v-4ae17423="" type="button"
-												class="btn solid buy full large" data-v-1f7c6d3f="">
-												바로 결제하기</button>
-										</div>
-									</div>
-									<a data-v-4ae17423="" data-v-1f7c6d3f="" href="#"
-										class="btn_layer_close"><svg data-v-4ae17423=""
-											data-v-1f7c6d3f="" xmlns="http://www.w3.org/2000/svg"
-											class="ico-close icon sprite-icons">
-											<use data-v-4ae17423="" data-v-1f7c6d3f=""
-												href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-close"
-												xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-close"></use></svg></a>
-								</div>
-							</div>
+							
 							<!---->
 							<!---->
 							<!---->
