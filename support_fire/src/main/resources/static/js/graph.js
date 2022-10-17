@@ -35,14 +35,14 @@ Highcharts.chart('container', {
 	            label: {
 	                connectorAllowed: false
 	            },
-	            pointStart: 2019,
-	            pointEnd: 2022
+	            pointStart: 1,
+	            pointEnd: 12
 	        }
 	    },
 	
 	       series: [{
 	        name: '',
-	        data: [43934, 48656, 65165, 81827]
+	        data: [160000, 48656, 65165, 81827, 0, 111111]
 	    }],
 	
 		

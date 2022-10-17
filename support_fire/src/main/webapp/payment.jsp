@@ -242,8 +242,8 @@ function use_point(){
 	document.getElementById("mypoint").value=${member.m_point};
 	document.getElementById("point_m").innerHTML='0';
 	document.getElementById("point_view").innerHTML="<fmt:formatNumber  pattern="#,###" value="${member.m_point}"/>";
-	document.getElementById("total1").innerHTML="<fmt:formatNumber type="number"  pattern="0,000" value=" ${productDetail.pd_price-productDetail.pd_price*0.01-member.m_point-2000-3000 }" />";
-	document.getElementById("total2").innerHTML="<fmt:formatNumber type="number"  pattern="0,000" value=" ${productDetail.pd_price-productDetail.pd_price*0.01-member.m_point-2000-3000 }" />";
+	document.getElementById("total1").innerHTML="<fmt:formatNumber type="number"  pattern="0,000" value=" ${productDetail.pd_price+productDetail.pd_price*0.01-member.m_point+2000+3000 }" />";
+	document.getElementById("total2").innerHTML="<fmt:formatNumber type="number"  pattern="0,000" value=" ${productDetail.pd_price+productDetail.pd_price*0.01-member.m_point+2000+3000 }" />";
 }
 
 
@@ -521,7 +521,7 @@ function use_point(){
 											<dl data-v-679d7250="" class="price_box">
 												<dt data-v-679d7250="" class="price_title">총 결제금액</dt>
 												<dd data-v-679d7250="" class="price empty_price">
-													<span data-v-679d7250="" class="amount" id="total1"><fmt:formatNumber type="number"  pattern="0,000" value=" ${productDetail.pd_price-productDetail.pd_price*0.01-2000-3000 }" /></span><span
+													<span data-v-679d7250="" class="amount" id="total1"><fmt:formatNumber type="number"  pattern="0,000" value=" ${productDetail.pd_price+productDetail.pd_price*0.01+2000+3000 }" /></span><span
 														data-v-679d7250="" class="unit"></span>
 												</dd>
 											</dl>
@@ -638,7 +638,7 @@ function use_point(){
 										<dl data-v-679d7250="" class="price_box">
 											<dt data-v-679d7250="" class="price_title">총 결제금액</dt>
 											<dd data-v-679d7250="" class="price empty_price">
-												<span data-v-679d7250="" class="amount" id="total2"><fmt:formatNumber type="number"  pattern="0,000" value=" ${productDetail.pd_price-productDetail.pd_price*0.01-2000-3000 }" /></span><span
+												<span data-v-679d7250="" class="amount" id="total2"><fmt:formatNumber type="number"  pattern="0,000" value=" ${productDetail.pd_price+productDetail.pd_price*0.01+2000+3000 }" /></span><span
 													data-v-679d7250="" class="unit"></span>
 											</dd>
 										</dl>
