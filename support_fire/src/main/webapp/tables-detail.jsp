@@ -6,45 +6,98 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Male_Fashion Template">
+    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- include_common_top -->
     
     <!-- include_common_top -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/board.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.min.css">
+     <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script type="text/javascript" src="js/top_content.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.all.min.js"></script>
 
 	<!-- javaScript -->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<script type="text/javascript" src="js/user/UserHtmlContents.js"></script>
-	<script type="text/javascript" src="js/common/CommonHtmlContents.js"></script>
-	<script type="text/javascript" src="js/common/user_session_check.js"></script>
+	<script type="text/javascript">
+$(function(){
 	
-	<!-- toast -->
- <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" />
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>  
+	$.ajax({
+		url:'session_check',
+		method:'POST',
+		dataType:'json',
+		success:function(jsonResult){
+		    if(jsonResult.code==1){
+		    	var member = jsonResult.data;
+			 	$('#top_content').html(login_top(member));
+		    }else if(jsonResult.code==2){
+			 	$('#top_content').html(logout_top());
+		    }
+		   
+		}
+	});
 	
+});
 
-
+</script>
 </head>
 
 <body>
-    <!-- Preloader -->
-    <!-- 
-    <div id="preloader">
-        <div class="spinner-grow" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
- -->
     <!-- Header Area -->
-  	
+  	 <div id="top_content">
+    <jsp:include page="top.jsp" />
+    </div>
+    
+       <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__logo">
+                        <a href="./index.jsp"><img src="img/IMG_0608 (1).jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                            <li><a href="index.jsp">Home</a></li>
+                            <li><a href="shop">Shop</a></li>
+                            <li><a href="#">Pages</a>
+                                <ul class="dropdown">
+                                    <li><a href="./about.jsp">About Us</a></li>
+                                    <li><a href="./shop-details.jsp">Shop Details</a></li>
+                                    <li><a href="./shopping-cart.jsp">Shopping Cart</a></li>
+                                    <li><a href="./checkout.jsp">Check Out</a></li>
+                                    <li><a href="./blog-details.jsp">Blog Details</a></li>
+                                </ul>
+                            </li>
+                            <li class="active"><a href="notice_list">Notice</a></li>
+                            <li><a href="./contact.jsp">Contacts</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__nav__option">
+                        <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+                        <a href="#"><img src="img/icon/heart.png" alt=""></a>
+                        <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+                        <div class="price">$까드득</div>
+                    </div>
+                </div>
+            </div>
+            <div class="canvas__open"><i class="fa fa-bars"></i></div>
+        </div>
     <!-- Header Area End -->
     
     <!-- Breadcumb Area -->
@@ -80,22 +133,21 @@
 	                                	<th>조회수</th>
 	                                </tr>
                                     <tr>
-                                        <th scope="col" class="board_title">${notice.notice_title}</th>
-                                        <th scope="col" class="board_date">${notice.notice_date}</th>
-                                        <th scope="col" class="board_count">조회수 : ${notice.notice_count}</th>
+                                        <th scope="col" class="board_title">${notice.n_title}</th>
+                                        <th scope="col" class="board_date">${notice.n_date}</th>
+                                        <th scope="col" class="board_count">${notice.n_count}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td id="notice_content_td" colspan="3">${notice.notice_content}</td>
+                                        <td id="notice_content_td" colspan="3">${notice.n_content}</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                     	<div id="notice_btn_container">
-							<input class="notice_btn update_form" type="button" pageno="${pageno}" notice_no="${notice.notice_no}" value="수정" />
-							<input class="notice_btn delete" type="button" pageno="${pageno}" notice_no="${notice.notice_no}" value="삭제" />
+
 							<input class="notice_btn list" type="button" pageno="${pageno}" value="목록" />
                     	</div>
                 </div>
@@ -127,32 +179,12 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/jquery.nice-select.min.js"></script>
     <script src="js/wow.min.js"></script>
-    <script src="js/default/active.js"></script>
+    <script src="js/board.js"></script>
     
     <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<script src="js/notice/board.js" defer></script>
+	<script src="js/board.js" defer></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-	
-	<style type="text/css">
-#toast-container > .toast {
-    background-image: none !important;
-}
-
- #toast-container > .toast:before {
-    position: relative;
-    font-family: FontAwesome;
-    font-size: 24px;
-    line-height: 18px;
-    float: left;
-    color: #FFF;
-    padding-right: 0.5em;
-    margin: auto 0.5em auto -1.5em;
-}       
-    #toast-container > .toast-warning:before {
-     content: "\f27a"; 
- 
-}
 	
 
 </body>

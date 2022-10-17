@@ -13,9 +13,20 @@
 
     <!-- include_common_top -->
     <!-- include_common_top -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/board.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.min.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+     <!-- Style CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script type="text/javascript" src="js/top_content.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.all.min.js"></script>
 	
 	
@@ -24,11 +35,6 @@
 	<script type="text/javascript" src="js/user/UserHtmlContents.js"></script>
 	<script type="text/javascript" src="js/common/CommonHtmlContents.js"></script>
 	<script type="text/javascript" src="js/common/user_session_check.js"></script>
-	
-	<!-- toast -->
- <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" />
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>  
 	
 
 </head>
@@ -44,23 +50,49 @@
     </div>
 	 -->
     <!-- Header Area -->
-
+    <div id="top_content">
+    <jsp:include page="top.jsp" />
+    </div>
     <!-- Header Area End -->
     
     <!-- Breadcumb Area -->
-    <div class="breadcumb_area">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <h5>Board</h5>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active">Board</li>
-                    </ol>
+     <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__logo">
+                        <a href="./index.jsp"><img src="img/IMG_0608 (1).jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                            <li><a href="index.jsp">Home</a></li>
+                            <li><a href="shop">Shop</a></li>
+                            <li><a href="#">Pages</a>
+                                <ul class="dropdown">
+                                    <li><a href="./about.jsp">About Us</a></li>
+                                    <li><a href="./shop-details.jsp">Shop Details</a></li>
+                                    <li><a href="./shopping-cart.jsp">Shopping Cart</a></li>
+                                    <li><a href="./checkout.jsp">Check Out</a></li>
+                                    <li><a href="./blog-details.jsp">Blog Details</a></li>
+                                </ul>
+                            </li>
+                            <li class="active"><a href="notice_list">Notice</a></li>
+                            <li><a href="./contact.jsp">Contacts</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__nav__option">
+                        <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+                        <a href="#"><img src="img/icon/heart.png" alt=""></a>
+                        <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+                        <div class="price">$까드득</div>
+                    </div>
                 </div>
             </div>
+            <div class="canvas__open"><i class="fa fa-bars"></i></div>
         </div>
-    </div>
     <!-- Breadcumb Area -->
 
     <div class="shortcodes_area section_padding_100">
@@ -82,24 +114,24 @@
 	                                </tr>
 	                                    <tr>
 	                                        <th scope="col" class="board_title">
-	                                        	<input type="text" name="notice_title" id="notice_title_txt" placeholder=" title" value="${notice.notice_title}" />
+	                                        	<input type="text" name="notice_title" id="notice_title_txt" placeholder=" title" value="${notice.n_title}" />
 	                                        </th>
 	                                        <th scope="col" class="board_fix">
 	                                        	<input type="checkbox" name = "notice_fix" value="1" id="notice_fix" >
 	                                        	<input type="hidden" name = "notice_fix" value="0" id="notice_fix_hidden" >
 	                                        </th>
-	                                        <th scope="col" name="notice_date" class="board_date">${notice.notice_date}</th>
+	                                        <th scope="col" name="notice_date" class="board_date">${notice.n_date}</th>
 	                                    </tr>
 	                                </thead>
 	                                <tbody>
 	                                    <tr>
 	                                        <td id="notice_content_td" colspan="3">
-	                                        	<textarea name="notice_content" id="notice_content_area" >${notice.notice_content}</textarea>
+	                                        	<textarea name="notice_content" id="notice_content_area" >${notice.n_content}</textarea>
 	                                        </td>
 	                                    </tr>
 	                                </tbody>
 	                            </table>
-                       				<input type="hidden" name="notice_no" value="${notice.notice_no}" />
+                       				<input type="hidden" name="notice_no" value="${notice.n_no}" />
                       				<input type="hidden" name="pageno" value="${pageno}" />
                 			</form>
                         </div>
@@ -141,30 +173,7 @@
     <script src="js/default/active.js"></script>
 	<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<script src="js/notice/board.js" defer></script>
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<script src="js/board.js" defer></script>
 	
-	
-	<style type="text/css">
-#toast-container > .toast {
-    background-image: none !important;
-}
-
- #toast-container > .toast:before {
-    position: relative;
-    font-family: FontAwesome;
-    font-size: 24px;
-    line-height: 18px;
-    float: left;
-    color: #FFF;
-    padding-right: 0.5em;
-    margin: auto 0.5em auto -1.5em;
-}       
-    #toast-container > .toast-warning:before {
-     content: "\f27a"; 
- 
-}
-
-</body>
 
 </html>
