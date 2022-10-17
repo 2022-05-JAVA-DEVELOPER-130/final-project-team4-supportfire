@@ -183,19 +183,34 @@ $(document).on('click', '.buy1', function(e){
 			}
 		});
 	}	
+	e.preventDefault();
 });
 
 $(document).on('click', '.sell1', function(e){
+	if(e.currentTarget.value != 'null'){
 	$.ajax({
 		url:'sizeClick_s',
 		method:'POST',
 		dataType:'json',
-		data: {pd_no : e.currentTarget.value},
+		data: a + '&pd_no=' + e.currentTarget.value + '&s_size='+ this.querySelector('.p_size').value,
 		success:function(jsonResult){
 			$('#ipchal').html(sizeClick_s(jsonResult.productDetail, jsonResult.productSize, jsonResult.product, jsonResult.buymin));
 		}
 
 	});
+	
+	}else{
+		$.ajax({
+			url:'sizeClick_s_null',
+			method:'POST',
+			dataType:'json',
+			data: a + '&pd_no=' + '&s_size='+ this.querySelector('.p_size').value,
+			success:function(jsonResult){
+				$('#ipchal').html(sizeClick_s_null(jsonResult.productSize, jsonResult.product, jsonResult.buymin));
+			}
+		
+		});
+	}
 	e.preventDefault();
 });
 

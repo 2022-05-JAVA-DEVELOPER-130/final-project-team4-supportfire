@@ -64,3 +64,54 @@ function modify_form(member){
 	`;
 	
 }
+
+
+function mypage_info(member){
+	return `
+	  <div>
+                  <div class="section-title">
+                      <h4 style="font-weight: 900">프로필 정보</h4>
+			     </div>
+               <hr>
+    		</div>
+    
+                                    <!---start----> 
+   <div>
+        <div class="container">
+                    <div class="contact__form">
+                        <form action="#" id="modi_form">
+                            <div class="row">
+                                <div>
+                                <br><br>
+                                 <div class="section-title">
+				                      <h4 style="width:30%" style="margin-bottom: 10px;"><strong>로그인 정보</strong></h4>
+				               <hr style="margin-top: 5px;">
+							     </div>
+		                            <span>아이디</span><input type="text" name="m_id" id="m_id" placeholder="ID" value="${member.m_id}" readonly><font id="msg_id" color="red"></font>
+                                    <span>비밀번호</span><input type="password" name="m_password" id="m_password" placeholder="password" value="${member.m_password}" readonly>
+                                    <br><br><br>
+                                    <div class="section-title">
+				                      <h4 style="width:30%" style="margin-bottom: 10px;"><strong>개인정보</strong></h4>
+				               <hr style="margin-top: 5px;">
+							     </div>
+                                    <span>이름</span><input type="text" name="m_name" id="m_name" placeholder="ex) 홍길동" value="${member.m_name}" readonly>
+                                    <span>핸드폰 번호</span><input type="number" name="m_phone" id="m_phone" placeholder="ex) 01012345678" value="${member.m_phone}" readonly>
+                                    <span>생년월일</span><input type="number" name="m_birth" id="m_birth" placeholder="ex) 970902" value="${member.m_birth}" readonly>
+                                    <span>이메일</span><input type="text" name="m_email" id="m_email" placeholder="Email" value="${member.m_email}" readonly>
+                                    <span>주소</span><input type="text" name="m_address" id="m_address" placeholder="address" value="${member.m_address}" readonly>
+                                    <input type="hidden" id="m_gender" name="m_gender" value="${member.m_gender}">
+									<div></div>
+                                </div>
+                               
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+	
+	`;
+	
+}
