@@ -113,7 +113,7 @@ public class ProductController {
 	
 		
 	
-	//@RequestMapping(value="bid")
+	@RequestMapping(value="bid")
 	public String product_bid_payment(@RequestParam int p_no,int bt_no,int c_no,String s_size,Model model,HttpServletRequest request) throws Exception{
 		String sUserId=(String)request.getSession().getAttribute("sUserId");
 		request.getSession().setAttribute("sUserId", sUserId);
@@ -126,9 +126,9 @@ public class ProductController {
 		int insertProductDetail = productDetailService.insert(insertPd);
 		model.addAttribute("product", product);
 		System.out.println(product);
-		ProductDetail productDetail=productDetailService.selectByNo(insertPd.getPd_no()); 
-		model.addAttribute("productDetail", productDetail);
-		System.out.println(productDetail);
+		
+		model.addAttribute("productDetail", insertPd);
+		System.out.println(insertPd);
 		return "payment";
 	}
 	
