@@ -120,7 +120,7 @@ function sizeClick_p(productDetail, productSize, product, buymin){
 						</div>
 						<div data-v-15aa5096="" data-v-158ed304="" class="price_now">
 							<dl data-v-15aa5096="" class="price_now_box">
-								<dt data-v-15aa5096="" class="price_now_title">즉시 구매가</dt>
+								<dt data-v-15aa5096="" class="price_now_title">즉시구매가</dt>
 								<dd data-v-15aa5096="" class="price">
 									<span data-v-15aa5096="" class="amount">${productDetail.pd_price}</span><span
 										data-v-15aa5096="" class="unit">원</span>
@@ -215,7 +215,7 @@ function sizeClick_p_null(productSize, product, buymin){
 						</div>
 						<div data-v-15aa5096="" data-v-158ed304="" class="price_now">
 							<dl data-v-15aa5096="" class="price_now_box">
-								<dt data-v-15aa5096="" class="price_now_title">즉시 구매가</dt>
+								<dt data-v-15aa5096="" class="price_now_title">구매희망가</dt>
 								<dd data-v-15aa5096="" class="price">
 									<span data-v-15aa5096="" class="amount"> - </span><span
 										data-v-15aa5096="" class="unit">원</span>

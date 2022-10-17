@@ -247,7 +247,10 @@ function use_point(){
 }
 
 
-
+ function changeClass() { 
+    document.getElementById('kakaopay').className = "pay_item kakaopay selected"; 
+	
+}
 
 
 	
@@ -591,7 +594,7 @@ function use_point(){
 													data-v-8215c5a4="" class="sub_title">일시불・할부</span>
 											</div>
 										</h4>
-										<div data-v-35b707e2="" data-v-8215c5a4="" class="pay_method">
+										<div data-v-35b707e2="" data-v-8215c5a4="" class="pay_method" >
 											<div data-v-35b707e2="" class="pay_item normal">
 												<div data-v-35b707e2="" class="pay_box">
 													<div data-v-35b707e2="" class="pay_title">
@@ -611,13 +614,13 @@ function use_point(){
 												</div>
 											</div>
 											
-											<div data-v-35b707e2="" class="pay_item kakaopay">
+											<div data-v-35b707e2="" class="pay_item kakaopay"  onclick="changeClass()" id="kakaopay">
 												<div data-v-35b707e2="" class="pay_box">
 													<div data-v-35b707e2="" class="pay_title">
-														<p data-v-35b707e2="" class="main_title">카카오페이</p>
+														<p data-v-35b707e2="" class="main_title" >카카오페이</p>
 														<!---->
 													</div>
-													
+													<img  src="./img/payment_icon_yellow_small (1).png" alt="카카오페이" class="pay_img">
 												</div>
 											</div>
 											
