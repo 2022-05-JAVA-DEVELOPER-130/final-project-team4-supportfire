@@ -85,6 +85,7 @@ function sizeClick_p(productDetail, productSize, product, buymin){
 							</strong>
 							<p data-v-2b95d831="" class="model_title">${product.p_name}</p>
 							<div data-v-2b95d831="" class="model_desc">
+								<input type="hidden" id="s_size" value="${productSize}">
 								<p data-v-2b95d831="" class="size_txt">${productSize}</p>
 								<!---->
 							</div>
@@ -179,6 +180,7 @@ function sizeClick_p_null(productSize, product, buymin){
 							</strong>
 							<p data-v-2b95d831="" class="model_title">${product.p_name}</p>
 							<div data-v-2b95d831="" class="model_desc">
+							<input type="hidden" id="s_size" value="${productSize}">
 								<p data-v-2b95d831="" class="size_txt">${productSize}</p>
 								<!---->
 							</div>
@@ -273,6 +275,7 @@ function sizeClick_s(productDetail, productSize, product, buymin){
 							</strong>
 							<p data-v-2b95d831="" class="model_title">${product.p_name}</p>
 							<div data-v-2b95d831="" class="model_desc">
+							<input type="hidden" id="s_size" value="${productSize}">
 								<p data-v-2b95d831="" class="size_txt">${productSize}</p>
 								<!---->
 							</div>
@@ -367,6 +370,7 @@ function sizeClick_s_null(productSize, product, buymin){
 							</strong>
 							<p data-v-2b95d831="" class="model_title">${product.p_name}</p>
 							<div data-v-2b95d831="" class="model_desc">
+							<input type="hidden" id="s_size" value="${productSize}">
 								<p data-v-2b95d831="" class="size_txt">${productSize}</p>
 								<!---->
 							</div>
