@@ -536,7 +536,7 @@ function use_point(){
 													<span data-v-3a2a7b6b="">구매가</span>
 													<!---->
 												</dt>
-												<dd data-v-3a2a7b6b="" class="price_text" "><fmt:formatNumber type="number"  pattern="0,000" value="${productDetail.pd_price}"/></dd>
+												<dd data-v-3a2a7b6b="" class="price_text" "><fmt:formatNumber type="number"  pattern="#,###" value="${productDetail.pd_price}"/></dd>
 											</dl>
 											<dl data-v-3a2a7b6b="" data-v-887ad490=""
 												class="price_addition">

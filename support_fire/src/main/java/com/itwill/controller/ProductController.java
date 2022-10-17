@@ -1,5 +1,6 @@
 package com.itwill.controller;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -108,37 +109,27 @@ public class ProductController {
 		return forwardPath;
 	}
 	
-	@RequestMapping(value = "bid", params = "pd_no")
-	public String product_view_bid_payment(@RequestParam int pd_no, Model model,HttpServletRequest request) throws Exception{
-		String forwardPath = "";
-		ProductDetail productDetail = productDetailService.selectByNo(pd_no);
+	
+		
+	
+	//@RequestMapping(value="bid")
+	public String product_bid_payment(@RequestParam int p_no,int bt_no,int c_no,String s_size,Model model,HttpServletRequest request) throws Exception{
 		String sUserId=(String)request.getSession().getAttribute("sUserId");
 		request.getSession().setAttribute("sUserId", sUserId);
 		Member member = memberService.selectById(sUserId);
 		model.addAttribute("member", member);
-		if(productDetail.getBt_no() == 2) {
-			Product product = productService.selectByNo(productDetail.getProductsize().getProduct().getP_no());
-			ProductSize productSize=productSizeService.selectByNo(productDetail.getProductsize().getPs_no());
-			//System.out.println(productView);
-			model.addAttribute("product", product);
-			model.addAttribute("productDetail",productDetail);
-			model.addAttribute("productSize",productSize);
-			forwardPath= "payment";
-		}else {
-			Product product = productService.selectByNo(productDetail.getProductsize().getProduct().getP_no());
-			ProductSize productSize=productSizeService.selectByNo(productDetail.getProductsize().getPs_no());
-			//System.out.println(productView);
-			model.addAttribute("product", product);
-			model.addAttribute("productDetail",productDetail);
-			model.addAttribute("productSize",productSize);
-			
-			forwardPath= "sell";
-		}
-		
-		
-		return forwardPath;
+		Product product = productService.selectByNo(p_no);
+		int ps_no = productSizeService.selectByPnoSize(p_no, s_size);
+		ProductSize productSize = productSizeService.selectByNo(ps_no);
+		ProductDetail insertPd= new ProductDetail(0,product.getP_price(),new Date(),new Date(),new ProductSize(ps_no,s_size, product),sUserId,bt_no,1);
+		int insertProductDetail = productDetailService.insert(insertPd);
+		model.addAttribute("product", product);
+		System.out.println(product);
+		ProductDetail productDetail=productDetailService.selectByNo(insertPd.getPd_no()); 
+		model.addAttribute("productDetail", productDetail);
+		System.out.println(productDetail);
+		return "payment";
 	}
-	
 	
 }
 

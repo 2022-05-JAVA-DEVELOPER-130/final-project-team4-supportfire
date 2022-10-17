@@ -43,7 +43,7 @@ public class ProductSizeDaoImp implements ProductSizeDao{
 		return productSizeMapper.selectSellMinPriceByNo(p_no);
 	}
 	@Override
-	public int selectByPnoSize(int p_no, int s_size) {
+	public int selectByPnoSize(int p_no,String s_size) {
 		return productSizeMapper.selectByPnoSize(p_no, s_size);
 	}
 	

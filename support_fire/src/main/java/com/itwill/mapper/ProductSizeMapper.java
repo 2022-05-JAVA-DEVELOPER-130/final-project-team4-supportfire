@@ -43,5 +43,5 @@ public interface ProductSizeMapper {
 	
 	//제품번호와 사이즈로 프로덕트 ps_no 찾기
 	@Select("select ps_no from productSize where p_no=#{p_no} and s_size=#{s_size}")
-	int selectByPnoSize(int p_no, int s_size);
+	int selectByPnoSize(int p_no, String s_size);
 }
