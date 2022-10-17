@@ -113,6 +113,30 @@
     margin-top: 10px;
     margin-right: auto;
     }
+    
+ 
+
+button {
+    margin: 5px;
+}
+
+.w-btn {
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+.w-btn-gray {
+    background-color: #a3a1a1;
+    color: #e3dede;
+    font-size:4px
+}
+
     </style>
 
 
@@ -405,7 +429,7 @@ function showDelivery() {
 									<div data-v-7ba61ae8="" class="section_input">
 										<input data-v-7ba61ae8="" placeholder="0" 
 											class="input_credit">
-										<button data-v-7ba61ae8="" class="btn_use_credit disabled">
+										<button class="w-btn w-btn-gray" >
 											모두 사용</button>
 									</div>
 									<div data-v-7ba61ae8="" class="info_point">
