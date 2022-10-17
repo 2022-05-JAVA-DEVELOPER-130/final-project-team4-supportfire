@@ -77,7 +77,8 @@ $(document).on('click','#slide_p',function(e){
   }
   
    ul{
-   list-style:none;
+  list-style:none;
+  text-align: left;
    }
 table, td, th {
   border : 1px solid black;
@@ -90,6 +91,11 @@ table {
 th, td {
   text-align: center;
 }
+
+a:hover, a:focus {
+    text-decoration: none;
+    outline: none;
+    color: blue;
 </style>
 
 </head>
@@ -158,10 +164,10 @@ th, td {
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
-                        <h4>Notice</h4>
+                        <h4>QNA</h4>
                         <div class="breadcrumb__links">
                             <a href="./index.jsp">Home</a>
-                            <span>Notice</span>
+                            <span>QNA</span>
                         </div>
                     </div>
                 </div>
@@ -173,9 +179,9 @@ th, td {
     <div class="shortcodes_area section_padding_100">
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12" style="margin-top: 50px;">
                     <div class="shortcodes_title mb-30">
-                        <h4>QNA</h4>
+                        <h3 style="margin-bottom: 20px;"><strong>QNA</strong></h3>
                     </div>
                     <div class="shortcodes_content">
                         <div class="table-responsive">
@@ -183,8 +189,8 @@ th, td {
                                 <thead>
 							            <tr>
 							                <th width="800px">제목</th>
-							                <th>작성일</th>
-							                <th>작성자</th>
+							                <th width="150px">작성일</th>
+							                <th width="150px">작성자</th>
 							            </tr>
 							        </thead>
                                 <tbody id="notice_list_tbody">
@@ -199,6 +205,9 @@ th, td {
 		                                      <li>작성자 : ${qna.m_id}
 		                                      <li>작성일 ${qna.q_date}
 		                                      <li>내용 : ${qna.q_content}
+		                                      <br>
+		                                      <br>
+		                                      <div style='width:100px;float: right;'> <button type='button' class='btn btn-primary' id = 'reWrite'>답변하기</button></div>
     		 									</ul>
 	                                        </th>
 	                                        <th>${qna.q_date.substring(0,10)}</th><th>${qna.m_id}</th>
@@ -284,7 +293,7 @@ th, td {
     <script src="js/jquery.countdown.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/board.js"></script>
+    <script src="js/qna_content.js"></script>
     
 	<!--
 	

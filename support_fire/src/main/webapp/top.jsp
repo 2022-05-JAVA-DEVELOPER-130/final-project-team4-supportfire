@@ -5,7 +5,7 @@
         <div class="offcanvas__option">
             <div class="offcanvas__links">
                 <a href="logout_action">Logout</a>
-                <a href="board.jsp">FAQs</a>
+                <a href="board">FAQs</a>
             </div>
             <div class="offcanvas__top__hover">
                 <span>Usd <i class="arrow_carrot-down"></i></span>
@@ -42,7 +42,7 @@
                         <div class="header__top__right">
                             <div class="header__top__links">
                                 <a href="logout_action">Logout</a>
-                                <a href="board.jsp">FAQs</a>
+                                <a href="board">FAQs</a>
                             </div>
                             <div class="header__top__hover">
                                 <span>Usd <i class="arrow_carrot-down"></i></span>

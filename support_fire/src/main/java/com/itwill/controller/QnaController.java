@@ -26,12 +26,9 @@ import com.itwill.service.ReQnaService;
 public class QnaController {
 	@Autowired
 	private QnaService qnaService;
+	@Autowired
 	private ReQnaService reQnaService;
 	
-	@RequestMapping(value="board", method=RequestMethod.GET)
-	public String board() {
-		return "board";
-	}
 	
 	@RequestMapping(value="/", method=RequestMethod.GET)
     public String root() {
@@ -96,6 +93,25 @@ public class QnaController {
 	    resultMap.put("url",url);
 	    resultMap.put("msg",msg);
 	    resultMap.put("data",reQna);
+	    
+	    return resultMap;
+    }
+    
+    @RequestMapping("qna_list_rest")
+    @ResponseBody
+    public Map<String, Object> qna_list(@RequestParam(required = false, defaultValue = "1") Integer pageno) {
+    	Map<String, Object> resultMap= new HashMap();
+    	int code=1;
+ 		String url="";
+ 		String msg="";
+ 		NoticePageMakerDto<Qna> qnaList = null;
+ 		qnaList = qnaService.selectAll_p(pageno);
+ 		System.out.println("a : "+qnaList);
+ 		
+ 		resultMap.put("code",code);
+	    resultMap.put("url",url);
+	    resultMap.put("msg",msg);
+	    resultMap.put("data",qnaList);
 	    
 	    return resultMap;
     }
