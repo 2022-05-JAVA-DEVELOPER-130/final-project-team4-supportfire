@@ -26,12 +26,13 @@ public class NoticeRestController {
 	/*
 	 * 게시글 리스트 반환 (REST)
 	 */
-	@RequestMapping("/notice_list_rest")
-	public  Map<String, Object> notice_list_rest(@RequestParam(required = false, defaultValue = "1") Integer pageno) {
+	@RequestMapping("notice_list_rest")
+	public Map<String, Object> notice_list_rest(@RequestParam(required = false, defaultValue = "1") Integer pageno) {
 		Map<String, Object> resultMap = new HashMap<>();	
 		NoticePageMakerDto<Notice> noticeList = null;
 		try {
 			noticeList = noticeService.selectAll(pageno);
+			System.out.println("noticeList 제발" + noticeList);
 			resultMap.put("errorCode", 1); 
 			resultMap.put("errorMsg", "성공");
 			resultMap.put("data", noticeList);
@@ -46,7 +47,7 @@ public class NoticeRestController {
 	/*
 	 * 게시글 삭제
 	 */
-	@RequestMapping("/notice_delete_rest")
+	@RequestMapping("notice_delete_rest")
 	public Map<String, Object> notice_delete_rest(Integer pageno, Integer n_no, HttpSession session){
 		Map<String, Object> resultMap = new HashMap<>();
 		if (pageno == null || n_no == null) {

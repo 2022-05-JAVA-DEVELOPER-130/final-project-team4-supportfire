@@ -3,9 +3,7 @@
 <!DOCTYPE html>
 
     <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
+
 
    
 
@@ -25,15 +23,15 @@
                             <li><a href="./shop">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
-                                    <li><a href="./about.jsp">About Us</a></li>
-                                    <li><a href="./shop-details.jsp">Shop Details</a></li>
-                                    <li><a href="./shopping-cart.jsp">Shopping Cart</a></li>
-                                    <li><a href="./checkout.jsp">Check Out</a></li>
-                                    <li><a href="./tables.jsp">Notice</a></li>
+                                    <li><a href="about.jsp">About Us</a></li>
+                                    <li><a href="shop-details.jsp">Shop Details</a></li>
+                                    <li><a href="shopping-cart.jsp">Shopping Cart</a></li>
+                                    <li><a href="checkout.jsp">Check Out</a></li>
+                                    <li><a href="tables.jsp">Notice</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.jsp">Blog</a></li>
-                            <li><a href="./contact.jsp">Contacts</a></li>
+                            <li><a href="notice_list">Notice</a></li>
+                            <li><a href="contact.jsp">Contacts</a></li>
                         </ul>
                     </nav>
                 </div>

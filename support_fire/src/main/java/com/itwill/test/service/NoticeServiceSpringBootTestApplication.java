@@ -41,6 +41,7 @@ public class NoticeServiceSpringBootTestApplication {
 		ConfigurableApplicationContext context=application.run(args);
 		NoticeService noticeService=(NoticeService)context.getBean(NoticeService.class);
 		
+		//System.out.println(noticeService.selectAll(1));
 		//System.out.println("selectByNo() test:"+noticeService.selectByNo(2));
 		
 		//System.out.println("insert() test:"+noticeService.insert(new Notice(0, "추가 service 공지사항 제목", "추가 service 공지사항 내용", null, 0, 0)));
@@ -49,7 +50,7 @@ public class NoticeServiceSpringBootTestApplication {
 		
 		//System.out.println("update() test:"+noticeService.update(new Notice(4, "너무 달아", "야미야미야미야미", null, 0, 1)));
 		
-		System.out.println("updateCount() test:"+noticeService.updateCount(2));
+		//System.out.println("updateCount() test:"+noticeService.updateCount(2));
 		 
 		 
 		

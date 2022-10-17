@@ -2,6 +2,7 @@
 게시물 리스트 변경
 */
 function changeQnaList(pageno){
+	console.log(pageno);
 	$.ajax({
 		url: "notice_list_rest",
 		method: "post",
@@ -23,11 +24,11 @@ function changeQnaList(pageno){
 	                               
 					htmlBuffer += `
 	                               
-	                                <td><a href="notice_view?notice_no=${notice.notice_no}&pageno=${data.pageMaker.curPage}">${notice.notice_title}</a>`;
+	                                <td><a href="notice_view?notice_no=${notice.n_no}&pageno=${data.pageMaker.curPage}">${n.notice_title}</a>`;
 	                
                     htmlBuffer += `</td>
-	                                    <td>${notice.notice_date}</td>
-	                                    <td>${notice.notice_count}</td>
+	                                    <td>${notice.n_date}</td>
+	                                    <td>${notice.n_count}</td>
 	                                </tr>`;
 				});
 				$("#notice_list_tbody").html(htmlBuffer);
@@ -79,7 +80,7 @@ $(".notice_btn.delete").on("click", function(){
 							$.ajax({
 								url: "notice_delete_rest",
 								method: "post",
-								data: {"notice_no":notice_no},
+								data: {"n_no":n_no},
 								dataType: "json",
 								success:function(resultObj){
 									if(resultObj.errorCode > 0){

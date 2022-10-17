@@ -33,12 +33,7 @@ public interface NoticeMapper {
 	int updateCount(int n_no);
 	
 	//페이징 처리하는 공지사항 전체조회(뭔지 모름)
-		@Select("select ss.* from \r\n"
-				+ "		(select rownum idx, s.* from\r\n"
-				+ "		(select * from notice order by notice_fix desc, notice_no desc)s\r\n"
-				+ "		)ss\r\n"
-				+ "		where ss.idx #{pageStart} and ss.idx #{pageEnd}")
-		List<Notice> selectAll(int pageStart, int pageEnd);
+	List<Notice> selectAll(int pageStart, int pageEnd);
 		/*
 		<select id = "selectAll" parameterType="map" resultType = "com.itwill.brown_carrot_market.dto.Notice">
 			select ss.* from 

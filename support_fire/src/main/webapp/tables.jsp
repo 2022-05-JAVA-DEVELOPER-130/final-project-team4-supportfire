@@ -72,6 +72,8 @@ $(function(){
 </head>
 
 <body>
+    <!-- Page Preloder -->
+
     <!-- Preloader -->
     <!-- 
     <div id="preloader">
@@ -99,7 +101,7 @@ $(function(){
                     <nav class="header__menu mobile-menu">
                         <ul>
                             <li><a href="index.jsp">Home</a></li>
-                            <li class="active"><a href="shop">Shop</a></li>
+                            <li><a href="shop">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                     <li><a href="./about.jsp">About Us</a></li>
@@ -109,7 +111,7 @@ $(function(){
                                     <li><a href="./blog-details.jsp">Blog Details</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./tables.jsp">Notice</a></li>
+                            <li class="active"><a href="notice_list">Notice</a></li>
                             <li><a href="./contact.jsp">Contacts</a></li>
                         </ul>
                     </nav>
@@ -168,9 +170,7 @@ $(function(){
                                 	<!-- board start -->
                                 	<c:forEach var="notice" items="${noticeList.itemList}">
 	                                    <tr>
-	                                    <!-- 
-	                                        <th scope="row">${notice.notice_no}</th>
-	                                         -->
+
 	                                         <th>
 	                                         	<c:if test="${notice.n_fix eq '1'}">
 	                                        			&nbsp;&nbsp;<span class="badge badge-danger">중요</span>
@@ -270,8 +270,26 @@ $(function(){
 	<!--
 	
 	  -->
-	
+	  <style type="text/css">
+#toast-container > .toast {
+    background-image: none !important;
+}
 
+ #toast-container > .toast:before {
+    position: relative;
+    font-family: FontAwesome;
+    font-size: 24px;
+    line-height: 18px;
+    float: left;
+    color: #FFF;
+    padding-right: 0.5em;
+    margin: auto 0.5em auto -1.5em;
+}       
+    #toast-container > .toast-warning:before {
+     content: "\f27a"; 
+ 
+}
+	</style>
 </body>
 
 </html>

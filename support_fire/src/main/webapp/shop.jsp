@@ -82,15 +82,15 @@ $(function(){
                             <li class="active"><a href="shop">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
-                                    <li><a href="./about.jsp">About Us</a></li>
-                                    <li><a href="./shop-details.jsp">Shop Details</a></li>
-                                    <li><a href="./shopping-cart.jsp">Shopping Cart</a></li>
-                                    <li><a href="./checkout.jsp">Check Out</a></li>
-                                    <li><a href="./blog-details.jsp">Blog Details</a></li>
+                                    <li><a href="about.jsp">About Us</a></li>
+                                    <li><a href="shop-details.jsp">Shop Details</a></li>
+                                    <li><a href="shopping-cart.jsp">Shopping Cart</a></li>
+                                    <li><a href="checkout.jsp">Check Out</a></li>
+                                    <li><a href="blog-details.jsp">Blog Details</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.jsp">Blog</a></li>
-                            <li><a href="./contact.jsp">Contacts</a></li>
+                            <li><a href="tables.jsp">Notice</a></li>
+                            <li><a href="contact.jsp">Contacts</a></li>
                         </ul>
                     </nav>
                 </div>
