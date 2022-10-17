@@ -13,18 +13,18 @@ function changeQnaList(pageno){
 			if(resultObj.errorCode > 0){
 				let data = resultObj.data;
 				let htmlBuffer = ``;
-				data.itemList.forEach(function(notice, i){
+				data.itemList.forEach(function(notice){
 					
-	                if(notice.notice_fix == 1){
+	                if(notice.n_fix == 1){
 						htmlBuffer += `<tr><td>&nbsp;&nbsp;<span class="badge badge-danger">중요</span></td>`
 					}
-	                if(notice.notice_fix == 0){
+	                if(notice.n_fix == 0){
 						htmlBuffer += `<tr><td>&nbsp;&nbsp;<span class="badge badge-normal">일반</span></td>`
 					}
 	                               
 					htmlBuffer += `
 	                               
-	                                <td><a href="notice_view?notice_no=${notice.n_no}&pageno=${data.pageMaker.curPage}">${n.notice_title}</a>`;
+	                                <td><a href="n_view?n_no=${notice.n_no}&pageno=${data.pageMaker.curPage}">${notice.n_title}</a>`;
 	                
                     htmlBuffer += `</td>
 	                                    <td>${notice.n_date}</td>
@@ -73,7 +73,7 @@ $(".notice_btn.list").on("click", function(){
 */
 $(".notice_btn.delete").on("click", function(){
 	let pageno = $(this).attr("pageno");
-	let notice_no = $(this).attr("notice_no");
+	let n_no = $(this).attr("n_no");
 	ToastConfirm.fire({ icon: 'question', 
 						title: "게시글을 삭제하시겠습니까?\n 삭제 후 복구가 불가능합니다"}).then((result) => {
 						if(result.isConfirmed){
@@ -100,9 +100,9 @@ $(".notice_btn.delete").on("click", function(){
 게시글 수정 폼 
 */
 $(".notice_btn.update_form").on("click", function(){
-	let notice_no = $(this).attr("notice_no");
+	let n_no = $(this).attr("n_no");
 	let pageno = $(this).attr("pageno");
-	location.href = `notice_update_form?notice_no=${notice_no}&pageno=${pageno}`;
+	location.href = `notice_update_form?n_no=${n_no}&pageno=${pageno}`;
 });
 
 /* 
@@ -116,7 +116,7 @@ $(".notice_btn.update").on("click", function(){
 		ToastConfirm.fire({ icon: 'question', 
 							title: "게시글을 수정하시겠습니까?"}).then((result) => {
 							if(result.isConfirmed){
-								let notice_no = $(this).attr("notice_no"); 
+								let n_no = $(this).attr("n_no"); 
 								$("#qna_update_form").attr("action", "notice_update"); 
 								$("#qna_update_form").submit(); // q_no, q_titla, q_content 
 							}

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 
 
@@ -407,7 +408,7 @@ function showDelivery() {
 											<dl data-v-679d7250="" class="price_box">
 												<dt data-v-679d7250="" class="price_title">정산금액</dt>
 												<dd data-v-679d7250="" class="price empty_price">
-													<span data-v-679d7250="" class="amount">-</span><span
+													<span data-v-679d7250="" class="amount"><fmt:formatNumber type="number"  pattern="0,000" value=" ${productDetail.pd_price-productDetail.pd_price*0.01-2000-3000 }" /></span><span
 														data-v-679d7250="" class="unit"></span>
 												</dd>
 											</dl>
@@ -423,21 +424,16 @@ function showDelivery() {
 													<span data-v-3a2a7b6b="">검수비</span>
 													<!---->
 												</dt>
-												<dd data-v-3a2a7b6b="" class="price_text">-</dd>
+												<dd data-v-3a2a7b6b="" class="price_text"><fmt:formatNumber type="number"  pattern="0,000" value="2000"/></dd>
 											</dl>
 											<dl data-v-3a2a7b6b="" data-v-887ad490=""
 												class="price_addition">
 												<dt data-v-3a2a7b6b="" class="price_title">
 													<span data-v-3a2a7b6b="">수수료</span>
 												
-														<svg data-v-3a2a7b6b="" xmlns="http://www.w3.org/2000/svg"
-															class="icon sprite-icons info-circle-white">
-															<use data-v-3a2a7b6b=""
-																href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-info-circle-white"
-																xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-info-circle-white"></use></svg>
-													</button>
+														
 												</dt>
-												<dd data-v-3a2a7b6b="" class="price_text">-</dd>
+												<dd data-v-3a2a7b6b="" class="price_text"><fmt:formatNumber type="number"  pattern="0,000" value=" ${productDetail.pd_price*0.01 }" /></dd>
 											</dl>
 											<dl data-v-3a2a7b6b="" data-v-887ad490=""
 												class="price_addition">
@@ -445,7 +441,7 @@ function showDelivery() {
 													<span data-v-3a2a7b6b="">배송비</span>
 													<!---->
 												</dt>
-												<dd data-v-3a2a7b6b="" class="price_text">-</dd>
+												<dd data-v-3a2a7b6b="" class="price_text"><fmt:formatNumber type="number"  pattern="0,000" value="3000"/></dd>
 											</dl>
 										</div>
 										<!---->
@@ -481,7 +477,7 @@ function showDelivery() {
 													<dl data-v-679d7250="" class="price_box">
 														<dt data-v-679d7250="" class="price_title">정산금액</dt>
 														<dd data-v-679d7250="" class="price empty_price">
-															<span data-v-679d7250="" class="amount">-</span><span
+															<span data-v-679d7250="" class="amount"><fmt:formatNumber type="number"  pattern="0,000" value=" ${productDetail.pd_price-productDetail.pd_price*0.01-2000-3000 }" /></span><span
 																data-v-679d7250="" class="unit"></span>
 														</dd>
 													</dl>
@@ -489,10 +485,7 @@ function showDelivery() {
 														style="display: none;"><em data-v-679d7250="">주의!
 													</em></span>
 												</div>
-												<div data-v-14995178="" class="btn_confirm">
-													<a data-v-3d1bcc82="" data-v-14995178="" disabled="disabled"
-														href="#" class="btn full solid false disabled"> 바로판매 하기 </a>
-												</div>
+												<input data-v-3d1bcc82="" data-v-14995178="" type="button"  class="btn full solid" value="바로판매하기" />
 											</div>
 											<div data-v-29138675="" class="other_card"
 												style="display: none;">

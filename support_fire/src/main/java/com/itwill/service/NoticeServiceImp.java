@@ -54,7 +54,7 @@ public class NoticeServiceImp implements NoticeService{
 	@Override
 	public NoticePageMakerDto<Notice> selectAll(int currentPage) throws Exception {
 		int totNoticeCount = noticeDao.selectCount();
-		NoticePageMaker pageMaker = new NoticePageMaker(totNoticeCount, currentPage, 10, 5);
+		NoticePageMaker pageMaker = new NoticePageMaker(totNoticeCount, currentPage, 5, 5);
 		List<Notice> noticeList = noticeDao.selectAll(pageMaker.getPageBegin(), pageMaker.getPageEnd());
 		NoticePageMakerDto<Notice> pageMakerNoticeList = new NoticePageMakerDto<Notice>(noticeList, pageMaker, totNoticeCount);
 		
