@@ -117,7 +117,7 @@ $(function(){
                                     <li><a href="./blog-details.jsp">Blog Details</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.jsp">Blog</a></li>
+                            <li><a href="notice_list">Notice</a></li>
                             <li><a href="./contact.jsp">Contacts</a></li>
                         </ul>
                     </nav>
