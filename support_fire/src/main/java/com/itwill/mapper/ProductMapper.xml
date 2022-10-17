@@ -42,8 +42,14 @@
         <result column="p_no" property="p_no"/>
         <result column="min(pd.pd_price)" property="min_price"/>
     </resultMap>
-	
-
-
+<!--
+<select id = "selectAll" parameterType="map" resultType = "com.itwill.dto.Product">
+		select ss.* from 
+		(select rownum idx, s.* from
+		(select * from notice order by n_fix desc, n_no desc)s
+		)ss
+		where ss.idx <![CDATA[ >= ]]> #{pageStart} and ss.idx <![CDATA[ <= ]]> #{pageEnd}
+	</select>
+  -->
 
 </mapper>

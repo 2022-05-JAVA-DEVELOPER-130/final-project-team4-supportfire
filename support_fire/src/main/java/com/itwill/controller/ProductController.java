@@ -39,7 +39,7 @@ public class ProductController {
 	@Autowired
 	private MemberService memberService;
 
-	
+
 	@RequestMapping("shop")
 	public String product_list(HttpServletRequest request, Model model) {
 		String forwardPath = "";
@@ -52,6 +52,7 @@ public class ProductController {
 		forwardPath = "shop";
 		return forwardPath;
 	}
+
 	@RequestMapping(value = "shop-details", params = "p_no")
 	public String product_view(@RequestParam int p_no, Model model) {
 		String forwardPath = "";

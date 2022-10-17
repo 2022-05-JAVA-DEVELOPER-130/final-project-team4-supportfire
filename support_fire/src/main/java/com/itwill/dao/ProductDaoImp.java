@@ -7,6 +7,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.itwill.dto.Notice;
 import com.itwill.dto.Product;
 import com.itwill.mapper.ProductMapper;
 
@@ -40,10 +41,6 @@ public class ProductDaoImp implements ProductDao{
 	}
 	
 	@Override
-	public List<Product> selectAll() {
-		return productMapper.selectAll();
-	}
-	@Override
 	public List<Map> selectAllMinPrice() {
 		return productMapper.selectAllMinPrice();
 	}
@@ -51,5 +48,20 @@ public class ProductDaoImp implements ProductDao{
 	public List<Product> searchAll(String p_name) {	
 		return productMapper.searchAll(p_name);
 	}
+	@Override
+	public List<Product> selectAll() {
+		return productMapper.selectAll();
+	}
 	
+	/* product 페이징 작성중
+	@Override
+	public List<Product> selectAll(int pageStart, int pageEnd) throws Exception {
+		// TODO Auto-generated method stub
+		Map<String, Integer>map = new HashMap<>();
+		map.put("pageStart", pageStart);
+		map.put("pageEnd", pageEnd);
+		
+		return productMapper.selectAll(pageStart, pageEnd);
+	}
+	*/
 }

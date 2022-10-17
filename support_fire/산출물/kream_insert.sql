@@ -297,7 +297,7 @@ insert into notice values(NOTICE_N_NO_SEQ.nextval, '야미2', '빠드득빠드�
 insert into notice values(NOTICE_N_NO_SEQ.nextval, '야미3', '까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득3', sysdate, 0, 0);
 insert into notice values(NOTICE_N_NO_SEQ.nextval, '야미4', '빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득4', sysdate, 0, 0);
 insert into notice values(NOTICE_N_NO_SEQ.nextval, '야미5', '까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득5', sysdate, 0, 0);
-insert into notice values(NOTICE_N_NO_SEQ.nextval, '야미6', '빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득6', sysdate, 0, 0);
+insert into notice values(NOTICE_N_NO_SEQ.nextval, '야미6', '빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득6', sysdate, 0, 1);
 
 /*********review**********/
 insert into review values(REVIEW_R_NO_SEQ.nextval, '제목1', '내용1', sysdate, '5', 'seongmin', '1');

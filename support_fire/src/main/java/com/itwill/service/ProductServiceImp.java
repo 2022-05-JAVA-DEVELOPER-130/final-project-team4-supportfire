@@ -6,7 +6,12 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.itwill.common.NoticePageMaker;
+import com.itwill.common.NoticePageMakerDto;
+import com.itwill.common.ProductPageMaker;
+import com.itwill.common.ProductPageMakerDto;
 import com.itwill.dao.ProductDao;
+import com.itwill.dto.Notice;
 import com.itwill.dto.Product;
 
 public class ProductServiceImp implements ProductService{
@@ -39,10 +44,6 @@ public class ProductServiceImp implements ProductService{
 		return productDao.selectSellMinPriceByNo(p_no);
 	}
 
-	@Override
-	public List<Product> selectAll() {
-		return productDao.selectAll();
-	}
 	// min_price 값이 null 일때 구매 입찰로 표시 구현중
 	@Override
 	public Map selectAllMinPrice() {
@@ -62,8 +63,48 @@ public class ProductServiceImp implements ProductService{
 		}
 			return minPriceMap;
 	}
+	/*
 	@Override
 	public List<Product> searchAll(String p_name) {
 		return productDao.searchAll(p_name);
+	}
+	public ProductPageMakerDto<Product> selectAll(int currentPage) throws Exception {
+		ProductPageMaker pageMaker = new ProductPageMaker(0, 5, 5, currentPage);
+		List<Product> productList = productDao.selectAll(pageMaker.getPageBegin(), pageMaker.getPageEnd());
+		ProductPageMakerDto<Product> pageMakerProductList = new ProductPageMakerDto<Product>(productList, pageMaker, currentPage);
+		
+		//게시글 제목 수정
+				for(Product product:pageMakerProductList.getItemList()) {
+					//getTitleString(notice);
+				}
+				return pageMakerProductList;
+			}
+	public Product getTitleString(Product product) {
+		StringBuilder title = new StringBuilder(128);
+		String t = product.getP_name();
+		if (t.length() > 15) {
+			// t = t.substring(0,15);
+			// t = t+"...";
+			t = String.format("%s...", t.substring(0, 15));
+		}
+		
+
+		title.append(t.replace(" ", "&nbsp;"));
+		product.setP_name(title.toString());
+		
+		return product;
+	}
+	*/
+
+	@Override
+	public List<Product> searchAll(String p_name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Product> selectAll() {
+		// TODO Auto-generated method stub
+		return productDao.selectAll();
 	}
 }
