@@ -188,8 +188,18 @@ $.ajax({
 		$('#mypage_form').html(mypage_form(jsonResult.data[0]));
 	}
 });
+$(document).on('click', '#mypage_info', function(){
+	$.ajax({
+		url:'mypage_form',
+		method:'POST',
+		dataType:'json',
+		success:function(jsonResult){
+			console.log(jsonResult.data[0]);
+			$('#fff').html(mypage_info(jsonResult.data[0]));
+		}
+	});
 
-
+});
 	$(document).on('click','#modify' ,function(e){
 		
 		$.ajax({
@@ -327,7 +337,7 @@ $.ajax({
                                         <div class="card-body">
                                             <div class="shop__sidebar__brand">
                                                 <ul>
-                                                    <li><a href="#">프로필정보</a></li>
+                                                    <li><a href="#" id="mypage_info">프로필정보</a></li>
                                                     <li><a href="#">주소록</a></li>
                                                    
                                                 </ul>

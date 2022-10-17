@@ -136,7 +136,10 @@ button {
     color: #e3dede;
     font-size:4px
 }
-
+.btn_confirm{
+	width : 100%;
+	height: 50px;;
+}
     </style>
 
 
@@ -526,31 +529,8 @@ function use_point(){
 								<div data-v-8215c5a4="" class="section_title">
 									<h3 data-v-8215c5a4="" class="title_txt">결제 방법</h3>
 								</div>
-								<div data-v-8215c5a4="" class="section_content">
-									<div data-v-8215c5a4="" class="simple_payment">
-										<h4 data-v-8215c5a4="" class="method_title">
-											<div data-v-8215c5a4="" class="main_title">
-												간편 결제 <span data-v-8215c5a4="" class="sub_title">일시불</span>
-											</div>
-											<!---->
-										</h4>
-										<div data-v-29138675="" data-v-8215c5a4="" class="card_list">
-											<div data-v-29138675="" class="main_card selected disabled">
-												<a data-v-29138675="" href="#" class="regist_link"> 카드를
-													등록해주세요 <svg data-v-29138675=""
-														xmlns="http://www.w3.org/2000/svg"
-														class="ico-arr-right-gray-thick icon sprite-icons">
-														<use data-v-29138675=""
-															href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-arr-right-gray-thick"
-															xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-arr-right-gray-thick"></use></svg>
-												</a>
-											</div>
-											<div data-v-29138675="" class="other_card"
-												style="display: none;">
-												<ul data-v-29138675="" class="other_card_list"></ul>
-											</div>
-										</div>
-									</div>
+							
+										
 									<div data-v-8215c5a4="" class="general_payment">
 										<h4 data-v-8215c5a4="" class="method_title">
 											<div data-v-8215c5a4="" class="main_title">
@@ -585,8 +565,8 @@ function use_point(){
 														<!---->
 													</div>
 													<img 
-														src="payment_icon_yellow_small.png" alt="카카오페이"
-														class="pay_img">
+														src="/image/payment_icon_yellow_small.png" alt="카카오페이"
+														>
 												</div>
 											</div>
 											
@@ -615,10 +595,10 @@ function use_point(){
 											style="display: none;"><em data-v-679d7250="">주의!
 										</em></span>
 									</div>
-									<div data-v-14995178="" class="btn_confirm">
+									<button  class="btn_confirm">
 										<a data-v-3d1bcc82="" data-v-14995178="" disabled="disabled"
-											href="#" class="btn full solid false disabled"> 결제하기 </a>
-									</div>
+											href="#" class="btn full solid"> 결제하기 </a>
+									</button>
 								</div>
 						
 							<!---->
