@@ -108,6 +108,37 @@ public class ProductController {
 		return forwardPath;
 	}
 	
+	@RequestMapping(value = "bid", params = "pd_no")
+	public String product_view_bid_payment(@RequestParam int pd_no, Model model,HttpServletRequest request) throws Exception{
+		String forwardPath = "";
+		ProductDetail productDetail = productDetailService.selectByNo(pd_no);
+		String sUserId=(String)request.getSession().getAttribute("sUserId");
+		request.getSession().setAttribute("sUserId", sUserId);
+		Member member = memberService.selectById(sUserId);
+		model.addAttribute("member", member);
+		if(productDetail.getBt_no() == 2) {
+			Product product = productService.selectByNo(productDetail.getProductsize().getProduct().getP_no());
+			ProductSize productSize=productSizeService.selectByNo(productDetail.getProductsize().getPs_no());
+			//System.out.println(productView);
+			model.addAttribute("product", product);
+			model.addAttribute("productDetail",productDetail);
+			model.addAttribute("productSize",productSize);
+			forwardPath= "payment";
+		}else {
+			Product product = productService.selectByNo(productDetail.getProductsize().getProduct().getP_no());
+			ProductSize productSize=productSizeService.selectByNo(productDetail.getProductsize().getPs_no());
+			//System.out.println(productView);
+			model.addAttribute("product", product);
+			model.addAttribute("productDetail",productDetail);
+			model.addAttribute("productSize",productSize);
+			
+			forwardPath= "sell";
+		}
+		
+		
+		return forwardPath;
+	}
+	
 	
 }
 
