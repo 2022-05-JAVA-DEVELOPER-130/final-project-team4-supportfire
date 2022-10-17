@@ -132,6 +132,17 @@ public class ProductController {
 		return "payment";
 	}
 	
+	@RequestMapping(value="mapage" )
+	public String purchase_sell_list(HttpServletRequest request,Model model) throws Exception {
+		String sUserId=(String)request.getSession().getAttribute("sUserId");
+		request.getSession().setAttribute("sUserId", sUserId);
+		Member member = memberService.selectById(sUserId);
+		model.addAttribute("member", member);
+		System.out.println(member);
+		List<ProductDetail> productDetail=  productDetailService.selectById(sUserId);
+		model.addAttribute("ProductDetail", productDetail);
+		return "mypage";
+	}
 }
 
 

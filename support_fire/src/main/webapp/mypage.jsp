@@ -421,7 +421,7 @@ $(document).on('click', '#mypage_info', function(){
 				                                     <td class="product__cart__item">
 				                                        <div class="product__cart__item__text">
 				                                           
-				                                            <h5>$98.49</h5>
+				                                            <h5>${productDetail.pd_price}</h5>
 				                                        </div>
 				                                    </td>
 				                                    <td class="product__cart__item">
