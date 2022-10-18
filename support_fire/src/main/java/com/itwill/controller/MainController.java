@@ -60,12 +60,21 @@ public class MainController {
   	}
   	
   	@RequestMapping("bid_forward")
-  	public String bid_forward(int p_no, int bt_no, int c_no, String s_size, int price) {
+  	public String bid_forward(int p_no, int bt_no, int c_no, String s_size, int price, Model model) {
+  		
+  		model.addAttribute("p_no", p_no);
+  		model.addAttribute("bt_no", bt_no);
+  		model.addAttribute("c_no", c_no);
+  		model.addAttribute("s_size", s_size);
+  		model.addAttribute("price", price);
+  		
   		System.out.println(p_no);
   		System.out.println(bt_no);
   		System.out.println(c_no);
   		System.out.println(s_size);
   		System.out.println(price);
-  		return "bid";
+  		
+  		String forwardpath="bid";
+  		return "forward:bid";
   	}
 }

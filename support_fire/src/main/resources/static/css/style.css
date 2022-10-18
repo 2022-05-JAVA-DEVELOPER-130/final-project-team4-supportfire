@@ -158,14 +158,17 @@ ol {
 /* buttons */
 
 .primary-btn {
+	
 	display:inline-block;
-	font-size: 13px;
+	font-size: 17px;
 	font-weight: 700;
 	text-transform: uppercase;
-	padding: 14px 30px;
+	padding: 10px 40px;
 	color: #ffffff;
 	background: #000000;
-	letter-spacing: 4px;
+	letter-spacing: px;
+	
+	
 	
 	
 }
