@@ -188,6 +188,7 @@ $(function(){
 	
      $(document).on('click','#login_a' ,function(e){
 			$('#content').html(login_form());
+			e.preventDefault();
      });
 	
 	
@@ -250,7 +251,7 @@ $(function(){
 	});
 	
 	//아이디찾기 버튼클릭시
-	$(document).on('click', '#id_search_btn', function(){
+	$(document).on('click', '#id_search_btn', function(e){
 		$.ajax({
 		    url:'id_search_action',
 		    method:'GET',
@@ -264,10 +265,11 @@ $(function(){
 		   	 	}
 		    }
 		});
+		e.preventDefault();
 	});
 	
 	//비밀번호찾기 버튼클릭시
-	$(document).on('click', '#pass_search_btn', function(){
+	$(document).on('click', '#pass_search_btn', function(e){
 		$.ajax({
 		    url:'pass_search_action',
 		    method:'POST',
@@ -282,6 +284,7 @@ $(function(){
 		   	 	}
 		    }
 		});
+		e.preventDefault();
 	});
 	
 	//회원가입폼
