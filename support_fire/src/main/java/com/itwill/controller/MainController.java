@@ -58,4 +58,19 @@ public class MainController {
   		model.addAttribute("pageno", pageno);
   		return "qna_board";
   	}
+  	
+  	@RequestMapping("bid_forward")
+  	public String bid_forward(int p_no, int bt_no, int c_no, String s_size, int price, Model model,HttpServletRequest request) {
+  		
+  		
+  		
+  		model.addAttribute("p_no", p_no);
+  		model.addAttribute("bt_no", bt_no);
+  		model.addAttribute("c_no", c_no);
+  		model.addAttribute("s_size", s_size);
+  		model.addAttribute("price", price);
+  		
+  		
+  		return "forward:bid";
+  	}
 }

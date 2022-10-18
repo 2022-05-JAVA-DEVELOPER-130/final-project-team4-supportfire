@@ -58,6 +58,11 @@ public class ProductDetailServiceImp implements ProductDetailService{
 	public int insertSequence(ProductDetail productDetail) {
 		return productDetailDao.insertSequence(productDetail);
 	}
+
+	@Override
+	public List<ProductDetail> selectSellListByNo(int p_no) {
+		return productDetailDao.selectSellListByNo(p_no);
+	}
 	
 	
 }

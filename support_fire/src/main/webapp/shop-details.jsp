@@ -80,6 +80,86 @@ $(function(){
 	});
 
 
+	
+	
+	$.ajax({
+		url:'graph',
+		method:'POST',
+		data:'p_no=1',
+		success:function(jsonResult){
+			var pricee = function() {
+		        var data1 = [];
+		        for (var i=0; i<jsonResult.data.length; i++) {
+		          data1.push(jsonResult.data[i].pd_price)
+		        }
+		        return data1;
+		     }
+			var date = function() {
+		        var data1 = [];
+		        for (var i=0; i<jsonResult.data.length; i++) {
+		          data1.push(jsonResult.data[i].pd_start.substring(0,10))
+		        }
+		        return data1;
+		     }
+			Highcharts.chart('container', {
+				
+			    title: {
+			        text: '시세'
+			    },
+			
+			    subtitle: {
+			        text: '<a href="" target="_blank"></a>'
+			    },
+			
+			    yAxis: {
+			        title: {
+			            text: '가격'
+			            
+			        }
+			    },
+			
+			    xAxis: {
+			    	categories:date()
+			    },
+			
+			    legend: {
+			        layout: 'vertical',
+			        align: 'right',
+			        verticalAlign: 'middle'
+			    },
+			
+			   
+			
+			       series: [{
+			        name: '',
+			        data: pricee()
+			    }],
+			
+				
+			   
+			    
+			    responsive: {
+			        rules: [{
+			            condition: {
+			                maxWidth: 500
+			            },
+			            chartOptions: {
+			                legend: {
+			                    layout: 'horizontal',
+			                    align: 'center',
+			                    verticalAlign: 'bottom'
+			                }
+			            }
+			        }]
+			    }
+            
+				});
+			}
+		
+		
+	});
+	
+});
 </script>
 </head>
 
@@ -662,7 +742,6 @@ $(function(){
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/graph.js"></script>
 </body>
 
 </html>

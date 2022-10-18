@@ -134,9 +134,15 @@ public class ProductController {
 	
 	
 		
-	
-	@RequestMapping(value="bid")
-	public String product_bid_payment(@RequestParam int p_no,int bt_no,int c_no,String s_size,Model model,HttpServletRequest request) throws Exception{
+   
+	@RequestMapping("bid")
+	public String product_bid_payment(@RequestParam int p_no,int bt_no,int c_no,String s_size,int price,Model model,HttpServletRequest request) throws Exception{
+		
+		System.out.println("dka"+p_no);
+		System.out.println(bt_no);
+		System.out.println(c_no);
+		System.out.println(s_size);
+		System.out.println(price);
 		String sUserId=(String)request.getSession().getAttribute("sUserId");
 		request.getSession().setAttribute("sUserId", sUserId);
 		Member member = memberService.selectById(sUserId);
@@ -144,13 +150,14 @@ public class ProductController {
 		Product product = productService.selectByNo(p_no);
 		int ps_no = productSizeService.selectByPnoSize(p_no, s_size);
 		ProductSize productSize = productSizeService.selectByNo(ps_no);
-		ProductDetail insertPd= new ProductDetail(0,product.getP_price(),new Date(),new Date(),new ProductSize(ps_no,s_size, product),sUserId,bt_no,1);
+		ProductDetail insertPd= new ProductDetail(0,product.getP_price(),null,null,new ProductSize(ps_no,s_size, product),sUserId,bt_no,1);
 		int insertProductDetail = productDetailService.insert(insertPd);
 		model.addAttribute("product", product);
 		System.out.println(product);
 		
 		model.addAttribute("productDetail", insertPd);
 		System.out.println(insertPd);
+		
 		return "payment";
 	}
 	
