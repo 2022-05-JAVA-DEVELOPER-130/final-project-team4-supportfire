@@ -48,8 +48,12 @@ public interface ProductMapper {
 	
 	@Select("select * from product")
 	List<Product> selectAll();
-	/*
+	
+	//product 총 갯수 찾기
+	@Select("select count(*) from product")
+	public int product_countAll();
+	
 	//제품 전체 출력(페이징)
-	List<Product> selectAll(int pageStart, int pageEnd);
-	*/
+	List<Product> selectAll_p(int pageStart, int pageEnd);
+	
 }

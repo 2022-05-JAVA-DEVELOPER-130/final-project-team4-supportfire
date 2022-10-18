@@ -7,6 +7,7 @@ import com.itwill.common.ProductPageMakerDto;
 import com.itwill.dto.Product;
 
 public interface ProductService {
+	
 	//상품 등록
 	int insert(Product product);
 	
@@ -28,10 +29,15 @@ public interface ProductService {
 	//제품명 검색
 	List<Product> searchAll(String p_name);
 	
-	List<Product> selectAll();
-	/*
+	//제품 총 갯수
+	public int product_countAll();
+	
+	//제품 리스트 출력
+	public List<Product> selectAll();
+	
 	//상품 전체출력(페이징)
-	ProductPageMakerDto<Product> selectAll(int currentPage) throws Exception;
-	*/
+	ProductPageMakerDto<Product> selectAll_p(int currentPage);
+
+	
 	
 }

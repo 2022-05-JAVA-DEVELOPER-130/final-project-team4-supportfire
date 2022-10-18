@@ -59,7 +59,7 @@ $(function(){
 		}
 	});
 	
-});
+
 
 $(document).on('click','#slide_p',function(e){
 		
@@ -69,7 +69,7 @@ $(document).on('click','#slide_p',function(e){
 		e.preventDefault();
 		
 	});
-
+});
 </script>
 <style type="text/css">
   .hiden {
@@ -96,7 +96,11 @@ a:hover, a:focus {
     text-decoration: none;
     outline: none;
     color: blue;
+ }
+    
 </style>
+
+
 
 </head>
 
@@ -166,7 +170,7 @@ a:hover, a:focus {
                     <div class="breadcrumb__text">
                         <h4>QNA</h4>
                         <div class="breadcrumb__links">
-                            <a href="./index.jsp">Home</a>
+                            <a href="./index.jsp">QNA</a>
                             <span>QNA</span>
                         </div>
                     </div>
@@ -185,7 +189,7 @@ a:hover, a:focus {
                     </div>
                     <div class="shortcodes_content">
                         <div class="table-responsive">
-                            <table class="table mb-0 table-bordered">
+                            <table class="table mb-0 table-bordered" id = "head1">
                                 <thead>
 							            <tr>
 							                <th width="800px">제목</th>
@@ -240,7 +244,7 @@ a:hover, a:focus {
 					
                 </div>
             </div>
-            
+            <div style='width:100px;float: right; margin-top: 10px;'><button type='button' class='btn btn-primary' id = 'reWrite'>글쓰기</button></div>
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-9">
                     <!-- Shop Pagination Area -->

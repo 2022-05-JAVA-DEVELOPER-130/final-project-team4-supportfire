@@ -89,7 +89,7 @@ $(function(){
                                     <li><a href="blog-details.jsp">Blog Details</a></li>
                                 </ul>
                             </li>
-                            <li><a href="notice_list">Notice</a></li>
+                            <li><a href="tables.jsp">Notice</a></li>
                             <li><a href="contact.jsp">Contacts</a></li>
                         </ul>
                     </nav>
@@ -315,8 +315,10 @@ $(function(){
                             </div>
                         </div>
                     </div>
+                    
                     <div class="row">
-                    <c:forEach items="${productList}" var="product">
+                     <tbody id="notice_list_tbody">
+                    <c:forEach items="${productList.itemList}" var="product">
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="img/product/${product.p_image}">
@@ -326,7 +328,6 @@ $(function(){
                                     <h6>${product.p_name}</h6>
                                     <a href="shop-details?p_no=${product.p_no}" class="add-cart">제품 상세보기</a>
                                     <h5>${product.p_price}원</h5>
-                                    <h6>즉시구매가 - ${price.get((product.p_no))}</h6>
                                 	<h7>Nike</h7>
                                     <div class="product__color__select">
                                         <label for="pc-4">
@@ -343,15 +344,40 @@ $(function(){
                             </div>
                         </div>
                         </c:forEach>
+                        </tbody>
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="product__pagination">
-                                <a class="active" href="#">1</a>
-                                <a href="#">2</a>
-                                <a href="#">3</a>
-                                <span>...</span>
-                                <a href="#">21</a>
-                            </div>
+                            <div class="row justify-content-center">
+                <div class="col-12 col-lg-9">
+                    <!-- Shop Pagination Area -->
+                    <div class="shop_pagination_area mt-5">
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination pagination-sm justify-content-center">
+
+                            	<c:if test="${productList.pageMaker.prevPage > 0}">  
+	            					<li class="page-item">
+	                                    <button class="page-link" onclick="changeProductList(${data.pageMaker.prevPage});"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
+	                               	 </li>
+                                </c:if>
+                                <c:forEach var="no" begin="${productList.pageMaker.blockBegin}" end="${productList.pageMaker.blockEnd}">
+									<c:if test="${productList.pageMaker.curPage == no}">
+										<li class="page-item active"><button class="page-link" href="#">${no}</button></li>
+									</c:if>
+									<c:if test="${productList.pageMaker.curPage != no}">
+										<li class="page-item"><button class="page-link page" onclick="changeProductList(${no})">${no}</button></li>
+									</c:if>
+                                </c:forEach>
+                                <c:if test="${productList.pageMaker.curPage < productList.pageMaker.totPage}">  
+	                                <li class="page-item">
+				                        <button class="page-link" onclick="changeProductList(${productList.pageMaker.nextPage})"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+			                    	 </li>
+                                </c:if>
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
                         </div>
                     </div>
                 </div>
@@ -448,6 +474,8 @@ $(function(){
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/product_content.js"></script>
+    
 </body>
 
 </html>

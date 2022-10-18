@@ -31,9 +31,13 @@ public interface ProductDao {
 	//제품명 검색
 	List<Product> searchAll(String p_name);
 	
-	List<Product> selectAll();
-	/*
 	//상품 전체출력
-	List<Product> selectAll(int pageStart, int pageEnd) throws Exception;
-	*/
+	List<Product> selectAll();
+	
+	//상품 전체출력(페이징)
+	List<Product> selectAll_p(int pageStart, int pageEnd);
+	
+	//product 총 갯수 찾기
+	public int product_countAll();
+	
 }

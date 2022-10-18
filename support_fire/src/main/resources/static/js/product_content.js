@@ -434,5 +434,73 @@ function sizeClick_s_null(productSize, product, buymin){
 		<!---->
 	</div>
 	`;
-	
+}
+
+function changeProductList(pageno) {
+	console.log(pageno);
+	$.ajax({
+		url: "product_list_rest",
+		method: "post",
+		data: {"pageno" :pageno},
+		dataType: "json",
+		success:function(resultObj){
+			console.log(resultObj);
+			if(resultObj.code > 0){
+				let data = resultObj.data;
+				let htmlBuffer = ``;
+				data.itemList.forEach(function(product){
+					htmlBuffer += `
+					<div class="col-lg-4 col-md-6 col-sm-6">
+					                            <div class="product__item">
+					                                <div class="product__item__pic set-bg" data-setbg="img/product/${product.p_image}">
+					                                <input type="hidden" id="p_no" value="${product.p_no}">
+					                                </div>
+					                                <div class="product__item__text">
+					                                    <h6>${product.p_name}</h6>
+					                                    <a href="shop-details?p_no=${product.p_no}" class="add-cart">제품 상세보기</a>
+					                                    <h5>${product.p_price}원</h5>
+					                                	<h7>Nike</h7>
+					                                    <div class="product__color__select">
+					                                        <label for="pc-4">
+					                                            <input type="radio" id="pc-4">
+					                                        </label>
+					                                        <label class="active black" for="pc-5">
+					                                            <input type="radio" id="pc-5">
+					                                        </label>
+					                                        <label class="grey" for="pc-6">
+					                                            <input type="radio" id="pc-6">
+					                                        </label>
+					                                    </div>
+					                                </div>
+					                            </div>
+					                        </div>
+											`;
+			                   });
+				console.log(htmlBuffer)
+				$("#notice_list_tbody").html(htmlBuffer);
+				let paginationBuffer = ``;
+				if(data.pageMaker.prevPage > 0){
+					paginationBuffer += `<li class="page-item">
+		                                    <button class="page-link" onclick="changeProductList(${data.pageMaker.prevPage});"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
+		                               	 </li>`;
+				}
+				for(let no = data.pageMaker.blockBegin; no <= data.pageMaker.blockEnd; no++){
+					if(data.pageMaker.curPage == no){
+						paginationBuffer += `<li class="page-item active"><button class="page-link" href="#">${no}</button></li>`;
+					}
+					if(data.pageMaker.curPage != no){
+						paginationBuffer += `<li class="page-item"><button class="page-link" onclick="changeProductList(${no});">${no}</button></li>`;
+					}
+				}
+				if(data.pageMaker.curPage < data.pageMaker.totPage){
+					paginationBuffer += `<li class="page-item">
+					                        <button class="page-link" onclick="changeProductList(${data.pageMaker.nextPage});"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+				                    	 </li>`;
+				}
+				$(".pagination.pagination-sm.justify-content-center").html(paginationBuffer);
+			}else{
+				
+			}
+		}
+	});
 }

@@ -35,6 +35,7 @@ public class ProductDaoSpringBootTestApplication {
 		application.setWebApplicationType(WebApplicationType.NONE);
 		ConfigurableApplicationContext context=application.run(args);
 		ProductDao productDao=(ProductDao)context.getBean(ProductDao.class);
+		/*
 		//System.out.println(productDao.insert(new Product(0, "갤럭시제트제트플립플립플립", "30/09/30", 2000000, "img", 3)));
 		//System.out.println(productDao.delete(6));
 		//System.out.println(productDao.selectAll());
@@ -65,7 +66,8 @@ public class ProductDaoSpringBootTestApplication {
 		}
 		System.out.println(minPriceMap);
 		System.out.println("----------------------------------------------------------");
-		
+		*/
+		System.out.println(productDao.selectAll_p(1, 2));
 		
 	}
 

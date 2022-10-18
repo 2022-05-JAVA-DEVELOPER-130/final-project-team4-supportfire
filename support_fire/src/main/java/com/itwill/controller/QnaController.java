@@ -106,7 +106,6 @@ public class QnaController {
  		String msg="";
  		NoticePageMakerDto<Qna> qnaList = null;
  		qnaList = qnaService.selectAll_p(pageno);
- 		System.out.println("a : "+qnaList);
  		
  		resultMap.put("code",code);
 	    resultMap.put("url",url);
