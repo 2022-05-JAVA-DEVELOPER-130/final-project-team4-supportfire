@@ -257,10 +257,10 @@ function use_point(){
 </script>
 <script>
 
-		var IMP = window.IMP; // 생략가능
-		IMP.init('imp41236885'); 
 	function kakaopay() {
 		console.log('클릭')
+		var IMP = window.IMP; // 생략가능
+		IMP.init('imp41236885'); 
 		// i'mport 관리자 페이지 -> 내정보 -> 가맹점식별코드
 		// ''안에 띄어쓰기 없이 가맹점 식별코드를 붙여넣어주세요. 안그러면 결제창이 안뜹니다.
 		IMP.request_pay({
@@ -539,7 +539,7 @@ function use_point(){
 													<span data-v-3a2a7b6b="">구매가</span>
 													<!---->
 												</dt>
-												<dd data-v-3a2a7b6b="" class="price_text" "><fmt:formatNumber type="number"  pattern="#,###" value="${productDetail.pd_price}"/></dd>
+												<dd data-v-3a2a7b6b="" class="price_text"><fmt:formatNumber type="number"  pattern="#,###" value="${productDetail.pd_price}" /></dd>
 											</dl>
 											<dl data-v-3a2a7b6b="" data-v-887ad490=""
 												class="price_addition">
