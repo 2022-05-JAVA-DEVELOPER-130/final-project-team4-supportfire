@@ -158,7 +158,7 @@ ol {
 /* buttons */
 
 .primary-btn {
-	display: inline-block;
+	display:inline-block;
 	font-size: 13px;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -166,6 +166,8 @@ ol {
 	color: #ffffff;
 	background: #000000;
 	letter-spacing: 4px;
+	
+	
 }
 
 .site-btn {
