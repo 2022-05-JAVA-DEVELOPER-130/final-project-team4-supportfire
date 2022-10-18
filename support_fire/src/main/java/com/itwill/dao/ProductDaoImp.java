@@ -48,20 +48,19 @@ public class ProductDaoImp implements ProductDao{
 	public List<Product> searchAll(String p_name) {	
 		return productMapper.searchAll(p_name);
 	}
+	
 	@Override
 	public List<Product> selectAll() {
 		return productMapper.selectAll();
 	}
 	
-	/* product 페이징 작성중
 	@Override
-	public List<Product> selectAll(int pageStart, int pageEnd) throws Exception {
-		// TODO Auto-generated method stub
-		Map<String, Integer>map = new HashMap<>();
-		map.put("pageStart", pageStart);
-		map.put("pageEnd", pageEnd);
-		
-		return productMapper.selectAll(pageStart, pageEnd);
+	public List<Product> selectAll_p(int pageStart, int pageEnd){
+		return productMapper.selectAll_p(pageStart, pageEnd);
 	}
-	*/
+	@Override
+	public int product_countAll() {
+		return productMapper.product_countAll();
+	}
+	
 }

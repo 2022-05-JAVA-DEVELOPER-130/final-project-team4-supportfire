@@ -1,6 +1,7 @@
 package com.itwill.controller;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.itwill.common.ProductPageMakerDto;
 import com.itwill.dto.Brands;
 import com.itwill.dto.Member;
 import com.itwill.dto.Product;
@@ -39,18 +41,38 @@ public class ProductController {
 	@Autowired
 	private MemberService memberService;
 
-
+	@RequestMapping("product_list_rest")
+    @ResponseBody
+    public Map<String, Object> product_list_rest(@RequestParam(required = false, defaultValue = "1") Integer pageno) throws Exception {
+    	Map<String, Object> resultMap= new HashMap();
+    	int code=1;
+ 		String url="";
+ 		String msg="";
+ 		ProductPageMakerDto<Product> productList = null;
+ 		productList = productService.selectAll_p(pageno);
+ 		System.out.println("a : "+productList);
+ 		
+ 		resultMap.put("code",code);
+	    resultMap.put("url",url);
+	    resultMap.put("msg",msg);
+	    resultMap.put("data",productList);
+	    
+	    return resultMap;
+    }
+	
 	@RequestMapping("shop")
-	public String product_list(HttpServletRequest request, Model model) {
-		String forwardPath = "";
-		List<Product> productList = productService.selectAll();
-		Map price = productService.selectAllMinPrice();
+	public String product_list(@RequestParam(required = false, defaultValue = "1") Integer pageno, Model model) {
+		//String forwardPath = "";
+		ProductPageMakerDto<Product> productList = productService.selectAll_p(pageno);
+		System.out.println(productList);
+		//Map price = productService.selectAllMinPrice();
 		model.addAttribute("productList", productList);
-		model.addAttribute("price", price);
-		System.out.println(productList.get(1).getP_no());
-		System.out.println(price.get(productList.get(1).getP_no()));
-		forwardPath = "shop";
-		return forwardPath;
+		model.addAttribute("pageno", pageno);
+		//model.addAttribute("price", price);
+		//System.out.println(productList.get(1).getP_no());
+		//System.out.println(price.get(productList.get(1).getP_no()));
+		//forwardPath = "shop";
+		return "shop";
 	}
 
 	@RequestMapping(value = "shop-details", params = "p_no")
