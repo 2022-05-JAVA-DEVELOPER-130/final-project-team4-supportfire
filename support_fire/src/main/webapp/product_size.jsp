@@ -220,6 +220,8 @@ $(document).on('click', '#bid', function(e){
 		console.log(e.target);
 		$('#imm').removeClass('on');
 		$('#bid').addClass('on');
+		document.getElementById('price_g').readOnly = false;
+		document.getElementById('price_g').value = "";
 		}
 	
 });
@@ -231,8 +233,9 @@ $(document).on('click', '#imm', function(e){
 		success:function(jsonResult){
 		$('#bid').removeClass('on');
 		$('#imm').addClass('on');
+		document.getElementById('price_g').value = $('#hiddenPd_no_aa').attr('value');
+		document.getElementById('price_g').readOnly = true;
 		}
-	
 });
 	e.preventDefault();
 });
@@ -258,11 +261,22 @@ $(document).on('click', '.on', function(e){
 
 
 </script>
+
+<style type="text/css">
+	#price_g{
+		text-align: right;
+		font-style: italic;
+		
+	
+	}
+
+</style>
 </head>
 
 
 
 <body>
+
 <!-- Page Preloder -->
    <div id="preloder">
       <div class="loader"></div>

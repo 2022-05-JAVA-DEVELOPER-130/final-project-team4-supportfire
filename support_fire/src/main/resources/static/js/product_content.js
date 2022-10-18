@@ -60,6 +60,7 @@ function sizeClick_p(productDetail, productSize, product, buymin){
 	<div data-v-7598e8e5="" data-v-34b11929=""
 		class="container buy sm step-1 scp">
 		<input type="hidden" id="hiddenPd_no_buy" value="${productDetail.pd_no}">
+		<input type="hidden" id="hiddenPd_no_aa" value="${productDetail.pd_price}">
 		<!---->
 		<div data-v-7598e8e5="" class="content">
 			<div data-v-dc1edea6="" data-v-7598e8e5="" class="buy_immediate">
@@ -122,8 +123,8 @@ function sizeClick_p(productDetail, productSize, product, buymin){
 							<dl data-v-15aa5096="" class="price_now_box">
 								<dt data-v-15aa5096="" class="price_now_title">즉시구매가</dt>
 								<dd data-v-15aa5096="" class="price">
-									<span data-v-15aa5096="" class="amount">${productDetail.pd_price}</span><span
-										data-v-15aa5096="" class="unit">원</span>
+									<span data-v-15aa5096="" class="amount"><input type="number" id="price_g" value="${productDetail.pd_price}" readonly="ture"></span>
+									<span data-v-15aa5096="" class="unit">원</span>
 								</dd>
 							</dl>
 							<div data-v-15aa5096="" class="price_warning"
@@ -192,7 +193,7 @@ function sizeClick_p_null(productSize, product, buymin){
 					<ul data-v-638c1354="" data-v-158ed304="" class="price_list">
 						<li data-v-638c1354="" class="list_item"><p
 								data-v-638c1354="" class="title">즉시 구매가</p>
-							<span data-v-638c1354="" class="price"> - </span><span
+							<span data-v-638c1354="" class="price" id="price_v" value=" - "> - </span><span
 							data-v-638c1354="" class="unit">원</span></li>
 						<li data-v-638c1354="" class="list_item"><p
 								data-v-638c1354="" class="title">즉시 판매가</p>
@@ -217,7 +218,7 @@ function sizeClick_p_null(productSize, product, buymin){
 							<dl data-v-15aa5096="" class="price_now_box">
 								<dt data-v-15aa5096="" class="price_now_title">구매희망가</dt>
 								<dd data-v-15aa5096="" class="price">
-									<span data-v-15aa5096="" class="amount"> - </span><span
+									<span data-v-15aa5096="" class="amount"><input type="number" id="price_g" value=""></span><span
 										data-v-15aa5096="" class="unit">원</span>
 								</dd>
 							</dl>
@@ -250,6 +251,7 @@ function sizeClick_s(productDetail, productSize, product, buymin){
 	<div data-v-7598e8e5="" data-v-34b11929=""
 		class="container sell sm step-1">
 		<input type="hidden" id="hiddenPd_no_buy" value="${productDetail.pd_no}">
+		<input type="hidden" id="hiddenPd_no_aa" value="${productDetail.pd_price}">
 		<!---->
 		<div data-v-7598e8e5="" class="content">
 			<div data-v-dc1edea6="" data-v-7598e8e5="" class="buy_immediate">
@@ -312,7 +314,7 @@ function sizeClick_s(productDetail, productSize, product, buymin){
 							<dl data-v-15aa5096="" class="price_now_box">
 								<dt data-v-15aa5096="" class="price_now_title">즉시 판매가</dt>
 								<dd data-v-15aa5096="" class="price">
-									<span data-v-15aa5096="" class="amount">${productDetail.pd_price}</span><span
+									<span data-v-15aa5096="" class="amount"><input type="number" id="price_g" value="${productDetail.pd_price}" readonly="ture"></span><span
 										data-v-15aa5096="" class="unit">원</span>
 								</dd>
 							</dl>
@@ -407,7 +409,7 @@ function sizeClick_s_null(productSize, product, buymin){
 							<dl data-v-15aa5096="" class="price_now_box">
 								<dt data-v-15aa5096="" class="price_now_title">즉시 판매가</dt>
 								<dd data-v-15aa5096="" class="price">
-									<span data-v-15aa5096="" class="amount"> - </span><span
+									<span data-v-15aa5096="" class="amount"><input type="number" id="price_g" value=" - " readonly="ture"></span><span
 										data-v-15aa5096="" class="unit">원</span>
 								</dd>
 							</dl>
