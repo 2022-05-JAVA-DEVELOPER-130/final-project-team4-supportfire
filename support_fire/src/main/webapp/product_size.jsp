@@ -229,7 +229,7 @@ $(document).on('click', '.on', function(e){
 	console.log($(this).attr('id'));
 	if($(this).attr('id') == 'imm'){
 		console.log($('#hiddenPd_no_buy').val());
-		location.href='payment?pd_no='+$('#hiddenPd_no_buy').val()
+		location.href='payment?pd_no='+$('#hiddenPd_no_buy').val() + '&price=' + document.getElementById('price_g').value
 	}else{
 		location.href='bid?' + a + '&s_size=' + $('#s_size').val() + '&price=' + document.getElementById('price_g').value
 			
