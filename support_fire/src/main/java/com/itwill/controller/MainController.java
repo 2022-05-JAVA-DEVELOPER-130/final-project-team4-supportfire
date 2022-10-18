@@ -58,4 +58,14 @@ public class MainController {
   		model.addAttribute("pageno", pageno);
   		return "qna_board";
   	}
+  	
+  	@RequestMapping("bid_forward")
+  	public String bid_forward(int p_no, int bt_no, int c_no, String s_size, int price) {
+  		System.out.println(p_no);
+  		System.out.println(bt_no);
+  		System.out.println(c_no);
+  		System.out.println(s_size);
+  		System.out.println(price);
+  		return "bid";
+  	}
 }

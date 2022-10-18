@@ -246,10 +246,21 @@ $(document).on('click', '.on', function(e){
 		console.log($('#hiddenPd_no_buy').val());
 		location.href='payment?pd_no='+$('#hiddenPd_no_buy').val()
 	}else{
-		location.href='bid?' + a + '&s_size=' + $('#s_size').val();
+		$.ajax({
+			url:'bid_forward',
+			data:a + '&s_size=' + $('#s_size').val() + '&price=' + document.getElementById('price_g').value,
+			success:function(jsonResult){
+				
+				
+			}
+		})
+		//location.href='bid?' + a + '&s_size=' + $('#s_size').val();
 	}
 	e.preventDefault();
 });
+
+
+
 
 
 
