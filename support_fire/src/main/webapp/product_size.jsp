@@ -252,9 +252,9 @@ $(document).on('click', '.on', function(e){
 			success:function(jsonResult){
 				
 				
+				
 			}
 		})
-		//location.href='bid?' + a + '&s_size=' + $('#s_size').val();
 	}
 	e.preventDefault();
 });
