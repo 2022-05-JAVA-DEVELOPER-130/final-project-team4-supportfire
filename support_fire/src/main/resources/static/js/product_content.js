@@ -450,30 +450,19 @@ function changeProductList(pageno) {
 				let htmlBuffer = ``;
 				data.itemList.forEach(function(product){
 					htmlBuffer += `
-					<div class="col-lg-4 col-md-6 col-sm-6">
-					                            <div class="product__item">
-					                                <div class="product__item__pic set-bg" data-setbg="img/product/${product.p_image}">
-					                                <input type="hidden" id="p_no" value="${product.p_no}">
-					                                </div>
-					                                <div class="product__item__text">
-					                                    <h6>${product.p_name}</h6>
-					                                    <a href="shop-details?p_no=${product.p_no}" class="add-cart">제품 상세보기</a>
-					                                    <h5>${product.p_price}원</h5>
-					                                	<h7>Nike</h7>
-					                                    <div class="product__color__select">
-					                                        <label for="pc-4">
-					                                            <input type="radio" id="pc-4">
-					                                        </label>
-					                                        <label class="active black" for="pc-5">
-					                                            <input type="radio" id="pc-5">
-					                                        </label>
-					                                        <label class="grey" for="pc-6">
-					                                            <input type="radio" id="pc-6">
-					                                        </label>
-					                                    </div>
-					                                </div>
-					                            </div>
-					                        </div>
+					 <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="img/product/${product.p_image}">
+                                <input type="hidden" id="p_no" value="${product.p_no}">
+                                </div>
+                                <div class="product__item__text">
+                                	<h6>Nike</h6>
+                                    <a href="shop-details?p_no=${product.p_no}" class="add-cart">제품 상세보기</a>
+                                    <h5>${product.p_name}</h5>
+                                    <h6>${product.p_price}원</h6>
+                                </div>
+                            </div>
+                        </div>
 											`;
 			                   });
 				console.log(htmlBuffer)
