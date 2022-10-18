@@ -242,8 +242,8 @@ function use_point(){
 	document.getElementById("mypoint").value=${member.m_point};
 	document.getElementById("point_m").innerHTML='0';
 	document.getElementById("point_view").innerHTML="<fmt:formatNumber  pattern="#,###" value="${member.m_point}"/>";
-	document.getElementById("total1").innerHTML="<fmt:formatNumber type="number"  pattern="0,000" value=" ${productDetail.pd_price+productDetail.pd_price*0.01-member.m_point+2000+3000 }" />";
-	document.getElementById("total2").innerHTML="<fmt:formatNumber type="number"  pattern="0,000" value=" ${productDetail.pd_price+productDetail.pd_price*0.01-member.m_point+2000+3000 }" />";
+	document.getElementById("total1").innerHTML="<fmt:formatNumber type="number"  pattern="0,000" value=" ${param.price+param.price*0.01-member.m_point+2000+3000 }" />";
+	document.getElementById("total2").innerHTML="<fmt:formatNumber type="number"  pattern="0,000" value=" ${param.price+param.price*0.01-member.m_point+2000+3000 }" />";
 }
 
 
@@ -257,10 +257,10 @@ function use_point(){
 </script>
 <script>
 
-		var IMP = window.IMP; // 생략가능
-		IMP.init('imp41236885'); 
 	function kakaopay() {
 		console.log('클릭')
+		var IMP = window.IMP; // 생략가능
+		IMP.init('imp58636510'); 
 		// i'mport 관리자 페이지 -> 내정보 -> 가맹점식별코드
 		// ''안에 띄어쓰기 없이 가맹점 식별코드를 붙여넣어주세요. 안그러면 결제창이 안뜹니다.
 		IMP.request_pay({
@@ -524,7 +524,7 @@ function use_point(){
 											<dl data-v-679d7250="" class="price_box">
 												<dt data-v-679d7250="" class="price_title">총 결제금액</dt>
 												<dd data-v-679d7250="" class="price empty_price">
-													<span data-v-679d7250="" class="amount" id="total1"><fmt:formatNumber type="number"  pattern="0,000" value=" ${productDetail.pd_price+productDetail.pd_price*0.01+2000+3000 }" /></span><span
+													<span data-v-679d7250="" class="amount" id="total1"><fmt:formatNumber type="number"  pattern="0,000" value=" ${param.price+param.price*0.01+2000+3000 }" /></span><span
 														data-v-679d7250="" class="unit"></span>
 												</dd>
 											</dl>
@@ -539,7 +539,7 @@ function use_point(){
 													<span data-v-3a2a7b6b="">구매가</span>
 													<!---->
 												</dt>
-												<dd data-v-3a2a7b6b="" class="price_text" "><fmt:formatNumber type="number"  pattern="#,###" value="${productDetail.pd_price}"/></dd>
+												<dd data-v-3a2a7b6b="" class="price_text" "><fmt:formatNumber type="number"  pattern="#,###" value="${param.price}"/></dd>
 											</dl>
 											<dl data-v-3a2a7b6b="" data-v-887ad490=""
 												class="price_addition">
@@ -566,7 +566,7 @@ function use_point(){
 												</dt>
 												
 												<dd data-v-3a2a7b6b="" class="price_text">
-												<fmt:formatNumber type="number"  pattern="0,000" value=" ${productDetail.pd_price*0.01 }" /></dd>
+												<fmt:formatNumber type="number"  pattern="0,000" value=" ${param.price*0.01 }" /></dd>
 											</dl>
 											<dl data-v-3a2a7b6b="" data-v-887ad490=""
 												class="price_addition">
@@ -641,7 +641,7 @@ function use_point(){
 										<dl data-v-679d7250="" class="price_box">
 											<dt data-v-679d7250="" class="price_title">총 결제금액</dt>
 											<dd data-v-679d7250="" class="price empty_price">
-												<span data-v-679d7250="" class="amount" id="total2"><fmt:formatNumber type="number"  pattern="0,000" value=" ${productDetail.pd_price+productDetail.pd_price*0.01+2000+3000 }" /></span><span
+												<span data-v-679d7250="" class="amount" id="total2"><fmt:formatNumber type="number"  pattern="0,000" value=" ${param.price+param.price*0.01+2000+3000 }" /></span><span
 													data-v-679d7250="" class="unit"></span>
 											</dd>
 										</dl>
