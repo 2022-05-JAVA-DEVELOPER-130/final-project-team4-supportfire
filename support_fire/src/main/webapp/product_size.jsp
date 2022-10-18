@@ -53,18 +53,12 @@
 .container.buy[data-v-ed431aec] {
      background-color: #fff;
 }
-
-
 #cassd{
 	background-color: #fff;
 }
-
 .scp{
 	margin-top: 50px;
-
 }
-
-
 </style>
 
    
@@ -110,7 +104,6 @@ function getParameterByName(name) {
         results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
-
 $(function(){
 	
 	$.ajax({
@@ -157,8 +150,6 @@ $.ajax({
 		$('#product_tag').html(productSizeNameForm(jsonResult.product));
 	}
 });
-
-
 $(document).on('click', '.buy1', function(e){
 	if(e.currentTarget.value != 'null'){
 		$.ajax({
@@ -169,7 +160,6 @@ $(document).on('click', '.buy1', function(e){
 			success:function(jsonResult){
 				$('#ipchal').html(sizeClick_p(jsonResult.productDetail, jsonResult.productSize, jsonResult.product, jsonResult.buymin));
 			}
-
 		});
 		
 		}else{
@@ -185,7 +175,6 @@ $(document).on('click', '.buy1', function(e){
 	}	
 	e.preventDefault();
 });
-
 $(document).on('click', '.sell1', function(e){
 	if(e.currentTarget.value != 'null'){
 	$.ajax({
@@ -196,7 +185,6 @@ $(document).on('click', '.sell1', function(e){
 		success:function(jsonResult){
 			$('#ipchal').html(sizeClick_s(jsonResult.productDetail, jsonResult.productSize, jsonResult.product, jsonResult.buymin));
 		}
-
 	});
 	
 	}else{
@@ -213,7 +201,6 @@ $(document).on('click', '.sell1', function(e){
 	}
 	e.preventDefault();
 });
-
 $(document).on('click', '#bid', function(e){
 	$.ajax({
 		success:function(jsonResult){
@@ -227,7 +214,6 @@ $(document).on('click', '#bid', function(e){
 });
 	e.preventDefault();
 });
-
 $(document).on('click', '#imm', function(e){
 	$.ajax({
 		success:function(jsonResult){
@@ -239,35 +225,18 @@ $(document).on('click', '#imm', function(e){
 });
 	e.preventDefault();
 });
-
 $(document).on('click', '.on', function(e){
 	console.log($(this).attr('id'));
 	if($(this).attr('id') == 'imm'){
 		console.log($('#hiddenPd_no_buy').val());
 		location.href='payment?pd_no='+$('#hiddenPd_no_buy').val()
 	}else{
-	
-		location.href ='bid?'+ a + '&s_size=' + $('#s_size').val() + '&price=' + document.getElementById('price_g').value;
+		location.href='bid?' + a + '&s_size=' + $('#s_size').val() + '&price=' + document.getElementById('price_g').value
+			
 	}
 	e.preventDefault();
-	
-
 });
-	
-
-
-
-
-
-
-
 });
-
-
-
-
-
-
 </script>
 
 <style type="text/css">
@@ -277,7 +246,6 @@ $(document).on('click', '.on', function(e){
 		
 	
 	}
-
 </style>
 </head>
 
