@@ -53,7 +53,7 @@ public class MainController {
 	}
 	
 	 //공지사항 전체조회
-  	@RequestMapping("board")
+  	@RequestMapping("qna")
   	public String notice_list(@RequestParam(required = false, defaultValue = "1") Integer pageno,Model model) throws Exception{
   		System.out.println(pageno);
   		NoticePageMakerDto<Qna> qnaList = qnaService.selectAll_p(pageno);
@@ -93,8 +93,10 @@ public class MainController {
 			code=1;
 		}else if(b.equals("s") || b.equals("p") || b.equals("b")) {
 			code=2;
-		}else if(b.equals("n") || b.equals("q")) {
+		}else if(b.equals("n")) {
 			code=3;
+		}else if(b.equals("q")) {
+			code=4;
 		}
 		
 			resultMap.put("code",code);

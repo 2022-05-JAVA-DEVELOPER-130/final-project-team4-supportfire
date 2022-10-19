@@ -57,6 +57,8 @@ $.ajax({
 	    	$('#shop').addClass('active');
 	    }else if(jsonResult.code == 3){
 	    	$('#notice').addClass('active');
+	    }else if(jsonResult.code == 4){
+	    	$('#qna').addClass('active');
 	    }
 	   
 	}
