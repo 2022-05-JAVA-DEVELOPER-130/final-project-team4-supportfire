@@ -288,8 +288,9 @@ function use_point(){
 			dataType:'json',
 			success:function(jsonResult){
 			    alert('구매가 생성되었습니다');
-			   
+			 	location.href="main";  
 			}
+		
 		});
 	 });
  });
@@ -733,7 +734,7 @@ function use_point(){
 							style="display: none;"><em data-v-679d7250="">주의! </em></span>
 					</div>
 					<input data-v-3d1bcc82="" data-v-14995178="" type="button"
-						class="btn full solid" value="결제하기" onclick="kakaopay()" id="purchase_btn" />
+						class="btn full solid" value="결제하기"  id="purchase_btn" />
 
 				</div>
 

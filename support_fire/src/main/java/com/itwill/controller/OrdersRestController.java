@@ -23,10 +23,12 @@ import com.itwill.dto.Member;
 import com.itwill.dto.Orders;
 import com.itwill.dto.Payment;
 import com.itwill.dto.ProductDetail;
+import com.itwill.dto.ProductSize;
 import com.itwill.service.MemberService;
 import com.itwill.service.OrdersService;
 import com.itwill.service.PaymentService;
 import com.itwill.service.ProductDetailService;
+import com.itwill.service.ProductSizeService;
 
 
 @RestController
@@ -40,6 +42,8 @@ public class OrdersRestController {
 	private PaymentService paymentService;
 	@Autowired
 	private MemberService memberservice;
+	@Autowired
+	private ProductSizeService productSizeService;
 	
 	//구매내역
 	@RequestMapping(value="orders_purchase_list")
@@ -146,7 +150,7 @@ public class OrdersRestController {
 	 * 원래있던판매자 정보와ㅓ 새로 만들어진 구매자정보로 오더생성 후 인서
 	 */
 	@RequestMapping(value="orders_purchase")
-	public Map insert_orders_purchase(int pd_no,HttpServletRequest request) throws Exception{
+	public Map insert_orders_purchase(@RequestParam int pd_no,HttpServletRequest request) throws Exception{
 		Map resultMap = new HashMap();
 		int code=0;
 		String url="";
@@ -231,4 +235,59 @@ public class OrdersRestController {
 		
 		return resultMap;
 	}
+	//구매입찰
+	@RequestMapping(value="orders_purchase_ipchal")
+	public Map insert_orders_purchase_ipchal(@RequestParam int p_no,int c_no,String s_size,int price,HttpServletRequest request) throws Exception{
+		Map resultMap = new HashMap();
+		int code=0;
+		String url="";
+		String msg="";
+		ProductDetail data=null;
+	
+		//구매자의 정보 셋팅
+		String sUserId=(String)request.getSession().getAttribute("sUserId");
+		request.getSession().setAttribute("sUserId", sUserId);
+		//p_no=1&bt_no=1&c_no=1&s_size=250&price=243234
+		
+		int ps_no = productSizeService.selectByPnoSize(p_no, s_size);
+		ProductDetail newProductDetail = new ProductDetail(p_no, price, "", "", new ProductSize(ps_no, s_size, null), sUserId,1 ,2);
+		int insertRowCount=productDetailService.insertSequence(newProductDetail);
+		data=newProductDetail;
+		resultMap.put("code",code);
+		resultMap.put("url",url);
+		resultMap.put("msg",msg);
+		resultMap.put("data",data);
+		
+		
+		
+		return resultMap;
+	}
+	//판매입
+		@RequestMapping(value="orders_sell_ipchal")
+		public Map insert_orders_sell_ipchal(@RequestParam int p_no,int c_no,String s_size,int price,HttpServletRequest request) throws Exception{
+			Map resultMap = new HashMap();
+			int code=0;
+			String url="";
+			String msg="";
+			ProductDetail data=null;
+		
+			//구매자의 정보 셋팅
+			String sUserId=(String)request.getSession().getAttribute("sUserId");
+			request.getSession().setAttribute("sUserId", sUserId);
+			//p_no=1&bt_no=1&c_no=1&s_size=250&price=243234
+			
+			int ps_no = productSizeService.selectByPnoSize(p_no, s_size);
+			ProductDetail newProductDetail = new ProductDetail(p_no, price, "", "", new ProductSize(ps_no, s_size, null), sUserId,2 ,2);
+			int insertRowCount=productDetailService.insertSequence(newProductDetail);
+			data=newProductDetail;
+			resultMap.put("code",code);
+			resultMap.put("url",url);
+			resultMap.put("msg",msg);
+			resultMap.put("data",data);
+			
+			
+			
+			return resultMap;
+		}
+	
 }
