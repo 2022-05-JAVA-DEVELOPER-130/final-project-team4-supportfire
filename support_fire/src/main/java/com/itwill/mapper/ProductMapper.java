@@ -38,9 +38,7 @@ public interface ProductMapper {
 	Map selectSellMinPriceByNo(int p_no);
 	
 	//제품 최소 판매가 전체 출력
-	@Select("select p.p_no, min(pd.pd_price) from productsize ps left outer join (select * from productdetail where bt_no = 2 and b_no = 1) pd on ps.ps_no = pd.ps_no join product p on ps.p_no = p.p_no group by p.p_no ORDER BY p_no asc")
-	@ResultMap("selectMap")
-	List<Map> selectAllMinPrice();
+	List<Map> selectAllMinPrice(int pageStart, int pageEnd);
 	
 	//제품 검색
 	@Select("select * from product where p_name like '%'||#{p_name}||'%' or p_name like initcap('%'||#{p_name}||'%')")

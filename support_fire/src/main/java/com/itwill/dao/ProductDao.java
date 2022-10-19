@@ -7,6 +7,7 @@ import java.util.Map;
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 
+import com.itwill.dto.PDDTO;
 import com.itwill.dto.Product;
 
 public interface ProductDao {
@@ -26,7 +27,7 @@ public interface ProductDao {
 	Map selectSellMinPriceByNo(int p_no);
 	
 	//제품 최소 판매가 전체 출력
-	List<Map> selectAllMinPrice();
+	List<PDDTO> selectAllMinPrice(int pageStart, int pageEnd);
 	
 	//제품명 검색
 	List<Product> searchAll(String p_name);

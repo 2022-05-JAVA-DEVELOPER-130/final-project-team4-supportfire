@@ -320,7 +320,7 @@ $(function(){
                     
                     <!-- product start -->
                     <div class="row" id = "notice_list_tbody">
-                    <c:forEach items="${productList.itemList}" var="product">
+                    <c:forEach items="${productList.itemList}" var="product" varStatus="status">
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="img/product/${product.p_image}">
@@ -330,7 +330,7 @@ $(function(){
                                 	<h6>Nike</h6>
                                     <a href="shop-details?p_no=${product.p_no}" class="add-cart">제품 상세보기</a>
                                     <h5>${product.p_name}</h5>
-                                    <h6>${product.p_price}원</h6>
+                                    <h6>${productList.priceList[status.index].min_price}</h6>
                                 </div>
                             </div>
                         </div>

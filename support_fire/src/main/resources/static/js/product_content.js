@@ -448,23 +448,23 @@ function changeProductList(pageno) {
 			if(resultObj.code > 0){
 				let data = resultObj.data;
 				let htmlBuffer = ``;
-				data.itemList.forEach(function(product){
+				for(var i=0; i<data.priceList.length; i++){
 					htmlBuffer += `
 					 <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg"><img src="img/product/${product.p_image};">
-                                <input type="hidden" id="p_no" value="${product.p_no}">
+                                <div class="product__item__pic set-bg"> <img src="img/product/${data.itemList[i].p_image}">
+                                <input type="hidden" id="p_no" value="${data.itemList[i].p_no}">
                                 </div>
                                 <div class="product__item__text">
                                 	<h6>Nike</h6>
-                                    <a href="shop-details?p_no=${product.p_no}" class="add-cart">제품 상세보기</a>
-                                    <h5>${product.p_name}</h5>
-                                    <h6>${product.p_price}원</h6>
+                                    <a href="shop-details?p_no=${data.itemList[i].p_no}" class="add-cart">제품 상세보기</a>
+                                    <h5>${data.itemList[i].p_name}</h5>
+                                    <h6>${data.priceList[i].min_price}</h6>
                                 </div>
                             </div>
                         </div>
 											`;
-			                   });
+			                   };
 				console.log(htmlBuffer)
 				$("#notice_list_tbody").html(htmlBuffer);
 				let paginationBuffer = ``;

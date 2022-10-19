@@ -1,5 +1,6 @@
 package com.itwill.dao;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.itwill.dto.Notice;
+import com.itwill.dto.PDDTO;
 import com.itwill.dto.Product;
 import com.itwill.mapper.ProductMapper;
 
@@ -41,8 +43,25 @@ public class ProductDaoImp implements ProductDao{
 	}
 	
 	@Override
-	public List<Map> selectAllMinPrice() {
-		return productMapper.selectAllMinPrice();
+	public List<PDDTO> selectAllMinPrice(int pageStart, int pageEnd) {
+		List<Map> map = productMapper.selectAllMinPrice(pageStart, pageEnd);
+		List<PDDTO> pddto = new ArrayList<PDDTO>();
+		PDDTO pddd = null;
+		for(int i=0; i<map.size(); i++) {
+			String a = String.valueOf(map.get(i).get("p_no"));
+			String b = String.valueOf(map.get(i).get("min_price"));
+			if(b.equals("null")) {
+				b = "구매입찰";
+			}else {
+				b= b+"원";
+			}
+			
+			System.out.println(a);
+			pddd = new PDDTO(a, b);
+			pddto.add(pddd);
+			
+		}
+		return pddto;
 	}
 	@Override
 	public List<Product> searchAll(String p_name) {	
