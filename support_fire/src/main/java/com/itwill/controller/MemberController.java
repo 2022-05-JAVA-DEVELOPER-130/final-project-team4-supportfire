@@ -270,6 +270,21 @@ public class MemberController {
 		return resultMap;
 	}
 	
+	@RequestMapping("address_modify")
+	public Map address_modify(HttpServletRequest request) {
+		Map resultMap = new HashMap();
+		int code=0;
+		String url="";
+		String msg="";
+		Member data = null;
+		//int updateByMember= memberService.updateMember()
+		resultMap.put("code",code);
+	    resultMap.put("url",url);
+	    resultMap.put("msg",msg);
+	    resultMap.put("data",data);
+	    
+    return resultMap;
+	}
 
 	
 	

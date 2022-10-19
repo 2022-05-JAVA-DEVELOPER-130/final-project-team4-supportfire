@@ -97,11 +97,7 @@
 	transform: translateX(-50%) translateY(-50%);
 }
 
-<<<<<<< HEAD
-.contact__form input {
-=======
-        background-color: rgba(0, 0, 0, 0.4);
-      }
+
 
       .modal.show {
         display: block;
@@ -260,7 +256,8 @@ function showDelivery() {
 			dataType:'json',
 			success:function(jsonResult){
 				$('#content').html(address_form_content(jsonResult));
-				$('.modal').off();
+				$('.modal').removeClass('show');
+				body.style.overflow = 'auto';
 			}
 	 });
 	});
@@ -291,8 +288,9 @@ function use_point(){
 			dataType:'json',
 			success:function(jsonResult){
 			    alert('구매가 생성되었습니다');
-			   
+			 	location.href="main";  
 			}
+		
 		});
 	 });
  });
@@ -356,17 +354,6 @@ function use_point(){
 
 				<!-- Checkout Section Begin -->
 
-							<div class="checkout__input">
-								<p>
-									<span>배송메모*</span>
-								</p>
-								<input type="text" class="asd" placeholder="배송메모">
-							</div>
-							<div class="checkout__input__checkbox">
-								<label for="acc" style="margin-left: 20px; padding-left: 10px;"> <span style="width: 30%; margin-top: 20px;">기본 배송지로설정</span> <input type="checkbox"
-									id="acc" > <span class="checkmark" style="margin-top: 0px;"></span>
-								</label><button type="button" class="site-btn" style="margin-top: 0px;" id="address_btn">저장</button>
-
 				<div class="contact__form">
 					<form id="address_form">
 						<h6 class="checkout__title">주소추가하기</h6>
@@ -380,7 +367,7 @@ function use_point(){
 								<span>우편번호*</span>
 							</p>
 							<input type="button" class="asd" onclick="showDelivery()"
-								value="우편번호 찾기" class="input_txt"> <input type="text"
+								value="우편번호 찾기" class="input_txt" style="background-color: rgba(0, 0, 0, 0.4); color: white; align-content: center;"> <input type="text"
 								class="asd" id="sample4_postcode">
 						</div>
 						<span>주소*</span> <input type="text" class="asd"
@@ -747,7 +734,7 @@ function use_point(){
 							style="display: none;"><em data-v-679d7250="">주의! </em></span>
 					</div>
 					<input data-v-3d1bcc82="" data-v-14995178="" type="button"
-						class="btn full solid" value="결제하기" onclick="kakaopay()" id="purchase_btn" />
+						class="btn full solid" value="결제하기"  id="purchase_btn" />
 
 				</div>
 
