@@ -1,5 +1,6 @@
 package com.itwill.controller;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -64,10 +65,12 @@ public class ProductController {
 	public String product_list(@RequestParam(required = false, defaultValue = "1") Integer pageno, Model model) {
 		//String forwardPath = "";
 		ProductPageMakerDto<Product> productList = productService.selectAll_p(pageno);
+		int productCount = productService.product_countAll();
 		System.out.println(productList);
 		//Map price = productService.selectAllMinPrice();
 		model.addAttribute("productList", productList);
 		model.addAttribute("pageno", pageno);
+		model.addAttribute("productCount", productCount);
 		//model.addAttribute("price", price);
 		//System.out.println(productList.get(1).getP_no());
 		//System.out.println(price.get(productList.get(1).getP_no()));

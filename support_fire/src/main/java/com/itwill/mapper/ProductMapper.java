@@ -53,5 +53,8 @@ public interface ProductMapper {
 	
 	//제품 전체 출력(페이징)
 	List<Product> selectAll_p(int pageStart, int pageEnd);
-	
+	/*
+	@Select("select * from product where br_no")
+	int brand_No();
+	*/
 }
