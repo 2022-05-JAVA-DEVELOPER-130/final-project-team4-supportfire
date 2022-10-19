@@ -85,7 +85,7 @@
         left: 50%;
 
         width: 600px;
-        height: 850px;
+        height: 800px;
 
         padding: 20px;
 
@@ -231,6 +231,7 @@ function showDelivery() {
 			dataType:'json',
 			success:function(jsonResult){
 				$('#content').html(address_form_content(jsonResult));
+				$('.modal').off();
 			}
 	 });
 	});
@@ -338,8 +339,8 @@ function use_point(){
 								<input type="text" class="asd" placeholder="배송메모">
 							</div>
 							<div class="checkout__input__checkbox">
-								<label for="acc"> <span style="width: 30%">기본 배송지로설정</span> <input type="checkbox"
-									id="acc"> <span class="checkmark"></span>
+								<label for="acc" style="margin-left: 20px; padding-left: 10px;"> <span style="width: 30%; margin-top: 20px;">기본 배송지로설정</span> <input type="checkbox"
+									id="acc" > <span class="checkmark" style="margin-top: 0px;"></span>
 								</label><button type="button" class="site-btn" style="margin-top: 0px;" id="address_btn">저장</button>
 
 							</div>

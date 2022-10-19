@@ -452,7 +452,7 @@ function changeProductList(pageno) {
 					htmlBuffer += `
 					 <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/product/${product.p_image}">
+                                <div class="product__item__pic set-bg"><img src="img/product/${product.p_image};">
                                 <input type="hidden" id="p_no" value="${product.p_no}">
                                 </div>
                                 <div class="product__item__text">
