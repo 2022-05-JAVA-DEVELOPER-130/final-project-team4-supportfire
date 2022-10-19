@@ -19,8 +19,8 @@
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li class="active"><a href="main">Home</a></li>
-                            <li><a href="./shop">Shop</a></li>
+                            <li id="home"><a href="main">Home</a></li>
+                            <li id="shop"><a href="./shop">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                     <li><a href="about.jsp">About Us</a></li>
@@ -30,7 +30,7 @@
                                     <li><a href="tables.jsp">Notice</a></li>
                                 </ul>
                             </li>
-                            <li><a href="notice_list">Notice</a></li>
+                            <li id="notice"><a href="notice_list">Notice</a></li>
                             <li><a href="contact.jsp">Contacts</a></li>
                         </ul>
                     </nav>

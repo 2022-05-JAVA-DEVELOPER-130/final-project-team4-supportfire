@@ -40,9 +40,12 @@ public interface ProductDetailMapper {
 		List<ProductDetail> selectById(String m_id);
 		
 		//회원의 판매,구매찾기
-		@Select("select * from productDetail pd left outer join productsize ps on pd.ps_no = ps.ps_no left outer join product p on ps.p_no = p.p_no where pd.m_id=#{m_id} and pd.bt_no=#{bt_no}")
+		@Select("select * from productDetail pd left outer join productsize ps on pd.ps_no = ps.ps_no left outer join product p on ps.p_no = p.p_no where pd.m_id=#{m_id} and pd.bt_no=#{bt_no} and ROWNUM <= 3 order by pd.pd_start desc")
 		@ResultMap("productDetail")
 		List<ProductDetail> selectByIdAndBtNo(String m_id, int bt_no);
+		
+		
+		
 		
 		//전체출력
 		@Select("select * from productDetail pd left outer join productsize ps on pd.ps_no = ps.ps_no left outer join product p on ps.p_no = p.p_no")

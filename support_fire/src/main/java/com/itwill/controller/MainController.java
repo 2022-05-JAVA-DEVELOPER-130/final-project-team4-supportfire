@@ -1,5 +1,8 @@
 package com.itwill.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.itwill.common.NoticePageMakerDto;
 import com.itwill.dto.Qna;
@@ -73,4 +77,32 @@ public class MainController {
   		
   		return "forward:bid";
   	}
+  	
+  	@RequestMapping("url_check")
+  	@ResponseBody
+  	public Map url_check(String url) {
+  		Map resultMap= new HashMap();
+  		int code=0;
+		String msg="";
+		String[] urlS = url.split("/");
+		String url1 = urlS[2];
+		char a = url1.charAt(0);
+		String b = a+"";
+		System.out.println(b);
+		if(b.equals("m") || b.equals("l")) {
+			code=1;
+		}else if(b.equals("s") || b.equals("p") || b.equals("b")) {
+			code=2;
+		}else if(b.equals("n") || b.equals("q")) {
+			code=3;
+		}
+		
+			resultMap.put("code",code);
+		    resultMap.put("url",url);
+		    resultMap.put("msg",msg);
+		    
+		  return resultMap;
+  	}
+  	
+  	
 }

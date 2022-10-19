@@ -6,12 +6,7 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="zxx">
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
-<script type="text/javascript">
 
-    
-</script>
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Male_Fashion Template">
@@ -33,6 +28,12 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+<script type="text/javascript">
+
+    
+</script>
 </head>
 
 
@@ -118,39 +119,7 @@
                 </div>
                 <div class="col-lg-9">
                     
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div style="height: 170px;width: 170px" class="product__item__pic set-bg" data-setbg="img/product/product-2.jpg">
-                                  
-                                </div>
-                
-                            </div>
-                        </div>
-                        <div class="col-lg-8 col-md-6 col-sm-6">
-                            <div class="product__item sale">
-                                <div class="product__item__pic set-bg">
-                                    
-                                    <ul>
-			                            <li>
-			                                <h4></h4>
-			                                <p><br></p>
-			                            </li>
-			                            <li>
-			                                <h4>guard</h4>
-			                                <p>guard@guard@naver.com<br></p>
-			                            </li>
-                        			</ul>
-                                    <div class="">
-                                    <h4></h4>
-                                    <h5></h5>
-                                    <button  class="primary-btn">프로필수정</button>
-                                
-                                </div> 
-                                </div>
-                                
-                            </div>
-                        </div>
+                        
             
                         <div>
                                     <div class="section-title">
@@ -159,7 +128,7 @@
                         </div>
                         <div class="col-lg-12 col-md-6 col-sm-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" >
+                                <div class=" set-bg" >
                                     <!---start----> 
                                     <div class="shopping__cart__table">
 				                        <table id="example">
@@ -173,6 +142,7 @@
 				                                    <th>상태</th>
 				                                </tr>
 				                            </thead>
+				                            
 				                            <tbody id=content>
 				                             
 				                               
@@ -220,7 +190,6 @@
                             </div>
                         </div>
     
-                    </div>
                     
                 </div>
             </div>

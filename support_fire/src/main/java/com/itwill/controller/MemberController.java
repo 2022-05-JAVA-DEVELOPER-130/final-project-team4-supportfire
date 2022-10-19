@@ -20,13 +20,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.itwill.dto.Member;
+import com.itwill.dto.ProductDetail;
 import com.itwill.service.MemberService;
+import com.itwill.service.ProductDetailService;
 
 @RestController
 public class MemberController {
 	
 	@Autowired
 	private MemberService memberService;
+	@Autowired
+	private ProductDetailService productDetailService;
 	
 	@LoginCheck
 	@PostMapping(value = "session_check")
@@ -54,12 +58,24 @@ public class MemberController {
 		String sUserId = (String)session.getAttribute("sUserId");
 		List<Member> result = new ArrayList<Member>();
 		Member member = memberService.selectById(sUserId);
+		//구매기록
+		List<ProductDetail> productDetail = productDetailService.selectByIdAndBtNo(sUserId, 1);
+		//판매기록
+		List<ProductDetail> product_s = productDetailService.selectByIdAndBtNo(sUserId, 2);
+		
+		System.out.println(productDetail);
+		System.out.println(product_s);
+		
+		
+		
 		result.add(member);
 		
 		resultMap.put("code",code);
 	    resultMap.put("url",url);
 	    resultMap.put("msg",msg);
 	    resultMap.put("data",result);
+	    resultMap.put("p",productDetail);
+	    resultMap.put("s",product_s);
 	    
 	    return resultMap;
 	}

@@ -177,7 +177,24 @@ $.ajax({
 	}
 });
 
-
+var url = window.location.pathname
+$.ajax({
+	url:'url_check',
+	method:'POST',
+	data:'url='+url,
+	success:function(jsonResult){
+	    if(jsonResult.code == 1){
+	    	$('#home').addClass('active');
+	    }else if(jsonResult.code == 2){
+	    	$('#shop').addClass('active');
+	    }else if(jsonResult.code == 3){
+	    	$('#notice').addClass('active');
+	    }
+	   
+	}
+});
+var h12 = '';
+var h13 = '';
 
 $.ajax({
 	url:'mypage_form',
@@ -186,8 +203,19 @@ $.ajax({
 	success:function(jsonResult){
 		console.log(jsonResult.data[0]);
 		$('#mypage_form').html(mypage_form(jsonResult.data[0]));
+		for(var i=0; i<jsonResult.p.length; i++){
+			h12 += purchase(jsonResult.p[i]);
+		}
+		console.log(h12);
+		for(var i=0; i<jsonResult.s.length; i++){
+			h13 += purchase(jsonResult.s[i]);
+		}
+		$('#purchase').html(h12);
+		$('#sell').html(h13);
 	}
 });
+
+
 $(document).on('click', '#mypage_info', function(){
 	$.ajax({
 		url:'mypage_form',
@@ -320,8 +348,8 @@ $(document).on('click', '#mypage_info', function(){
                                         <div class="card-body">
                                             <div class="shop__sidebar__categories">
                                                 <ul class="nice-scroll">
-                                                    <li><a href="mypage_purchase_list.jsp">구매내역</a></li>
-                                                    <li><a href="mypage_sell_list.jsp">판매내역</a></li>
+                                                    <li><a href="" id="ppp">구매내역</a></li>
+                                                    <li><a href="" id="sss">판매내역</a></li>
                                                    
                                                     
                                                 </ul>
@@ -362,7 +390,7 @@ $(document).on('click', '#mypage_info', function(){
                         </div>
                         <div class="col-lg-8 col-md-6 col-sm-6">
                             <div class="product__item sale">
-                                <div class="product__item__pic set-bg" id="mypage_form">
+                                <div class=" set-bg" id="mypage_form">
                                     
                                     <ul>
 			                            <li>
@@ -391,7 +419,7 @@ $(document).on('click', '#mypage_info', function(){
                         </div>
                         <div class="col-lg-12 col-md-6 col-sm-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" >
+                                <div class=" set-bg" >
                                     <!---start----> 
                                     <div class="shopping__cart__table">
 				                        <table>
@@ -405,7 +433,40 @@ $(document).on('click', '#mypage_info', function(){
 				                                    <th>상태</th>
 				                                </tr>
 				                            </thead>
-				                            <tbody>
+				                            <tbody id="purchase">
+				                                <tr>
+				                                    <td class="product__cart__item">
+				                                        <div class="">
+				                                            <img src="./img/shopping-cart/cart-1.jpg" alt="">
+				                                        </div>
+				                                    </td>
+				                                    <td class="product__cart__item">
+				                                        <div class="product__cart__item__text">
+				                                            <h6>T-shirt</h6>
+				                                           
+				                                        </div>
+				                                    </td>
+				                                     <td class="product__cart__item">
+				                                        <div class="product__cart__item__text">
+				                                           
+				                                            <h5>${productDetail.pd_price}</h5>
+				                                        </div>
+				                                    </td>
+				                                    <td class="product__cart__item">
+				                                        <div class="product__cart__item__text">
+				                                            <h5>10/12</h5>
+				                                        </div>
+				                                    </td>
+				                                    <td class="product__cart__item"> 
+				                                    	<div class="product__cart__item__text">
+				                                            <h5>10/15</h5>
+				                                        </div></td>
+				                                    <td class="product__cart__item">
+				                                    	 <div class="product__cart__item__text">
+				                                            <h5>입찰중</h5>
+				                                        </div>
+				                                    </td>
+				                                </tr>
 				                                <tr>
 				                                    <td class="product__cart__item">
 				                                        <div class="product__cart__item__pic">
@@ -439,7 +500,6 @@ $(document).on('click', '#mypage_info', function(){
 				                                        </div>
 				                                    </td>
 				                                </tr>
-				                                
 				                            </tbody>
 				                        </table>
                     				</div>
@@ -457,7 +517,7 @@ $(document).on('click', '#mypage_info', function(){
                         </div>
                         <div class="col-lg-12 col-md-6 col-sm-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" >
+                                <div class="set-bg" >
                                     <!---start----> 
                                     <div class="shopping__cart__table">
 				                        <table>
@@ -471,7 +531,7 @@ $(document).on('click', '#mypage_info', function(){
 				                                    <th>상태</th>
 				                                </tr>
 				                            </thead>
-				                            <tbody>
+				                            <tbody id="sell">
 				                                <tr>
 				                                    <td class="product__cart__item">
 				                                        <div class="product__cart__item__pic">

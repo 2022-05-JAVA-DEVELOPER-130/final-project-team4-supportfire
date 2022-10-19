@@ -44,6 +44,24 @@ $.ajax({
 	   
 	}
 });
+
+var url = window.location.pathname
+$.ajax({
+	url:'url_check',
+	method:'POST',
+	data:'url='+url,
+	success:function(jsonResult){
+	    if(jsonResult.code == 1){
+	    	$('#home').addClass('active');
+	    }else if(jsonResult.code == 2){
+	    	$('#shop').addClass('active');
+	    }else if(jsonResult.code == 3){
+	    	$('#notice').addClass('active');
+	    }
+	   
+	}
+});
+
 });
 </script>
 </head>

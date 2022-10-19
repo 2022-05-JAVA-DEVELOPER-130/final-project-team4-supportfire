@@ -58,7 +58,25 @@ $(function(){
 		   
 		}
 	});
-	
+	var url = window.location.pathname
+	$.ajax({
+		url:'url_check',
+		method:'POST',
+		data:'url='+url,
+		success:function(jsonResult){
+			$('#home').removeClass('active');
+			$('#shop').removeClass('active');
+			$('#notice').removeClass('active');
+		    if(jsonResult.code == 1){
+		    	$('#home').addClass('active');
+		    }else if(jsonResult.code == 2){
+		    	$('#shop').addClass('active');
+		    }else if(jsonResult.code == 3){
+		    	$('#notice').addClass('active');
+		    }
+		   
+		}
+	});
 });
 
 </script>
@@ -83,43 +101,7 @@ $(function(){
     <!-- include_common_header.jsp start-->
 
 		<!-- include_common_header.jsp end-->
-  	        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3">
-                    <div class="header__logo">
-                        <a href="./index.jsp"><img src="img/IMG_0608 (1).jpg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <nav class="header__menu mobile-menu">
-                        <ul>
-                            <li><a href="index.jsp">Home</a></li>
-                            <li><a href="shop">Shop</a></li>
-                            <li><a href="#">Pages</a>
-                                <ul class="dropdown">
-                                    <li><a href="./about.jsp">About Us</a></li>
-                                    <li><a href="./shop-details.jsp">Shop Details</a></li>
-                                    <li><a href="./shopping-cart.jsp">Shopping Cart</a></li>
-                                    <li><a href="./checkout.jsp">Check Out</a></li>
-                                    <li><a href="./blog-details.jsp">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li class="active"><a href="notice_list">Notice</a></li>
-                            <li><a href="./contact.jsp">Contacts</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-lg-3 col-md-3">
-                    <div class="header__nav__option">
-                        <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
-                        <a href="#"><img src="img/icon/heart.png" alt=""></a>
-                        <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
-                        <div class="price">$까드득</div>
-                    </div>
-                </div>
-            </div>
-            <div class="canvas__open"><i class="fa fa-bars"></i></div>
-        </div>
+  	        <jsp:include page="header.jsp" />
     <!-- Header Area End -->
     
     <!-- Breadcumb Area -->
@@ -243,22 +225,11 @@ $(function(){
     <!-- Footer Area -->
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/default/classy-nav.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
-    <script src="js/default/scrollup.js"></script>
-    <script src="js/waypoints.min.js"></script>
     <script src="js/jquery.countdown.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jarallax.min.js"></script>
-    <script src="js/jarallax-video.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/wow.min.js"></script>
     <script src="js/board.js"></script>
     
 	<!--
