@@ -30,11 +30,11 @@ insert into sizes values('L', 3);
 insert into sizes values('XL', 3);
 insert into sizes values('XXL',3);
 /*********브랜드*********/
-/*신발*/
 insert into brands values(BRANDS_BR_NO_SEQ.nextval, 'Nike', 1);
 insert into brands values(BRANDS_BR_NO_SEQ.nextval, 'adidas', 1);
 insert into brands values(BRANDS_BR_NO_SEQ.nextval, 'Vans', 1);
 insert into brands values(BRANDS_BR_NO_SEQ.nextval, 'New Balance', 1);
+
 /************제품***************/
 insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Nike Air Force 1 07 WB Flax', '19/09/10', 169000 ,'Nike_Air_Force_1_07_WB_Flax.png', 1);
 insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Nike Dunk Low Retro Black', '21/01/14', 129000, 'Nike_Dunk_Low_Retro_Black.png', 1);
