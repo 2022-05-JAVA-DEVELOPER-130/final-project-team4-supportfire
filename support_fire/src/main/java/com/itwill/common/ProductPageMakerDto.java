@@ -3,6 +3,7 @@ package com.itwill.common;
 import java.util.List;
 
 import com.itwill.dto.PDDTO;
+import com.itwill.dto.Product;
 import com.itwill.dto.ReQna;
 
 import lombok.AllArgsConstructor;

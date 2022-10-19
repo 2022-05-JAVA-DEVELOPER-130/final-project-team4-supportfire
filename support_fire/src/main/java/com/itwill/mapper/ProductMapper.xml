@@ -42,7 +42,11 @@
         <result column="p_no" property="p_no"/>
         <result column="min(pd.pd_price)" property="min_price"/>
     </resultMap>
-
+    
+	<resultMap type="hashmap" id="selectBrandMap">
+        <result column="p_no" property="p_no"/>
+        <result column="br_name" property="br_name"/>
+    </resultMap>
 <select id = "selectAll_p" parameterType="map" resultType = "com.itwill.dto.Product" resultMap="product">
 		select ss.* from 
 		(select rownum idx, s.* from
@@ -59,6 +63,13 @@
 		)ss
 		where ss.idx <![CDATA[ >= ]]> #{pageStart} and ss.idx <![CDATA[ <= ]]> #{pageEnd}
 	</select>
-
+	
+<select id = "selectBrand" parameterType="map" resultType = "com.itwill.dto.Product" resultMap="selectBrandMap">
+		select ss.* from 
+		(select rownum idx, s.* from
+		(select p.p_no, b.br_name from product p join brands b on p.br_no = b.br_no)s
+		)ss
+		where ss.idx <![CDATA[ >= ]]> #{pageStart} and ss.idx <![CDATA[ <= ]]> #{pageEnd}
+	</select>
 
 </mapper>

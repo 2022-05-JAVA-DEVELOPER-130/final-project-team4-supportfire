@@ -73,10 +73,36 @@ public class ProductServiceImp implements ProductService{
 		return productDao.product_countAll();
 	}
 	@Override
+	public Map selectBrand(int pageStart, int pageEnd) {
+		List<Map> map = productDao.selectBrand(pageStart, pageEnd);
+		Map sizeMap = new HashMap();
+		for (Map map2 : map) {
+			String p_no = String.valueOf(map2.get("p_no"));
+			String br_name = (String)map2.get("br_name");
+			sizeMap.put(br_name, map2.get("br_name"));
+			if(br_name =="Nike") {
+				br_name = "Nike";
+				sizeMap.put(p_no, br_name);
+			}else if(br_name =="adidas") {
+				br_name = "adidas";
+				sizeMap.put(p_no, br_name);
+			}else if(br_name =="Vans") {
+				br_name = "Vans";
+				sizeMap.put(p_no, br_name);
+			}else if(br_name == "New Balance") {
+				br_name = "New Balance";
+				sizeMap.put(p_no, br_name);
+			}
+		}
+		return sizeMap;
+	}
+	
+	@Override
 	public ProductPageMakerDto<Product> selectAll_p(int currentPage) {
+		List<Map> map = productDao.selectBrand(currentPage, currentPage);
 		int totProductCount = product_countAll();
-		List<Product> listProduct = new ArrayList<Product>();
-		Product p = null;
+		//List<Product> listProduct = new ArrayList<Product>();
+		//Product p = null;
 		ProductPageMaker pageMaker = new ProductPageMaker(totProductCount, currentPage, 9, 5);
 		List<Product> productList = productDao.selectAll_p(pageMaker.getPageBegin(), pageMaker.getPageEnd());
 		List<PDDTO> pddto = productDao.selectAllMinPrice(pageMaker.getPageBegin(), pageMaker.getPageEnd());
@@ -97,4 +123,5 @@ public class ProductServiceImp implements ProductService{
 		}
 		return pageMakerProductList;
 	}
+	
 }
