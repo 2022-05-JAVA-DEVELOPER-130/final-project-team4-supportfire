@@ -434,7 +434,42 @@ $(document).on('click', '#mypage_info', function(){
 				                                </tr>
 				                            </thead>
 				                            <tbody id="purchase">
+				                                <tr>
+				                                    <td class="product__cart__item">
+				                                        <div class="">
+				                                            <img src="./img/shopping-cart/cart-1.jpg" alt="">
+				                                        </div>
+				                                    </td>
+				                                    <td class="product__cart__item">
+				                                        <div class="product__cart__item__text">
+				                                            <h6>T-shirt</h6>
+				                                           
+				                                        </div>
+				                                    </td>
+				                                     <td class="product__cart__item">
+				                                        <div class="product__cart__item__text">
+				                                           
+				                                            <h5>${productDetail.pd_price}</h5>
+				                                        </div>
+				                                    </td>
+				                                    <td class="product__cart__item">
+				                                        <div class="product__cart__item__text">
+				                                            <h5>10/12</h5>
+				                                        </div>
+				                                    </td>
+				                                    <td class="product__cart__item"> 
+				                                    	<div class="product__cart__item__text">
+				                                            <h5>10/15</h5>
+				                                        </div></td>
+				                                    <td class="product__cart__item">
+				                                    	 <div class="product__cart__item__text">
+				                                            <h5>입찰중</h5>
+				                                        </div>
+				                                    </td>
+				                                </tr>
 				                                
+				                            </tbody>
+				                        </table>
                     				</div>
                                     <!-- end -->
                        
@@ -465,7 +500,39 @@ $(document).on('click', '#mypage_info', function(){
 				                                </tr>
 				                            </thead>
 				                            <tbody id="sell">
-				                               
+				                                <tr>
+				                                    <td class="product__cart__item">
+				                                        <div class="product__cart__item__pic">
+				                                            <img src="img/shopping-cart/cart-1.jpg" alt="">
+				                                        </div>
+				                                    </td>
+				                                    <td class="product__cart__item">
+				                                        <div class="product__cart__item__text">
+				                                            <h6>T-shirt</h6>
+				                                           
+				                                        </div>
+				                                    </td>
+				                                     <td class="product__cart__item">
+				                                        <div class="product__cart__item__text">
+				                                           
+				                                            <h5>$98.49</h5>
+				                                        </div>
+				                                    </td>
+				                                    <td class="product__cart__item">
+				                                        <div class="product__cart__item__text">
+				                                            <h5>10/12</h5>
+				                                        </div>
+				                                    </td>
+				                                    <td class="product__cart__item"> 
+				                                    	<div class="product__cart__item__text">
+				                                            <h5>10/15</h5>
+				                                        </div></td>
+				                                    <td class="product__cart__item">
+				                                    	 <div class="product__cart__item__text">
+				                                            <h5>입찰중</h5>
+				                                        </div>
+				                                    </td>
+				                                </tr>
 				                                
 				                            </tbody>
 				                        </table>
