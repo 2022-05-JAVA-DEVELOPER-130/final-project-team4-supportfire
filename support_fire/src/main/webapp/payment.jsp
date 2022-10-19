@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<!DOCTYPE html>
+<!DOCTYPE html>	
 
 
 
@@ -22,22 +22,18 @@
 	rel="stylesheet">
 
 <!-- Css Styles -->
-<link
-	href="../https://fonts.googleapis.com/css?family=Karla:400,700&display=swap"
-	rel="stylesheet">
-<link rel="stylesheet"
-	href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/login.css">
-<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-<link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-<link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-<link rel="stylesheet" href="css/nice-select.css" type="text/css">
-<link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-<link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-<link rel="stylesheet" href="css/test.css" type="text/css">
+  <link href="../https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/test.css" type="text/css">
 <link href="_nuxt/css/74432ba.css" rel="stylesheet" type="text/css">
 <link href="_nuxt/css/db982ae.css" rel="stylesheet" type="text/css">
 <link href="_nuxt/css/dd20fa4.css" rel="stylesheet" type="text/css">
@@ -60,87 +56,92 @@
 <link rel="stylesheet" href="_nuxt/css/db982ae.css">
 
 <script type="text/javascript" src="js/address.js"></script>
-<script type="text/javascript"
-	src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script
-	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript" src="js/top_content.js"></script>
-<script type="text/javascript"
-	src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+<script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 
 <style>
-.modal {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	display: none;
-	background-color: rgba(0, 0, 0, 0.4);
-}
+      .modal {
+        position: absolute;
+        top: 0;
+        left: 0;
 
-.modal.show {
-	display: block;
-}
+        width: 100%;
+        height: 100%;
 
-.modal_body {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 600px;
-	height: 850px;
-	padding: 20px;
-	text-align: center;
-	background-color: rgb(255, 255, 255);
-	border-radius: 10px;
-	box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
-	transform: translateX(-50%) translateY(-50%);
-}
+        display: none;
 
-.contact__form input {
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      .modal.show {
+        display: block;
+      }
+
+      .modal_body {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        width: 600px;
+        height: 800px;
+
+        padding: 20px;
+
+        text-align: center;
+
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+
+        transform: translateX(-50%) translateY(-50%);
+      }
+      
+    .contact__form input{
 	margin-bottom: 5px;
-	width: 90%;
+	width : 90%;
 	height: 50px;
-	border: 0;
-	border-bottom: 1px solid #ebebeb;
-	display: inline-block;
-}
-
-.contact__form span {
-	width: 20%;
-	display: block;
-	margin-bottom: 0px;
-	margin-top: 10px;
-	margin-right: auto;
-}
+    border: 0;
+    border-bottom: 1px solid #ebebeb;
+    display: inline-block;
+    }
+    
+    .contact__form span {
+    width:20%;
+    display:block;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    margin-right: auto;
+    }
+    
+ 
 
 button {
-	margin: 5px;
+    margin: 5px;
 }
 
 .w-btn {
-	position: relative;
-	border: none;
-	display: inline-block;
-	padding: 2px 10px;
-	border-radius: 15px;
-	font-family: "paybooc-Light", sans-serif;
-	text-decoration: none;
-	font-weight: 600;
-	transition: 0.25s;
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
 }
-
 .w-btn-gray {
-	background-color: #a3a1a1;
-	color: #e3dede;
-	font-size: 4px
+    background-color: #a3a1a1;
+    color: #e3dede;
+    font-size:4px
 }
-
-.btn_confirm {
-	width: 100%;
+.btn_confirm{
+	width : 100%;
 	height: 50px;;
 }
-</style>
+    </style>
 
 
 <script type="text/javascript">
@@ -230,6 +231,7 @@ function showDelivery() {
 			dataType:'json',
 			success:function(jsonResult){
 				$('#content').html(address_form_content(jsonResult));
+				$('.modal').off();
 			}
 	 });
 	});
@@ -257,15 +259,7 @@ function use_point(){
 <script>
 
 	function kakaopay() {
-		/* <div class="container bg-light d-md-flex align-items-center"> 
-		<div class="card box1 shadow-sm p-md-5 p-md-5 p-4"> 
-		<div class="fw-bolder mb-4"><span class="fas fa-dollar-sign"></span>
-		<span class="ps-1">599,00</span></div> <div class="d-flex flex-column"> 
-		<div class="d-flex align-items-center justify-content-between text"> 
-		<span class="">Commission</span> <span class="fas fa-dollar-sign"><span class="ps-1">1.99</span></span> </div> <div class="d-flex align-items-center justify-content-between text mb-4"> <span>Total</span> <span class="fas fa-dollar-sign"><span class="ps-1">600.99</span></span> </div> <div class="border-bottom mb-4"></div> <div class="d-flex flex-column mb-4"> <span class="far fa-file-alt text"><span class="ps-2">Invoice ID:</span></span> <span class="ps-3">SN8478042099</span> </div> <div class="d-flex flex-column mb-5"> <span class="far fa-calendar-alt text"><span class="ps-2">Next payment:</span></span> <span class="ps-3">22 july,2018</span> </div> <div class="d-flex align-items-center justify-content-between text mt-5"> <div class="d-flex flex-column text"> <span>Customer Support:</span> <span>online chat 24/7</span> </div> <div class="btn btn-primary rounded-circle"><span class="fas fa-comment-alt"></span></div> </div> </div> </div> <div class="card box2 shadow-sm"> <div class="d-flex align-items-center justify-content-between p-md-5 p-4"> <span class="h5 fw-bold m-0">Payment methods</span> <div class="btn btn-primary bar"><span class="fas fa-bars"></span></div> </div> <ul class="nav nav-tabs mb-3 px-md-4 px-2"> <li class="nav-item"> <a class="nav-link px-2 active" aria-current="page" href="#">Credit Card</a> </li> <li class="nav-item"> <a class="nav-link px-2" href="#">Mobile Payment</a> </li> <li class="nav-item ms-auto"> <a class="nav-link px-2" href="#">+ More</a> </li> </ul> <div class="px-md-5 px-4 mb-4 d-flex align-items-center"> <div class="btn btn-success me-4"><span class="fas fa-plus"></span></div> <div class="btn-group" role="group" aria-label="Basic radio toggle button group"> <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked> <label class="btn btn-outline-primary" for="btnradio1"><span class="pe-1">+</span>5949</label> <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off"> <label class="btn btn-outline-primary" for="btnradio2"><span class="lpe-1">+</span>3894</label> </div> </div> <form action=""> <div class="row"> <div class="col-12"> <div class="d-flex flex-column px-md-5 px-4 mb-4"> <span>Credit Card</span> <div class="inputWithIcon"> <input class="form-control" type="text" value="5136 1845 5468 3894"> <span class=""> <img src="https://www.freepnglogos.com/uploads/mastercard-png/mastercard-logo-logok-15.png" alt=""></span> </div> </div> </div> <div class="col-md-6"> <div class="d-flex flex-column ps-md-5 px-md-0 px-4 mb-4"> <span>Expiration<span class="ps-1">Date</span></span> <div class="inputWithIcon"> <input type="text" class="form-control" value="05/20"> <span class="fas fa-calendar-alt"></span> </div> </div> </div> <div class="col-md-6"> <div class="d-flex flex-column pe-md-5 px-md-0 px-4 mb-4"> <span>Code CVV</span> <div class="inputWithIcon"> <input type="password" class="form-control" value="123"> <span class="fas fa-lock"></span> </div> </div> </div> <div class="col-12"> <div class="d-flex flex-column px-md-5 px-4 mb-4"> <span>Name</span> <div class="inputWithIcon"> <input class="form-control text-uppercase" type="text" value="valdimir berezovkiy"> <span class="far fa-user"></span> </div> </div> </div> <div class="col-12 px-md-5 px-4 mt-3"> <div class="btn btn-primary w-100">Pay $599.00</div> </div> </div> </form> </div> </div>
-		*/
-		location.href="http://kko.to/kmoqWCBFI4"; 
-		/* console.log('클릭')
+		console.log('클릭')
 		var IMP = window.IMP; // 생략가능
 		IMP.init('imp58636510'); 
 		// i'mport 관리자 페이지 -> 내정보 -> 가맹점식별코드
@@ -279,7 +273,7 @@ function use_point(){
 			 *  https://docs.iamport.kr/implementation/payment
 			 *  위에 url에 따라가시면 넣을 수 있는 방법이 있습니다.
 			 */
-			/* name: '주문명 : 아메리카노',
+			name: '주문명 : 아메리카노',
 			// 결제창에서 보여질 이름
 			// name: '주문명 : ${auction.a_title}',
 			// 위와같이 model에 담은 정보를 넣어 쓸수도 있습니다.
@@ -303,64 +297,58 @@ function use_point(){
 				msg += '에러내용 : ' + rsp.error_msg;
 			}
 			alert(msg);
-		}); */ 
+		});
 	};
 </script>
 
 
 </head>
 <body>
-	<div class="modal">
-		<div class="modal_body">
-			<section class="">
+<div class="modal">
+      <div class="modal_body"><section class="">
+		
+	<!-- Breadcrumb Section End -->
 
-				<!-- Breadcrumb Section End -->
+	<!-- Checkout Section Begin -->
+	
+		
+						<div class="contact__form">
+							<form id="address_form">
+							<h6 class="checkout__title">주소추가하기</h6>
+								
+							<span>이름*</span><input type="text" class="asd" name="m_id" id="m_id" palceholder="수령">
+							<span>휴대전화*</span><input type="text" class="asd" name="m_phone" id="m_phone">
 
-				<!-- Checkout Section Begin -->
+							<div class="checkout__input">
+								<p>
+									<span>우편번호*</span>
+								</p>
+								<input type="button" class="asd" onclick="showDelivery()" value="우편번호 찾기"
+									class="input_txt"> <input type="text" class="asd"
+									id="sample4_postcode">
+							</div>
+									<span>주소*</span>
+								<input type="text" class="asd" placeholder="도로명주소"
+									class="checkout__input__add" name="sample4_roadAddress" id="sample4_roadAddress">
+								<input type="text" class="asd" placeholder="지번주소" id="sample4_jibunAddress">
 
+							<div class="checkout__input">
+								<p>
+									<span>배송메모*</span>
+								</p>
+								<input type="text" class="asd" placeholder="배송메모">
+							</div>
+							<div class="checkout__input__checkbox">
+								<label for="acc" style="margin-left: 20px; padding-left: 10px;"> <span style="width: 30%; margin-top: 20px;">기본 배송지로설정</span> <input type="checkbox"
+									id="acc" > <span class="checkmark" style="margin-top: 0px;"></span>
+								</label><button type="button" class="site-btn" style="margin-top: 0px;" id="address_btn">저장</button>
 
-				<div class="contact__form">
-					<form id="address_form">
-						<h6 class="checkout__title">주소추가하기</h6>
-
-						<span>이름*</span><input type="text" class="asd" name="m_id"
-							id="m_id" palceholder="수령"> <span>휴대전화*</span><input
-							type="text" class="asd" name="m_phone" id="m_phone">
-
-						<div class="checkout__input">
-							<p>
-								<span>우편번호*</span>
-							</p>
-							<input type="button" class="asd" onclick="showDelivery()"
-								value="우편번호 찾기" class="input_txt"> <input type="text"
-								class="asd" id="sample4_postcode">
+							</div>
+							</form>
 						</div>
-						<span>주소*</span> <input type="text" class="asd"
-							placeholder="도로명주소" class="checkout__input__add"
-							name="sample4_roadAddress" id="sample4_roadAddress"> <input
-							type="text" class="asd" placeholder="지번주소"
-							id="sample4_jibunAddress">
-
-						<div class="checkout__input">
-							<p>
-								<span>배송메모*</span>
-							</p>
-							<input type="text" class="asd" placeholder="배송메모">
-						</div>
-						<div class="checkout__input__checkbox">
-							<label for="acc"> <span style="width: 30%">기본
-									배송지로설정</span> <input type="checkbox" id="acc"> <span
-								class="checkmark"></span>
-							</label>
-							<button type="button" class="site-btn" style="margin-top: 0px;"
-								id="address_btn">저장</button>
-
-						</div>
-					</form>
-				</div>
-			</section>
-		</div>
+	</section>
 	</div>
+    </div>
 	<!-- Page Preloder -->
 	<div id="preloder">
 		<div class="loader"></div>
@@ -368,10 +356,10 @@ function use_point(){
 
 	<!-- Offcanvas Menu Begin -->
 	<div id="top_content">
-		<jsp:include page="top.jsp" />
-	</div>
+    <jsp:include page="top.jsp" />
+    </div>
 	<!-- Offcanvas Menu End -->
-
+	
 
 	<!-- Header Section Begin -->
 	<div class="container">
@@ -434,288 +422,273 @@ function use_point(){
 	<!-- Breadcrumb Section End -->
 	<div id="__nuxt">
 		<!---->
-
-		<!---->
-		<div data-v-7598e8e5="" data-v-34b11929=""
-			class="container buy lg step-2">
-			<!---->
-			<div data-v-7598e8e5="" class="content">
+		
 				<!---->
-				<div data-v-0259aa53="" data-v-7598e8e5="" class="buy_immediate">
-					<div data-v-2b95d831="" data-v-0259aa53=""
-						class="product_info_area">
-						<div data-v-2b95d831="" class="product_info">
-							<div data-v-edf7886c="" data-v-2b95d831="" class="product"
-								style="background-color: rgb(242, 242, 242);">
-								<picture data-v-6c8b3524="" data-v-edf7886c=""
-									class="picture product_img">
-								<source data-v-6c8b3524="" type="image/webp"
-									srcset="img/product/${product.p_image}">
-								<source data-v-6c8b3524=""
-									srcset="https://kream-phinf.pstatic.net/MjAyMjA5MjdfOCAg/MDAxNjY0MjU5NTg2MDIy.wQktWmJWTwo83JVbleQzdaQ2OOfKTJp9RejdJvoeK-cg.Svg3Q-zegOeOgmjB6WpvyFAwXv51kpmljf-cvrybr08g.JPEG/a_9fe393b4a2c44008b1fecbc65adb407d.jpg?type=l">
-								<img data-v-6c8b3524="" alt="상품 이미지"
-									src="img/product/${product.p_image}" class="image"></picture>
-								<!---->
-								<!---->
-								<!---->
-							</div>
-							<div data-v-2b95d831="" class="product_detail">
-								<strong data-v-2b95d831="" class="model_number"><span
-									data-v-2b95d831="" class="mark_95">95점</span>${productDetail.pd_no}
-								</strong>
-								<p data-v-2b95d831="" class="model_title">${product.p_name}</p>
-								<p data-v-2b95d831="" class="model_ko">${product.p_name}</p>
-								<div data-v-2b95d831="" class="model_desc">
-									<p data-v-2b95d831="" class="size_txt">${productSize.s_size}</p>
-									<div data-v-6da6dff3="" data-v-2b95d831=""
-										class="badge badge_product shipping_express">빠른배송</div>
+				<div data-v-7598e8e5="" data-v-34b11929=""
+					class="container buy lg step-2">
+					<!---->
+					<div data-v-7598e8e5="" class="content">
+						<!---->
+						<div data-v-0259aa53="" data-v-7598e8e5="" class="buy_immediate">
+							<div data-v-2b95d831="" data-v-0259aa53=""
+								class="product_info_area">
+								<div data-v-2b95d831="" class="product_info">
+									<div data-v-edf7886c="" data-v-2b95d831="" class="product"
+										style="background-color: rgb(242, 242, 242);">
+										<picture data-v-6c8b3524="" data-v-edf7886c=""
+											class="picture product_img">
+										<source data-v-6c8b3524="" type="image/webp"
+											srcset="img/product/${product.p_image}">
+										<source data-v-6c8b3524=""
+											srcset="https://kream-phinf.pstatic.net/MjAyMjA5MjdfOCAg/MDAxNjY0MjU5NTg2MDIy.wQktWmJWTwo83JVbleQzdaQ2OOfKTJp9RejdJvoeK-cg.Svg3Q-zegOeOgmjB6WpvyFAwXv51kpmljf-cvrybr08g.JPEG/a_9fe393b4a2c44008b1fecbc65adb407d.jpg?type=l">
+										<img data-v-6c8b3524="" alt="상품 이미지"
+											src="img/product/${product.p_image}"
+											class="image"></picture>
+										<!---->
+										<!---->
+										<!---->
+									</div>
+									<div data-v-2b95d831="" class="product_detail">
+										<strong data-v-2b95d831="" class="model_number"><span
+											data-v-2b95d831="" class="mark_95">95점</span>${productDetail.pd_no} </strong>
+										<p data-v-2b95d831="" class="model_title">${product.p_name}</p>
+										<p data-v-2b95d831="" class="model_ko">${product.p_name}</p>
+										<div data-v-2b95d831="" class="model_desc">
+											<p data-v-2b95d831="" class="size_txt">${productSize.s_size}</p>
+											<div data-v-6da6dff3="" data-v-2b95d831=""
+												class="badge badge_product shipping_express">빠른배송</div>
+										</div>
+									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-					<section data-v-6a5da210="" data-v-0259aa53="">
-						<div data-v-6a5da210="" class="section_unit">
-							<div data-v-6a5da210="" class="section_title">
-								<h3 data-v-6a5da210="" class="title_txt">배송 주소</h3>
-								<a data-v-6a5da210="" href='#' class="btn-open-popup"
-									id="add_more_btn">+ 새 주소 추가</a>
-							</div>
-							<div id="content" data-v-6a5da210="" class="section_content">
-								<a data-v-6a5da210="" href="#" class="empty_delivery_info"><span
-									data-v-6a5da210="" class="guide_txt">주소를 추가해주세요.</span> <svg
-										data-v-6a5da210="" xmlns="http://www.w3.org/2000/svg"
-										class="ico-arr-right-gray-s icon sprite-icons">
+							<section data-v-6a5da210="" data-v-0259aa53="">
+								<div data-v-6a5da210="" class="section_unit">
+									<div data-v-6a5da210="" class="section_title">
+										<h3 data-v-6a5da210="" class="title_txt">배송 주소</h3>
+										<a data-v-6a5da210="" href='#' class="btn-open-popup" id="add_more_btn">+ 새 주소
+											추가</a>
+									</div>
+									<div id="content" data-v-6a5da210="" class="section_content">
+										<a data-v-6a5da210="" href="#" class="empty_delivery_info"><span
+											data-v-6a5da210="" class="guide_txt">주소를 추가해주세요.</span>
+										<svg data-v-6a5da210="" xmlns="http://www.w3.org/2000/svg"
+												class="ico-arr-right-gray-s icon sprite-icons">
 												<use data-v-6a5da210=""
-											href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-arr-right-gray-s"
-											xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-arr-right-gray-s"></use></svg></a>
-							</div>
-						</div>
-						<div id="content"></div>
-
-						<!---->
-
-						<!---->
-						<!---->
-					</section>
-					<section data-v-7ba61ae8="" data-v-0259aa53="">
-						<div data-v-7ba61ae8="" class="section_title">
-							<h3 data-v-7ba61ae8="" class="title_txt">포인트</h3>
-						</div>
-						<div data-v-7ba61ae8="" class="section_content">
-							<div data-v-7ba61ae8="" class="section_input">
-								<input data-v-7ba61ae8="" placeholder="0" class="input_credit"
-									id="mypoint" value="">
-								<button class="w-btn w-btn-gray" onclick="use_point()">
-									모두 사용</button>
-							</div>
-							<div data-v-7ba61ae8="" class="info_point">
-								<div data-v-7ba61ae8="">
-									<span data-v-7ba61ae8="" class="text_current">보유 포인트</span>
-
-									<div data-v-7ba61ae8="" class="value_current">
-										<span data-v-7ba61ae8="" class="point" id="point_m"><fmt:formatNumber
-												pattern="#,###" value="${member.m_point }" /></span> <span
-											data-v-7ba61ae8="" class="unit">P</span>
+													href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-arr-right-gray-s"
+													xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-arr-right-gray-s"></use></svg></a>
 									</div>
 								</div>
+										<div id="content">
+										</div>
+								
+												<!---->
+									
 								<!---->
-							</div>
-							<!---->
-							<!---->
-						</div>
-					</section>
-					<section data-v-0259aa53="">
-						<div data-v-0259aa53="" class="section_title">
-							<h3 data-v-0259aa53="" class="title_txt">최종 주문 정보</h3>
-						</div>
-						<div data-v-0259aa53="" class="section_content">
-							<div data-v-887ad490="" data-v-0259aa53="" class="instant_group">
-								<div data-v-679d7250="" data-v-887ad490=""
-									class="price_total order_info">
-									<dl data-v-679d7250="" class="price_box">
-										<dt data-v-679d7250="" class="price_title">총 결제금액</dt>
-										<dd data-v-679d7250="" class="price empty_price">
-											<span data-v-679d7250="" class="amount" id="total1"><fmt:formatNumber
-													type="number" pattern="0,000"
-													value=" ${param.price_price+param.price*0.01+2000+3000 }" /></span><span
-												data-v-679d7250="" class="unit"></span>
-										</dd>
-									</dl>
-									<span data-v-679d7250="" class="price_warning"
-										style="display: none;"><em data-v-679d7250="">주의!
-									</em></span>
-								</div>
-								<div data-v-887ad490="" class="price_bind">
-									<dl data-v-3a2a7b6b="" data-v-887ad490=""
-										class="price_addition is_dark">
-										<dt data-v-3a2a7b6b="" class="price_title">
-											<span data-v-3a2a7b6b="">구매가</span>
-											<!---->
-										</dt>
-										<dd data-v-3a2a7b6b="" class="price_text"">
-											<fmt:formatNumber type="number" pattern="#,###"
-												value="${param.price}" />
-										</dd>
-									</dl>
-									<dl data-v-3a2a7b6b="" data-v-887ad490=""
-										class="price_addition">
-										<dt data-v-3a2a7b6b="" class="price_title">
-											<span data-v-3a2a7b6b="">포인트</span>
-											<!---->
-										</dt>
-										<dd data-v-3a2a7b6b="" class="price_text" id="point_view">
-											<fmt:formatNumber pattern="#,###" value="0" />
-										</dd>
-									</dl>
-									<dl data-v-3a2a7b6b="" data-v-887ad490=""
-										class="price_addition">
-										<dt data-v-3a2a7b6b="" class="price_title">
-											<span data-v-3a2a7b6b="">검수비</span>
-											<!---->
-										</dt>
-										<dd data-v-3a2a7b6b="" class="price_text">
-											<fmt:formatNumber type="number" pattern="0,000" value="2000" />
-										</dd>
-									</dl>
-									<dl data-v-3a2a7b6b="" data-v-887ad490=""
-										class="price_addition">
-										<dt data-v-3a2a7b6b="" class="price_title">
-											<span data-v-3a2a7b6b="">수수료</span>
-
-
-										</dt>
-
-										<dd data-v-3a2a7b6b="" class="price_text">
-											<fmt:formatNumber type="number" pattern="0,000"
-												value=" ${param.price*0.01 }" />
-										</dd>
-									</dl>
-									<dl data-v-3a2a7b6b="" data-v-887ad490=""
-										class="price_addition">
-										<dt data-v-3a2a7b6b="" class="price_title">
-											<span data-v-3a2a7b6b="">배송비</span>
-											<!---->
-										</dt>
-										<dd data-v-3a2a7b6b="" class="price_text">
-											<fmt:formatNumber type="number" pattern="0,000" value="3000" />
-										</dd>
-									</dl>
-								</div>
 								<!---->
-							</div>
-						</div>
-					</section>
-					<section data-v-8215c5a4="" data-v-0259aa53="">
-						<div data-v-8215c5a4="" class="section_title">
-							<h3 data-v-8215c5a4="" class="title_txt">결제 방법</h3>
-						</div>
-
-
-						<div data-v-8215c5a4="" class="general_payment">
-							<h4 data-v-8215c5a4="" class="method_title">
-								<div data-v-8215c5a4="" class="main_title">
-									<strong data-v-8215c5a4="">일반 결제</strong> <span
-										data-v-8215c5a4="" class="sub_title">일시불・할부</span>
+							</section>
+							<section data-v-7ba61ae8="" data-v-0259aa53="">
+								<div data-v-7ba61ae8="" class="section_title">
+									<h3 data-v-7ba61ae8="" class="title_txt">포인트</h3>
 								</div>
-							</h4>
-							<div data-v-35b707e2="" data-v-8215c5a4="" class="pay_method">
-								<div data-v-35b707e2="" class="pay_item normal">
-									<div data-v-35b707e2="" class="pay_box">
-										<div data-v-35b707e2="" class="pay_title">
-											<p data-v-35b707e2="" class="main_title">신용/체크카드</p>
-											<!---->
+								<div data-v-7ba61ae8="" class="section_content">
+									<div data-v-7ba61ae8="" class="section_input">
+										<input data-v-7ba61ae8="" placeholder="0" 
+											class="input_credit"id="mypoint" value="">
+										<button class="w-btn w-btn-gray" onclick="use_point()">
+											모두 사용</button>
+									</div>
+									<div data-v-7ba61ae8="" class="info_point">
+										<div data-v-7ba61ae8="">
+											<span data-v-7ba61ae8="" class="text_current">보유 포인트</span>
+											
+											<div data-v-7ba61ae8="" class="value_current">
+												<span data-v-7ba61ae8="" class="point" id="point_m"><fmt:formatNumber pattern="#,###" value="${member.m_point }" /></span>
+												<span
+													data-v-7ba61ae8="" class="unit">P</span>
+											</div>
+										</div>
+										<!---->
+									</div>
+									<!---->
+									<!---->
+								</div>
+							</section>
+							<section data-v-0259aa53="">
+								<div data-v-0259aa53="" class="section_title">
+									<h3 data-v-0259aa53="" class="title_txt">최종 주문 정보</h3>
+								</div>
+								<div data-v-0259aa53="" class="section_content">
+									<div data-v-887ad490="" data-v-0259aa53=""
+										class="instant_group">
+										<div data-v-679d7250="" data-v-887ad490=""
+											class="price_total order_info">
+											<dl data-v-679d7250="" class="price_box">
+												<dt data-v-679d7250="" class="price_title">총 결제금액</dt>
+												<dd data-v-679d7250="" class="price empty_price">
+													<span data-v-679d7250="" class="amount" id="total1"><fmt:formatNumber type="number"  pattern="0,000" value=" ${param.price+param.price*0.01+2000+3000 }" /></span><span
+														data-v-679d7250="" class="unit"></span>
+												</dd>
+											</dl>
+											<span data-v-679d7250="" class="price_warning"
+												style="display: none;"><em data-v-679d7250="">주의!
+											</em></span>
+										</div>
+										<div data-v-887ad490="" class="price_bind">
+											<dl data-v-3a2a7b6b="" data-v-887ad490=""
+												class="price_addition is_dark">
+												<dt data-v-3a2a7b6b="" class="price_title">
+													<span data-v-3a2a7b6b="">구매가</span>
+													<!---->
+												</dt>
+												<dd data-v-3a2a7b6b="" class="price_text" "><fmt:formatNumber type="number"  pattern="#,###" value="${param.price}"/></dd>
+											</dl>
+											<dl data-v-3a2a7b6b="" data-v-887ad490=""
+												class="price_addition">
+												<dt data-v-3a2a7b6b="" class="price_title">
+													<span data-v-3a2a7b6b="">포인트</span>
+													<!---->
+												</dt>
+												<dd data-v-3a2a7b6b="" class="price_text" id="point_view"><fmt:formatNumber  pattern="#,###" value="0"/></dd>
+											</dl>
+											<dl data-v-3a2a7b6b="" data-v-887ad490=""
+												class="price_addition">
+												<dt data-v-3a2a7b6b="" class="price_title">
+													<span data-v-3a2a7b6b="">검수비</span>
+													<!---->
+												</dt>
+												<dd data-v-3a2a7b6b="" class="price_text"><fmt:formatNumber type="number"  pattern="0,000" value="2000"/></dd>
+											</dl>
+											<dl data-v-3a2a7b6b="" data-v-887ad490=""
+												class="price_addition">
+												<dt data-v-3a2a7b6b="" class="price_title">
+													<span data-v-3a2a7b6b="">수수료</span>
+												
+														
+												</dt>
+												
+												<dd data-v-3a2a7b6b="" class="price_text">
+												<fmt:formatNumber type="number"  pattern="0,000" value=" ${param.price*0.01 }" /></dd>
+											</dl>
+											<dl data-v-3a2a7b6b="" data-v-887ad490=""
+												class="price_addition">
+												<dt data-v-3a2a7b6b="" class="price_title">
+													<span data-v-3a2a7b6b="">배송비</span>
+													<!---->
+												</dt>
+												<dd data-v-3a2a7b6b="" class="price_text"><fmt:formatNumber type="number"  pattern="0,000" value="3000"/></dd>
+											</dl>
 										</div>
 										<!---->
 									</div>
 								</div>
-								<div data-v-35b707e2="" class="pay_item quickpay">
-									<div data-v-35b707e2="" class="pay_box">
-										<div data-v-35b707e2="" class="pay_title">
-											<p data-v-35b707e2="" class="main_title">계좌이체</p>
-
-										</div>
-										<!---->
-									</div>
+							</section>
+							<section data-v-8215c5a4="" data-v-0259aa53="">
+								<div data-v-8215c5a4="" class="section_title">
+									<h3 data-v-8215c5a4="" class="title_txt">결제 방법</h3>
 								</div>
-
-								<div data-v-35b707e2="" class="pay_item kakaopay"
-									onclick="changeClass()" id="kakaopay">
-									<div data-v-35b707e2="" class="pay_box">
-										<div data-v-35b707e2="" class="pay_title">
-											<p data-v-35b707e2="" class="main_title">카카오페이</p>
-											<!---->
+							
+										
+									<div data-v-8215c5a4="" class="general_payment">
+										<h4 data-v-8215c5a4="" class="method_title">
+											<div data-v-8215c5a4="" class="main_title">
+												<strong data-v-8215c5a4="">일반 결제</strong> <span
+													data-v-8215c5a4="" class="sub_title">일시불・할부</span>
+											</div>
+										</h4>
+										<div data-v-35b707e2="" data-v-8215c5a4="" class="pay_method" >
+											<div data-v-35b707e2="" class="pay_item normal">
+												<div data-v-35b707e2="" class="pay_box">
+													<div data-v-35b707e2="" class="pay_title">
+														<p data-v-35b707e2="" class="main_title">신용/체크카드</p>
+														<!---->
+													</div>
+													<!---->
+												</div>
+											</div>
+											<div data-v-35b707e2="" class="pay_item quickpay">
+												<div data-v-35b707e2="" class="pay_box">
+													<div data-v-35b707e2="" class="pay_title">
+														<p data-v-35b707e2="" class="main_title">계좌이체</p>
+														
+													</div>
+													<!---->
+												</div>
+											</div>
+											
+											<div data-v-35b707e2="" class="pay_item kakaopay"  onclick="changeClass()" id="kakaopay">
+												<div data-v-35b707e2="" class="pay_box">
+													<div data-v-35b707e2="" class="pay_title">
+														<p data-v-35b707e2="" class="main_title" >카카오페이</p>
+														<!---->
+													</div>
+													<img  src="./img/payment_icon_yellow_small (1).png" alt="카카오페이" class="pay_img">
+												</div>
+											</div>
+											
 										</div>
-										<img src="./img/payment_icon_yellow_small (1).png" alt="카카오페이"
-											class="pay_img">
-									</div>
+										
+									<!---->
 								</div>
-
-							</div>
-
+								<!---->
+								<!---->
+							</section>
+							
+									<!---->
+									<!---->
+								</div>
+								<div data-v-14995178="" data-v-0259aa53=""
+									class="buy_total_confirm" is-instant="true">
+									<div data-v-679d7250="" data-v-14995178="" class="price_total">
+										<dl data-v-679d7250="" class="price_box">
+											<dt data-v-679d7250="" class="price_title">총 결제금액</dt>
+											<dd data-v-679d7250="" class="price empty_price">
+												<span data-v-679d7250="" class="amount" id="total2"><fmt:formatNumber type="number"  pattern="0,000" value=" ${param.price+param.price*0.01+2000+3000 }" /></span><span
+													data-v-679d7250="" class="unit"></span>
+											</dd>
+										</dl>
+										<span data-v-679d7250="" class="price_warning"
+											style="display: none;"><em data-v-679d7250="">주의!
+										</em></span>
+									</div>
+									<input data-v-3d1bcc82="" data-v-14995178="" type="button"  class="btn full solid" value="결제하기" onclick="kakaopay()"/>
+										
+								</div>
+						
+							<!---->
+							
+							<!---->
+							<!---->
 							<!---->
 						</div>
 						<!---->
-						<!---->
-					</section>
-
-					<!---->
-					<!---->
-				</div>
-				<div data-v-14995178="" data-v-0259aa53="" class="buy_total_confirm"
-					is-instant="true">
-					<div data-v-679d7250="" data-v-14995178="" class="price_total">
-						<dl data-v-679d7250="" class="price_box">
-							<dt data-v-679d7250="" class="price_title">총 결제금액</dt>
-							<dd data-v-679d7250="" class="price empty_price">
-								<span data-v-679d7250="" class="amount" id="total2"><fmt:formatNumber
-										type="number" pattern="0,000"
-										value=" ${param.price+param.price*0.01+2000+3000 }" /></span><span
-									data-v-679d7250="" class="unit"></span>
-							</dd>
-						</dl>
-						<span data-v-679d7250="" class="price_warning"
-							style="display: none;"><em data-v-679d7250="">주의! </em></span>
 					</div>
-					<input data-v-3d1bcc82="" data-v-14995178="" type="button"
-						class="btn full solid" value="결제하기" onclick="kakaopay()" />
-
+					<!---->
+					<!---->
 				</div>
-
+				
+						<!---->
+						<!---->
+						<!---->
+						<!---->
+					</div>
+				</div>
 				<!---->
-
-				<!---->
-				<!---->
-				<!---->
-			</div>
-			<!---->
-		</div>
-		<!---->
-		<!---->
-	</div>
-
-	<!---->
-	<!---->
-	<!---->
-	<!---->
-	</div>
-	</div>
-	<!---->
-	<div data-v-34b11929="">
-		<!---->
-		<div data-v-66ae1b7c="" id="toast" class="toast lg">
-			<div data-v-66ae1b7c="" class="wrap">
-				<svg data-v-66ae1b7c="" xmlns="http://www.w3.org/2000/svg"
-					class="icon sprite-icons toast-icon toast-success">
+				<div data-v-34b11929="">
+					<!---->
+					<div data-v-66ae1b7c="" id="toast" class="toast lg">
+						<div data-v-66ae1b7c="" class="wrap">
+							<svg data-v-66ae1b7c="" xmlns="http://www.w3.org/2000/svg"
+								class="icon sprite-icons toast-icon toast-success">
 								<use data-v-66ae1b7c=""
-						href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-toast-success"
-						xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-toast-success"></use></svg>
-				<div data-v-66ae1b7c="" class="toast-content">
-					<p data-v-66ae1b7c="">내용</p>
+									href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-toast-success"
+									xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-toast-success"></use></svg>
+							<div data-v-66ae1b7c="" class="toast-content">
+								<p data-v-66ae1b7c="">내용</p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-	</div>
 
 
 
@@ -804,7 +777,7 @@ function use_point(){
 		</div>
 	</div>
 	<!-- Search End -->
-	<script>
+ <script>
       const body = document.querySelector('body');
       const modal = document.querySelector('.modal');
       const btnOpenPopup = document.querySelector('.btn-open-popup');
@@ -839,7 +812,7 @@ function use_point(){
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/address.js"></script>
-
+	
 </body>
 
 </html>

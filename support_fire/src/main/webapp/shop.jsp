@@ -319,8 +319,7 @@ $(function(){
                     </div>
                     
                     <!-- product start -->
-                    <div class="row" >
-                    <div id = "notice_list_tbody">
+                    <div class="row" id = "notice_list_tbody">
                     <c:forEach items="${productList.itemList}" var="product">
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
@@ -337,8 +336,7 @@ $(function(){
                         </div>
                         </c:forEach>
                         </div>
-                       </div>
-            <div class="row justify-content-center">
+             <div class="row justify-content-center">
                 <div class="col-12 col-lg-9">
                     <!-- Shop Pagination Area -->
                     <div class="shop_pagination_area mt-5">
@@ -368,9 +366,10 @@ $(function(){
                     </div>
                 </div>
             </div>
+                       
+            
                         </div>
                     </div>
-                </div>
     </section>
     <!-- Shop Section End -->
 
