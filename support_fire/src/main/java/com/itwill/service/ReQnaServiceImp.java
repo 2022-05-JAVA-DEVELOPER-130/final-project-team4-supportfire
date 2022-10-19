@@ -1,12 +1,13 @@
 package com.itwill.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.itwill.dao.ReQnaDao;
 import com.itwill.dto.ReQna;
 @Service
 public class ReQnaServiceImp implements ReQnaService{
-	
+	@Autowired
 	private ReQnaDao reQnaDao;
 
 	@Override

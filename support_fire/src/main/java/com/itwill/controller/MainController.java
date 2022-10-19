@@ -55,7 +55,6 @@ public class MainController {
 	 //공지사항 전체조회
   	@RequestMapping("qna")
   	public String notice_list(@RequestParam(required = false, defaultValue = "1") Integer pageno,Model model) throws Exception{
-  		System.out.println(pageno);
   		NoticePageMakerDto<Qna> qnaList = qnaService.selectAll_p(pageno);
   		model.addAttribute("qnaList", qnaList);
   		model.addAttribute("pageno", pageno);

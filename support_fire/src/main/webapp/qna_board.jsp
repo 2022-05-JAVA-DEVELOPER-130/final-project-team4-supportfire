@@ -122,6 +122,31 @@ $(document).on('click','#slide_p',function(e){
 	e.preventDefault();
 	
 });
+	$(document).on('click','.reWrite',function(e){
+		var val1 = $(this).val();
+		console.log(val1);
+		$('#reqna_write_form').html(reqna_form(val1));
+		e.preventDefault();
+	});
+	$(document).on('click','#back',function(e){
+		$('#reqna_write_form').html(reqna_back());
+		e.preventDefault();
+	});
+	console.log()
+	$(document).on('click','#reWrite_action',function(e){
+		var val2 = $(this).val();
+		console.log(val2);
+		$.ajax({
+			url:'reqna_write_action',
+			method:'POST',
+			data:'rq_content=' + $('#rq_content').val() + '&q_no=' + val2,
+			success:function(jsonResult){
+				location.href="qna";
+			}
+		});
+		e.preventDefault();
+	});
+	
 	
 });
 </script>
@@ -296,8 +321,8 @@ table{
 		                                      <li>작성일 ${qna.q_date}
 		                                      <li>내용 : ${qna.q_content}
 		                                      <br>
-		                                      <br>
-		                                      <div style='width:100px;float: right;'> <button type='button' class='btn btn-primary' id = 'reWrite'>답변하기</button></div>
+		                                      <br><div id="reqna_write_form">
+		                                      <div style='width:100px;float: right;'> <button type='button' class='btn btn-primary reWrite' value="${qna.q_no}">답변하기</button></div></div>
     		 									</ul>
 	                                        </th>
 	                                        <th>${qna.q_date.substring(0,10)}</th><th>${qna.m_id}</th>

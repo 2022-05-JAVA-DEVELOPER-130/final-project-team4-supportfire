@@ -44,6 +44,21 @@ public class QnaController {
         return result;
     }
     
+    @RequestMapping(value="reqna_write_action", method=RequestMethod.POST)
+    @ResponseBody
+    public int reqna_write_action(String rq_content, int q_no) {
+    	System.out.println(rq_content);
+    	System.out.println(q_no);
+    	ReQna reQna = new ReQna(0, rq_content, "");
+    	int result = reQnaService.insert(reQna);
+    	System.out.println(result);
+    	reQna.setRq_no(result);
+    	Qna qna = new Qna(q_no, null, null, null, null, reQna);
+    	qnaService.qna_reply_update(qna);
+    	
+    	return result;
+    }
+    
     @RequestMapping(value="boardUpdate", method=RequestMethod.POST)
     @ResponseBody
     public int boardUpdate(Qna qna) {
@@ -125,7 +140,6 @@ public class QnaController {
  		String url="";
  		String msg="";
  		String sUserId = (String)session.getAttribute("sUserId");
- 		System.out.println(sUserId);
  		resultMap.put("code",code);
 	    resultMap.put("url",url);
 	    resultMap.put("msg",msg);
