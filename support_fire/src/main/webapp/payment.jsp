@@ -97,9 +97,8 @@
 	transform: translateX(-50%) translateY(-50%);
 }
 
-<<<<<<< HEAD
 .contact__form input {
-=======
+
         background-color: rgba(0, 0, 0, 0.4);
       }
 
@@ -290,7 +289,13 @@ function use_point(){
 			method:'POST',
 			dataType:'json',
 			success:function(jsonResult){
-			    alert('구매가 생성되었습니다');
+			    if(${productDetail.pd_no}!=null){
+			    	alert('구매되었습니다');
+			    	location.href="main";
+			    }else{
+			    	alert('구매입찰되었습니다');
+			    	location.href="main";
+			    }
 			   
 			}
 		});
