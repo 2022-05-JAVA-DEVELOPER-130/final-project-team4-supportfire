@@ -119,6 +119,7 @@
 					$('#top_content').html(login_top(member));
 				} else if (jsonResult.code == 2) {
 					$('#top_content').html(logout_top());
+					alert('로그인을 해주세요');
 				}
 
 			}
