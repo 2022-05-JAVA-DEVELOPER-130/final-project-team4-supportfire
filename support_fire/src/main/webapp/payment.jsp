@@ -571,7 +571,7 @@ function use_point(){
 										<dd data-v-679d7250="" class="price empty_price">
 											<span data-v-679d7250="" class="amount" id="total1"><fmt:formatNumber
 													type="number" pattern="0,000"
-													value=" ${param.price_price+param.price*0.01+2000+3000 }" /></span><span
+													value=" ${param.price+price+param.price*0.01+2000+3000 }" /></span><span
 												data-v-679d7250="" class="unit"></span>
 										</dd>
 									</dl>

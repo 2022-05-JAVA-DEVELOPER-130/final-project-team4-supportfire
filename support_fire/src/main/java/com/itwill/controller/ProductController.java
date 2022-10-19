@@ -106,10 +106,10 @@ public class ProductController {
 	public String product_view_payment(@RequestParam int pd_no, Model model,HttpServletRequest request) throws Exception{
 		String forwardPath = "";
 		ProductDetail productDetail = productDetailService.selectByNo(pd_no);
-//		String sUserId=(String)request.getSession().getAttribute("sUserId");
+		String sUserId=(String)request.getSession().getAttribute("sUserId");
 //		request.getSession().setAttribute("sUserId", sUserId);
-//		Member member = memberService.selectById(sUserId);
-//		model.addAttribute("member", member);
+		Member member = memberService.selectById(sUserId);
+		model.addAttribute("member", member);
 		if(productDetail.getBt_no() == 2) {
 			Product product = productService.selectByNo(productDetail.getProductsize().getProduct().getP_no());
 			ProductSize productSize=productSizeService.selectByNo(productDetail.getProductsize().getPs_no());
@@ -139,27 +139,37 @@ public class ProductController {
 	@RequestMapping("bid")
 	public String product_bid_payment(@RequestParam int p_no,int bt_no,int c_no,String s_size,int price,Model model,HttpServletRequest request) throws Exception{
 		
-		System.out.println("dka"+p_no);
-		System.out.println(bt_no);
-		System.out.println(c_no);
-		System.out.println(s_size);
-		System.out.println(price);
+		String forwardPath = "";
 		String sUserId=(String)request.getSession().getAttribute("sUserId");
-		request.getSession().setAttribute("sUserId", sUserId);
+		//request.getSession().setAttribute("sUserId", sUserId);
 		Member member = memberService.selectById(sUserId);
 		model.addAttribute("member", member);
-		Product product = productService.selectByNo(p_no);
-		int ps_no = productSizeService.selectByPnoSize(p_no, s_size);
-		ProductSize productSize = productSizeService.selectByNo(ps_no);
-		ProductDetail insertPd= new ProductDetail(0,product.getP_price(),null,null,new ProductSize(ps_no,s_size, product),sUserId,bt_no,1);
-		int insertProductDetail = productDetailService.insert(insertPd);
-		model.addAttribute("product", product);
-		System.out.println(product);
-		
-		model.addAttribute("productDetail", insertPd);
-		System.out.println(insertPd);
-		
-		return "payment";
+		if(bt_no==2) {
+			Product product = productService.selectByNo(p_no);
+			int ps_no = productSizeService.selectByPnoSize(p_no, s_size);
+			ProductSize productSize = productSizeService.selectByNo(ps_no);
+			ProductDetail insertPd= new ProductDetail(0,product.getP_price(),null,null,new ProductSize(ps_no,s_size, product),sUserId,bt_no,1);
+			int insertProductDetail = productDetailService.insert(insertPd);
+			model.addAttribute("product", product);
+			System.out.println(product);
+			
+			model.addAttribute("productDetail", insertPd);
+			System.out.println(insertPd);
+			forwardPath="sell";
+		}else {
+			Product product = productService.selectByNo(p_no);
+			int ps_no = productSizeService.selectByPnoSize(p_no, s_size);
+			ProductSize productSize = productSizeService.selectByNo(ps_no);
+			ProductDetail insertPd= new ProductDetail(0,product.getP_price(),null,null,new ProductSize(ps_no,s_size, product),sUserId,bt_no,1);
+			int insertProductDetail = productDetailService.insert(insertPd);
+			model.addAttribute("product", product);
+			System.out.println(product);
+			
+			model.addAttribute("productDetail", insertPd);
+			System.out.println(insertPd);
+			forwardPath="payment";
+		}
+		return forwardPath;
 	}
 	
 	//@RequestMapping(value="mapage" )
