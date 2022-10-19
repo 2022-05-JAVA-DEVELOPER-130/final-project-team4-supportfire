@@ -78,11 +78,9 @@
 	display: none;
 	background-color: rgba(0, 0, 0, 0.4);
 }
-
 .modal.show {
 	display: block;
 }
-
 .modal_body {
 	position: absolute;
 	top: 50%;
@@ -96,37 +94,32 @@
 	box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
 	transform: translateX(-50%) translateY(-50%);
 }
-
-.contact__form input {
-
-        background-color: rgba(0, 0, 0, 0.4);
-      }
-
+.contact__form input{
+	margin-bottom: 5px;
+	width : 90%;
+	height: 50px;
+    border: 0;
+    border-bottom: 1px solid #ebebeb;
+    display: inline-block;
+    }
       .modal.show {
         display: block;
       }
-
       .modal_body {
         position: absolute;
         top: 50%;
         left: 50%;
-
         width: 600px;
-        height: 800px;
-
+        height: 850px;
         padding: 20px;
-
         text-align: center;
-
         background-color: rgb(255, 255, 255);
         border-radius: 10px;
         box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
-
         transform: translateX(-50%) translateY(-50%);
       }
       
     .contact__form input{
-
 	margin-bottom: 5px;
 	width: 90%;
 	height: 50px;
@@ -134,7 +127,6 @@
 	border-bottom: 1px solid #ebebeb;
 	display: inline-block;
 }
-
 .contact__form span {
 	width: 20%;
 	display: block;
@@ -142,11 +134,9 @@
 	margin-top: 10px;
 	margin-right: auto;
 }
-
 button {
 	margin: 5px;
 }
-
 .w-btn {
 	position: relative;
 	border: none;
@@ -158,13 +148,11 @@ button {
 	font-weight: 600;
 	transition: 0.25s;
 }
-
 .w-btn-gray {
 	background-color: #a3a1a1;
 	color: #e3dede;
 	font-size: 4px
 }
-
 .btn_confirm {
 	width: 100%;
 	height: 50px;;
@@ -360,6 +348,27 @@ function use_point(){
 				<!-- Breadcrumb Section End -->
 
 				<!-- Checkout Section Begin -->
+							
+
+						<div class="contact__form">
+							<form id="address_form">
+							<h6 class="checkout__title">주소추가하기</h6>
+								
+							<span>이름*</span><input type="text" class="asd" name="m_id" id="m_id" palceholder="수령">
+							<span>휴대전화*</span><input type="text" class="asd" name="m_phone" id="m_phone">
+
+							<div class="checkout__input">
+								<p>
+									<span>우편번호*</span>
+								</p>
+								<input type="button" class="asd" onclick="showDelivery()" value="우편번호 찾기"
+									class="input_txt"> <input type="text" class="asd"
+									id="sample4_postcode">
+							</div>
+									<span>주소*</span>
+								<input type="text" class="asd" placeholder="도로명주소"
+									class="checkout__input__add" name="sample4_roadAddress" id="sample4_roadAddress">
+								<input type="text" class="asd" placeholder="지번주소" id="sample4_jibunAddress">
 
 							<div class="checkout__input">
 								<p>
@@ -368,52 +377,16 @@ function use_point(){
 								<input type="text" class="asd" placeholder="배송메모">
 							</div>
 							<div class="checkout__input__checkbox">
-								<label for="acc" style="margin-left: 20px; padding-left: 10px;"> <span style="width: 30%; margin-top: 20px;">기본 배송지로설정</span> <input type="checkbox"
-									id="acc" > <span class="checkmark" style="margin-top: 0px;"></span>
-								</label><button type="button" class="site-btn" style="margin-top: 0px;" id="address_btn">저장</button>
+								<label for="acc"> <span style="width: 30%">기본 배송지로설정</span> <input type="checkbox"
+									id="acc"> <span class="checkmark"></span>
+								</label><button type="button" class="site-btn" style="margin-top: 50px;" id="address_btn">저장</button>
 
-				<div class="contact__form">
-					<form id="address_form">
-						<h6 class="checkout__title">주소추가하기</h6>
-
-						<span>이름*</span><input type="text" class="asd" name="m_id"
-							id="m_id" palceholder="수령"> <span>휴대전화*</span><input
-							type="text" class="asd" name="m_phone" id="m_phone">
-
-						<div class="checkout__input">
-							<p>
-								<span>우편번호*</span>
-							</p>
-							<input type="button" class="asd" onclick="showDelivery()"
-								value="우편번호 찾기" class="input_txt"> <input type="text"
-								class="asd" id="sample4_postcode">
+							</div>
+							</form>
 						</div>
-						<span>주소*</span> <input type="text" class="asd"
-							placeholder="도로명주소" class="checkout__input__add"
-							name="sample4_roadAddress" id="sample4_roadAddress"> <input
-							type="text" class="asd" placeholder="지번주소"
-							id="sample4_jibunAddress">
-
-						<div class="checkout__input">
-							<p>
-								<span>배송메모*</span>
-							</p>
-							<input type="text" class="asd" placeholder="배송메모">
-						</div>
-						<div class="checkout__input__checkbox">
-							<label for="acc"> <span style="width: 30%">기본
-									배송지로설정</span> <input type="checkbox" id="acc"> <span
-								class="checkmark"></span>
-							</label>
-							<button type="button" class="site-btn" style="margin-top: 0px;"
-								id="address_btn">저장</button>
-
-						</div>
-					</form>
-				</div>
-			</section>
-		</div>
+	</section>
 	</div>
+    </div>
 	<!-- Page Preloder -->
 	<div id="preloder">
 		<div class="loader"></div>
@@ -883,19 +856,15 @@ function use_point(){
       const body = document.querySelector('body');
       const modal = document.querySelector('.modal');
       const btnOpenPopup = document.querySelector('.btn-open-popup');
-
       btnOpenPopup.addEventListener('click', () => {
         modal.classList.toggle('show');
-
         if (modal.classList.contains('show')) {
           body.style.overflow = 'hidden';
         }
       });
-
       modal.addEventListener('click', (event) => {
         if (event.target === modal) {
           modal.classList.toggle('show');
-
           if (!modal.classList.contains('show')) {
             body.style.overflow = 'auto';
           }
