@@ -99,7 +99,6 @@
 
 
 
-
       .modal.show {
         display: block;
       }
@@ -367,7 +366,7 @@ function use_point(){
 								<span>우편번호*</span>
 							</p>
 							<input type="button" class="asd" onclick="showDelivery()"
-								value="우편번호 찾기" class="input_txt"> <input type="text"
+								value="우편번호 찾기" class="input_txt" style="background-color: rgba(0, 0, 0, 0.4); color: white; align-content: center;"> <input type="text"
 								class="asd" id="sample4_postcode">
 						</div>
 						<span>주소*</span> <input type="text" class="asd"
