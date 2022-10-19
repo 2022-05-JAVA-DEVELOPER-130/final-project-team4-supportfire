@@ -57,15 +57,32 @@ public class MemberController {
 		String msg="";
 		String sUserId = (String)session.getAttribute("sUserId");
 		List<Member> result = new ArrayList<Member>();
+		List<String> b_name1 = new ArrayList<String>();
+		List<String> b_name2 = new ArrayList<String>();
 		Member member = memberService.selectById(sUserId);
 		//구매기록
 		List<ProductDetail> productDetail = productDetailService.selectByIdAndBtNo(sUserId, 1);
 		//판매기록
 		List<ProductDetail> product_s = productDetailService.selectByIdAndBtNo(sUserId, 2);
 		
-		System.out.println(productDetail);
-		System.out.println(product_s);
-		
+		for (ProductDetail product : productDetail) {
+			if(product.getB_no() == 1) {
+				b_name1.add("입찰중");
+			}else if(product.getB_no() == 2) {
+				b_name1.add("거래중");
+			}else if(product.getB_no() == 3) {
+				b_name1.add("완료");
+			}
+		}
+		for (ProductDetail product : product_s) {
+			if(product.getB_no() == 1) {
+				b_name2.add("입찰중");
+			}else if(product.getB_no() == 2) {
+				b_name2.add("거래중");
+			}else if(product.getB_no() == 3) {
+				b_name2.add("완료");
+			}
+		}
 		
 		
 		result.add(member);
@@ -76,6 +93,8 @@ public class MemberController {
 	    resultMap.put("data",result);
 	    resultMap.put("p",productDetail);
 	    resultMap.put("s",product_s);
+	    resultMap.put("b_p",b_name1);
+	    resultMap.put("b_s",b_name2);
 	    
 	    return resultMap;
 	}

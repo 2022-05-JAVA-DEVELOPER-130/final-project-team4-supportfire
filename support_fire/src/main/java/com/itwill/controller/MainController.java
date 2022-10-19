@@ -57,7 +57,6 @@ public class MainController {
   	public String notice_list(@RequestParam(required = false, defaultValue = "1") Integer pageno,Model model) throws Exception{
   		System.out.println(pageno);
   		NoticePageMakerDto<Qna> qnaList = qnaService.selectAll_p(pageno);
-  		System.out.println(qnaList);
   		model.addAttribute("qnaList", qnaList);
   		model.addAttribute("pageno", pageno);
   		return "qna_board";
@@ -88,7 +87,6 @@ public class MainController {
 		String url1 = urlS[2];
 		char a = url1.charAt(0);
 		String b = a+"";
-		System.out.println(b);
 		if(b.equals("m") || b.equals("l")) {
 			code=1;
 		}else if(b.equals("s") || b.equals("p") || b.equals("b")) {

@@ -55,7 +55,7 @@
 <select id = "selectAllMinPrice" parameterType="map" resultType = "com.itwill.dto.Product" resultMap="selectMap">
 		select ss.* from 
 		(select rownum idx, s.* from
-		(select p.p_no, min(pd.pd_price) from productsize ps left outer join (select * from productdetail where bt_no = 2 and b_no = 1) pd on ps.ps_no = pd.ps_no right outer join product p on ps.p_no = p.p_no group by p.p_no ORDER BY p_no asc)s
+		(select p.p_no, min(pd.pd_price) from productsize ps left outer join (select * from productdetail where bt_no = 2 and b_no = 1 and pd_start <![CDATA[ < ]]> sysdate and pd_end <![CDATA[ > ]]> sysdate) pd on ps.ps_no = pd.ps_no right outer join product p on ps.p_no = p.p_no group by p.p_no  ORDER BY p_no asc)s
 		)ss
 		where ss.idx <![CDATA[ >= ]]> #{pageStart} and ss.idx <![CDATA[ <= ]]> #{pageEnd}
 	</select>
