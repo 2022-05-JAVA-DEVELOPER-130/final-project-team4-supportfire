@@ -1,13 +1,18 @@
 package com.itwill.dao;
 
+import java.util.List;
+
 import com.itwill.dto.Address;
 
 public interface AddressDao {
 
-	Address selectAddressByMemberId(String m_id) throws Exception;
+	int insert(Address address);
 	
-	int insertAddress(Address address) throws Exception;
+	int update(Address address);
 	
+	int delete(int a_no);
+	
+	List<Address> selectAllById(String m_id);
 	
 	
 }
