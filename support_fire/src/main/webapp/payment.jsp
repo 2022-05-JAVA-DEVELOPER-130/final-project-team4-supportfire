@@ -281,7 +281,21 @@ function use_point(){
     document.getElementById('kakaopay').className = "pay_item kakaopay selected"; 
 	
 }
-
+ 
+ $(function(){
+	 $(document).on('click', '#purchase_btn', function(){	
+		console.log('생성');
+		$.ajax({
+			url:'orders_purchase?pd_no='+${productDetail.pd_no},
+			method:'POST',
+			dataType:'json',
+			success:function(jsonResult){
+			    alert('구매가 생성되었습니다');
+			   
+			}
+		});
+	 });
+ });
 
 	
 </script>
@@ -711,7 +725,7 @@ function use_point(){
 							style="display: none;"><em data-v-679d7250="">주의! </em></span>
 					</div>
 					<input data-v-3d1bcc82="" data-v-14995178="" type="button"
-						class="btn full solid" value="결제하기" onclick="kakaopay()" />
+						class="btn full solid" value="결제하기" onclick="kakaopay()" id="purchase_btn" />
 
 				</div>
 

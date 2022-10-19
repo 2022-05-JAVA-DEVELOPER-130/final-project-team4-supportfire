@@ -208,7 +208,21 @@ function showDelivery() {
 	
 	
 });
-
+ 
+ //db저장
+ $(function(){
+	 $(document).on('click', '#sell_btn', function(){	
+		$.ajax({
+			url:'orders_sell?pd_no='+${productDetail.pd_no},
+			method:'POST',
+			dataType:'json',
+			success:function(jsonResult){
+			    alert('판매가 생성되었습니다');
+			   
+			}
+		});
+	 });
+ });
 	 
 
 
@@ -485,7 +499,7 @@ function showDelivery() {
 														style="display: none;"><em data-v-679d7250="">주의!
 													</em></span>
 												</div>
-												<input data-v-3d1bcc82="" data-v-14995178="" type="button"  class="btn full solid" value="바로판매하기" />
+												<input data-v-3d1bcc82="" data-v-14995178="" type="button"  class="btn full solid" value="바로판매하기" id="sell_btn"/>
 											</div>
 											<div data-v-29138675="" class="other_card"
 												style="display: none;">

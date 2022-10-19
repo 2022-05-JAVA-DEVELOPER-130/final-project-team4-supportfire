@@ -157,10 +157,7 @@
 								productSizeNameForm(jsonResult.product));
 					}
 				});
-		$(document).on(
-				'click',
-				'.buy1',
-				function(e) {
+		$(document).on('click','.buy1',function(e) {
 					if (e.currentTarget.value != 'null') {
 						$.ajax({
 							url : 'sizeClick_p',
@@ -196,10 +193,7 @@
 					}
 					e.preventDefault();
 				});
-		$(document).on(
-				'click',
-				'.sell1',
-				function(e) {
+		$(document).on('click','.sell1',function(e) {
 					if (e.currentTarget.value != 'null') {
 						$.ajax({
 							url : 'sizeClick_s',
@@ -249,10 +243,7 @@
 			});
 			e.preventDefault();
 		});
-		$(document).on(
-				'click',
-				'#imm',
-				function(e) {
+		$(document).on('click','#imm',function(e) {
 					$.ajax({
 						success : function(jsonResult) {
 							$('#bid').removeClass('on');
@@ -264,10 +255,7 @@
 					});
 					e.preventDefault();
 				});
-		$(document).on(
-				'click',
-				'.on',
-				function(e) {
+		$(document).on('click','.on',function(e) {
 					console.log($(this).attr('id'));
 					if ($(this).attr('id') == 'imm') {
 						console.log($('#hiddenPd_no_buy').val());

@@ -9,6 +9,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.mapping.ResultMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -145,7 +146,13 @@ public class OrdersRestController {
 	 * 원래있던판매자 정보와ㅓ 새로 만들어진 구매자정보로 오더생성 후 인서
 	 */
 	@RequestMapping(value="orders_purchase")
-	public Orders insert_orders_purchase(int pd_no,HttpServletRequest request) throws Exception{
+	public Map insert_orders_purchase(int pd_no,HttpServletRequest request) throws Exception{
+		Map resultMap = new HashMap();
+		int code=0;
+		String url="";
+		String msg="";
+		String data="";
+		
 		//즉시구매
 		//원래있던 판매자의 pd_no 가져옴
 		System.out.println(pd_no);
@@ -172,12 +179,27 @@ public class OrdersRestController {
 		Payment purchasePayment= new Payment(0, member.getM_name(),member.getM_phone(),member.getM_address(),"",insertOrders,1);
 		int insertpayment=paymentService.insertPayment(purchasePayment);
 		
-		return purchaseOrders;
+		resultMap.put("code",code);
+		resultMap.put("url",url);
+		resultMap.put("msg",msg);
+		resultMap.put("purchaseorders",purchaseOrders);
+		resultMap.put("purchasepayment",purchasePayment);
+		
+		
+		
+		
+		
+		return resultMap;
 	}
 	
 	
 	@RequestMapping(value="orders_sell")
-	public Orders insert_orders_sell (int pd_no,HttpServletRequest request) throws Exception{
+	public Map insert_orders_sell (@RequestParam int pd_no,HttpServletRequest request) throws Exception{
+		Map resultMap = new HashMap();
+		int code=0;
+		String url="";
+		String msg="";
+		String data="";
 		
 		System.out.println(pd_no);
 		ProductDetail newProductDetail  = productDetailService.selectByNo(pd_no);
@@ -200,7 +222,13 @@ public class OrdersRestController {
 		System.out.println(member);
 		Payment sellPayment= new Payment(0, member.getM_name(),member.getM_phone(),member.getM_address(),"",insertOrders,1);
 		int insertpayment=paymentService.insertPayment(sellPayment);
-	
-		return sellOrders;
+		
+		resultMap.put("code",code);
+		resultMap.put("url",url);
+		resultMap.put("msg",msg);
+		resultMap.put("sellorders",sellOrders);
+		resultMap.put("sellpayment",sellPayment);
+		
+		return resultMap;
 	}
 }
