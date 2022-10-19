@@ -408,7 +408,7 @@ function showDelivery() {
 											<dl data-v-679d7250="" class="price_box">
 												<dt data-v-679d7250="" class="price_title">정산금액</dt>
 												<dd data-v-679d7250="" class="price empty_price">
-													<span data-v-679d7250="" class="amount"><fmt:formatNumber type="number"  pattern="0,000" value=" ${productDetail.pd_price-productDetail.pd_price*0.01-2000-3000 }" /></span><span
+													<span data-v-679d7250="" class="amount"><fmt:formatNumber type="number"  pattern="0,000" value=" ${param.price-param.price*0.01-2000-3000 }" /></span><span
 														data-v-679d7250="" class="unit"></span>
 												</dd>
 											</dl>
@@ -433,7 +433,7 @@ function showDelivery() {
 												
 														
 												</dt>
-												<dd data-v-3a2a7b6b="" class="price_text"><fmt:formatNumber type="number"  pattern="0,000" value=" ${productDetail.pd_price*0.01 }" /></dd>
+												<dd data-v-3a2a7b6b="" class="price_text"><fmt:formatNumber type="number"  pattern="0,000" value=" ${param.price*0.01 }" /></dd>
 											</dl>
 											<dl data-v-3a2a7b6b="" data-v-887ad490=""
 												class="price_addition">
@@ -477,7 +477,7 @@ function showDelivery() {
 													<dl data-v-679d7250="" class="price_box">
 														<dt data-v-679d7250="" class="price_title">정산금액</dt>
 														<dd data-v-679d7250="" class="price empty_price">
-															<span data-v-679d7250="" class="amount"><fmt:formatNumber type="number"  pattern="0,000" value=" ${productDetail.pd_price-productDetail.pd_price*0.01-2000-3000 }" /></span><span
+															<span data-v-679d7250="" class="amount"><fmt:formatNumber type="number"  pattern="0,000" value=" ${param.price-param.price*0.01-2000-3000 }" /></span><span
 																data-v-679d7250="" class="unit"></span>
 														</dd>
 													</dl>
