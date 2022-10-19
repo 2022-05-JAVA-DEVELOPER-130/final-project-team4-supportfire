@@ -385,25 +385,46 @@ function showDelivery() {
 								</div>
 							</div>
 							<section data-v-6a5da210="" data-v-0259aa53="">
-								<div data-v-6a5da210="" class="section_unit">
-									<div data-v-6a5da210="" class="section_title">
-										<h3 data-v-6a5da210="" class="title_txt">발송 주소</h3>
-										<a data-v-6a5da210="" href='#' class="btn-open-popup" id="add_more_btn">+ 새 주소
-											추가</a>
-									</div>
-									<div id="content" data-v-6a5da210="" class="section_content">
-										<a data-v-6a5da210="" href="#" class="empty_delivery_info"><span
-											data-v-6a5da210="" class="guide_txt">주소를 추가해주세요.</span>
-										<svg data-v-6a5da210="" xmlns="http://www.w3.org/2000/svg"
-												class="ico-arr-right-gray-s icon sprite-icons">
+						<div data-v-6a5da210="" class="section_unit">
+							<div data-v-6a5da210="" class="section_title">
+								<h3 data-v-6a5da210="" class="title_txt">발송 주소</h3>
+								<a data-v-6a5da210="" href='#' class="btn-open-popup"
+									id="add_more_btn">+ 새 주소 추가</a>
+							</div>
+							<!-- <div id="content" data-v-6a5da210="" class="section_content">
+								<a data-v-6a5da210="" href="#" class="empty_delivery_info"><span
+									data-v-6a5da210="" class="guide_txt">주소를 추가해주세요.</span> <svg
+										data-v-6a5da210="" xmlns="http://www.w3.org/2000/svg"
+										class="ico-arr-right-gray-s icon sprite-icons">
 												<use data-v-6a5da210=""
-													href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-arr-right-gray-s"
-													xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-arr-right-gray-s"></use></svg></a>
-									</div>
-								</div>
-										<div id="content">
+											href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-arr-right-gray-s"
+											xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-ico-arr-right-gray-s"></use></svg></a>
+							</div> -->
+							<div id="content" data-v-6a5da210="" class="section_content">
+							<div data-v-6a5da210="" class="section_content">
+								<div data-v-6a5da210=""  class="delivery_info">
+									<div data-v-05a4f438="" data-v-6a5da210="" class="address_info">
+										<dl data-v-05a4f438="" class="info_list">
+										<div data-v-05a4f438="" class="info_box">
+											<dt data-v-05a4f438="" class="title">받는 분</dt>
+											<dd data-v-05a4f438="" class="desc">${member.m_name}</dd>
 										</div>
-								
+										<div data-v-05a4f438="" class="info_box">
+											<dt data-v-05a4f438="" class="title">연락처</dt>
+											<dd data-v-05a4f438="" class="desc">${member.m_phone}</dd>
+										</div>
+										<div data-v-05a4f438="" class="info_box">
+											<dt data-v-05a4f438="" class="title">배송 주소</dt>
+											<dd data-v-05a4f438="" class="desc">${member.m_address}</dd>
+										</div>
+									</dl>
+								</div>
+							</div>
+						</div>
+						</div>
+							
+						<div id="content"></div>
+
 												<!---->
 									
 								<!---->

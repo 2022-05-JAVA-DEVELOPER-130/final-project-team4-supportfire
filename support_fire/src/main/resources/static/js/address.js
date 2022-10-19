@@ -91,8 +91,6 @@ function address_form_content(jsonResult){
 				</div>
 			</dl>
 		</div>
-		<a data-v-3d1bcc82="" data-v-6a5da210="" href="#"
-			class="btn btn_edit outlinegrey small"> 변경 </a>
 	</div>
 </div>`;
 }

@@ -99,9 +99,8 @@ public class PaymentController {
 	
 	
 	//결제번호로 배송지 업데이트
-	@RequestMapping(value = "/payment_modify_action",
-			produces = "application/json;charset=UTF-8")
-	public Map payment_modify_action(@ModelAttribute Payment payment) {
+	@RequestMapping(value = "paymen_modify_action")
+	public Map payment_modify_action( Payment payment) {
 		Map resultMap=new HashMap();
 		int code=2;
 		String url="";
@@ -110,8 +109,8 @@ public class PaymentController {
 		try {
 			code=1;
 			url="";
-			msg="";
-			int row_count=paymentService.updateByNo(new Payment(12, "김지원","", "", "", 0, 1));
+			msg="배송지가 변경되었습니다.";
+			//int row_count=paymentService.updateByNo(new Payment(pm, msg, msg, url, msg, pd_no, pd_no);
 		} catch (Exception e) {
 			code=2;
 			url="";
