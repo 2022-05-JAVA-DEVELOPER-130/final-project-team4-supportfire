@@ -201,14 +201,12 @@ $.ajax({
 	method:'POST',
 	dataType:'json',
 	success:function(jsonResult){
-		console.log(jsonResult.data[0]);
 		$('#mypage_form').html(mypage_form(jsonResult.data[0]));
 		for(var i=0; i<jsonResult.p.length; i++){
-			h12 += purchase(jsonResult.p[i]);
+			h12 += purchase(jsonResult.p[i], jsonResult.b_p[i]);
 		}
-		console.log(h12);
 		for(var i=0; i<jsonResult.s.length; i++){
-			h13 += purchase(jsonResult.s[i]);
+			h13 += purchase(jsonResult.s[i], jsonResult.b_s[i]);
 		}
 		$('#purchase').html(h12);
 		$('#sell').html(h13);
@@ -222,7 +220,6 @@ $(document).on('click', '#mypage_info', function(){
 		method:'POST',
 		dataType:'json',
 		success:function(jsonResult){
-			console.log(jsonResult.data[0]);
 			$('#fff').html(mypage_info(jsonResult.data[0]));
 		}
 	});
@@ -236,7 +233,6 @@ $(document).on('click', '#mypage_info', function(){
 		    dataType:'json',
 		    success:function(jsonResult){
 		    	$('#fff').html(modify_form(jsonResult.data));
-		    	console.log(jsonResult);
 		    	/**********************/
 		    	validator = $('#modi_form').validate({
 			 		rules:{
@@ -284,12 +280,41 @@ $(document).on('click', '#mypage_info', function(){
 		//e.preventDefault();
 	});	
 	
-
+$(document).on('click', '#ppp', function(e){
 	
+
+	 $.ajax({
+		    url:'mypage_form',
+		    method:'POST',
+		    success:function(jsonResult){
+		    	$('#fff').html(purchase_form());
+				for(var i=0; i<jsonResult.p.length; i++){
+					h12 += purchase(jsonResult.p[i], jsonResult.b_p[i]);
+				}
+				
+				$('#content').html(h12);
+	
+		    	}
+		 });
+	 e.preventDefault();
+	});
+	
+$(document).on('click', '#sss', function(e){
 	
 
-
-
+	 $.ajax({
+		    url:'mypage_form',
+		    method:'POST',
+		    success:function(jsonResult){
+		    	$('#fff').html(sell_form());
+		    	for(var i=0; i<jsonResult.s.length; i++){
+					h13 += purchase(jsonResult.s[i], jsonResult.b_s[i]);
+				}
+				$('#content').html(h13);
+		    	}
+		 });
+	 e.preventDefault();
+	});
 
 
 
@@ -319,9 +344,9 @@ $(document).on('click', '#mypage_info', function(){
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
-                        <h4>마이페이지</h4>
+                        <a href="mypage"><h4>마이페이지</h4></a>
                         <div class="breadcrumb__links">
-                            <a href="./index.jsp">Home</a>
+                            <a href="main">Home</a>
                             <span>MyPage</span>
                         </div>
                     </div>
