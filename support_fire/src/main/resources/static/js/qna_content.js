@@ -106,3 +106,60 @@ function changeQnaList(pageno){
 		}
 	});
 }
+
+
+function qna_write_form(sUserId){
+	return `
+	<section class="write" style="padding-top: 50px; margin-bottom: 50px;">
+                
+      <div class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="shortcodes_title mb-30">
+                        <h4 style="margin-bottom: 50px;"><strong>QNA 글쓰기</strong></h4>
+                    </div>
+                    <div class="shortcodes_content">
+                        <div class="table-responsive">
+                        	<form id="qna_write_form" method="post">
+	                            <table class="table mb-0 table-bordered"">
+	                                <thead>
+	                                <tr>
+	                                	<th colspan="2">제목</th>
+	                                	<th style="text-align: center;">아이디</th>
+	                                	<th style="text-align: center;">날짜</th>
+	                                </tr>
+	                                    <tr>
+	                                        <th colspan="2" class="board_title">
+	                                        	<input type="text" class="write" name="q_title" id="q_title" placeholder=" title" />
+	                                        </th>
+	                                        <th style="width: 150px; text-align: center;">${sUserId}</th>
+	                                        <th scope="col" class="board_date" id="today" style="width: 150px; text-align: center; padding-bottom: 20px;"></th>
+	                                    </tr>
+	                                </thead>
+	                                <tbody>
+	                                    <tr>
+	                                        <td id="notice_content_td" colspan="4">
+	                                        	<textarea name="q_content" id="q_content" placeholder=" content" style="resize: none;"></textarea>
+	                                        </td>
+	                                    </tr>
+	                                </tbody>
+	                            </table>
+                      				<input type="hidden" name="m_id" value="${sUserId}" />
+                			</form>
+                        </div>
+                    </div>
+                    		<div>
+							<button class="btn btn-primary butt" id="write_action" type="button" value="등록" />등록</button>
+							<button class="btn btn-primary butt" id="w_list" type="button"  value="목록" />목록</button>
+							</div>
+                </div>
+            </div>
+            
+         </div>
+    </div>   
+    </section>
+	
+	`;
+	
+}

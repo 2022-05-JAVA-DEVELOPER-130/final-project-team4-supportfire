@@ -92,6 +92,37 @@ $(document).on('click','#slide_p',function(e){
 		e.preventDefault();
 		
 	});
+	
+	$(document).on('click','#qna_write',function(e){
+		$.ajax({
+			url:'qna_write_form',
+			method:'POST',
+			success:function(jsonResult){
+				$('#write_form').html(qna_write_form(jsonResult.data));
+			}
+		});
+	e.preventDefault();
+	
+});
+	$(document).on('click','#w_list',function(e){
+		location.href="qna";
+	
+});
+	
+	
+	$(document).on('click','#write_action',function(e){
+		$.ajax({
+			url:'qna_write_action',
+			method:'POST',
+			data:$('#qna_write_form').serialize(),
+			success:function(jsonResult){
+				location.href="qna";
+			}
+		});
+	e.preventDefault();
+	
+});
+	
 });
 </script>
 <style type="text/css">
@@ -120,6 +151,75 @@ a:hover, a:focus {
     color: blue;
  }
     
+   .write input{
+	width: 100%;
+			padding: 10px;
+			box-sizing: border-box;
+			border: solid 2px #1E90FF;
+			border-radius: 5px;
+			font-size: 16px;
+			resize: both;
+    }
+
+form span{
+	width: auto;
+	margin-top: 25px;
+	margin-left: 50px;
+	display: block;
+
+}
+
+hr{
+	width: 700px;
+	height: 5px;
+
+}
+
+
+.error{
+	margin-left: 60px;
+
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  
+}
+
+.error{
+	color: red;
+
+}
+
+table{
+	color: black;
+	border-color: black!important;
+}
+
+#q_content{
+	width: 100%;
+	resize: none; /* 사용자 임의 변경 불가 */
+			height: 400px;
+			padding: 10px;
+			box-sizing: border-box;
+			border: solid 2px #1E90FF;
+			border-radius: 5px;
+			font-size: 16px;
+			resize: both;
+
+}
+
+ .butt{
+	margin-top: 10px;
+	float: right;
+	width: 80px;
+	margin-right: 10px;
+	height: 40px;
+	color: white;
+	
+}
 </style>
 
 
@@ -147,7 +247,7 @@ a:hover, a:focus {
 		<!-- include_common_header.jsp end-->
   	        <jsp:include page="header.jsp" />
     <!-- Header Area End -->
-    
+    <div>
     <!-- Breadcumb Area -->
    <section class="breadcrumb-option">
         <div class="container">
@@ -166,7 +266,7 @@ a:hover, a:focus {
     </section>
     <!-- Breadcumb Area -->
 
-    <div class="shortcodes_area section_padding_100">
+    <div class="shortcodes_area" id="write_form">
         <div class="container">
             <div class="row">
                 <div class="col-12" style="margin-top: 50px;">
@@ -230,7 +330,7 @@ a:hover, a:focus {
 					
                 </div>
             </div>
-            <div style='width:100px;float: right; margin-top: 10px;'><button type='button' class='btn btn-primary' id = 'reWrite'>글쓰기</button></div>
+            <div style='width:100px;float: right; margin-top: 10px;'><button type='button' class='btn btn-primary' id ='qna_write'>글쓰기</button></div>
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-9">
                     <!-- Shop Pagination Area -->

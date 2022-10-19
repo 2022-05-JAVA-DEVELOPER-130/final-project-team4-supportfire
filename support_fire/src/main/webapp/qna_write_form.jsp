@@ -31,13 +31,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
     
 <style type="text/css">
- #radi{
- 	height: 20px;
- 	width: 100%;
- 	display: inline;
- -webkit-appearance: button;
  
- }
  
  input{
 	width: 100%;
@@ -223,8 +217,8 @@ $(function(){
                         </div>
                     </div>
                     		<div>
-							<button class="btn btn-primary" type="button" value="등록" />등록</button>
-							<button class="btn btn-primary" type="button"  value="목록" />목록</button>
+								<button class="btn btn-primary" id="write_action" type="button" value="등록" />등록</button>
+								<button class="btn btn-primary" id="w_list" type="button"  value="목록" />목록</button>
 							</div>
                 </div>
             </div>
