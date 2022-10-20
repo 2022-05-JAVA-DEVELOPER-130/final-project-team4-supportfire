@@ -68,8 +68,8 @@ public class ProductDaoSpringBootTestApplication {
 		System.out.println("----------------------------------------------------------");
 		*/
 		//System.out.println(productDao.selectAll_p(1, 2));
-		System.out.println(productDao.selectAllMinPrice(1, 5));
-		
+		//System.out.println(productDao.selectAllMinPrice(1, 5));
+		//System.out.println(productDao.selectBrands(1));
 	}
 
 }

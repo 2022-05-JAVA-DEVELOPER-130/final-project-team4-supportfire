@@ -36,17 +36,30 @@ insert into brands values(BRANDS_BR_NO_SEQ.nextval, 'Vans', 1);
 insert into brands values(BRANDS_BR_NO_SEQ.nextval, 'New Balance', 1);
 
 /************제품***************/
+/*Nike*/
 insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Nike Air Force 1 07 WB Flax', '19/09/10', 169000 ,'Nike_Air_Force_1_07_WB_Flax.png', 1);
 insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Nike Dunk Low Retro Black', '21/01/14', 129000, 'Nike_Dunk_Low_Retro_Black.png', 1);
 insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Nike Dunk Low Light Smoke Grey', '22/05/07', 129000, 'Nike_Dunk_Low_Light_Smoke_Grey.png', 1);
 insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Nike Dunk Low Retro Gym Red', '22/09/21', 129000, 'Nike_Dunk_Low_Retro_Gym_Red.png', 1);
 insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Nike x J.Crew Killshot 2 Sail Midnight Navy', '17/02/26', 109000, 'Nike_x_J.Crew_Killshot_2_Sail_Midnight_Navy.png', 1);
-
-insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Jordan 1 Mid Light Smoke Grey', '20/01/11', 139000 ,'Jordan_1_Mid_Light_Smoke_Grey.png', 1);
 insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Jordan 1 x Travis Scott Retro Low OG SP Sail and Ridgerock', '22/07/21', 189000 ,'Jordan_1_x_Travis_Scott_Retro_Low_OG_SP_Sail_and_Ridgerock.png', 1);
 insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Jordan 1 Retro Low OG Black and Dark Powder Blue', '22/07/27', 159000 ,'Jordan_1_Retro_Low_OG_Black_and_Dark_Powder_Blue.png', 1);
 insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Jordan 1 Retro High OG Black Mocha', '20/11/13', 199000 ,'Jordan_1_Retro_High_OG_Black_Mocha.png', 1);
 insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Jordan 1 Mid Light Smoke Grey Anthracite', '22/01/24', 149000 ,'Jordan_1_Mid_Light_Smoke_Grey_Anthracite.png', 1);
+/*adidas*/
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Samba Vegan White Black', '21/07/27', 128700 ,'Adidas Samba Vegan White Black.png', 2);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Superstar Core Black White', '19/12/23', 119000 ,'Adidas Superstar Core Black White.png', 2);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Samba Vegan White Black', '21/07/27', 128700 ,'Adidas Samba Vegan White Black.png', 2);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Samba Vegan White Black', '21/07/27', 128700 ,'Adidas Samba Vegan White Black.png', 2);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Samba Vegan White Black', '21/07/27', 128700 ,'Adidas Samba Vegan White Black.png', 2);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Samba Vegan White Black', '21/07/27', 128700 ,'Adidas Samba Vegan White Black.png', 2);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Samba Vegan White Black', '21/07/27', 128700 ,'Adidas Samba Vegan White Black.png', 2);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Samba Vegan White Black', '21/07/27', 128700 ,'Adidas Samba Vegan White Black.png', 2);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Samba Vegan White Black', '21/07/27', 128700 ,'Adidas Samba Vegan White Black.png', 2);
+/*Vans*/
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Nike Air Force 1 07 WB Flax', '19/09/10', 169000 ,'Nike_Air_Force_1_07_WB_Flax.png', 1);
+/*New Balance*/
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Nike Air Force 1 07 WB Flax', '19/09/10', 169000 ,'Nike_Air_Force_1_07_WB_Flax.png', 1);
 /**************제품사이즈**************/
 insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 1);
 insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 1);
@@ -289,15 +302,5 @@ insert into notice values(NOTICE_N_NO_SEQ.nextval, '야미5', '까드득까드�
 insert into notice values(NOTICE_N_NO_SEQ.nextval, '야미6', '빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득6', sysdate, 0, 1);
 
 /*********review**********/
-insert into review values(REVIEW_R_NO_SEQ.nextval, '제목1', '내용1', sysdate, '5', 'seongmin', '1');
-insert into review values(REVIEW_R_NO_SEQ.nextval, '제목2', '내용2', sysdate, '5', 'seongmin', '2');
-insert into review values(REVIEW_R_NO_SEQ.nextval, '제목3', '내용3', sysdate, '1', 'seongmin', '3');
-insert into review values(REVIEW_R_NO_SEQ.nextval, '제목4', '내용4', sysdate, '5', 'seongmin', '4');
-insert into review values(REVIEW_R_NO_SEQ.nextval, '제목5', '내용5', sysdate, '5', 'seongmin', '5');
-insert into review values(REVIEW_R_NO_SEQ.nextval, '제목6', '내용6', sysdate, '4', 'seongmin', '6');
-insert into review values(REVIEW_R_NO_SEQ.nextval, '제목7', '내용7', sysdate, '3', 'seongmin', '7');
-insert into review values(REVIEW_R_NO_SEQ.nextval, '제목8', '내용8', sysdate, '5', 'seongmin', '8');
-insert into review values(REVIEW_R_NO_SEQ.nextval, '제목9', '내용9', sysdate, '4', 'seongmin', '9');
-insert into review values(REVIEW_R_NO_SEQ.nextval, '제목10', '내용10', sysdate, '5', 'seongmin', '10');
 
 commit;

@@ -130,49 +130,14 @@ $(function(){
                                     <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__brand">
+                                              <input type="hidden" id="br_no" value="${product.br_no}">
                                                 <ul>
                                                     <li><a href="shop">Product All</a></li>
-                                                    <li><a href="#">Nike</a></li>
-                                                    <li><a href="#">adidas</a></li>
-                                                    <li><a href="#">Vans</a></li>
-                                                    <li><a href="#">New Balance</a></li>
+                                                    <li><a href="shop?br_no=${product.br_no}">Nike</a></li>
+                                                    <li><a href="shop?br_no=${product.br_no}">adidas</a></li>
+                                                    <li><a href="shop?br_no=${product.br_no}">Vans</a></li>
+                                                    <li><a href="shop?br_no=${product.br_no}">New Balance</a></li>
                                                 </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="card">
-                                    <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseFour">Size</a>
-                                    </div>
-                                    <div id="collapseFour" class="collapse show" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <div class="shop__sidebar__size">
-                                                <label for="xs">xs
-                                                    <input type="radio" id="xs">
-                                                </label>
-                                                <label for="sm">s
-                                                    <input type="radio" id="sm">
-                                                </label>
-                                                <label for="md">m
-                                                    <input type="radio" id="md">
-                                                </label>
-                                                <label for="xl">xl
-                                                    <input type="radio" id="xl">
-                                                </label>
-                                                <label for="2xl">2xl
-                                                    <input type="radio" id="2xl">
-                                                </label>
-                                                <label for="xxl">xxl
-                                                    <input type="radio" id="xxl">
-                                                </label>
-                                                <label for="3xl">3xl
-                                                    <input type="radio" id="3xl">
-                                                </label>
-                                                <label for="4xl">4xl
-                                                    <input type="radio" id="4xl">
-                                                </label>
                                             </div>
                                         </div>
                                     </div>
@@ -213,7 +178,7 @@ $(function(){
                                 <input type="hidden" id="p_no" value="${product.p_no}">
                                 </div>
                                 <div class="product__item__text">
-                                	<h6>Nike</h6>
+                                	<h6>${brandsList.br_name}</h6>
                                     <a href="shop-details?p_no=${product.p_no}" class="add-cart">제품 상세보기</a>
                                     <h5>${product.p_name}</h5>
                                     <h6>${productList.priceList[status.index].min_price}</h6>

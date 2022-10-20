@@ -41,7 +41,27 @@ public class ProductController {
 	private ProductSizeService productSizeService;
 	@Autowired
 	private MemberService memberService;
-
+	
+	
+	@RequestMapping("brands_list_rest")
+    @ResponseBody
+	public Map<String, Object> brands_list_rest(@RequestParam(required = false)int br_no) {
+		Map<String, Object> resultMap= new HashMap();
+		int code=1;
+ 		String url="";
+ 		String msg="";
+ 		List<Product> brandsList = null;
+ 		brandsList = productService.selectBrands(br_no);
+ 		System.out.println(brandsList);
+ 		resultMap.put("code",code);
+	    resultMap.put("url",url);
+	    resultMap.put("msg",msg);
+	    resultMap.put("data",brandsList);
+	    
+	    return resultMap;
+	}
+	
+	
 	@RequestMapping("product_list_rest")
     @ResponseBody
     public Map<String, Object> product_list_rest(@RequestParam(required = false, defaultValue = "1") Integer pageno) throws Exception {
@@ -50,27 +70,32 @@ public class ProductController {
  		String url="";
  		String msg="";
  		ProductPageMakerDto<Product> productList = null;
+ 		//List<Product> brandsList = null;
+ 		//brandsList = productService.selectBrands(br_no);
  		productList = productService.selectAll_p(pageno);
  		System.out.println("a : "+productList);
- 		
+ 		//System.out.println("b : "+brandsList);
  		resultMap.put("code",code);
 	    resultMap.put("url",url);
 	    resultMap.put("msg",msg);
 	    resultMap.put("data",productList);
+	   //resultMap.put("data1",brandsList);
 	    
 	    return resultMap;
     }
 	
 	@RequestMapping("shop")
-	public String product_list(@RequestParam(required = false, defaultValue = "1") Integer pageno, Model model) {
+	public String product_list(@RequestParam(required = false, defaultValue = "1") Integer pageno, Integer br_no, Model model) {
 		//String forwardPath = "";
 		ProductPageMakerDto<Product> productList = productService.selectAll_p(pageno);
 		int productCount = productService.product_countAll();
 		System.out.println(productList);
+		//System.out.println(brandList);
 		//Map price = productService.selectAllMinPrice();
 		model.addAttribute("productList", productList);
 		model.addAttribute("pageno", pageno);
 		model.addAttribute("productCount", productCount);
+		//model.addAttribute("brandList", brandList);
 		//model.addAttribute("price", price);
 		//System.out.println(productList.get(1).getP_no());
 		//System.out.println(price.get(productList.get(1).getP_no()));
@@ -87,7 +112,7 @@ public class ProductController {
 		Map buymin = productService.selectBuyMinPriceByNo(p_no);
 		Map sellmin = productService.selectSellMinPriceByNo(p_no);
 		if(String.valueOf(buymin.get("min_price")).equals("null")){
-			buymin.put("min_price", "판매입찰");
+			buymin.put("min_price", "판매입찰");     
 		}else {
 			buymin.put("min_price", "즉시판매가 : " + String.valueOf(buymin.get("min_price"))+" 원");
 		}
@@ -175,7 +200,17 @@ public class ProductController {
 		return forwardPath;
 	}
 	
-
+	//@RequestMapping(value="mapage" )
+	public String purchase_sell_list(HttpServletRequest request,Model model) throws Exception {
+		String sUserId=(String)request.getSession().getAttribute("sUserId");
+		request.getSession().setAttribute("sUserId", sUserId);
+		Member member = memberService.selectById(sUserId);
+		model.addAttribute("member", member);
+		System.out.println(member);
+		List<ProductDetail> productDetail=  productDetailService.selectById(sUserId);
+		model.addAttribute("ProductDetail", productDetail);
+		return "mypage";
+	}
 }
 
 

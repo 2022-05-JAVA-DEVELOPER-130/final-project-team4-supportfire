@@ -53,6 +53,9 @@ public interface ProductMapper {
 	
 	//제품 전체 출력(페이징)
 	List<Product> selectAll_p(int pageStart, int pageEnd);
+	
+	@Select("select p.p_no, br.br_no, br.br_name from product p join brands br on p.br_no = br.br_no where p.br_no = #{br_no}")
+	List<Product> selectBrands(int br_no);
 	/*
 	@Select("select * from product where br_no")
 	int brand_No();

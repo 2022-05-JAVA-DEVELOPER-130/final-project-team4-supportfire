@@ -83,6 +83,10 @@ public class ProductDaoImp implements ProductDao{
 	public int product_countAll() {
 		return productMapper.product_countAll();
 	}
+	@Override
+	public List<Product> selectBrands(int br_no) {
+		return productMapper.selectBrands(br_no);
+	}
 	
 	
 }

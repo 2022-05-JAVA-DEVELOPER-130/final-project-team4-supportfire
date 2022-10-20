@@ -73,6 +73,11 @@ public class ProductServiceImp implements ProductService{
 		return productDao.product_countAll();
 	}
 	@Override
+	public List<Product> selectBrands(int br_no) {
+		//System.out.println(productDao.selectBrands(br_no));
+		return productDao.selectBrands(br_no);
+	}
+	@Override
 	public ProductPageMakerDto<Product> selectAll_p(int currentPage) {
 		int totProductCount = product_countAll();
 		List<Product> listProduct = new ArrayList<Product>();
@@ -97,4 +102,5 @@ public class ProductServiceImp implements ProductService{
 		}
 		return pageMakerProductList;
 	}
+	
 }

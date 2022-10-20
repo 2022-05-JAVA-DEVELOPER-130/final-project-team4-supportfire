@@ -305,7 +305,9 @@ CREATE TABLE notice(
 		n_no                          		NUMBER(10)		 NULL ,
 		n_title                       		VARCHAR2(100)		 NULL ,
 		n_content                     		VARCHAR2(1000)		 NULL ,
-		n_date                        		DATE		 NULL 
+		n_date                        		DATE		 NULL ,
+        n_count                  		NUMBER(10)		 NULL ,
+		n_fix                    		NUMBER(10)		 DEFAULT 0		 NULL 
 );
 
 DROP SEQUENCE notice_n_no_SEQ;
