@@ -558,10 +558,6 @@ insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 36);
 insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 36);
 insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 36);
 
-
-
-
-
 /************입찰상태************/
 insert into bidStatus values(1, '대기중');
 insert into bidStatus values(2, '거래중');
@@ -580,6 +576,8 @@ insert into member values('enbi', '1234', '임은비', '01012345678', '970902', 
 insert into member values('joo2', '1234', '이주희', '01023456789', '940601', 'bongkyoun@gamil.com', '남', 1000, '서울시 서초구');
 insert into member values('sojin', '1234', '안소진', '01034567890', '971002', 'jiwon@gamil.com', '여', 1000, '서울시 종로구');
 insert into member values('seoyoung', '1234', '최서영', '01045678901', '900602', 'hyun@gamil.com', '남', 1000, '서울시 중구');
+insert into member values('kakarot', '1234', '카카로트', '01045678901', '900602', 'hyun@gamil.com', '남', 1000, '서울시 중구');
+insert into member values('naruto', '1234', '나루토', '01045678901', '900602', 'hyun@gamil.com', '남', 1000, '서울시 중구');
     
 /***********배달주소*************/
 
@@ -659,27 +657,19 @@ insert into payment values(1, '지원준비', '01034567890', '인천', '안전�
 insert into payment values(2, '우치하', '01087654321', '나뭇잎 마을', '안전한 배송 부탁 드립니다.', 2, 3);
 
 /********************REQNA*****************/
-insert into reqna values(reqna_rq_no_seq.nextval, '답변답변답변답변답변1', sysdate);
-insert into reqna values(reqna_rq_no_seq.nextval, '답변답변답변답변답변2', sysdate);
-insert into reqna values(reqna_rq_no_seq.nextval, '답변답변답변답변답변3', sysdate);
-insert into reqna values(reqna_rq_no_seq.nextval, '답변답변답변답변답변4', sysdate);
-insert into reqna values(reqna_rq_no_seq.nextval, '답변답변답변답변답변5', sysdate);
-insert into reqna values(reqna_rq_no_seq.nextval, '답변답변답변답변답변6', sysdate);
+insert into reqna values(reqna_rq_no_seq.nextval, '안녕하세요 support_fire 1:1 문의 담담자 CS 정성윤입니다. 현재 고객님의 주문 단계는 입금전 단계 입니다 상품은 입금이된 후 출고가 진행되오니 결제 후 사이트를 통하여 배송상황 확인 부탁드립니다.', sysdate);
+insert into reqna values(reqna_rq_no_seq.nextval, '안녕하세요 support_fire 1:1 문의 담담자 CS 임현정입니다. 아쉽게도 나이키 측에서 재고가 많이 풀리지 않아 세계적으로 매물이 부족한 상황입니다.', sysdate);
+insert into reqna values(reqna_rq_no_seq.nextval, '안녕하세요 support_fire 1:1 문의 담담자 CS 박현입니다. 죄송하지만 코로나 사태로 인하여 물류량 증가로 전체적인 배송이 지연되는 상황입니다 고객님의 너그러운 마음으로 이해 부탁드립니다.', sysdate);
 
 /*********QNA***********/
-insert into qna values(QNA_Q_NO_SEQ.nextval, '제목1', '내용내용내용내용내용내용내용내용내용내용1', sysdate, 'seongmin', 1);
-insert into qna values(QNA_Q_NO_SEQ.nextval, '제목2', '내용내용내용내용내용내용내용내용내용내용2', sysdate, 'seongmin', 2);
-insert into qna values(QNA_Q_NO_SEQ.nextval, '제목3', '내용내용내용내용내용내용내용내용내용내용3', sysdate, 'seongmin', 3);
-insert into qna values(QNA_Q_NO_SEQ.nextval, '제목4', '내용내용내용내용내용내용내용내용내용내용4', sysdate, 'seongmin', 4);
-insert into qna values(QNA_Q_NO_SEQ.nextval, '제목5', '내용내용내용내용내용내용내용내용내용내용5', sysdate, 'seongmin', 5);
-insert into qna values(QNA_Q_NO_SEQ.nextval, '제목6', '내용내용내용내용내용내용내용내용내용내용6', sysdate, 'seongmin', 6);
-insert into qna values(QNA_Q_NO_SEQ.nextval, '제목7', '내용내용내용내용내용내용내용내용내용내용7', sysdate, 'seongmin', null);
-insert into qna values(QNA_Q_NO_SEQ.nextval, '제목8', '내용내용내용내용내용내용내용내용내용내용8', sysdate, 'seongmin', null);
-insert into qna values(QNA_Q_NO_SEQ.nextval, '제목8', '내용내용내용내용내용내용내용내용내용내용8', sysdate, 'seongmin', null);
-insert into qna values(QNA_Q_NO_SEQ.nextval, '제목8', '내용내용내용내용내용내용내용내용내용내용8', sysdate, 'seongmin', null);
-insert into qna values(QNA_Q_NO_SEQ.nextval, '제목8', '내용내용내용내용내용내용내용내용내용내용8', sysdate, 'seongmin', null);
-
-
+insert into qna values(QNA_Q_NO_SEQ.nextval, '상품 하자', '발견 곤란', sysdate, 'sojin', null);
+insert into qna values(QNA_Q_NO_SEQ.nextval, '박스가 심하게 훼손되서 왔읍니다', '왜 이럴까요?', sysdate, 'seoyoung', null);
+insert into qna values(QNA_Q_NO_SEQ.nextval, '배송지연 실화인가요?', '감동실화인가요?', sysdate, 'seongmin', 3);
+insert into qna values(QNA_Q_NO_SEQ.nextval, '상품이 출발했는데 배송지를 변경하고 싶어요', '가능한가요?', sysdate, 'jiwon', null);
+insert into qna values(QNA_Q_NO_SEQ.nextval, '상품하자 접수합니다', '검수를 제대로 안하시는건지 곤란하네요^_ㅠ', sysdate, 'joo2', null);
+insert into qna values(QNA_Q_NO_SEQ.nextval, '가볍고 뛰어다니기 좋은 신발 있을까요?', '직업상 뛰어다닐 일이 많아 추천 부탁드립니다.', sysdate, 'naruto', null);
+insert into qna values(QNA_Q_NO_SEQ.nextval, '나이키 x 드래곤볼 콜라보 제품은 매물이 없나요?', '제가 드래곤볼을 많이 좋아합니다', sysdate, 'kakarot', 2);
+insert into qna values(QNA_Q_NO_SEQ.nextval, '주문한지 15일째인데 상품이 도착하지 않고있습니다.', '맨발로 다니라는 소리인가요?', sysdate, 'enbi', 1);
 
 /**********notice***********/
 insert into notice values(NOTICE_N_NO_SEQ.nextval, '야미1', '까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득1', sysdate, 0, 0);
