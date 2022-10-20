@@ -26,6 +26,8 @@ public interface ProductDetailService {
 	//회원의 판매,구매찾기
 	List<ProductDetail> selectByIdAndBtNo(String m_id, int bt_no);
 	
+	List<ProductDetail> selectByIdAndBtNoAll(String m_id, int bt_no);
+	
 	//전체출력
 	List<ProductDetail> selectAll();
 	

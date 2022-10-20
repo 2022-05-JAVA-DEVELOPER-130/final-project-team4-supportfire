@@ -151,6 +151,10 @@ function purchase(productDetail, b_name){
 				                                            <h5>${b_name}</h5>
 				                                        </div>
 				                                    </td>
+				                                     <td class="product__cart__item">
+				                                    	 <div class="product__cart__item__text">
+				                                            <img src="img/delete.png" style="width=20px; height: 20px; cursor:pointer;" class="delete_pd" value="${productDetail.pd_no}">
+				                                        </div>
 				                                </tr>
 	`;
 	
@@ -177,6 +181,7 @@ function purchase_form(){
 				                                    <th>신청일</th>
 				                                    <th>종료일</th>
 				                                    <th>상태</th>
+				                                    <th>비고<th>
 				                                </tr>
 				                            </thead>
 				                            
@@ -214,6 +219,7 @@ function purchase_form(){
 				                                            <h5>입찰중</h5>
 				                                        </div>
 				                                    </td>
+				                                   
 				                                </tr>
 				                                
                                  
@@ -257,6 +263,7 @@ function sell_form(){
 				                                    <th>신청일</th>
 				                                    <th>종료일</th>
 				                                    <th>상태</th>
+				                                    <th>비고<th>
 				                                </tr>
 				                            </thead>
 				                            

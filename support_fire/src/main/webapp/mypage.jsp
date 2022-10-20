@@ -284,7 +284,7 @@ $(document).on('click', '#ppp', function(e){
 	
 
 	 $.ajax({
-		    url:'mypage_form',
+		    url:'List_p_s',
 		    method:'POST',
 		    success:function(jsonResult){
 		    	$('#fff').html(purchase_form());
@@ -303,7 +303,7 @@ $(document).on('click', '#sss', function(e){
 	
 
 	 $.ajax({
-		    url:'mypage_form',
+		    url:'List_p_s',
 		    method:'POST',
 		    success:function(jsonResult){
 		    	$('#fff').html(sell_form());
@@ -315,6 +315,34 @@ $(document).on('click', '#sss', function(e){
 		 });
 	 e.preventDefault();
 	});
+
+$(document).on('click', '.delete_pd', function(e){
+	if(confirm('정말로 삭제하시겠습니까?')){
+	var no = $(this).attr('value');
+		$.ajax({
+		    url:'pd_delete',
+		    data:'pd_no='+no,
+		    method:'POST',
+		    success:function(jsonResult){
+		    	if(jsonResult.code==1){
+		    		alert(jsonResult.msg);
+		    	}else if(jsonResult.code == 2){
+		    		alert(jsonResult.msg);
+		    	}else if(jsonResult.code == 3){
+		    		alert(jsonResult.msg);
+		    	}else{
+		    		alert('비정상적 접근입니다.');
+		    	}
+		    	location.reload();
+			}
+		});
+		
+	}else{
+		
+	}
+	});
+
+
 
 
 
@@ -457,6 +485,8 @@ $(document).on('click', '#sss', function(e){
 				                                    <th>신청일</th>
 				                                    <th>종료일</th>
 				                                    <th>상태</th>
+				                                    <th>비고<th>
+				                                    
 				                                </tr>
 				                            </thead>
 				                            <tbody id="purchase">
@@ -523,6 +553,7 @@ $(document).on('click', '#sss', function(e){
 				                                    <th>신청일</th>
 				                                    <th>종료일</th>
 				                                    <th>상태</th>
+				                                    <th>비고<th>
 				                                </tr>
 				                            </thead>
 				                            <tbody id="sell">

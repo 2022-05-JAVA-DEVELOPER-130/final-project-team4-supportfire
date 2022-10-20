@@ -39,12 +39,16 @@ public interface ProductDetailMapper {
 		@ResultMap("productDetail")
 		List<ProductDetail> selectById(String m_id);
 		
-		//회원의 판매,구매찾기
+		//회원의 판매,구매찾기 3개제한
 		@Select("select * from (select * from productDetail pd left outer join productsize ps on pd.ps_no = ps.ps_no left outer join product p on ps.p_no = p.p_no where pd.m_id=#{m_id} and pd.bt_no=#{bt_no} order by pd.pd_start desc) where ROWNUM <= 3")
 		@ResultMap("productDetail")
 		List<ProductDetail> selectByIdAndBtNo(String m_id, int bt_no);
 		
 		
+		//회원의 판매,구매찾기
+		@Select("select * from (select * from productDetail pd left outer join productsize ps on pd.ps_no = ps.ps_no left outer join product p on ps.p_no = p.p_no where pd.m_id=#{m_id} and pd.bt_no=#{bt_no} order by pd.pd_start desc)")
+		@ResultMap("productDetail")
+		List<ProductDetail> selectByIdAndBtNoAll(String m_id, int bt_no);
 		
 		
 		//전체출력

@@ -124,28 +124,49 @@ $(document).on('click','#slide_p',function(e){
 });
 	$(document).on('click','.reWrite',function(e){
 		var val1 = $(this).val();
-		console.log(val1);
-		$('#reqna_write_form').html(reqna_form(val1));
+		var rwf = '.reqna_write_form' + val1;
+		$('.reqna_write_form' + val1).html(reqna_form(val1));
 		e.preventDefault();
 	});
+	
 	$(document).on('click','#back',function(e){
-		$('#reqna_write_form').html(reqna_back());
+		$('.reqna_write_form').html(reqna_back());
 		e.preventDefault();
 	});
-	console.log()
-	$(document).on('click','#reWrite_action',function(e){
+	
+	$(document).on('click','.reWrite_action',function(e){
 		var val2 = $(this).val();
 		console.log(val2);
 		$.ajax({
 			url:'reqna_write_action',
 			method:'POST',
-			data:'rq_content=' + $('#rq_content').val() + '&q_no=' + val2,
+			data:'rq_content=' + $('#rq_content'+val2).val() + '&q_no=' + val2,
 			success:function(jsonResult){
 				location.href="qna";
 			}
 		});
 		e.preventDefault();
 	});
+	
+	$(document).on('click','.qnaDelete',function(e){
+		var val3 = $(this).val();
+		if(confirm('정말로 삭제하시겠습니까?')){
+			$.ajax({
+				url:'qna_delete_action',
+				method:'POST',
+				data:'&q_no=' + val3,
+				success:function(jsonResult){
+					location.href="qna";
+				}
+			});
+		}else{
+			
+		}
+		
+		
+		e.preventDefault();
+	});
+	
 	
 	
 });
@@ -328,8 +349,11 @@ table{
 		                                      <li><br>
 		                                      <li>${qna.q_content}
 		                                      <br>
-		                                      <br><div id="reqna_write_form">
-		                                      <div style='width:100px;float: right;'> <button type='button' class='btn btn-primary reWrite' value="${qna.q_no}">답변하기</button></div></div>
+		                                      <br><div class="reqna_write_form${qna.q_no}">
+		                                      <div style='width:100px;float: right;'> <button type='button' class='btn btn-primary reWrite' value="${qna.q_no}">답변하기</button></div>
+		                                      <c:if test="${sUserId == qna.m_id}">
+		                                       <div style='width:100px;float: right;'><button type='button' class='btn btn-primary qnaDelete' value="${qna.q_no}">삭제하기</button></div></c:if></div>
+		                                      
     		 									</ul>
 	                                        </th>
 	                                        <th>${qna.q_date.substring(0,10)}</th><th>${qna.m_id}</th>

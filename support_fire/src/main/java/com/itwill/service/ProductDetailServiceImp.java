@@ -63,6 +63,11 @@ public class ProductDetailServiceImp implements ProductDetailService{
 	public List<ProductDetail> selectSellListByNo(int p_no) {
 		return productDetailDao.selectSellListByNo(p_no);
 	}
+
+	@Override
+	public List<ProductDetail> selectByIdAndBtNoAll(String m_id, int bt_no) {
+		return productDetailDao.selectByIdAndBtNoAll(m_id, bt_no);
+	}
 	
 	
 }

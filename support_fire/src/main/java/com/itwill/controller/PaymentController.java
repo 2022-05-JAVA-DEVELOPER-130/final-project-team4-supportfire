@@ -163,9 +163,6 @@ public class PaymentController {
 		String msg="";
 		String address = sample4_roadAddress;
 		
-		System.out.println(m_id);
-		System.out.println(m_phone);
-		System.out.println(address);
 		
 		resultMap.put("code", code);
 		resultMap.put("url", url);

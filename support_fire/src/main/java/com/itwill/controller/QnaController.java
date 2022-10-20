@@ -47,11 +47,8 @@ public class QnaController {
     @RequestMapping(value="reqna_write_action", method=RequestMethod.POST)
     @ResponseBody
     public int reqna_write_action(String rq_content, int q_no) {
-    	System.out.println(rq_content);
-    	System.out.println(q_no);
     	ReQna reQna = new ReQna(0, rq_content, "");
     	int result = reQnaService.insert(reQna);
-    	System.out.println(result);
     	reQna.setRq_no(result);
     	Qna qna = new Qna(q_no, null, null, null, null, reQna);
     	qnaService.qna_reply_update(qna);
@@ -67,7 +64,7 @@ public class QnaController {
     	return result;
     }
     
-    @RequestMapping(value="boardDelete", method=RequestMethod.POST)
+    @RequestMapping(value="qna_delete_action", method=RequestMethod.POST)
     @ResponseBody
     public int boardDelete(int q_no) {
     	int result = qnaService.qna_delete(q_no);
@@ -78,7 +75,6 @@ public class QnaController {
     @RequestMapping(value="boardList", method=RequestMethod.GET)
     @ResponseBody
     public List<Qna> boardList(){
-    	System.out.println(qnaService.selectAll());
         return qnaService.selectAll();
     }
     
@@ -116,18 +112,21 @@ public class QnaController {
     
     @RequestMapping("qna_list_rest")
     @ResponseBody
-    public Map<String, Object> qna_list(@RequestParam(required = false, defaultValue = "1") Integer pageno) {
+    public Map<String, Object> qna_list(@RequestParam(required = false, defaultValue = "1") Integer pageno, HttpSession session) {
     	Map<String, Object> resultMap= new HashMap();
     	int code=1;
  		String url="";
  		String msg="";
  		NoticePageMakerDto<Qna> qnaList = null;
  		qnaList = qnaService.selectAll_p(pageno);
+ 		String sUserId = (String)session.getAttribute("sUserId");
+ 		
  		
  		resultMap.put("code",code);
 	    resultMap.put("url",url);
 	    resultMap.put("msg",msg);
 	    resultMap.put("data",qnaList);
+	    resultMap.put("sUserId",sUserId);
 	    
 	    return resultMap;
     }

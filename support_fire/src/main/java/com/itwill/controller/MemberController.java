@@ -126,8 +126,6 @@ public class MemberController {
 	
 	@PostMapping("member_write_action")
 	public Map member_write_action(@ModelAttribute Member member, String a_zipcode, String a_detail) throws Exception{
-		System.out.println(a_zipcode);
-		System.out.println(a_detail);
 		Map resultMap = new HashMap();
 		int code=0;
 		String url="";
@@ -149,7 +147,6 @@ public class MemberController {
 			code=2;
 			msg="존재하는 아이디입니다.";
 		}
-		System.out.println(msg);
 		resultMap.put("code",code);
 	    resultMap.put("url",url);
 	    resultMap.put("msg",msg);
@@ -192,7 +189,6 @@ public class MemberController {
 		String msg="";
 		Member data = null;
 		int updateMemberRowCount = memberService.updateMember(member);
-		System.out.println(member);
 		if(updateMemberRowCount == 1) {
 			code=1;
 			data = member;
@@ -270,8 +266,6 @@ public class MemberController {
 		int code=0;
 		String url="";
 		String msg="";
-		System.out.println(m_phone);
-		System.out.println(m_id);
 		String data = memberService.selectMemberByPhone(m_phone);
 		Member member = memberService.selectById(m_id);
 		if(data == null) {
@@ -329,6 +323,81 @@ public class MemberController {
     return resultMap;
 	}
 
+	@RequestMapping("pd_delete")
+	public Map pd_delete(int pd_no) {
+		Map resultMap = new HashMap();
+		int code=0;
+		String url="";
+		String msg="";
+		Member data = null;
+		
+		ProductDetail productDetail = productDetailService.selectByNo(pd_no);
+		if(productDetail.getB_no() == 1) {
+			code=1;
+			productDetailService.delete(pd_no);
+			msg="삭제되었습니다.";
+		}else if(productDetail.getB_no() == 2){
+			code=2;
+			msg="거래중인 상품은 취소할 수 없습니다.";
+		}else if(productDetail.getB_no() == 3){
+			code=3;
+			msg="완료된 상품은 취소할 수 없습니다.";
+		}
+		
+		
+		resultMap.put("code",code);
+	    resultMap.put("url",url);
+	    resultMap.put("msg",msg);
+	    resultMap.put("data",data);
+	    
+    return resultMap;
+	}
+	
+	@RequestMapping("List_p_s")
+	public Map List_p_s(HttpSession session) throws Exception{
+		Map resultMap = new HashMap();
+		int code=0;
+		String url="";
+		String msg="";
+		String sUserId = (String)session.getAttribute("sUserId");
+		List<String> b_name1 = new ArrayList<String>();
+		List<String> b_name2 = new ArrayList<String>();
+		Member member = memberService.selectById(sUserId);
+		//구매기록
+		List<ProductDetail> productDetail = productDetailService.selectByIdAndBtNoAll(sUserId, 1);
+		//판매기록
+		List<ProductDetail> product_s = productDetailService.selectByIdAndBtNoAll(sUserId, 2);
+		
+		for (ProductDetail product : productDetail) {
+			if(product.getB_no() == 1) {
+				b_name1.add("입찰중");
+			}else if(product.getB_no() == 2) {
+				b_name1.add("거래중");
+			}else if(product.getB_no() == 3) {
+				b_name1.add("완료");
+			}
+		}
+		for (ProductDetail product : product_s) {
+			if(product.getB_no() == 1) {
+				b_name2.add("입찰중");
+			}else if(product.getB_no() == 2) {
+				b_name2.add("거래중");
+			}else if(product.getB_no() == 3) {
+				b_name2.add("완료");
+			}
+		}
+		
+		
+		resultMap.put("code",code);
+	    resultMap.put("url",url);
+	    resultMap.put("msg",msg);
+	    resultMap.put("p",productDetail);
+	    resultMap.put("s",product_s);
+	    resultMap.put("b_p",b_name1);
+	    resultMap.put("b_s",b_name2);
+	    
+    return resultMap;
+	}
 	
 	
 	

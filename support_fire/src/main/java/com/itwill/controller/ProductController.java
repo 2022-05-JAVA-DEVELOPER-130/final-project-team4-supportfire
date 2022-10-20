@@ -139,7 +139,6 @@ public class ProductController {
 		//String forwardPath = "";
 		ProductPageMakerDto<Product> productList = productService.selectAll_p(pageno);
 		int productCount = productService.product_countAll();
-		System.out.println(productList);
 		List<Brands> BList = brandsService.selectAll();
 		List<Product> ListP = productList.getItemList();
 		List<String> brandList = new ArrayList<String>();
@@ -249,10 +248,8 @@ public class ProductController {
 			ProductDetail insertPd= new ProductDetail(0,product.getP_price(),null,null,new ProductSize(ps_no,s_size, product),sUserId,bt_no,1);
 			//int insertProductDetail = productDetailService.insert(insertPd);
 			model.addAttribute("product", product);
-			System.out.println(product);
 			
 			model.addAttribute("productDetail", insertPd);
-			System.out.println(insertPd);
 			forwardPath="sell";
 		}else {
 			Product product = productService.selectByNo(p_no);
@@ -261,10 +258,8 @@ public class ProductController {
 			ProductDetail insertPd= new ProductDetail(0,product.getP_price(),null,null,new ProductSize(ps_no,s_size, product),sUserId,bt_no,1);
 			//int insertProductDetail = productDetailService.insert(insertPd);
 			model.addAttribute("product", product);
-			System.out.println(product);
 			
 			model.addAttribute("productDetail", insertPd);
-			System.out.println(insertPd);
 			forwardPath="payment";
 		}
 		return forwardPath;
@@ -276,7 +271,6 @@ public class ProductController {
 		request.getSession().setAttribute("sUserId", sUserId);
 		Member member = memberService.selectById(sUserId);
 		model.addAttribute("member", member);
-		System.out.println(member);
 		List<ProductDetail> productDetail=  productDetailService.selectById(sUserId);
 		model.addAttribute("ProductDetail", productDetail);
 		return "mypage";

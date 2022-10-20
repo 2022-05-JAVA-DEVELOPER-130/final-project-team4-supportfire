@@ -54,8 +54,19 @@ function changeQnaList(pageno){
 		                                      <li><br>
 		                                      <li>${qna.q_content}
 	                                     <br>
-		                                      <br><div id="reqna_write_form">
-		                                      <div style='width:100px;float: right;'> <button type='button' class='btn btn-primary reWrite' value="${qna.q_no}">답변하기</button></div></div>
+		                                      <br><div class="reqna_write_form${qna.q_no}">
+		                                      <div style='width:100px;float: right;'> <button type='button' class='btn btn-primary reWrite' value="${qna.q_no}">답변하기</button></div>`;
+		                                      
+		           if(resultObj.sUserId == qna.m_id){
+		                         htmlBuffer +=  `
+		                                       <div style='width:100px;float: right;'>
+		                                       <button type='button' class='btn btn-primary qnaDelete' value="${qna.q_no}">삭제하기</button>
+		                                       </div>
+		                                       `
+		                                       }else{
+			
+		}
+		                            htmlBuffer += `</div>
     		 									</ul>
 	                                        </th>
 	                                        <th>${qna.q_date.substring(0,10)}</th><th>${qna.m_id}</th>
@@ -172,8 +183,8 @@ function qna_write_form(sUserId){
 
 function reqna_form(val1){
 	return `
-		<input type="text" style="width: 100%; height: 200px;" id="rq_content" value="">
-		<div style='width:100px;float: right; margin-top:15px;'> <button type='button' class='btn btn-primary' id = 'reWrite_action' value="${val1}">답변하기</button> </div>
+		<input type="text" style="width: 100%; height: 200px;" id="rq_content${val1}" value="">
+		<div style='width:100px;float: right; margin-top:15px;'> <button type='button' class='btn btn-primary reWrite_action' value="${val1}">답변하기</button> </div>
 		<div style='width:100px;float: right; margin-top:15px;'><button type='button' class='btn btn-primary' id='back'>취소하기</button></div>
 	`;
 }

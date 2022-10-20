@@ -28,9 +28,9 @@ public class NoticeController {
 	//공지사항 전체조회
 	@RequestMapping("notice_list")
 	public String notice_list(@RequestParam(required = false, defaultValue = "1") Integer pageno,Model model) throws Exception{
-		System.out.println(pageno);
+		//System.out.println(pageno);
 		NoticePageMakerDto<Notice> noticeList = noticeService.selectAll(pageno);
-		System.out.println(noticeList);
+		//System.out.println(noticeList);
 		model.addAttribute("noticeList", noticeList);
 		model.addAttribute("pageno", pageno);
 		return "tables";

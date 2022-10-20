@@ -63,6 +63,11 @@ public class ProductDetailDaoImp  implements ProductDetailDao{
 		productDetailMapper.insertSequence(productDetail);
 		return productDetail.getPd_no();
 	}
+
+	@Override
+	public List<ProductDetail> selectByIdAndBtNoAll(String m_id, int bt_no) {
+		return productDetailMapper.selectByIdAndBtNoAll(m_id, bt_no);
+	}
 	
 	
 	

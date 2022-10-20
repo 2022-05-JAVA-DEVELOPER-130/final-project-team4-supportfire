@@ -163,9 +163,7 @@ public class OrdersRestController {
 		
 		//즉시구매
 		//원래있던 판매자의 pd_no 가져옴
-		System.out.println(pd_no);
 		ProductDetail newProductDetail  = productDetailService.selectByNo(pd_no);
-		System.out.println(newProductDetail);
 		//구매자의 정보 셋팅
 		String sUserId=(String)request.getSession().getAttribute("sUserId");
 		request.getSession().setAttribute("sUserId", sUserId);
@@ -173,18 +171,15 @@ public class OrdersRestController {
 		newProductDetail.setBt_no(1);
 		newProductDetail.setB_no(3);
 		int updateBno= productDetailService.updateByBidStatus(3, pd_no);
-		System.out.println(newProductDetail);
 		//pd에 새로 인서트
 		int insertRowCount=productDetailService.insertSequence(newProductDetail);
 		//새로운오더 즉시구매오더생성
 		
 		Orders purchaseOrders= new Orders(0, null,insertRowCount, pd_no, "배송준비중");
 		int insertOrders=ordersService.insertSequence(purchaseOrders);
-		System.out.println(purchaseOrders);
 		
 		//결제생성
 		Member member=memberservice.selectById(sUserId);
-		System.out.println(member);
 		Payment purchasePayment= new Payment(0, member.getM_name(),member.getM_phone(),member.getM_address(),"",insertOrders,1);
 		int insertpayment=paymentService.insertPayment(purchasePayment);
 		
@@ -210,7 +205,6 @@ public class OrdersRestController {
 		String msg="";
 		String data="";
 		
-		System.out.println(pd_no);
 		ProductDetail newProductDetail  = productDetailService.selectByNo(pd_no);
 		//System.out.println(newProductDetail);
 		
@@ -249,10 +243,6 @@ public class OrdersRestController {
 		String url="";
 		String msg="";
 		ProductDetail data=null;
-		System.out.println("111111111");
-		System.out.println(p_no);
-		System.out.println(price);
-		System.out.println(s_size);
 		
 		
 		//구매자의 정보 셋팅
@@ -263,9 +253,7 @@ public class OrdersRestController {
 		
 		Product product = productService.selectByNo(p_no);
 		int ps_no = productSizeService.selectByPnoSize(p_no, s_size);
-		System.out.println(ps_no);
 		ProductSize productSize=productSizeService.selectByNo(ps_no);
-		System.out.println(productSize);
 		ProductDetail newProductDetail = new ProductDetail(p_no,price, "", "",productSize , sUserId,1 ,1);
 		
 		int insertRowCount=productDetailService.insertSequence(newProductDetail);
