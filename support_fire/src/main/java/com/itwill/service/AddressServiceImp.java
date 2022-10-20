@@ -2,11 +2,14 @@ package com.itwill.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.itwill.dao.AddressDao;
 import com.itwill.dto.Address;
-
+@Service
 public class AddressServiceImp implements AddressService{
-	
+	@Autowired
 	private AddressDao addressDao;
 
 	@Override
@@ -32,5 +35,10 @@ public class AddressServiceImp implements AddressService{
 	@Override
 	public Address selectMainAddr(String m_id) {
 		return addressDao.selectMainAddr(m_id);
+	}
+
+	@Override
+	public Address selectAllByNo(int a_no) {
+		return addressDao.selectAllByNo(a_no);
 	}
 }

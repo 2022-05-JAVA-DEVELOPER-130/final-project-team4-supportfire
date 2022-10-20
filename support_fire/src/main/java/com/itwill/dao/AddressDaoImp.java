@@ -2,11 +2,16 @@ package com.itwill.dao;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
 import com.itwill.dto.Address;
 import com.itwill.mapper.AddressMapper;
 
+@Repository
 public class AddressDaoImp implements AddressDao{
 	
+	@Autowired
 	private AddressMapper addressMapper;
 	
 	@Override
@@ -32,6 +37,11 @@ public class AddressDaoImp implements AddressDao{
 	@Override
 	public Address selectMainAddr(String m_id) {
 		return addressMapper.selectMainAddr(m_id);
+	}
+
+	@Override
+	public Address selectAllByNo(int a_no) {
+		return addressMapper.selectAllByNo(a_no);
 	}
 
 }

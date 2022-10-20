@@ -16,4 +16,6 @@ public interface AddressService {
 	List<Address> selectAllById(String m_id);
 	
 	Address selectMainAddr(String m_id);
+	
+	Address selectAllByNo(int a_no);
 }

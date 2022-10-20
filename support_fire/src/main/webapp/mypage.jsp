@@ -391,8 +391,8 @@ $(document).on('click', '#sss', function(e){
                                         <div class="card-body">
                                             <div class="shop__sidebar__brand">
                                                 <ul>
-                                                    <li><a href="#" id="mypage_info">프로필정보</a></li>
-                                                    <li><a href="#">주소록</a></li>
+                                                    <li><a href="" id="mypage_info">프로필정보</a></li>
+                                                    <li><a href="mypage_address">주소록</a></li>
                                                    
                                                 </ul>
                                             </div>

@@ -19,8 +19,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.itwill.dto.Address;
 import com.itwill.dto.Member;
 import com.itwill.dto.ProductDetail;
+import com.itwill.service.AddressService;
 import com.itwill.service.MemberService;
 import com.itwill.service.ProductDetailService;
 
@@ -31,6 +33,8 @@ public class MemberController {
 	private MemberService memberService;
 	@Autowired
 	private ProductDetailService productDetailService;
+	@Autowired
+	private AddressService addressService;
 	
 	@LoginCheck
 	@PostMapping(value = "session_check")
@@ -121,14 +125,18 @@ public class MemberController {
 	}
 	
 	@PostMapping("member_write_action")
-	public Map member_write_action(@ModelAttribute Member member) throws Exception{
+	public Map member_write_action(@ModelAttribute Member member, String a_zipcode, String a_detail) throws Exception{
+		System.out.println(a_zipcode);
+		System.out.println(a_detail);
 		Map resultMap = new HashMap();
 		int code=0;
 		String url="";
 		String msg="";
 		int data=0;
 		try {
+			Address address = new Address(0, member.getM_name(), member.getM_phone(), a_zipcode, member.getM_address(), a_detail, member.getM_id());
 		int insertRowCount = memberService.insertMember(member);
+		addressService.insert(address);
 		if(insertRowCount == 1) {
 			code=1;
 			url="login_form";

@@ -334,11 +334,11 @@ function join_form(){
 										</p>
 										<input type="button" class="asd" onclick="showDelivery()"
 											value="우편번호 찾기" class="input_txt" style="background-color: rgba(0, 0, 0, 0.4); color: white; align-content: center;"> <input type="text"
-											class="asd" id="sample4_postcode">
+											class="asd" name="a_zipcode" id="sample4_postcode">
 								</div>
 									<span>주소*</span> 
 									<input type="text" class="asd" placeholder="도로명주소" class="checkout__input__add" name="m_address" id="sample4_roadAddress">
-									 <input	type="text" class="asd" placeholder="지번주소" id="sample4_jibunAddress">
+									 <input	type="text" class="asd" placeholder="지번주소" name="a_detail" id="sample4_jibunAddress">
 			                      </div>
                                 <div class="col-lg-12">
                                     <button type="submit" class="site-btn" id="write_action_btn">회원가입</button>

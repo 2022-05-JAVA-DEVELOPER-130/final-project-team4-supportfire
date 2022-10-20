@@ -16,4 +16,5 @@ public interface AddressDao {
 	
 	Address selectMainAddr(String m_id);
 	
+	Address selectAllByNo(int a_no);
 }

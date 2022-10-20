@@ -4,6 +4,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="s" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -49,12 +50,11 @@
 <link rel="stylesheet" href="_nuxt/css/dd20fa4.css">
 <link rel="stylesheet" href="_nuxt/css/74432ba.css">
 <link rel="stylesheet" href="_nuxt/css/db982ae.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript"
 	src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
 	<script
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script type="text/javascript"
-	src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <style type="text/css">
 .modal {
 	position: absolute;
@@ -235,12 +235,101 @@ function showDelivery() {
 			}).open();
 
 };
+
+$(function(){
+	
+	$(document).on('click', '#address_btn', function(){
+		$.ajax({
+			url:'address_insert',
+			method:'POST',
+			data:$('#address_form').serialize(),
+			success:function(jsonResult){
+				alert('등록이 완료되었습니다.');
+				$('.modal').removeClass('show');
+				body.style.overflow = 'auto';
+				location.reload();
+				
+			}
+			
+		});
+		
+		
+	});
+	$(document).on('click', '.del', function(e){
+		console.log($(this).attr('value'));
+		if(confirm('정말로 삭제하시겠습니까?')){
+			$.ajax({
+				url:'address_delete',
+				method:'POST',
+				data:'a_no='+$(this).attr('value'),
+				success:function(jsonResult){
+					location.reload();
+				}
+			});
+		}else{
+			
+		}
+	});
+	
+	$(document).on('click', '.btn-open-popup2', function(e){
+			$.ajax({
+				url:'address_update_form',
+				method:'POST',
+				data:'a_no='+$(this).attr('value'),
+				success:function(jsonResult){
+					$('#a_no').attr('value',jsonResult.data.a_no);
+					$('#a_name1').attr('value',jsonResult.data.a_name);
+					$('#a_phone1').attr('value',jsonResult.data.a_phone);
+					$('#a_zipcode1').attr('value',jsonResult.data.a_zipcode);
+					$('#a_streetAddr1').attr('value',jsonResult.data.a_streetAddr);
+					$('#a_detailAddr1').attr('value',jsonResult.data.a_detailAddr);
+				}
+			});
+			
+	});
+	$(document).on('click', '#address_btn_u', function(e){
+		$.ajax({
+			url:'address_update_action',
+			method:'POST',
+			data:$('#address_form1').serialize(),
+			success:function(jsonResult){
+				alert('수정이 완료되었습니다.');
+				location.reload();
+			}
+		});
+	
+	
+});
+	
+	$(document).on('click', '.main', function(e){
+		if(confirm('기본 배송지로 설정하시겠습니까?')){
+		$.ajax({
+			url:'address_main',
+			method:'POST',
+			data:'a_no='+$(this).attr('value'),
+			success:function(jsonResult){
+				alert('변경이 완료되었습니다.');
+				location.reload();
+				}
+		});
+		}else{
+			
+			}
+		
+	
+	
+});
+	
+	
+	
+});
+
 </script>
 </head>
 
 
 <body>
-<div class="modal">
+<div class="modal insert">
 		<div class="modal_body">
 			<section class="">
 
@@ -252,9 +341,9 @@ function showDelivery() {
 					<form id="address_form">
 						<h6 class="checkout__title">주소추가하기</h6>
 
-						<span>이름*</span><input type="text" class="asd" name="da_name"
-							id="da_name" palceholder="수령"> <span>휴대전화*</span><input
-							type="text" class="asd" name="m_phone" id="m_phone">
+						<span>이름*</span><input type="text" class="asd" name="a_name"
+							id="a_name" palceholder="수령"> <span>휴대전화*</span><input
+							type="text" class="asd" name="a_phone" id="a_phone">
 
 						<div class="checkout__input">
 							<p>
@@ -268,6 +357,42 @@ function showDelivery() {
 							<input type="text" class="asd" placeholder="지번주소" id="a_detailAddr" name="a_detailAddr">
 							<button type="button" class="site-btn" style="margin-top: 10px;"
 								id="address_btn">저장</button>
+
+						
+					</form>
+				</div>
+			</section>
+		</div>
+	</div>
+	<!-- 수정폼 -->
+	<div class="modal update">
+		<div class="modal_body">
+			<section class="">
+
+				<!-- Breadcrumb Section End -->
+
+				<!-- Checkout Section Begin -->
+
+				<div class="contact__form">
+					<form id="address_form1">
+						<h6 class="checkout__title">주소수정하기</h6>
+							<input type="hidden" name="a_no" id="a_no" value="">
+						<span>이름*</span><input type="text" class="asd" name="a_name"
+							id="a_name1" palceholder="수령"> <span>휴대전화*</span><input
+							type="text" class="asd" name="a_phone" id="a_phone1">
+
+						<div class="checkout__input">
+							<p>
+								<span>우편번호*</span>
+							</p>
+							<input type="button" class="asd" onclick="showDelivery()" value="우편번호 찾기" class="input_txt" style="background-color: rgba(0, 0, 0, 0.4); color: white; align-content: center;"> 
+							<input type="text" class="asd" placeholder="우편번호" id="a_zipcode1" name="a_zipcode">
+						</div>
+						<span>주소*</span>
+						 <input type="text" class="asd"	placeholder="도로명주소" class="checkout__input__add" name="a_streetAddr" id="a_streetAddr1">
+							<input type="text" class="asd" placeholder="지번주소" id="a_detailAddr1" name="a_detailAddr">
+							<button type="button" class="site-btn" style="margin-top: 10px;"
+								id="address_btn_u">저장</button>
 
 						
 					</form>
@@ -289,72 +414,70 @@ function showDelivery() {
 
 	<!-- Breadcrumb Section Begin -->
 	<section class="breadcrumb-option">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="breadcrumb__text">
-						<h4>마이페이지</h4>
-						<div class="breadcrumb__links">
-							<a href="./index.jsp">Home</a> <span>MyPage</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Breadcrumb Section End -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__text">
+                        <a href="mypage"><h4>마이페이지</h4></a>
+                        <div class="breadcrumb__links">
+                            <a href="main">Home</a>
+                            <span>MyPage</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
 
-	<!-- Shop Section Begin -->
-	<section class="shop spad">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3">
-					<div class="shop__sidebar">
-
-						<div class="shop__sidebar__accordion">
-							<div class="accordion" id="accordionExample">
-								<div class="card">
-									<div class="card-heading">
-										<a data-toggle="collapse" data-target="#collapseOne">쇼핑정보</a>
-									</div>
-									<div id="collapseOne" class="collapse show"
-										data-parent="#accordionExample">
-										<div class="card-body">
-											<div class="shop__sidebar__categories">
-												<ul class="nice-scroll">
-													<li><a href="mypage_purchase_list.jsp">구매내역</a></li>
-													<li><a href="mypage_sell_list.jsp">판매내역</a></li>
-
-
-
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-heading">
-										<a data-toggle="collapse" data-target="#collapseTwo">내정보</a>
-									</div>
-									<div id="collapseTwo" class="collapse show"
-										data-parent="#accordionExample">
-										<div class="card-body">
-											<div class="shop__sidebar__brand">
-												<ul>
-													<li><a href="#">프로필정보</a></li>
-													<li><a href="#">주소록</a></li>
-
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-
-
-							</div>
-						</div>
-					</div>
-				</div>
+    <!-- Shop Section Begin -->
+    <section class="shop spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="shop__sidebar">
+                        
+                        <div class="shop__sidebar__accordion">
+                            <div class="accordion" id="accordionExample">
+                                <div class="card">
+                                    <div class="card-heading">
+                                        <a data-toggle="collapse" data-target="#collapseOne">쇼핑정보</a>
+                                    </div>
+                                    <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="shop__sidebar__categories">
+                                                <ul class="nice-scroll">
+                                                    <li><a href="" id="ppp">구매내역</a></li>
+                                                    <li><a href="" id="sss">판매내역</a></li>
+                                                   
+                                                    
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-heading">
+                                        <a data-toggle="collapse" data-target="#collapseTwo">내정보</a>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="shop__sidebar__brand">
+                                                <ul>
+                                                    <li><a href="#" id="mypage_info">프로필정보</a></li>
+                                                    <li><a href="mypage_address">주소록</a></li>
+                                                   
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                         
+                            </div>
+                        </div>
+                    </div>
+                </div>
 				<div class="col-lg-9">
 				<div>
 				
@@ -383,30 +506,28 @@ function showDelivery() {
 									<!---->
 									<div data-v-be4e2246="" class="address_info" data-v-7d49a47c="">
 										<div data-v-be4e2246="" class="name_box">
-											<span data-v-be4e2246="" class="name">정**</span>
+											<span data-v-be4e2246="" class="name">${fn:substring(mainAddr.a_name, 0, 1)}**</span>
 											<span data-v-be4e2246="" class="mark">기본 배송지</span>
 										</div>
 										<p data-v-be4e2246="" class="phone">
-											010<span class="hyphen"></span>
-											1<span class="dot"></span>
+											${fn:substring(mainAddr.a_phone, 0, 3)}<span class="hyphen"></span>
+											${fn:substring(mainAddr.a_phone, 3, 4)}<span class="dot"></span>
 											<span class="dot"></span>
 											<span class="dot"></span>
 											<span class="hyphen"></span>
-											<span class="dot"></span>678
+											<span class="dot"></span>${fn:substring(mainAddr.a_phone, 8, 11)}
 										</p>
 										<div data-v-be4e2246="" class="address_box">
-											<span data-v-be4e2246="" class="zipcode">(06035)</span><span
-												data-v-be4e2246="" class="address">서울 강남구 가로수길 5
-												(신사동) 123</span>
+											<span data-v-be4e2246="" class="zipcode">(${mainAddr.a_zipcode})</span><span
+												data-v-be4e2246="" class="address">${mainAddr.a_streetAddr}
+												</span>
 										</div>
 									</div>
 								</div>
 								<div data-v-7d49a47c="" class="btn_bind">
 									<!---->
-									<a data-v-3d1bcc82="" data-v-7d49a47c="" href="#"
-										class="btn outlinegrey small"> 수정 </a><a data-v-3d1bcc82=""
-										data-v-7d49a47c="" href="#" class="btn outlinegrey small">
-										삭제 </a>
+									<a data-v-3d1bcc82="" data-v-7d49a47c="" href="#" class="btn outlinegrey small upd btn-open-popup2" value="${mainAddr.a_no}"> 수정 </a>
+										<a data-v-3d1bcc82=""data-v-7d49a47c="" href="#" class="btn outlinegrey small del" value="${mainAddr.a_no}">삭제</a>
 								</div>
 							</div>
 						</div>
@@ -416,6 +537,47 @@ function showDelivery() {
 					</div>
 					
 					
+					<c:forEach items="${addressList}" var="address">
+					<div data-v-1c284ef0="" data-v-61d3533a="" class="my_list">
+						<div data-v-1c284ef0="" class="basic">
+							<div data-v-7d49a47c="" class="my_item is_active"
+								default-mark="기본 배송지" data-v-1c284ef0="">
+								<div data-v-7d49a47c="" class="info_bind">
+									<!---->
+									<div data-v-be4e2246="" class="address_info" data-v-7d49a47c="">
+										<div data-v-be4e2246="" class="name_box">
+											<span data-v-be4e2246="" class="name">${fn:substring(address.a_name, 0, 1)}**</span>
+										</div>
+										<p data-v-be4e2246="" class="phone">
+											${fn:substring(address.a_phone, 0, 3)}<span class="hyphen"></span>
+											${fn:substring(address.a_phone, 3, 4)}<span class="dot"></span>
+											<span class="dot"></span>
+											<span class="dot"></span>
+											<span class="hyphen"></span>
+											<span class="dot"></span>${fn:substring(address.a_phone, 8, 11)}
+										</p>
+										<div data-v-be4e2246="" class="address_box">
+											<span data-v-be4e2246="" class="zipcode">(${address.a_zipcode})</span><span
+												data-v-be4e2246="" class="address">${address.a_streetAddr}
+												</span>
+										</div>
+									</div>
+								</div>
+								<div data-v-7d49a47c="" class="btn_bind">
+									<!---->
+									<a data-v-3d1bcc82="" data-v-7d49a47c="" href="#" class="btn outlinegrey small main" value="${address.a_no}"> 기본배송지 </a>
+									<a data-v-3d1bcc82="" data-v-7d49a47c="" href="#"
+										class="btn outlinegrey small upd btn-open-popup2" value="${address.a_no}"> 수정 </a><a data-v-3d1bcc82=""
+										data-v-7d49a47c="" href="#" class="btn outlinegrey small del" value="${address.a_no}">
+										삭제 </a>
+								</div>
+							</div>
+						</div>
+						<div data-v-1c284ef0="" class="other">
+							<div data-v-1c284ef0="" class="other_list"></div>
+						</div>
+					</div>
+					</c:forEach>
 				</div>
 
 				</div>
@@ -501,7 +663,7 @@ function showDelivery() {
 	<!-- Search End -->
 	<script>
       const body = document.querySelector('body');
-      const modal = document.querySelector('.modal');
+      const modal = document.querySelector('.insert');
       const btnOpenPopup = document.querySelector('.btn-open-popup');
 
       btnOpenPopup.addEventListener('click', () => {
@@ -518,6 +680,28 @@ function showDelivery() {
 
           if (!modal.classList.contains('show')) {
             body.style.overflow = 'auto';
+          }
+        }
+      });
+      
+      const body2 = document.querySelector('body');
+      const modal2 = document.querySelector('.update');
+      const btnOpenPopup2 = document.querySelector('.btn-open-popup2');
+
+      btnOpenPopup2.addEventListener('click', () => {
+        modal2.classList.toggle('show');
+
+        if (modal2.classList.contains('show')) {
+          body2.style.overflow = 'hidden';
+        }
+      });
+
+      modal2.addEventListener('click', (event) => {
+        if (event.target === modal2) {
+          modal2.classList.toggle('show');
+
+          if (!modal2.classList.contains('show')) {
+            body2.style.overflow = 'auto';
           }
         }
       });
