@@ -22,9 +22,7 @@
 	rel="stylesheet">
 
 <!-- Css Styles -->
-<link
-	href="../https://fonts.googleapis.com/css?family=Karla:400,700&display=swap"
-	rel="stylesheet">
+
 <link rel="stylesheet"
 	href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
 <link rel="stylesheet"
@@ -335,6 +333,32 @@ function use_point(){
 		 }
 		 
 		 });
+	 
+	 $("#acc").change(function(){
+	        if($("#acc").is(":checked")){
+	            $.ajax({
+	            	url:'check_address',
+	            	success:function(jsonResult){
+	            		$('#m_id').attr('value',jsonResult.data.a_name);
+						$('#m_phone').attr('value',jsonResult.data.a_phone);
+						$('#sample4_postcode').attr('value',jsonResult.data.a_zipcode);
+						$('#sample4_roadAddress').attr('value',jsonResult.data.a_streetAddr);
+						$('#sample4_jibunAddress').attr('value',jsonResult.data.a_detailAddr);
+	            	}
+	            });
+	            
+	            
+	            
+	        }else{
+	        	$('#m_id').attr('value',"");
+				$('#m_phone').attr('value',"");
+				$('#sample4_postcode').attr('value',"");
+				$('#sample4_roadAddress').attr('value',"");
+				$('#sample4_jibunAddress').attr('value',"");
+	        }
+	    });
+	 
+	 
 	 });
 
 	
@@ -357,7 +381,7 @@ function use_point(){
 			 *  https://docs.iamport.kr/implementation/payment
 			 *  위에 url에 따라가시면 넣을 수 있는 방법이 있습니다.
 			 */
-			/* name: '주문명 : 아메리카노',
+			/**/ name: '주문명 : 아메리카노',
 			// 결제창에서 보여질 이름
 			// name: '주문명 : ${auction.a_title}',
 			// 위와같이 model에 담은 정보를 넣어 쓸수도 있습니다.
@@ -383,6 +407,9 @@ function use_point(){
 			alert(msg);
 		}); 
 	};
+	
+	
+	
 </script>
 
 
@@ -767,8 +794,8 @@ function use_point(){
 				<svg data-v-66ae1b7c="" xmlns="http://www.w3.org/2000/svg"
 					class="icon sprite-icons toast-icon toast-success">
 								<use data-v-66ae1b7c=""
-						href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-toast-success"
-						xlink:href="/_nuxt/777fad20721a1250a960608094a991d9.svg#i-toast-success"></use></svg>
+						href="_nuxt/777fad20721a1250a960608094a991d9.svg#i-toast-success"
+						xlink:href="_nuxt/777fad20721a1250a960608094a991d9.svg#i-toast-success"></use></svg>
 				<div data-v-66ae1b7c="" class="toast-content">
 					<p data-v-66ae1b7c="">내용</p>
 				</div>
