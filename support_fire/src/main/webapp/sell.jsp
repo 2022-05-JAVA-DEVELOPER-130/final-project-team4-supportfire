@@ -234,38 +234,7 @@ $(function(){
 	 });
 
  
- //db저장
- $(function(){
-	 $(document).on('click', '#sell_btn', function(){	
-		console.log('생성');
-		if(${productDetail.pd_no}!=0){
-		 $.ajax({
-			url:'orders_sell',
-			method:'POST',
-			data:'pd_no='+${productDetail.pd_no},
-			dataType:'json',
-			success:function(jsonResult){
-			    alert('판매되었습니다');	
-			   location.href="main";
-			   
-			}
-		});
-	 }else{
-		 $.ajax({
-				url:'orders_sell_ipchal',
-				method:'POST',
-				data:'p_no='+${product.p_no},
-				dataType:'json',
-				success:function(jsonResult){
-				    alert('판매되었습니다');	
-				   location.href="main";
-				   
-				}
-			});
-	 }
-	 
-	 });
-	 
+ 
 	 
 	 $("#acc").change(function(){
 	        if($("#acc").is(":checked")){
