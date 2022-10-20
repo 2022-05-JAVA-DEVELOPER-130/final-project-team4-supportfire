@@ -422,7 +422,7 @@ function use_point(){
 							<p>
 								<span>배송메모*</span>
 							</p>
-							<input type="text" class="asd" placeholder="배송메모">
+							<input type="text" class="asd" id="pm_memo" placeholder="배송메모">
 						</div>
 						<div class="checkout__input__checkbox">
 							<label for="acc"> <span style="width: 30%">기본

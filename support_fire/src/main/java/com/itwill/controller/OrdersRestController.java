@@ -172,6 +172,7 @@ public class OrdersRestController {
 		newProductDetail.setM_id(sUserId);
 		newProductDetail.setBt_no(1);
 		newProductDetail.setB_no(3);
+		int updateBno= productDetailService.updateByBidStatus(3, pd_no);
 		System.out.println(newProductDetail);
 		//pd에 새로 인서트
 		int insertRowCount=productDetailService.insertSequence(newProductDetail);
@@ -219,7 +220,7 @@ public class OrdersRestController {
 		newProductDetail.setBt_no(2);
 		newProductDetail.setB_no(3);
 		//System.out.println(newProductDetail);
-		
+		int updateBno=productDetailService.updateByBidStatus(3, pd_no);
 		int insertRowCount=productDetailService.insertSequence(newProductDetail);
 		
 		
