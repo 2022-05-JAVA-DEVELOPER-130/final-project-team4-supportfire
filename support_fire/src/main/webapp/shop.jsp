@@ -26,8 +26,8 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-	<script type="text/javascript" src="js/top_content.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	<script type="text/javascript" src="js/top_content.js"></script>
 <script type="text/javascript">
 $(function(){
 	
@@ -62,6 +62,25 @@ $(function(){
 		   
 		}
 	});
+	
+	$(document).on('click', '.brand_a', function(e){
+		var list='';
+		$.ajax({
+			url:'brands_list_rest',
+			method:'POST',
+			data:'br_no='+$(this).attr('value'),
+			success:function(jsonResult){
+				for(var i=0; i<jsonResult.data.length; i++){
+				list += brandsList_content(jsonResult.data[i], jsonResult.brandList[i], jsonResult.priceList[i]);
+				}
+				$('#notice_list_tbody').html(list);
+				$('.pagination.pagination-sm.justify-content-center').html(number_btn());
+			}
+		});
+		e.preventDefault();
+	});
+	
+	
 	
 });
 
@@ -133,10 +152,9 @@ $(function(){
                                               <input type="hidden" id="br_no" value="${product.br_no}">
                                                 <ul>
                                                     <li><a href="shop">Product All</a></li>
-                                                    <li><a href="shop?br_no=${product.br_no}">Nike</a></li>
-                                                    <li><a href="shop?br_no=${product.br_no}">adidas</a></li>
-                                                    <li><a href="shop?br_no=${product.br_no}">Vans</a></li>
-                                                    <li><a href="shop?br_no=${product.br_no}">New Balance</a></li>
+                                                <c:forEach items="${BList}" var="brand">
+                                                    <li><a class="brand_a" href="" value="${brand.br_no}">${brand.br_name}</a></li>
+                                                    </c:forEach>
                                                 </ul>
                                             </div>
                                         </div>
@@ -178,7 +196,7 @@ $(function(){
                                 <input type="hidden" id="p_no" value="${product.p_no}">
                                 </div>
                                 <div class="product__item__text">
-                                	<h6>${brandsList.br_name}</h6>
+                                	<h6>${brandList[status.index]}</h6>
                                     <a href="shop-details?p_no=${product.p_no}" class="add-cart">제품 상세보기</a>
                                     <h5>${product.p_name}</h5>
                                     <h6>${productList.priceList[status.index].min_price}</h6>
@@ -220,6 +238,7 @@ $(function(){
                        
             
                         </div>
+                    </div>
                     </div>
     </section>
     <!-- Shop Section End -->
