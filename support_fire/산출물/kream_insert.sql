@@ -49,13 +49,13 @@ insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Jordan 1 Mid Light Smoke G
 /*adidas*/
 insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Samba Vegan White Black', '21/07/27', 128700 ,'Adidas Samba Vegan White Black.png', 2);
 insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Superstar Core Black White', '19/12/23', 119000 ,'Adidas Superstar Core Black White.png', 2);
-insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Samba Vegan White Black', '21/07/27', 128700 ,'Adidas Samba Vegan White Black.png', 2);
-insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Samba Vegan White Black', '21/07/27', 128700 ,'Adidas Samba Vegan White Black.png', 2);
-insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Samba Vegan White Black', '21/07/27', 128700 ,'Adidas Samba Vegan White Black.png', 2);
-insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Samba Vegan White Black', '21/07/27', 128700 ,'Adidas Samba Vegan White Black.png', 2);
-insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Samba Vegan White Black', '21/07/27', 128700 ,'Adidas Samba Vegan White Black.png', 2);
-insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Samba Vegan White Black', '21/07/27', 128700 ,'Adidas Samba Vegan White Black.png', 2);
-insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Samba Vegan White Black', '21/07/27', 128700 ,'Adidas Samba Vegan White Black.png', 2);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Samba OG Black White Gum', '18/06/01', 119000 ,'Adidas Samba OG Black White Gum.png', 2);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Samba OG Cloud White', '18/01/01', 128700 ,'Adidas Samba OG Cloud White.png', 2);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Yeezy Boost 350 V2 Beluga - Reflective', '21/12/18', 329000 ,'Adidas Yeezy Boost 350 V2 Beluga - Reflective.png', 2);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Yeezy Boost 350 V2 Slate Core Black', '22/09/03', 329000 ,'Adidas Yeezy Boost 350 V2 Slate Core Black.png', 2);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Yeezy Slide Bone 2022', '21/07/27', 99000 ,'Adidas Yeezy Slide Bone 2022.png', 2);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Samba ADV Black', '22/03/25', 99000 ,'Adidas Samba ADV Black.png', 2);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Adimatic Grey One', '21/07/27', 139000 ,'Adidas Adimatic Grey One.png', 2);
 /*Vans*/
 insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Nike Air Force 1 07 WB Flax', '19/09/10', 169000 ,'Nike_Air_Force_1_07_WB_Flax.png', 1);
 /*New Balance*/
