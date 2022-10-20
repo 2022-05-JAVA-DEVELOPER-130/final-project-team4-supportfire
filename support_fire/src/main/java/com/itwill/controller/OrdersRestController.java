@@ -228,6 +228,7 @@ public class OrdersRestController {
 		int insertOrders=ordersService.insertSequence(sellOrders);
 		
 		Member member=memberservice.selectById(sUserId);
+		
 		//System.out.println(member);
 		Payment sellPayment= new Payment(0, member.getM_name(),member.getM_phone(),member.getM_address(),"",insertOrders,1);
 		int insertpayment=paymentService.insertPayment(sellPayment);
@@ -297,7 +298,7 @@ public class OrdersRestController {
 			int ps_no = productSizeService.selectByPnoSize(p_no, s_size);
 		    ProductSize productSize = productSizeService.selectByNo(ps_no);
 		   // System.out.println(productSize);
-			ProductDetail newProductDetail = new ProductDetail(p_no, price, "", "",productSize, sUserId,2 ,2);
+			ProductDetail newProductDetail = new ProductDetail(p_no, price, "", "",productSize, sUserId,1 ,2);
 			int insertRowCount=productDetailService.insertSequence(newProductDetail);
 			data=newProductDetail;
 			resultMap.put("code",code);
