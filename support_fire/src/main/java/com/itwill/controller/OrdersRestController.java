@@ -241,15 +241,21 @@ public class OrdersRestController {
 	}
 	//구매입찰
 	@RequestMapping(value="orders_purchase_ipchal")
-	public Map insert_orders_purchase_ipchal(int p_no,int price,String s_size,HttpServletRequest request) throws Exception{
+	public Map insert_orders_purchase_ipchal(int p_no, int price, String s_size,HttpServletRequest request) throws Exception{
 		Map resultMap = new HashMap();
 		int code=0;
 		String url="";
 		String msg="";
 		ProductDetail data=null;
-	
+		System.out.println("111111111");
+		System.out.println(p_no);
+		System.out.println(price);
+		System.out.println(s_size);
+		
+		
 		//구매자의 정보 셋팅
 		String sUserId=(String)request.getSession().getAttribute("sUserId");
+		
 		request.getSession().setAttribute("sUserId", sUserId);
 		//p_no=1&bt_no=1&c_no=1&s_size=250&price=243234
 		

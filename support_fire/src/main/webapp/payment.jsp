@@ -299,12 +299,18 @@ function use_point(){
  
  $(function(){
 	 $(document).on('click', '#purchase_btn', function(){	
+		 var v = window.location.search;
+			console.log(v);
+			a = v.replace('?', '');
+			console.log(a);
 		console.log('생성');
+		console.log(${product.p_no});
+		console.log(${price});
 		if(${productDetail.pd_no}!=0){
 			$.ajax({
 				url:'orders_purchase',
 				method:'POST',
-				data:'pd_no='+${productDetail.pd_no},
+				data:a,
 				dataType:'json',
 				success:function(jsonResult){
 				   
