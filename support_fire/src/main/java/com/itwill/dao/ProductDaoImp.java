@@ -62,7 +62,13 @@ public class ProductDaoImp implements ProductDao{
 			
 		}
 		return pddto;
+		
 	}
+	@Override
+	public List<Map> selectBrand(int pageStart, int pageEnd) {
+		return productMapper.selectBrand(pageStart,pageEnd);
+	}
+	
 	@Override
 	public List<Product> searchAll(String p_name) {	
 		return productMapper.searchAll(p_name);
@@ -81,5 +87,6 @@ public class ProductDaoImp implements ProductDao{
 	public int product_countAll() {
 		return productMapper.product_countAll();
 	}
+	
 	
 }

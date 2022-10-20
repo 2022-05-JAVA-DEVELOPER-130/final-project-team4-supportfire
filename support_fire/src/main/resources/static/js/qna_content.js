@@ -52,8 +52,8 @@ function changeQnaList(pageno){
 		                                      <li>작성일 : ${qna.q_date}
 		                                      <li>내용 : ${qna.q_content}
 	                                     <br>
-		                                      <br>
-		                                      <div style='width:100px;float: right;'> <button type='button' class='btn btn-primary' id = 'reWrite'>답변하기</button></div>
+		                                      <br><div id="reqna_write_form">
+		                                      <div style='width:100px;float: right;'> <button type='button' class='btn btn-primary reWrite' value="${qna.q_no}">답변하기</button></div></div>
     		 									</ul>
 	                                        </th>
 	                                        <th>${qna.q_date.substring(0,10)}</th><th>${qna.m_id}</th>
@@ -105,4 +105,74 @@ function changeQnaList(pageno){
 			}
 		}
 	});
+}
+
+
+function qna_write_form(sUserId){
+	return `
+	<section class="write" style="padding-top: 50px; margin-bottom: 50px;">
+                
+      <div class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="shortcodes_title mb-30">
+                        <h4 style="margin-bottom: 50px;"><strong>QNA 글쓰기</strong></h4>
+                    </div>
+                    <div class="shortcodes_content">
+                        <div class="table-responsive">
+                        	<form id="qna_write_form" method="post">
+	                            <table class="table mb-0 table-bordered"">
+	                                <thead>
+	                                <tr>
+	                                	<th colspan="2">제목</th>
+	                                	<th style="text-align: center;">아이디</th>
+	                                	<th style="text-align: center;">날짜</th>
+	                                </tr>
+	                                    <tr>
+	                                        <th colspan="2" class="board_title">
+	                                        	<input type="text" class="write" name="q_title" id="q_title" placeholder=" title" />
+	                                        </th>
+	                                        <th style="width: 150px; text-align: center;">${sUserId}</th>
+	                                        <th scope="col" class="board_date" id="today" style="width: 150px; text-align: center; padding-bottom: 20px;"></th>
+	                                    </tr>
+	                                </thead>
+	                                <tbody>
+	                                    <tr>
+	                                        <td id="notice_content_td" colspan="4">
+	                                        	<textarea name="q_content" id="q_content" placeholder=" content" style="resize: none;"></textarea>
+	                                        </td>
+	                                    </tr>
+	                                </tbody>
+	                            </table>
+                      				<input type="hidden" name="m_id" value="${sUserId}" />
+                			</form>
+                        </div>
+                    </div>
+                    		<div>
+							<button class="btn btn-primary butt" id="write_action" type="button" value="등록" />등록</button>
+							<button class="btn btn-primary butt" id="w_list" type="button"  value="목록" />목록</button>
+							</div>
+                </div>
+            </div>
+            
+         </div>
+    </div>   
+    </section>
+	
+	`;
+	
+}
+
+function reqna_form(val1){
+	return `
+		<input type="text" style="width: 100%; height: 200px;" id="rq_content" value="">
+		<div style='width:100px;float: right; margin-top:15px;'> <button type='button' class='btn btn-primary' id = 'reWrite_action' value="${val1}">답변하기</button> </div>
+		<div style='width:100px;float: right; margin-top:15px;'><button type='button' class='btn btn-primary' id='back'>취소하기</button></div>
+	`;
+}
+function reqna_back(){
+	return `
+		<div style='width:100px;float: right;'> <button type='button' class='btn btn-primary reWrite'>답변하기</button></div>
+	`;
 }

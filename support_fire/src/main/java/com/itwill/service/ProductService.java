@@ -38,6 +38,6 @@ public interface ProductService {
 	//상품 전체출력(페이징)
 	ProductPageMakerDto<Product> selectAll_p(int currentPage);
 
-	
+	Map selectBrand(int pageStart, int pageEnd);
 	
 }

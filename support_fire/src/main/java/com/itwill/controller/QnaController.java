@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,12 +36,27 @@ public class QnaController {
     public String root() {
         return "index";
     }
-    @RequestMapping(value="boardAction", method=RequestMethod.POST)
+    @RequestMapping(value="qna_write_action", method=RequestMethod.POST)
     @ResponseBody
     public int boardAction(Qna qna) {
     	int result = qnaService.qna_insert(qna);
     	
         return result;
+    }
+    
+    @RequestMapping(value="reqna_write_action", method=RequestMethod.POST)
+    @ResponseBody
+    public int reqna_write_action(String rq_content, int q_no) {
+    	System.out.println(rq_content);
+    	System.out.println(q_no);
+    	ReQna reQna = new ReQna(0, rq_content, "");
+    	int result = reQnaService.insert(reQna);
+    	System.out.println(result);
+    	reQna.setRq_no(result);
+    	Qna qna = new Qna(q_no, null, null, null, null, reQna);
+    	qnaService.qna_reply_update(qna);
+    	
+    	return result;
     }
     
     @RequestMapping(value="boardUpdate", method=RequestMethod.POST)
@@ -115,6 +132,21 @@ public class QnaController {
 	    return resultMap;
     }
     
+    @RequestMapping("qna_write_form")
+    @ResponseBody
+    public Map qna_write_form(HttpSession session) {
+    	Map resultMap= new HashMap();
+    	int code=1;
+ 		String url="";
+ 		String msg="";
+ 		String sUserId = (String)session.getAttribute("sUserId");
+ 		resultMap.put("code",code);
+	    resultMap.put("url",url);
+	    resultMap.put("msg",msg);
+	    resultMap.put("data",sUserId);
+	    
+	    return resultMap;
+    }
  
 }
 

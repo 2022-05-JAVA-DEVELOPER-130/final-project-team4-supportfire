@@ -177,24 +177,49 @@ $.ajax({
 	}
 });
 
-
+var url = window.location.pathname
+$.ajax({
+	url:'url_check',
+	method:'POST',
+	data:'url='+url,
+	success:function(jsonResult){
+	    if(jsonResult.code == 1){
+	    	$('#home').addClass('active');
+	    }else if(jsonResult.code == 2){
+	    	$('#shop').addClass('active');
+	    }else if(jsonResult.code == 3){
+	    	$('#notice').addClass('active');
+	    }
+	   
+	}
+});
+var h12 = '';
+var h13 = '';
 
 $.ajax({
 	url:'mypage_form',
 	method:'POST',
 	dataType:'json',
 	success:function(jsonResult){
-		console.log(jsonResult.data[0]);
 		$('#mypage_form').html(mypage_form(jsonResult.data[0]));
+		for(var i=0; i<jsonResult.p.length; i++){
+			h12 += purchase(jsonResult.p[i], jsonResult.b_p[i]);
+		}
+		for(var i=0; i<jsonResult.s.length; i++){
+			h13 += purchase(jsonResult.s[i], jsonResult.b_s[i]);
+		}
+		$('#purchase').html(h12);
+		$('#sell').html(h13);
 	}
 });
+
+
 $(document).on('click', '#mypage_info', function(){
 	$.ajax({
 		url:'mypage_form',
 		method:'POST',
 		dataType:'json',
 		success:function(jsonResult){
-			console.log(jsonResult.data[0]);
 			$('#fff').html(mypage_info(jsonResult.data[0]));
 		}
 	});
@@ -208,7 +233,6 @@ $(document).on('click', '#mypage_info', function(){
 		    dataType:'json',
 		    success:function(jsonResult){
 		    	$('#fff').html(modify_form(jsonResult.data));
-		    	console.log(jsonResult);
 		    	/**********************/
 		    	validator = $('#modi_form').validate({
 			 		rules:{
@@ -256,12 +280,41 @@ $(document).on('click', '#mypage_info', function(){
 		//e.preventDefault();
 	});	
 	
-
+$(document).on('click', '#ppp', function(e){
 	
+
+	 $.ajax({
+		    url:'mypage_form',
+		    method:'POST',
+		    success:function(jsonResult){
+		    	$('#fff').html(purchase_form());
+				for(var i=0; i<jsonResult.p.length; i++){
+					h12 += purchase(jsonResult.p[i], jsonResult.b_p[i]);
+				}
+				
+				$('#content').html(h12);
+	
+		    	}
+		 });
+	 e.preventDefault();
+	});
+	
+$(document).on('click', '#sss', function(e){
 	
 
-
-
+	 $.ajax({
+		    url:'mypage_form',
+		    method:'POST',
+		    success:function(jsonResult){
+		    	$('#fff').html(sell_form());
+		    	for(var i=0; i<jsonResult.s.length; i++){
+					h13 += purchase(jsonResult.s[i], jsonResult.b_s[i]);
+				}
+				$('#content').html(h13);
+		    	}
+		 });
+	 e.preventDefault();
+	});
 
 
 
@@ -291,9 +344,9 @@ $(document).on('click', '#mypage_info', function(){
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
-                        <h4>마이페이지</h4>
+                        <a href="mypage"><h4>마이페이지</h4></a>
                         <div class="breadcrumb__links">
-                            <a href="./index.jsp">Home</a>
+                            <a href="main">Home</a>
                             <span>MyPage</span>
                         </div>
                     </div>
@@ -320,8 +373,8 @@ $(document).on('click', '#mypage_info', function(){
                                         <div class="card-body">
                                             <div class="shop__sidebar__categories">
                                                 <ul class="nice-scroll">
-                                                    <li><a href="mypage_purchase_list.jsp">구매내역</a></li>
-                                                    <li><a href="mypage_sell_list.jsp">판매내역</a></li>
+                                                    <li><a href="" id="ppp">구매내역</a></li>
+                                                    <li><a href="" id="sss">판매내역</a></li>
                                                    
                                                     
                                                 </ul>
@@ -362,7 +415,7 @@ $(document).on('click', '#mypage_info', function(){
                         </div>
                         <div class="col-lg-8 col-md-6 col-sm-6">
                             <div class="product__item sale">
-                                <div class="product__item__pic set-bg" id="mypage_form">
+                                <div class=" set-bg" id="mypage_form">
                                     
                                     <ul>
 			                            <li>
@@ -391,7 +444,7 @@ $(document).on('click', '#mypage_info', function(){
                         </div>
                         <div class="col-lg-12 col-md-6 col-sm-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" >
+                                <div class=" set-bg" >
                                     <!---start----> 
                                     <div class="shopping__cart__table">
 				                        <table>
@@ -405,10 +458,10 @@ $(document).on('click', '#mypage_info', function(){
 				                                    <th>상태</th>
 				                                </tr>
 				                            </thead>
-				                            <tbody>
+				                            <tbody id="purchase">
 				                                <tr>
 				                                    <td class="product__cart__item">
-				                                        <div class="product__cart__item__pic">
+				                                        <div class="">
 				                                            <img src="./img/shopping-cart/cart-1.jpg" alt="">
 				                                        </div>
 				                                    </td>
@@ -457,7 +510,7 @@ $(document).on('click', '#mypage_info', function(){
                         </div>
                         <div class="col-lg-12 col-md-6 col-sm-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" >
+                                <div class="set-bg" >
                                     <!---start----> 
                                     <div class="shopping__cart__table">
 				                        <table>
@@ -471,7 +524,7 @@ $(document).on('click', '#mypage_info', function(){
 				                                    <th>상태</th>
 				                                </tr>
 				                            </thead>
-				                            <tbody>
+				                            <tbody id="sell">
 				                                <tr>
 				                                    <td class="product__cart__item">
 				                                        <div class="product__cart__item__pic">

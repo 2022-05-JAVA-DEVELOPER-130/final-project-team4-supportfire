@@ -59,7 +59,30 @@ $(function(){
 		}
 	});
 	
-
+	
+	var url = window.location.pathname
+	$.ajax({
+		url:'url_check',
+		method:'POST',
+		data:'url='+url,
+		success:function(jsonResult){
+			$('#home').removeClass('active');
+			$('#shop').removeClass('active');
+			$('#notice').removeClass('active');
+		    if(jsonResult.code == 1){
+		    	$('#home').addClass('active');
+		    }else if(jsonResult.code == 2){
+		    	$('#shop').addClass('active');
+		    }else if(jsonResult.code == 3){
+		    	$('#notice').addClass('active');
+		    }else if(jsonResult.code == 4){
+		    	$('#qna').addClass('active');
+		    }
+		   
+		}
+	});
+	
+	
 
 $(document).on('click','#slide_p',function(e){
 		
@@ -69,6 +92,62 @@ $(document).on('click','#slide_p',function(e){
 		e.preventDefault();
 		
 	});
+	
+	$(document).on('click','#qna_write',function(e){
+		$.ajax({
+			url:'qna_write_form',
+			method:'POST',
+			success:function(jsonResult){
+				$('#write_form').html(qna_write_form(jsonResult.data));
+			}
+		});
+	e.preventDefault();
+	
+});
+	$(document).on('click','#w_list',function(e){
+		location.href="qna";
+	
+});
+	
+	
+	$(document).on('click','#write_action',function(e){
+		$.ajax({
+			url:'qna_write_action',
+			method:'POST',
+			data:$('#qna_write_form').serialize(),
+			success:function(jsonResult){
+				location.href="qna";
+			}
+		});
+	e.preventDefault();
+	
+});
+	$(document).on('click','.reWrite',function(e){
+		var val1 = $(this).val();
+		console.log(val1);
+		$('#reqna_write_form').html(reqna_form(val1));
+		e.preventDefault();
+	});
+	$(document).on('click','#back',function(e){
+		$('#reqna_write_form').html(reqna_back());
+		e.preventDefault();
+	});
+	console.log()
+	$(document).on('click','#reWrite_action',function(e){
+		var val2 = $(this).val();
+		console.log(val2);
+		$.ajax({
+			url:'reqna_write_action',
+			method:'POST',
+			data:'rq_content=' + $('#rq_content').val() + '&q_no=' + val2,
+			success:function(jsonResult){
+				location.href="qna";
+			}
+		});
+		e.preventDefault();
+	});
+	
+	
 });
 </script>
 <style type="text/css">
@@ -78,7 +157,6 @@ $(document).on('click','#slide_p',function(e){
   
    ul{
   list-style:none;
-  text-align: left;
    }
 table, td, th {
   border : 1px solid black;
@@ -98,6 +176,75 @@ a:hover, a:focus {
     color: blue;
  }
     
+   .write input{
+	width: 100%;
+			padding: 10px;
+			box-sizing: border-box;
+			border: solid 2px #1E90FF;
+			border-radius: 5px;
+			font-size: 16px;
+			resize: both;
+    }
+
+form span{
+	width: auto;
+	margin-top: 25px;
+	margin-left: 50px;
+	display: block;
+
+}
+
+hr{
+	width: 700px;
+	height: 5px;
+
+}
+
+
+.error{
+	margin-left: 60px;
+
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  
+}
+
+.error{
+	color: red;
+
+}
+
+table{
+	color: black;
+	border-color: black!important;
+}
+
+#q_content{
+	width: 100%;
+	resize: none; /* 사용자 임의 변경 불가 */
+			height: 400px;
+			padding: 10px;
+			box-sizing: border-box;
+			border: solid 2px #1E90FF;
+			border-radius: 5px;
+			font-size: 16px;
+			resize: both;
+
+}
+
+ .butt{
+	margin-top: 10px;
+	float: right;
+	width: 80px;
+	margin-right: 10px;
+	height: 40px;
+	color: white;
+	
+}
 </style>
 
 
@@ -123,45 +270,9 @@ a:hover, a:focus {
     <!-- include_common_header.jsp start-->
 
 		<!-- include_common_header.jsp end-->
-  	        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3">
-                    <div class="header__logo">
-                        <a href="./index.jsp"><img src="img/IMG_0608 (1).jpg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <nav class="header__menu mobile-menu">
-                        <ul>
-                            <li><a href="index.jsp">Home</a></li>
-                            <li><a href="shop">Shop</a></li>
-                            <li><a href="#">Pages</a>
-                                <ul class="dropdown">
-                                    <li><a href="./about.jsp">About Us</a></li>
-                                    <li><a href="./shop-details.jsp">Shop Details</a></li>
-                                    <li><a href="./shopping-cart.jsp">Shopping Cart</a></li>
-                                    <li><a href="./checkout.jsp">Check Out</a></li>
-                                    <li><a href="./blog-details.jsp">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li class="active"><a href="notice_list">Notice</a></li>
-                            <li><a href="./contact.jsp">Contacts</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-lg-3 col-md-3">
-                    <div class="header__nav__option">
-                        <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
-                        <a href="#"><img src="img/icon/heart.png" alt=""></a>
-                        <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
-                        <div class="price">$0.00</div>
-                    </div>
-                </div>
-            </div>
-            <div class="canvas__open"><i class="fa fa-bars"></i></div>
-        </div>
+  	        <jsp:include page="header.jsp" />
     <!-- Header Area End -->
-    
+    <div>
     <!-- Breadcumb Area -->
    <section class="breadcrumb-option">
         <div class="container">
@@ -180,7 +291,7 @@ a:hover, a:focus {
     </section>
     <!-- Breadcumb Area -->
 
-    <div class="shortcodes_area section_padding_100">
+    <div class="shortcodes_area" id="write_form">
         <div class="container">
             <div class="row">
                 <div class="col-12" style="margin-top: 50px;">
@@ -210,8 +321,8 @@ a:hover, a:focus {
 		                                      <li>작성일 ${qna.q_date}
 		                                      <li>내용 : ${qna.q_content}
 		                                      <br>
-		                                      <br>
-		                                      <div style='width:100px;float: right;'> <button type='button' class='btn btn-primary' id = 'reWrite'>답변하기</button></div>
+		                                      <br><div id="reqna_write_form">
+		                                      <div style='width:100px;float: right;'> <button type='button' class='btn btn-primary reWrite' value="${qna.q_no}">답변하기</button></div></div>
     		 									</ul>
 	                                        </th>
 	                                        <th>${qna.q_date.substring(0,10)}</th><th>${qna.m_id}</th>
@@ -244,7 +355,7 @@ a:hover, a:focus {
 					
                 </div>
             </div>
-            <div style='width:100px;float: right; margin-top: 10px;'><button type='button' class='btn btn-primary' id = 'reWrite'>글쓰기</button></div>
+            <div style='width:100px;float: right; margin-top: 10px;'><button type='button' class='btn btn-primary' id ='qna_write'>글쓰기</button></div>
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-9">
                     <!-- Shop Pagination Area -->

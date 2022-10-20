@@ -63,7 +63,7 @@ public class ProductController {
 	
 	@RequestMapping("shop")
 	public String product_list(@RequestParam(required = false, defaultValue = "1") Integer pageno, Model model) {
-		//String forwardPath = "";
+		String forwardPath = "";
 		ProductPageMakerDto<Product> productList = productService.selectAll_p(pageno);
 		int productCount = productService.product_countAll();
 		System.out.println(productList);
@@ -74,8 +74,8 @@ public class ProductController {
 		//model.addAttribute("price", price);
 		//System.out.println(productList.get(1).getP_no());
 		//System.out.println(price.get(productList.get(1).getP_no()));
-		//forwardPath = "shop";
-		return "shop";
+		forwardPath = "shop";
+		return forwardPath;
 	}
 
 	@RequestMapping(value = "shop-details", params = "p_no")

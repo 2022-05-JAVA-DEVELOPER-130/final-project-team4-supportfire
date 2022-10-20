@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 
     <!-- Page Preloder -->
@@ -19,30 +20,31 @@
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li class="active"><a href="main">Home</a></li>
-                            <li><a href="./shop">Shop</a></li>
-                            <li><a href="#">Pages</a>
-                                <ul class="dropdown">
-                                    <li><a href="about.jsp">About Us</a></li>
-                                    <li><a href="shop-details.jsp">Shop Details</a></li>
-                                    <li><a href="shopping-cart.jsp">Shopping Cart</a></li>
-                                    <li><a href="checkout.jsp">Check Out</a></li>
-                                    <li><a href="tables.jsp">Notice</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="notice_list">Notice</a></li>
-                            <li><a href="contact.jsp">Contacts</a></li>
+                            <li id="home"><a href="main">Home</a></li>
+                            <li id="shop"><a href="shop">Shop</a></li>
+                            <li id="notice"><a href="notice_list">Notice</a></li>
+                            <li id="qna"><a href="qna">Qna</a></li>
                         </ul>
                     </nav>
                 </div>
+                <c:if test="${empty sUserId}">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option">
-                        <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+                        <a href="login_form" class=""><img src="img/icon/login.png" style="width: 30px; height: 30px;"></a>
                         <a href="#"><img src="img/icon/heart.png" alt=""></a>
                         <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
                         <div class="price">$0.00</div>
                     </div>
                 </div>
+                </c:if>
+                <c:if test="${!empty sUserId}">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__nav__option">
+                        <a href="logout_action" class=""><img src="img/icon/logout.png" style="width: 30px; height: 30px;"></a>
+                        <a href="mypage"><img src="img/mypage_img.png" style="width: 30px; height: 30px;" alt=""></a>
+                    </div>
+                </div>
+                </c:if>
             </div>
             <div class="canvas__open"><i class="fa fa-bars"></i></div>
         </div>
