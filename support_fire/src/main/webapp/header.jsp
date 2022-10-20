@@ -31,9 +31,6 @@
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option">
                         <a href="login_form" class=""><img src="img/icon/login.png" style="width: 30px; height: 30px;"></a>
-                        <a href="#"><img src="img/icon/heart.png" alt=""></a>
-                        <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
-                        <div class="price">$0.00</div>
                     </div>
                 </div>
                 </c:if>

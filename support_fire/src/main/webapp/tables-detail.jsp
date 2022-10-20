@@ -32,9 +32,6 @@
 
 	<!-- javaScript -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<script type="text/javascript" src="js/user/UserHtmlContents.js"></script>
-	<script type="text/javascript" src="js/common/CommonHtmlContents.js"></script>
-	<script type="text/javascript" src="js/common/user_session_check.js"></script>
 	<script type="text/javascript">
 $(function(){
 	
@@ -72,6 +69,101 @@ $(function(){
 });
 
 </script>
+
+<style type="text/css">
+  .hiden {
+  	display: none;
+  }
+  
+   ul{
+  list-style:none;
+   }
+table, td, th {
+  border : 1px solid black;
+  border-collapse : collapse;
+}
+table {
+  width : 300px;
+  height : 200px;
+}
+th, td {
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+    outline: none;
+    color: blue;
+ }
+    
+   .write input{
+	width: 100%;
+			padding: 10px;
+			box-sizing: border-box;
+			border: solid 2px #1E90FF;
+			border-radius: 5px;
+			font-size: 16px;
+			resize: both;
+    }
+
+form span{
+	width: auto;
+	margin-top: 25px;
+	margin-left: 50px;
+	display: block;
+
+}
+
+hr{
+	width: 700px;
+	height: 5px;
+
+}
+
+
+.error{
+	margin-left: 60px;
+
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  
+}
+
+.error{
+	color: red;
+
+}
+
+table{
+	color: black;
+	border-color: black!important;
+}
+
+table{
+	width: 100%;
+	resize: none; /* 사용자 임의 변경 불가 */
+			height: 400px;
+			padding: 10px;
+			box-sizing: border-box;
+			border-radius: 5px;
+			font-size: 16px;
+			resize: both;
+
+}
+
+ .butt{
+	margin-top: 10px;
+	float: right;
+	width: 80px;
+	margin-right: 10px;
+	height: 40px;
+	color: white;
+	
+}
+</style>
 </head>
 
 <body>
@@ -131,7 +223,7 @@ $(function(){
                         </div>
                     </div>
                     	<div id="notice_btn_container">
-							<input class="notice_btn list" type="button" pageno="${pageno}" value="목록" />
+							<input class="btn btn-primary list" type="button" pageno="${pageno}" value="목록" />
                     	</div>
                 </div>
             </div>
@@ -146,25 +238,12 @@ $(function(){
     <!-- Footer Area -->
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/default/classy-nav.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
-    <script src="js/default/scrollup.js"></script>
-    <script src="js/waypoints.min.js"></script>
     <script src="js/jquery.countdown.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jarallax.min.js"></script>
-    <script src="js/jarallax-video.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/default/active.js"></script>
     
-    <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script src="js/board.js" defer></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>

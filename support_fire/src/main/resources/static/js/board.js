@@ -24,7 +24,7 @@ function changeQnaList(pageno){
 	                               
 					htmlBuffer += `
 	                               
-	                                <td><a href="n_view?n_no=${notice.n_no}&pageno=${data.pageMaker.curPage}">${notice.n_title}</a>`;
+	                                <td><a href="notice_view?n_no=${notice.n_no}&pageno=${data.pageMaker.curPage}">${notice.n_title}</a>`;
 	                
                     htmlBuffer += `</td>
 	                                    <td>${notice.n_date}</td>

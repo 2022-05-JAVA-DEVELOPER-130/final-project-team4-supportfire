@@ -153,6 +153,7 @@ $(document).on('click','#slide_p',function(e){
 <style type="text/css">
   .hiden {
   	display: none;
+  	text-align: left;
   }
   
    ul{
@@ -169,6 +170,8 @@ table {
 th, td {
   text-align: center;
 }
+
+	
 
 a:hover, a:focus {
     text-decoration: none;
@@ -235,6 +238,8 @@ table{
 			resize: both;
 
 }
+
+
 
  .butt{
 	margin-top: 10px;
@@ -317,9 +322,11 @@ table{
 	                                        <th>
 	                                        <a href = "qna_view?n_no=${qna.q_no}&pageno=${qnaList.pageMaker.curPage}" id="slide_p">${qna.q_title}</a>
 	                                        <ul class='hiden'>
-		                                      <li>작성자 : ${qna.m_id}
-		                                      <li>작성일 ${qna.q_date}
-		                                      <li>내용 : ${qna.q_content}
+		                                      <li>작성자 : <span style="font-size: 12px;">${qna.m_id}</span>
+		                                      <li>작성일
+		                                      <li style="font-size: 12px;">${qna.q_date}
+		                                      <li><br>
+		                                      <li>${qna.q_content}
 		                                      <br>
 		                                      <br><div id="reqna_write_form">
 		                                      <div style='width:100px;float: right;'> <button type='button' class='btn btn-primary reWrite' value="${qna.q_no}">답변하기</button></div></div>
@@ -330,15 +337,19 @@ table{
 	                                    </c:if>
 	                                    <c:if test="${qna.reQna != null}">
 	                                    <tr>
-	                                        <th><a href = "qna_view?n_no=${qna.q_no}&pageno=${qnaList.pageMaker.curPage}" id="slide_p">${qna.q_title}</a>
-	                                        <ul class='hiden'>
-		                                      <li>작성자 : ${qna.m_id}
-		                                      <li>작성일 : ${qna.q_date}
-		                                      <li>내용 : ${qna.q_content}
+	                                        <th><a href = "qna_view?n_no=${qna.q_no}&pageno=${qnaList.pageMaker.curPage}" id="slide_p" >${qna.q_title}</a>
+	                                        <ul class='hiden' >
+		                                      <li>작성자 : <span style="font-size: 12px;">${qna.m_id}</span>
+		                                      <li>작성일
+		                                      <li style="font-size: 12px;">${qna.q_date}
+		                                      <li><br>
+		                                      <li>${qna.q_content}
 		                                      <li><br>
 		                                      <hr><br>
-		                                      <li>작성일 : ${qna.reQna.rq_date}
-		                                      <li>내용 : ${qna.reQna.rq_content}
+		                                      <li>작성일
+		                                      <li style="font-size: 12px;">${qna.reQna.rq_date}
+		                                      <li><br>
+		                                      <li>${qna.reQna.rq_content}
     		 									</ul>
 	                                        </th>
 	                                        <th>${qna.q_date.substring(0,10)}</th><th>${qna.m_id}</th>
