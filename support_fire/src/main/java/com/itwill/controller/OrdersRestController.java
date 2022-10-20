@@ -211,14 +211,14 @@ public class OrdersRestController {
 		
 		System.out.println(pd_no);
 		ProductDetail newProductDetail  = productDetailService.selectByNo(pd_no);
-		System.out.println(newProductDetail);
+		//System.out.println(newProductDetail);
 		
 		String sUserId=(String)request.getSession().getAttribute("sUserId");
 		request.getSession().setAttribute("sUserId", sUserId);
 		newProductDetail.setM_id(sUserId);
 		newProductDetail.setBt_no(2);
 		newProductDetail.setB_no(3);
-		System.out.println(newProductDetail);
+		//System.out.println(newProductDetail);
 		
 		int insertRowCount=productDetailService.insertSequence(newProductDetail);
 		
@@ -227,7 +227,7 @@ public class OrdersRestController {
 		int insertOrders=ordersService.insertSequence(sellOrders);
 		
 		Member member=memberservice.selectById(sUserId);
-		System.out.println(member);
+		//System.out.println(member);
 		Payment sellPayment= new Payment(0, member.getM_name(),member.getM_phone(),member.getM_address(),"",insertOrders,1);
 		int insertpayment=paymentService.insertPayment(sellPayment);
 		
@@ -252,10 +252,16 @@ public class OrdersRestController {
 		String sUserId=(String)request.getSession().getAttribute("sUserId");
 		request.getSession().setAttribute("sUserId", sUserId);
 		//p_no=1&bt_no=1&c_no=1&s_size=250&price=243234
+		
 		Product product = productService.selectByNo(p_no);
 		int ps_no = productSizeService.selectByPnoSize(p_no, s_size);
-		ProductDetail newProductDetail = new ProductDetail(p_no, price, "", "", new ProductSize(ps_no, "", product), sUserId,1 ,2);
+		System.out.println(ps_no);
+		ProductSize productSize=productSizeService.selectByNo(ps_no);
+		System.out.println(productSize);
+		ProductDetail newProductDetail = new ProductDetail(p_no,price, "", "",productSize , sUserId,1 ,2);
+		
 		int insertRowCount=productDetailService.insertSequence(newProductDetail);
+		
 		data=newProductDetail;
 		resultMap.put("code",code);
 		resultMap.put("url",url);
@@ -268,7 +274,7 @@ public class OrdersRestController {
 	}
 	//판매입
 		@RequestMapping(value="orders_sell_ipchal")
-		public Map insert_orders_sell_ipchal(int p_no,String s_size,int price,HttpServletRequest request) throws Exception{
+		public Map insert_orders_sell_ipchal( int p_no,String s_size,int price,HttpServletRequest request) throws Exception{
 			Map resultMap = new HashMap();
 			int code=0;
 			String url="";
@@ -280,10 +286,10 @@ public class OrdersRestController {
 			request.getSession().setAttribute("sUserId", sUserId);
 			//p_no=1&bt_no=1&c_no=1&s_size=250&price=243234
 			Product product = productService.selectByNo(p_no);
-			System.out.println("dddd"+product);
+			//System.out.println("dddd"+product);
 			int ps_no = productSizeService.selectByPnoSize(p_no, s_size);
 		    ProductSize productSize = productSizeService.selectByNo(ps_no);
-		    System.out.println(productSize);
+		   // System.out.println(productSize);
 			ProductDetail newProductDetail = new ProductDetail(p_no, price, "", "",productSize, sUserId,2 ,2);
 			int insertRowCount=productDetailService.insertSequence(newProductDetail);
 			data=newProductDetail;

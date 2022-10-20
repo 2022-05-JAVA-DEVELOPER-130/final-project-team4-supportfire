@@ -302,8 +302,9 @@ function use_point(){
 		console.log('생성');
 		if(${productDetail.pd_no}!=0){
 			$.ajax({
-				url:'orders_purchase?pd_no='+${productDetail.pd_no},
+				url:'orders_purchase',
 				method:'POST',
+				data:'pd_no='+${productDetail.pd_no},
 				dataType:'json',
 				success:function(jsonResult){
 				   
@@ -314,21 +315,21 @@ function use_point(){
 			
 			});
 		}else{
-			$.ajax({
-				url:'orders_purchase_ipchal?p_no='+${product.p_no}+'&price='+${param.price}+'',
-				method:'POST',
-				dataType:'json',
-				success:function(jsonResult){
-				   
-					
-					alert('구매입찰 생성되었습니다');
-				 	location.href="main";  
-				}
-			
-			});
-		}
+			 $.ajax({
+					url:'orders_purchase_ipchal',
+					method:'POST',
+					data:'p_no='+${product.p_no},
+					dataType:'json',
+					success:function(jsonResult){
+					    alert('구매입찰되었습니다');	
+					   location.href="main";
+					   
+					}
+				});
+		 }
+		 
+		 });
 	 });
- });
 
 	
 </script>
