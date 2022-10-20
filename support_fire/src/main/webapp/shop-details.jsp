@@ -249,14 +249,7 @@ $(function(){
                     <div class="col-lg-8">
                         <div class="product__details__text">
                             <h4>${product.p_name}</h4>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o"></i>
-                                <span> - 5 Reviews</span>
-                            </div>
+                            
                             <div class="shopping__cart__table">
                             <table>
                           		  <thead>
