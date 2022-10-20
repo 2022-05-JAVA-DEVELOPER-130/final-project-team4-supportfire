@@ -24,8 +24,6 @@ public interface ProductService {
 	//제품 1개 판매최소가격 출력
 	Map selectSellMinPriceByNo(int p_no);
 	
-	
-	
 	//제품명 검색
 	List<Product> searchAll(String p_name);
 	
@@ -38,6 +36,5 @@ public interface ProductService {
 	//상품 전체출력(페이징)
 	ProductPageMakerDto<Product> selectAll_p(int currentPage);
 
-	Map selectBrand(int pageStart, int pageEnd);
 	
 }

@@ -64,10 +64,6 @@ public class ProductDaoImp implements ProductDao{
 		return pddto;
 		
 	}
-	@Override
-	public List<Map> selectBrand(int pageStart, int pageEnd) {
-		return productMapper.selectBrand(pageStart,pageEnd);
-	}
 	
 	@Override
 	public List<Product> searchAll(String p_name) {	
