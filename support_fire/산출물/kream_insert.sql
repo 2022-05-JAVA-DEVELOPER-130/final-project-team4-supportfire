@@ -57,9 +57,25 @@ insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Yeezy Slide Bone 20
 insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Samba ADV Black', '22/03/25', 99000 ,'Adidas Samba ADV Black.png', 2);
 insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Adidas Adimatic Grey One', '21/07/27', 139000 ,'Adidas Adimatic Grey One.png', 2);
 /*Vans*/
-insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Nike Air Force 1 07 WB Flax', '19/09/10', 169000 ,'Nike_Air_Force_1_07_WB_Flax.png', 1);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Vans Vault x CDG Slip-On LX White', '22/09/29', 169000 ,'Vans Vault x CDG Slip-On LX White.png', 3);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Vans Vault x Bianca Chandon Classic Slip-On LX Stressed Black White', '22/08/20', 125000 ,'Vans Vault x Bianca Chandon Classic Slip-On LX Stressed Black White.png', 3);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Vans Vault x CDG Old Skool LX White', '22/01/07', 119000 ,'Vans Vault x CDG Old Skool LX White.png', 3);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Vans Slip-On Checkerboard', '17/01/02', 71500 ,'Vans Slip-On Checkerboard.png', 3);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Vans Vault x Bianca Chandon Authentic LX Stressed Navy White', '22/08/20', 125000 ,'Vans Vault x Bianca Chandon Authentic LX Stressed Navy White.png', 3);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Vans Vault OG Old Skool LX Black', '22/02/26', 125000 ,'Vans Vault OG Old Skool LX Black.png', 3);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Vans x BAPE Old Skool 36 DX ABC Camo', '22/09/29', 169000 ,'Vans x BAPE Old Skool 36 DX ABC Camo.png', 3);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Vans ComfyCush Old Skool Black True white', '20/09/29', 90000 ,'Vans ComfyCush Old Skool Black True white.png', 3);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Vans Vault x Palm Angels Sk8-Hi Reissue VLT LX Chili Pepper', '22/09/30', 189000 ,'Vans Vault x Palm Angels Sk8-Hi Reissue VLT LX Chili Pepper.png', 3);
 /*New Balance*/
-insert into product values(PRODUCT_P_NO_SEQ.nextval, 'Nike Air Force 1 07 WB Flax', '19/09/10', 169000 ,'Nike_Air_Force_1_07_WB_Flax.png', 1);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'New Balance 993 Made in USA Grey - D Standard', '18/08/21', 259000 ,'New Balance 993 Made in USA Grey - D Standard.png', 4);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'New Balance 574 Heritage Orange Burst White', '22/08/26', 119000 ,'New Balance 574 Heritage Orange Burst White.png', 4);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'New Balance 2002R Grey', '20/09/25', 149000 ,'New Balance 2002R Grey.png', 4);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'New Balance 530 Silver', '19/12/02', 99000 ,'New Balance 530 Silver.png', 4);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'New Balance 992 Made in USA Grey - D Standard', '20/04/13', 259000 ,'New Balance 992 Made in USA Grey - D Standard.png', 4);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'New Balance 530 Steel Grey', '21/01/08', 109000 ,'New Balance 530 Steel Grey.png', 4);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'New Balance 2002R Eclipse Castlerock', '22/09/16', 149000 ,'New Balance 2002R Eclipse Castlerock.png', 4);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'New Balance 530 White', '19/12/02', 109000 ,'New Balance 530 White.png', 4);
+insert into product values(PRODUCT_P_NO_SEQ.nextval, 'New Balance 574 Legacy Navy', '22/06/10', 129000 ,'New Balance 574 Legacy Navy.png', 4);
 /**************제품사이즈**************/
 insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 1);
 insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 1);
@@ -178,6 +194,374 @@ insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 9);
 insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 9);
 insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 9);
 
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 10);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 10);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 10);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 10);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 10);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 10);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 10);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 10);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 10);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 10);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 10);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 10);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 11);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 11);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 11);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 11);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 11);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 11);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 11);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 11);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 11);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 11);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 11);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 11);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 12);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 12);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 12);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 12);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 12);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 12);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 12);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 12);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 12);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 12);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 12);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 12);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 13);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 13);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 13);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 13);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 13);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 13);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 13);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 13);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 13);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 13);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 13);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 13);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 14);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 14);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 14);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 14);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 14);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 14);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 14);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 14);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 14);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 14);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 14);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 14);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 15);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 15);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 15);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 15);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 15);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 15);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 15);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 15);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 15);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 15);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 15);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 15);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 16);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 16);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 16);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 16);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 16);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 16);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 16);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 16);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 16);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 16);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 16);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 16);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 17);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 17);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 17);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 17);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 17);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 17);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 17);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 17);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 17);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 17);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 17);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 17);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 17);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 17);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 17);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 17);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 17);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 17);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 17);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 17);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 17);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 17);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 17);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 17);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 18);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 18);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 18);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 18);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 18);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 18);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 18);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 18);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 18);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 18);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 18);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 18);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 19);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 19);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 19);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 19);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 19);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 19);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 19);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 19);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 19);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 19);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 19);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 19);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 20);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 20);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 20);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 20);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 20);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 20);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 20);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 20);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 20);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 20);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 20);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 20);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 21);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 21);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 21);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 21);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 21);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 21);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 21);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 21);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 21);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 21);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 21);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 21);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 22);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 22);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 22);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 22);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 22);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 22);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 22);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 22);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 22);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 22);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 22);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 22);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 23);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 23);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 23);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 23);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 23);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 23);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 23);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 23);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 23);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 23);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 23);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 23);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 24);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 24);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 24);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 24);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 24);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 24);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 24);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 24);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 24);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 24);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 24);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 24);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 25);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 25);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 25);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 25);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 25);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 25);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 25);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 25);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 25);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 25);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 25);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 25);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 26);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 26);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 26);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 26);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 26);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 26);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 26);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 26);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 26);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 26);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 26);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 26);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 27);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 27);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 27);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 27);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 27);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 27);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 27);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 27);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 27);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 27);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 27);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 27);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 28);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 28);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 28);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 28);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 28);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 28);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 28);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 28);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 28);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 28);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 28);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 28);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 29);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 29);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 29);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 29);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 29);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 29);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 29);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 29);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 29);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 29);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 29);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 29);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 30);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 30);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 30);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 30);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 30);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 30);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 30);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 30);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 30);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 30);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 30);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 30);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 31);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 31);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 31);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 31);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 31);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 31);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 31);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 31);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 31);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 31);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 31);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 31);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 32);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 32);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 32);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 32);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 32);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 32);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 32);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 32);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 32);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 32);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 32);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 32);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 33);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 33);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 33);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 33);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 33);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 33);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 33);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 33);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 33);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 33);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 33);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 33);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 34);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 34);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 34);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 34);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 34);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 34);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 34);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 34);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 34);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 34);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 34);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 34);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 35);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 35);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 35);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 35);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 35);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 35);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 35);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 35);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 35);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 35);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 35);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 35);
+
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '210', 36);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '220', 36);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '230', 36);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '240', 36);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '250', 36);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '260', 36);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '270', 36);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '280', 36);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '290', 36);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '300', 36);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '310', 36);
+insert into productSize values(PRODUCTSIZE_PS_NO_SEQ.nextval, '320', 36);
+
+
+
+
+
 /************입찰상태************/
 insert into bidStatus values(1, '대기중');
 insert into bidStatus values(2, '거래중');
@@ -188,10 +572,14 @@ insert into bidType values(1, '구매');
 insert into bidType values(2, '판매');
 
 /************회원*****************/
-insert into member values('seongmin', '1234', '알찬성민', '01012345678', '970902', 'seongmin@gamil.com', '남', 1000, '서울시 강남구');
-insert into member values('bongkyoun', '1234', '봉된장', '01023456789', '940601', 'bongkyoun@gamil.com', '남', 1000, '서울시 서초구');
-insert into member values('jiwon', '1234', '지원준비', '01034567890', '971002', 'jiwon@gamil.com', '여', 1000, '서울시 종로구');
-insert into member values('hyun', '1234', '현악기', '01045678901', '900602', 'hyun@gamil.com', '남', 1000, '서울시 중구');
+insert into member values('seongmin', '1234', '정성민', '01012345678', '970902', 'seongmin@gamil.com', '남', 1000, '서울시 강남구');
+insert into member values('bongkyoun', '1234', '김봉균', '01023456789', '940601', 'bongkyoun@gamil.com', '남', 1000, '서울시 서초구');
+insert into member values('jiwon', '1234', '김지원', '01034567890', '971002', 'jiwon@gamil.com', '여', 1000, '서울시 종로구');
+insert into member values('hyun', '1234', '박현', '01045678901', '900602', 'hyun@gamil.com', '남', 1000, '서울시 중구');
+insert into member values('enbi', '1234', '임은비', '01012345678', '970902', 'seongmin@gamil.com', '남', 1000, '서울시 강남구');
+insert into member values('joo2', '1234', '이주희', '01023456789', '940601', 'bongkyoun@gamil.com', '남', 1000, '서울시 서초구');
+insert into member values('sojin', '1234', '안소진', '01034567890', '971002', 'jiwon@gamil.com', '여', 1000, '서울시 종로구');
+insert into member values('seoyoung', '1234', '최서영', '01045678901', '900602', 'hyun@gamil.com', '남', 1000, '서울시 중구');
     
 /***********배달주소*************/
 
