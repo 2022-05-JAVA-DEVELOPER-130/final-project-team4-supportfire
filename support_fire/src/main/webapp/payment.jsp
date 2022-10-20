@@ -282,16 +282,33 @@ function use_point(){
  $(function(){
 	 $(document).on('click', '#purchase_btn', function(){	
 		console.log('생성');
-		$.ajax({
-			url:'orders_purchase?pd_no='+${productDetail.pd_no},
-			method:'POST',
-			dataType:'json',
-			success:function(jsonResult){
-			    alert('구매가 생성되었습니다');
-			 	location.href="main";  
-			}
-		
-		});
+		if(${productDetail.pd_no}!=0){
+			$.ajax({
+				url:'orders_purchase?pd_no='+${productDetail.pd_no},
+				method:'POST',
+				dataType:'json',
+				success:function(jsonResult){
+				   
+					
+					alert('구매가 생성되었습니다');
+				 	location.href="main";  
+				}
+			
+			});
+		}else{
+			$.ajax({
+				url:'orders_purchase_ipchal?p_no='+${product.p_no}+'&price='+${param.price}+'',
+				method:'POST',
+				dataType:'json',
+				success:function(jsonResult){
+				   
+					
+					alert('구매입찰 생성되었습니다');
+				 	location.href="main";  
+				}
+			
+			});
+		}
 	 });
  });
 

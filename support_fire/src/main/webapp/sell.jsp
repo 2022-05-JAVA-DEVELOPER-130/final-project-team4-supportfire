@@ -217,7 +217,8 @@ function showDelivery() {
 			method:'POST',
 			dataType:'json',
 			success:function(jsonResult){
-			    alert('판매가 생성되었습니다');
+			    alert('판매가 생성되었습니다');	
+			   location.href="main";
 			   
 			}
 		});
