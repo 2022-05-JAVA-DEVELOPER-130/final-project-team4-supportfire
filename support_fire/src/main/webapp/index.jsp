@@ -126,10 +126,10 @@ $.ajax({
                 <div class="col-lg-7 offset-lg-4">
                     <div class="banner__item">
                         <div class="banner__item__pic">
-                            <img src="img/product/Nike_Air_Force_1_07_WB_Flax.png" alt="">
+                            <img src="img/nike.png" alt="">
                         </div>
                         <div class="banner__item__text">
-                            <h2>Clothing Collections 2030</h2>
+                            <h2>Nike</h2>
                             <a href="#">Shop now</a>
                         </div>
                     </div>
@@ -137,10 +137,10 @@ $.ajax({
                 <div class="col-lg-5">
                     <div class="banner__item banner__item--middle">
                         <div class="banner__item__pic">
-                            <img src="img/product/Jordan_1_x_Travis_Scott_Retro_Low_OG_SP_Sail_and_Ridgerock.png" alt="">
+                            <img src="img/vans.jpeg" alt="">
                         </div>
                         <div class="banner__item__text">
-                            <h2>Accessories</h2>
+                            <h2>Vans</h2>
                             <a href="#">Shop now</a>
                         </div>
                     </div>
@@ -148,10 +148,10 @@ $.ajax({
                 <div class="col-lg-7">
                     <div class="banner__item banner__item--last">
                         <div class="banner__item__pic">
-                            <img src="img/banner/banner-3.jpg" alt="">
+                            <img src="img/adidas.png" alt="">
                         </div>
                         <div class="banner__item__text">
-                            <h2>Shoes Spring 2030</h2>
+                            <h2>adidas</h2>
                             <a href="#">Shop now</a>
                         </div>
                     </div>
@@ -184,7 +184,7 @@ $.ajax({
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__logo">
-                            <a href="#"><img src="img/footer-logo.png" alt=""></a>
+                            <a href="#"><img src="" alt=""></a>
                         </div>
                         <p>The customer is at the heart of our unique business model, which includes design.</p>
                         <a href="#"><img src="img/payment.png" alt=""></a>
