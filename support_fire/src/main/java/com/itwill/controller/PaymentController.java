@@ -102,7 +102,7 @@ public class PaymentController {
 	@RequestMapping("address_modify_action")
 	public Map payment_modify_action( String m_phone, String sample4_roadAddress,HttpServletRequest request) throws Exception{
 		Map resultMap=new HashMap();
-		int code=2;
+		int code=1;
 		String url="";
 		String msg="";
 		String data="";
