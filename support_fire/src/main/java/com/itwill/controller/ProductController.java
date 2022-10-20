@@ -247,7 +247,7 @@ public class ProductController {
 			int ps_no = productSizeService.selectByPnoSize(p_no, s_size);
 			ProductSize productSize = productSizeService.selectByNo(ps_no);
 			ProductDetail insertPd= new ProductDetail(0,product.getP_price(),null,null,new ProductSize(ps_no,s_size, product),sUserId,bt_no,1);
-			int insertProductDetail = productDetailService.insert(insertPd);
+			//int insertProductDetail = productDetailService.insert(insertPd);
 			model.addAttribute("product", product);
 			System.out.println(product);
 			
@@ -259,7 +259,7 @@ public class ProductController {
 			int ps_no = productSizeService.selectByPnoSize(p_no, s_size);
 			ProductSize productSize = productSizeService.selectByNo(ps_no);
 			ProductDetail insertPd= new ProductDetail(0,product.getP_price(),null,null,new ProductSize(ps_no,s_size, product),sUserId,bt_no,1);
-			int insertProductDetail = productDetailService.insert(insertPd);
+			//int insertProductDetail = productDetailService.insert(insertPd);
 			model.addAttribute("product", product);
 			System.out.println(product);
 			
