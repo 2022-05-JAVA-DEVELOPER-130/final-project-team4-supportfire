@@ -266,7 +266,7 @@ public class OrdersRestController {
 		System.out.println(ps_no);
 		ProductSize productSize=productSizeService.selectByNo(ps_no);
 		System.out.println(productSize);
-		ProductDetail newProductDetail = new ProductDetail(p_no,price, "", "",productSize , sUserId,1 ,2);
+		ProductDetail newProductDetail = new ProductDetail(p_no,price, "", "",productSize , sUserId,1 ,1);
 		
 		int insertRowCount=productDetailService.insertSequence(newProductDetail);
 		
@@ -298,7 +298,7 @@ public class OrdersRestController {
 			int ps_no = productSizeService.selectByPnoSize(p_no, s_size);
 		    ProductSize productSize = productSizeService.selectByNo(ps_no);
 		   // System.out.println(productSize);
-			ProductDetail newProductDetail = new ProductDetail(p_no, price, "", "",productSize, sUserId,1 ,2);
+			ProductDetail newProductDetail = new ProductDetail(p_no, price, "", "",productSize, sUserId,2 ,1);
 			int insertRowCount=productDetailService.insertSequence(newProductDetail);
 			data=newProductDetail;
 			resultMap.put("code",code);
