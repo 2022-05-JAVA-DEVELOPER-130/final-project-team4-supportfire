@@ -20,12 +20,12 @@ function login_form(){
       <div class="card login-card">
         <div class="row no-gutters">
           <div class="col-md-5">
-            <img src="img/login.jpg" alt="login" class="login-card-img">
+            <img src="img/bg_info02.05e2a28.png" alt="login" class="login-card-img">
           </div>
           <div class="col-md-7">
             <div class="card-body">
               <div class="brand-wrapper">
-                <img src="img/logo.svg" alt="logo" class="logo">
+                <img src="img/IMG_0608 (1).jpg" alt="logo" class="logo">
               </div>
               <p class="login-card-description">Sign into your account</p>
               <form action="#!" id="login_form">
