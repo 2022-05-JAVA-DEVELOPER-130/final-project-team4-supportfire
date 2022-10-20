@@ -58,7 +58,6 @@ public class ProductSizeController {
 			PDDTO pddto = new PDDTO(String.valueOf(map.get(sizes.getS_size()+"1")), String.valueOf(map.get(sizes.getS_size())));
 			stringList.add(pddto);
 		}
-		
 		resultMap.put("code",code);
 	    resultMap.put("url",url);
 	    resultMap.put("msg",msg);
@@ -142,7 +141,7 @@ public class ProductSizeController {
 		if(buymin.equals("null")){
 			buymin = "-";
 		}
-		if(buymin.equals("판매입찰")){
+		if(buymin.equals("구매입찰")){
 			buymin = "-";
 		}
 		ProductDetail productDetail = productDetailService.selectByNo(pd_no);
