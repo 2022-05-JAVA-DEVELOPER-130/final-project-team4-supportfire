@@ -95,12 +95,13 @@ $(function(){
 		   
 		}
 	});
-	
+	var v = window.location.search;
+	a = v.replace('?', '');
 	
 	$.ajax({
 		url:'graph',
 		method:'POST',
-		data:'p_no=1',
+		data:a,
 		success:function(jsonResult){
 			var pricee = function() {
 		        var data1 = [];

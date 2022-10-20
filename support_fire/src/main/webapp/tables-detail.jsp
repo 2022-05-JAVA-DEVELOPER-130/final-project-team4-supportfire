@@ -163,6 +163,16 @@ table{
 	color: white;
 	
 }
+
+.btn{
+	margin-top: 10px;
+	float: right;
+	width: 80px;
+	margin-right: 10px;
+	height: 40px;
+	color: white;
+	
+}
 </style>
 </head>
 
@@ -223,7 +233,7 @@ table{
                         </div>
                     </div>
                     	<div id="notice_btn_container">
-							<input class="btn btn-primary list" type="button" pageno="${pageno}" value="목록" />
+							<input class="btn btn-primary notice_btn list" type="button" pageno="${pageno}" value="목록" />
                     	</div>
                 </div>
             </div>

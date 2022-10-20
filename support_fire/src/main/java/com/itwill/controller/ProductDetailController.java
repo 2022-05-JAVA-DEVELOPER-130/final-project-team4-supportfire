@@ -26,6 +26,7 @@ public class ProductDetailController {
 	@RequestMapping("graph")
 	@ResponseBody
 	public Map graph(int p_no) {
+		System.out.println(p_no);
 		Map resultMap = new HashMap();
 		int code=0;
 		String url="";
