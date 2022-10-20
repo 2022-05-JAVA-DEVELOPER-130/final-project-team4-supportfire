@@ -69,12 +69,12 @@ function sizeClick_p(productDetail, productSize, product, buymin){
 							style="background-color: rgb(235, 240, 245);">
 							<picture data-v-6c8b3524="" data-v-edf7886c=""
 								class="picture product_img">
-							<source data-v-6c8b3524="" type="image/webp"
+							<source data-v-6c8b3524="" type="image"
 								srcset="img/product/${product.p_image}">
 							<source data-v-6c8b3524=""
-								srcset="https://kream-phinf.pstatic.net/MjAyMjA2MTVfMjYw/MDAxNjU1MjgzNjk2Mzk3.gh8n5rs7p-pWVqzIhNh7yj_KdyjLFBeJr9QbsDumoFEg.KdvPfvgBYmjm7MKKhcbIEQIP6FGeuof_GnmcDUgrvyAg.PNG/a_baa1ccea3726495badba419dfede63f9.png?type=l">
+								srcset="img/product/${product.p_image}">
 							<img data-v-6c8b3524="" alt="상품 이미지"
-								src="${product.p_image}?type=l" class="image"></picture>
+								src="img/product/${product.p_image}"></picture>
 							<!---->
 							<!---->
 							<!---->
@@ -164,12 +164,12 @@ function sizeClick_p_null(productSize, product, buymin){
 							style="background-color: rgb(235, 240, 245);">
 							<picture data-v-6c8b3524="" data-v-edf7886c=""
 								class="picture product_img">
-							<source data-v-6c8b3524="" type="image/webp"
+							<source data-v-6c8b3524="" type="image"
 								srcset="img/product/${product.p_image}">
 							<source data-v-6c8b3524=""
-								srcset="https://kream-phinf.pstatic.net/MjAyMjA2MTVfMjYw/MDAxNjU1MjgzNjk2Mzk3.gh8n5rs7p-pWVqzIhNh7yj_KdyjLFBeJr9QbsDumoFEg.KdvPfvgBYmjm7MKKhcbIEQIP6FGeuof_GnmcDUgrvyAg.PNG/a_baa1ccea3726495badba419dfede63f9.png?type=l">
+								srcset="img/product/${product.p_image}">
 							<img data-v-6c8b3524="" alt="상품 이미지"
-								src="${product.p_image}?type=l" class="image"></picture>
+								src="img/product/${product.p_image}"></picture>
 							<!---->
 							<!---->
 							<!---->
@@ -260,12 +260,12 @@ function sizeClick_s(productDetail, productSize, product, buymin){
 							style="background-color: rgb(235, 240, 245);">
 							<picture data-v-6c8b3524="" data-v-edf7886c=""
 								class="picture product_img">
-							<source data-v-6c8b3524="" type="image/webp"
+							<source data-v-6c8b3524="" type="image"
 								srcset="img/product/${product.p_image}">
 							<source data-v-6c8b3524=""
-								srcset="https://kream-phinf.pstatic.net/MjAyMjA2MTVfMjYw/MDAxNjU1MjgzNjk2Mzk3.gh8n5rs7p-pWVqzIhNh7yj_KdyjLFBeJr9QbsDumoFEg.KdvPfvgBYmjm7MKKhcbIEQIP6FGeuof_GnmcDUgrvyAg.PNG/a_baa1ccea3726495badba419dfede63f9.png?type=l">
+								srcset="img/product/${product.p_image}">
 							<img data-v-6c8b3524="" alt="상품 이미지"
-								src="${product.p_image}?type=l" class="image"></picture>
+								src="img/product/${product.p_image}"></picture>
 							<!---->
 							<!---->
 							<!---->
@@ -355,12 +355,12 @@ function sizeClick_s_null(productSize, product, buymin){
 							style="background-color: rgb(235, 240, 245);">
 							<picture data-v-6c8b3524="" data-v-edf7886c=""
 								class="picture product_img">
-							<source data-v-6c8b3524="" type="image/webp"
+							<source data-v-6c8b3524="" type="image"
 								srcset="img/product/${product.p_image}">
 							<source data-v-6c8b3524=""
-								srcset="https://kream-phinf.pstatic.net/MjAyMjA2MTVfMjYw/MDAxNjU1MjgzNjk2Mzk3.gh8n5rs7p-pWVqzIhNh7yj_KdyjLFBeJr9QbsDumoFEg.KdvPfvgBYmjm7MKKhcbIEQIP6FGeuof_GnmcDUgrvyAg.PNG/a_baa1ccea3726495badba419dfede63f9.png?type=l">
+								srcset="img/product/${product.p_image}">
 							<img data-v-6c8b3524="" alt="상품 이미지"
-								src="${product.p_image}?type=l" class="image"></picture>
+								src="img/product/${product.p_image}"></picture>
 							<!---->
 							<!---->
 							<!---->

@@ -399,12 +399,12 @@ $(function(){
 										style="background-color: rgb(242, 242, 242);">
 										<picture data-v-6c8b3524="" data-v-edf7886c=""
 											class="picture product_img">
-										<source data-v-6c8b3524="" type="image/webp"
+										<source data-v-6c8b3524="" type="image"
 											srcset="img/product/${product.p_image}">
 										<source data-v-6c8b3524=""
-											srcset="https://kream-phinf.pstatic.net/MjAyMjA5MjdfOCAg/MDAxNjY0MjU5NTg2MDIy.wQktWmJWTwo83JVbleQzdaQ2OOfKTJp9RejdJvoeK-cg.Svg3Q-zegOeOgmjB6WpvyFAwXv51kpmljf-cvrybr08g.JPEG/a_9fe393b4a2c44008b1fecbc65adb407d.jpg?type=l">
+											srcset="img/product/${product.p_image}">
 										<img data-v-6c8b3524="" alt="상품 이미지"
-											src="https://kream-phinf.pstatic.net/MjAyMjA5MjdfOCAg/MDAxNjY0MjU5NTg2MDIy.wQktWmJWTwo83JVbleQzdaQ2OOfKTJp9RejdJvoeK-cg.Svg3Q-zegOeOgmjB6WpvyFAwXv51kpmljf-cvrybr08g.JPEG/a_9fe393b4a2c44008b1fecbc65adb407d.jpg?type=l"
+											src="img/product/${product.p_image}"
 											class="image"></picture>
 										<!---->
 										<!---->
