@@ -315,7 +315,7 @@ function use_point(){
 				success:function(jsonResult){
 				   
 					
-					alert('구매가 생성되었습니다');
+					alert('구매되었습니다');
 				 	location.href="main";  
 				}
 			
@@ -324,7 +324,7 @@ function use_point(){
 			 $.ajax({
 					url:'orders_purchase_ipchal',
 					method:'POST',
-					data:'p_no='+${product.p_no},
+					data: a,
 					dataType:'json',
 					success:function(jsonResult){
 					    alert('구매입찰되었습니다');	

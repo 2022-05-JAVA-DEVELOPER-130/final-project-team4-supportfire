@@ -176,38 +176,46 @@ function showDelivery() {
 
 };
 
- $(function(){
-		
-		$.ajax({
-			url:'session_check',
-			method:'POST',
-			dataType:'json',
-			success:function(jsonResult){
-			    if(jsonResult.code==1){
-			    	var member = jsonResult.data;
-				 	$('#top_content').html(login_top(member));
-			    }else if(jsonResult.code==2){
-				 	$('#top_content').html(logout_top());
-			    }
-			   
-			}
-		});
-		
-	$(document).on('click', '#address_btn', function(){
-	console.log($('#address_form').serialize());
-	 $.ajax({
-			url:'address_btn',
-			method:'POST',
-			data: $('#address_form').serialize(),
-			dataType:'json',
-			success:function(jsonResult){
-				$('#content').html(address_form_content(jsonResult));
-			}
+$(function(){
+	 $(document).on('click', '#sell_btn', function(){	
+		 var v = window.location.search;
+			console.log(v);
+			a = v.replace('?', '');
+			console.log(a);
+		console.log('생성');
+		console.log(${product.p_no});
+		console.log(${price});
+		if(${productDetail.pd_no}!=0){
+			$.ajax({
+				url:'orders_sell',
+				method:'POST',
+				data:a,
+				dataType:'json',
+				success:function(jsonResult){
+				   
+					
+					alert('판매되었습니다');
+				 	location.href="main";  
+				}
+			
+			});
+		}else{
+			 $.ajax({
+					url:'orders_sell_ipchal',
+					method:'POST',
+					data: a,
+					dataType:'json',
+					success:function(jsonResult){
+					    alert('판매입찰되었습니다');	
+					   location.href="main";
+					   
+					}
+				});
+		 }
+		 
+		 });
 	 });
-	});
-	
-	
-});
+
  
  //db저장
  $(function(){
