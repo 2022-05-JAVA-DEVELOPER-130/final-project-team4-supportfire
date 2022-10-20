@@ -16,9 +16,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.itwill.dto.Address;
 import com.itwill.dto.Member;
 import com.itwill.dto.Orders;
 import com.itwill.dto.Payment;
+import com.itwill.service.AddressService;
 import com.itwill.service.MemberService;
 import com.itwill.service.PaymentService;
 
@@ -29,6 +31,8 @@ public class PaymentController {
 	private PaymentService paymentService;
 	@Autowired
 	private MemberService memberService;
+	@Autowired
+	private AddressService addressService;
 	
 	//pm_no로 결제내역조회
 	@RequestMapping(value="select_by_pm_no" ,params="pm_no")
@@ -173,8 +177,23 @@ public class PaymentController {
 		return resultMap;
 	}
 	
-	
-	
+	@RequestMapping("check_address")
+	public Map check_address(HttpSession session) {
+		Map resultMap=new HashMap();
+		int code=0;
+		String url="";
+		String msg="";
+		String sUserId = (String)session.getAttribute("sUserId");
+		Address address = addressService.selectMainAddr(sUserId);
+		
+		
+		resultMap.put("code", code);
+		resultMap.put("url", url);
+		resultMap.put("msg", msg);
+		resultMap.put("data", address);
+		
+		return resultMap;
+	}
 	
 	
 }

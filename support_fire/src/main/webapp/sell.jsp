@@ -177,6 +177,23 @@ function showDelivery() {
 };
 
 $(function(){
+	$(document).on('click', '#address_btn', function(){
+		console.log($('#address_form').serialize());
+		 $.ajax({
+				url:'address_btn',
+				method:'POST',
+				data: $('#address_form').serialize(),
+				dataType:'json',
+				success:function(jsonResult){
+					$('#content').html(address_form_content(jsonResult));
+					$('.modal').removeClass('show');
+					body.style.overflow = 'auto';
+				}
+		 });
+		});
+	
+	
+	
 	 $(document).on('click', '#sell_btn', function(){	
 		 var v = window.location.search;
 			console.log(v);
@@ -248,6 +265,31 @@ $(function(){
 	 }
 	 
 	 });
+	 
+	 
+	 $("#acc").change(function(){
+	        if($("#acc").is(":checked")){
+	            $.ajax({
+	            	url:'check_address',
+	            	success:function(jsonResult){
+	            		$('#m_id').attr('value',jsonResult.data.a_name);
+						$('#m_phone').attr('value',jsonResult.data.a_phone);
+						$('#sample4_postcode').attr('value',jsonResult.data.a_zipcode);
+						$('#sample4_roadAddress').attr('value',jsonResult.data.a_streetAddr);
+						$('#sample4_jibunAddress').attr('value',jsonResult.data.a_detailAddr);
+	            	}
+	            });
+	            
+	            
+	            
+	        }else{
+	        	$('#m_id').attr('value',"");
+				$('#m_phone').attr('value',"");
+				$('#sample4_postcode').attr('value',"");
+				$('#sample4_roadAddress').attr('value',"");
+				$('#sample4_jibunAddress').attr('value',"");
+	        }
+	    });
  });
 	 
 
@@ -275,7 +317,7 @@ $(function(){
 									<span>우편번호*</span>
 								</p>
 								<input type="button" class="asd" onclick="showDelivery()" value="우편번호 찾기"
-									class="input_txt"> <input type="text" class="asd"
+									class="input_txt" style="background-color: rgba(0, 0, 0, 0.4); color: white; align-content: center;"> <input type="text" class="asd" 
 									id="sample4_postcode">
 							</div>
 									<span>주소*</span>
