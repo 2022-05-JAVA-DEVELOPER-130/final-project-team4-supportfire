@@ -149,8 +149,7 @@
 		console.log(a);
 
 		html = "";
-		$
-				.ajax({
+		$.ajax({
 					url : 'product_size',
 					method : 'GET',
 					dataType : 'json',

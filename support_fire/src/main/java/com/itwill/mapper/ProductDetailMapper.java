@@ -53,7 +53,7 @@ public interface ProductDetailMapper {
 		List<ProductDetail> selectAll();
 		
 		//제품 1개 판매 내역
-		@Select("select * from productSize ps join (select * from productDetail where bt_no = 2 and b_no = 3) pd on pd.ps_no = ps.ps_no where ps.p_no = #{p_no}")
+		@Select("select * from productSize ps join (select * from productDetail where bt_no = 2 and b_no = 3) pd on pd.ps_no = ps.ps_no where ps.p_no = #{p_no} order by pd.pd_start asc")
 		@ResultMap("productDetail")
 		List<ProductDetail> selectSellListByNo(int p_no);
 		

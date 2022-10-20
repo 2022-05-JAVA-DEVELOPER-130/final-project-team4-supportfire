@@ -29,4 +29,9 @@ public class AddressDaoImp implements AddressDao{
 		return addressMapper.selectAllById(m_id);
 	}
 
+	@Override
+	public Address selectMainAddr(String m_id) {
+		return addressMapper.selectMainAddr(m_id);
+	}
+
 }

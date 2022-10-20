@@ -14,4 +14,6 @@ public interface AddressService {
 	int delete(int a_no);
 	
 	List<Address> selectAllById(String m_id);
+	
+	Address selectMainAddr(String m_id);
 }

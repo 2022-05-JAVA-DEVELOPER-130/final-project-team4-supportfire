@@ -182,10 +182,10 @@ insert into member values('hyun', '1234', '현악기', '01045678901', '900602', 
     
 /***********배달주소*************/
 
-insert into deliveryaddress values('집', '06392', '서울시 강남구', '301호', 'seongmin');
-insert into deliveryaddress values('회사', '09283', '서울시 서초구', '302호', 'bongkyoun');
-insert into deliveryaddress values('사무실', '11846', '서울시 종로구', '303호', 'jiwon');
-insert into deliveryaddress values('집', '03527', '서울시 중구', '304호', 'hyun');
+insert into address values(ADDRESS_A_NO_SEQ.nextval, '정성민', '01012345678', '06392', '서울시 강남구', '301호', 'seongmin');
+insert into address values('회사', '09283', '서울시 서초구', '302호', 'bongkyoun');
+insert into address values('사무실', '11846', '서울시 종로구', '303호', 'jiwon');
+insert into address values('집', '03527', '서울시 중구', '304호', 'hyun');
 
 /*************제품상세****************/
 insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 169000, sysdate, sysdate+7, 1, 'seongmin', 2, 1);

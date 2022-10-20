@@ -1,4 +1,3 @@
-DROP TABLE REQNA CASCADE CONSTRAINTS;
 DROP TABLE payment CASCADE CONSTRAINTS;
 DROP TABLE paymentList CASCADE CONSTRAINTS;
 DROP TABLE wishList CASCADE CONSTRAINTS;
@@ -6,6 +5,7 @@ DROP TABLE orders CASCADE CONSTRAINTS;
 DROP TABLE notice CASCADE CONSTRAINTS;
 DROP TABLE review CASCADE CONSTRAINTS;
 DROP TABLE QNA CASCADE CONSTRAINTS;
+DROP TABLE REQNA CASCADE CONSTRAINTS;
 DROP TABLE productDetail CASCADE CONSTRAINTS;
 DROP TABLE bidStatus CASCADE CONSTRAINTS;
 DROP TABLE bidType CASCADE CONSTRAINTS;
@@ -14,8 +14,9 @@ DROP TABLE sizes CASCADE CONSTRAINTS;
 DROP TABLE product CASCADE CONSTRAINTS;
 DROP TABLE brands CASCADE CONSTRAINTS;
 DROP TABLE category CASCADE CONSTRAINTS;
-DROP TABLE deliveryAddress CASCADE CONSTRAINTS;
+DROP TABLE Address CASCADE CONSTRAINTS;
 DROP TABLE member CASCADE CONSTRAINTS;
+
 /**********************************/
 /* Table Name: member */
 /**********************************/
@@ -35,6 +36,7 @@ DROP SEQUENCE member_m_id_SEQ;
 
 CREATE SEQUENCE member_m_id_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
 
+
 COMMENT ON TABLE member is 'member';
 COMMENT ON COLUMN member.m_id is 'm_id';
 COMMENT ON COLUMN member.m_password is 'm_password';
@@ -48,22 +50,30 @@ COMMENT ON COLUMN member.m_address is 'm_address';
 
 
 /**********************************/
-/* Table Name: deliveryAddress */
+/* Table Name: Address */
 /**********************************/
-CREATE TABLE deliveryAddress(
-		da_name                       		VARCHAR2(30)		 NULL ,
-		da_zipcode                    		VARCHAR2(20)		 NULL ,
-		da_streetAddr                 		VARCHAR2(30)		 NULL ,
-		da_detailAddr                 		VARCHAR2(30)		 NULL ,
+CREATE TABLE Address(
+		a_no                          		NUMBER(10)		 NULL ,
+		a_name                        		VARCHAR2(30)		 NULL ,
+		a_phone                       		VARCHAR2(15)		 NULL ,
+		a_zipcode                     		VARCHAR2(50)		 NULL ,
+		a_streetAddr                  		VARCHAR2(100)		 NULL ,
+		a_detailAddr                  		VARCHAR2(100)		 NULL ,
 		m_id                          		VARCHAR2(20)		 NULL 
 );
 
-COMMENT ON TABLE deliveryAddress is 'deliveryAddress';
-COMMENT ON COLUMN deliveryAddress.da_name is 'da_name';
-COMMENT ON COLUMN deliveryAddress.da_zipcode is 'da_zipcode';
-COMMENT ON COLUMN deliveryAddress.da_streetAddr is 'da_streetAddr';
-COMMENT ON COLUMN deliveryAddress.da_detailAddr is 'da_detailAddr';
-COMMENT ON COLUMN deliveryAddress.m_id is 'm_id';
+DROP SEQUENCE Address_a_no_SEQ;
+
+CREATE SEQUENCE Address_a_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
+
+COMMENT ON TABLE Address is 'Address';
+COMMENT ON COLUMN Address.a_no is 'a_no';
+COMMENT ON COLUMN Address.a_name is 'a_name';
+COMMENT ON COLUMN Address.a_phone is 'a_phone';
+COMMENT ON COLUMN Address.a_zipcode is 'a_zipcode';
+COMMENT ON COLUMN Address.a_streetAddr is 'a_streetAddr';
+COMMENT ON COLUMN Address.a_detailAddr is 'a_detailAddr';
+COMMENT ON COLUMN Address.m_id is 'm_id';
 
 
 /**********************************/
@@ -215,6 +225,26 @@ COMMENT ON COLUMN productDetail.b_no is 'b_no';
 
 
 /**********************************/
+/* Table Name: REQNA */
+/**********************************/
+CREATE TABLE REQNA(
+		rq_no                         		NUMBER(10)		 NOT NULL,
+		rq_content                    		VARCHAR2(1000)		 NULL ,
+		rq_date                       		DATE		 DEFAULT sysdate		 NULL 
+);
+
+DROP SEQUENCE REQNA_rq_no_SEQ;
+
+CREATE SEQUENCE REQNA_rq_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
+
+
+COMMENT ON TABLE REQNA is 'REQNA';
+COMMENT ON COLUMN REQNA.rq_no is 'rq_no';
+COMMENT ON COLUMN REQNA.rq_content is 'rq_content';
+COMMENT ON COLUMN REQNA.rq_date is 'rq_date';
+
+
+/**********************************/
 /* Table Name: QNA */
 /**********************************/
 CREATE TABLE QNA(
@@ -222,8 +252,8 @@ CREATE TABLE QNA(
 		q_title                       		VARCHAR2(100)		 NULL ,
 		q_content                     		VARCHAR2(1000)		 NULL ,
 		q_date                        		DATE		 NULL ,
-		m_id                          		VARCHAR2(20)		 NULL, 
-        rq_no                         		NUMBER(10)
+		m_id                          		VARCHAR2(20)		 NULL ,
+		rq_no                         		NUMBER(10)		 NULL 
 );
 
 DROP SEQUENCE QNA_q_no_SEQ;
@@ -237,6 +267,7 @@ COMMENT ON COLUMN QNA.q_title is 'q_title';
 COMMENT ON COLUMN QNA.q_content is 'q_content';
 COMMENT ON COLUMN QNA.q_date is 'q_date';
 COMMENT ON COLUMN QNA.m_id is 'm_id';
+COMMENT ON COLUMN QNA.rq_no is 'rq_no';
 
 
 /**********************************/
@@ -271,12 +302,10 @@ COMMENT ON COLUMN review.p_no is 'p_no';
 /* Table Name: notice */
 /**********************************/
 CREATE TABLE notice(
-		n_no                     		NUMBER(10)		 NULL ,
-		n_title                  		VARCHAR2(100)		 NULL ,
-		n_content                		VARCHAR2(1000)		 NULL ,
-		n_date                   		DATE		 NULL ,
-		n_count                  		NUMBER(10)		 NULL ,
-		n_fix                    		NUMBER(10)		 DEFAULT 0		 NULL 
+		n_no                          		NUMBER(10)		 NULL ,
+		n_title                       		VARCHAR2(100)		 NULL ,
+		n_content                     		VARCHAR2(1000)		 NULL ,
+		n_date                        		DATE		 NULL 
 );
 
 DROP SEQUENCE notice_n_no_SEQ;
@@ -366,29 +395,11 @@ COMMENT ON COLUMN payment.o_no is 'o_no';
 COMMENT ON COLUMN payment.pl_no is 'pl_no';
 
 
-/**********************************/
-/* Table Name: REQNA */
-/**********************************/
-CREATE TABLE REQNA(
-		rq_no                         		NUMBER(10)		 NOT NULL,
-		rq_content                    		VARCHAR2(1000)		 NULL ,
-		rq_date                       		DATE		 DEFAULT sysdate		 NULL
-);
-
-DROP SEQUENCE REQNA_rq_no_SEQ;
-
-CREATE SEQUENCE REQNA_rq_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
-
-
-COMMENT ON TABLE REQNA is 'REQNA';
-COMMENT ON COLUMN REQNA.rq_no is 'rq_no';
-COMMENT ON COLUMN REQNA.rq_content is 'rq_content';
-COMMENT ON COLUMN REQNA.rq_date is 'rq_date';
 
 ALTER TABLE member ADD CONSTRAINT IDX_member_PK PRIMARY KEY (m_id);
 
-ALTER TABLE deliveryAddress ADD CONSTRAINT IDX_deliveryAddress_PK PRIMARY KEY (da_zipcode);
-ALTER TABLE deliveryAddress ADD CONSTRAINT IDX_deliveryAddress_FK0 FOREIGN KEY (m_id) REFERENCES member (m_id);
+ALTER TABLE Address ADD CONSTRAINT IDX_Address_PK PRIMARY KEY (a_no, a_zipcode);
+ALTER TABLE Address ADD CONSTRAINT IDX_Address_FK0 FOREIGN KEY (m_id) REFERENCES member (m_id);
 
 ALTER TABLE category ADD CONSTRAINT IDX_category_PK PRIMARY KEY (c_no);
 
@@ -441,6 +452,3 @@ ALTER TABLE payment ADD CONSTRAINT IDX_payment_PK PRIMARY KEY (pm_no);
 ALTER TABLE payment ADD CONSTRAINT IDX_payment_FK0 FOREIGN KEY (o_no) REFERENCES orders (o_no);
 ALTER TABLE payment ADD CONSTRAINT IDX_payment_FK1 FOREIGN KEY (pl_no) REFERENCES paymentList (pl_no);
 
-
-
-COMMIT;

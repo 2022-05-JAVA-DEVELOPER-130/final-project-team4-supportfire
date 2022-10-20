@@ -28,4 +28,9 @@ public class AddressServiceImp implements AddressService{
 	public List<Address> selectAllById(String m_id) {
 		return addressDao.selectAllById(m_id);
 	}
+
+	@Override
+	public Address selectMainAddr(String m_id) {
+		return addressDao.selectMainAddr(m_id);
+	}
 }

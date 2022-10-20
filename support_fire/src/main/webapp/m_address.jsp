@@ -364,10 +364,10 @@ function showDelivery() {
 							<!---->
 						</div>
 						<div class="btn_box" data-v-88eb18f6="">
-							<a href="#" class="btn btn_add" data-v-3d1bcc82=""
+							<a href="#" class="btn btn_add btn-open-popup" data-v-3d1bcc82=""
 								data-v-88eb18f6="">
 								<!---->
-								<span class="btn_txt btn-open-popup" data-v-88eb18f6="">+ 새 배송지 추가</span>
+								<span class="btn_txt" data-v-88eb18f6="">+ 새 배송지 추가</span>
 							</a>
 						</div>
 					</div>
@@ -383,13 +383,16 @@ function showDelivery() {
 									<!---->
 									<div data-v-be4e2246="" class="address_info" data-v-7d49a47c="">
 										<div data-v-be4e2246="" class="name_box">
-											<span data-v-be4e2246="" class="name">정**</span><span
-												data-v-be4e2246="" class="mark">기본 배송지</span>
+											<span data-v-be4e2246="" class="name">정**</span>
+											<span data-v-be4e2246="" class="mark">기본 배송지</span>
 										</div>
 										<p data-v-be4e2246="" class="phone">
-											010<span class="hyphen"></span>1<span class="dot"></span><span
-												class="dot"></span><span class="dot"></span><span
-												class="hyphen"></span><span class="dot"></span>678
+											010<span class="hyphen"></span>
+											1<span class="dot"></span>
+											<span class="dot"></span>
+											<span class="dot"></span>
+											<span class="hyphen"></span>
+											<span class="dot"></span>678
 										</p>
 										<div data-v-be4e2246="" class="address_box">
 											<span data-v-be4e2246="" class="zipcode">(06035)</span><span
@@ -411,7 +414,9 @@ function showDelivery() {
 							<div data-v-1c284ef0="" class="other_list"></div>
 						</div>
 					</div>
-					</div>
+					
+					
+				</div>
 
 				</div>
 			</div>

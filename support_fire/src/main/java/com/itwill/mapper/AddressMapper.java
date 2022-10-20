@@ -23,4 +23,7 @@ public interface AddressMapper {
 	@Select("select * from adress where m_id=#{m_id}")
 	List<Address> selectAllById(String m_id);
 	
+	@Select("select * from member m join address a on m.m_address = a.a_streetAddr where m.m_id = #{m_id}")
+	Address selectMainAddr(String m_id);
+	
 }
