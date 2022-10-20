@@ -41,5 +41,4 @@ public interface ProductDao {
 	//product 총 갯수 찾기
 	public int product_countAll();
 	
-	List<Map> selectBrand(int pageStart, int pageEnd);
 }

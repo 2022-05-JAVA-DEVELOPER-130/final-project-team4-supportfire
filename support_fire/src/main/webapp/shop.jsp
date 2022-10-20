@@ -213,7 +213,7 @@ $(function(){
                                 <input type="hidden" id="p_no" value="${product.p_no}">
                                 </div>
                                 <div class="product__item__text">
-                                	<h6>${product.br_no}</h6>
+                                	<h6>Nike</h6>
                                     <a href="shop-details?p_no=${product.p_no}" class="add-cart">제품 상세보기</a>
                                     <h5>${product.p_name}</h5>
                                     <h6>${productList.priceList[status.index].min_price}</h6>
