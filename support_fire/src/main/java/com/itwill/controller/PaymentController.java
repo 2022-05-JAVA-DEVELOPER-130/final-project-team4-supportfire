@@ -98,19 +98,26 @@ public class PaymentController {
 	}
 	
 	
-	//결제번호로 배송지 업데이트
-	@RequestMapping(value = "paymen_modify_action")
-	public Map payment_modify_action( Payment payment) {
+	//아이디로 기본 배송지 업데이트
+	@RequestMapping("address_modify_action")
+	public Map payment_modify_action( String m_phone, String sample4_roadAddress,HttpServletRequest request) throws Exception{
 		Map resultMap=new HashMap();
-		int code=2;
+		int code=1;
 		String url="";
 		String msg="";
-		List<Payment> resultList=new ArrayList<Payment>();
+		String data="";
+		String sUserId=(String)request.getSession().getAttribute("sUserId");
+		request.getSession().setAttribute("sUserId", sUserId);
+		Member member = memberService.selectById(sUserId);
+		Member updatemember=new Member(sUserId,member.getM_password(),member.getM_name(),m_phone,member.getM_birth(),
+				member.getM_email(),member.getM_gender(),member.getM_point(),sample4_roadAddress);
+		 int updateMember=memberService.updateMember(updatemember);
+		 
 		try {
 			code=1;
 			url="";
 			msg="배송지가 변경되었습니다.";
-			//int row_count=paymentService.updateByNo(new Payment(pm, msg, msg, url, msg, pd_no, pd_no);
+			
 		} catch (Exception e) {
 			code=2;
 			url="";
@@ -120,7 +127,7 @@ public class PaymentController {
 		resultMap.put("code", code);
 		resultMap.put("url", url);
 		resultMap.put("msg", msg);
-		resultMap.put("data",resultList);
+		resultMap.put("data",updatemember);
 		
 		return resultMap;
 	}

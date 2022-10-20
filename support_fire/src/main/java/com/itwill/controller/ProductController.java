@@ -45,18 +45,47 @@ public class ProductController {
 	
 	@RequestMapping("brands_list_rest")
     @ResponseBody
-	public Map<String, Object> brands_list_rest(@RequestParam(required = false)int br_no) {
-		Map<String, Object> resultMap= new HashMap();
+	public Map brands_list_rest(int br_no) {
+		Map resultMap= new HashMap();
+		Map MinMap= new HashMap();
 		int code=1;
  		String url="";
  		String msg="";
- 		List<Product> brandsList = null;
- 		brandsList = productService.selectBrands(br_no);
- 		System.out.println(brandsList);
+ 		List<Product> ProductList = new ArrayList<Product>();
+ 		List<String> brandList = new ArrayList<String>();
+ 		List<String> priceList = new ArrayList<String>();
+ 		ProductList = productService.selectBrands(br_no);
+		for (Product product : ProductList) {
+			if(product.getBr_no() == 1) {
+				brandList.add("Nike");
+			}else if(product.getBr_no() == 2) {
+				brandList.add("adidas");
+				
+			}else if(product.getBr_no() == 3) {
+				brandList.add("Vans");
+				
+			}else if(product.getBr_no() == 4) {
+				brandList.add("New Balance");
+				
+			}
+			
+			MinMap = productService.selectSellMinPriceByNo(product.getP_no());
+			
+			if(String.valueOf(MinMap.get("min_price")).equals("null") || String.valueOf(MinMap.get("min_price")) == null) {
+				priceList.add("구매입찰");
+			}else {
+			priceList.add(String.valueOf(MinMap.get("min_price")) +"원");
+			}
+		}
+		
+		
+		
  		resultMap.put("code",code);
 	    resultMap.put("url",url);
 	    resultMap.put("msg",msg);
-	    resultMap.put("data",brandsList);
+	    resultMap.put("data",ProductList);
+	    resultMap.put("brandList",brandList);
+	    resultMap.put("priceList", priceList);
 	    
 	    return resultMap;
 	}
@@ -73,12 +102,33 @@ public class ProductController {
  		//List<Product> brandsList = null;
  		//brandsList = productService.selectBrands(br_no);
  		productList = productService.selectAll_p(pageno);
- 		System.out.println("a : "+productList);
+ 		List<Product> ListP = productList.getItemList();
+		List<String> brandList = new ArrayList<String>();
+		for (Product product : ListP) {
+			if(product.getBr_no() == 1) {
+				brandList.add("Nike");
+			}else if(product.getBr_no() == 2) {
+				brandList.add("adidas");
+				
+			}else if(product.getBr_no() == 3) {
+				brandList.add("Vans");
+				
+			}else if(product.getBr_no() == 4) {
+				brandList.add("New Balance");
+				
+			}
+		}
+		
+		
+		
+		
  		//System.out.println("b : "+brandsList);
  		resultMap.put("code",code);
 	    resultMap.put("url",url);
 	    resultMap.put("msg",msg);
 	    resultMap.put("data",productList);
+	    resultMap.put("brandList", brandList);
+	    
 	   //resultMap.put("data1",brandsList);
 	    
 	    return resultMap;
@@ -90,11 +140,31 @@ public class ProductController {
 		ProductPageMakerDto<Product> productList = productService.selectAll_p(pageno);
 		int productCount = productService.product_countAll();
 		System.out.println(productList);
+		List<Brands> BList = brandsService.selectAll();
+		List<Product> ListP = productList.getItemList();
+		List<String> brandList = new ArrayList<String>();
+		for (Product product : ListP) {
+			if(product.getBr_no() == 1) {
+				brandList.add("Nike");
+			}else if(product.getBr_no() == 2) {
+				brandList.add("adidas");
+				
+			}else if(product.getBr_no() == 3) {
+				brandList.add("Vans");
+				
+			}else if(product.getBr_no() == 4) {
+				brandList.add("New Balance");
+				
+			}
+		}
+		
 		//System.out.println(brandList);
 		//Map price = productService.selectAllMinPrice();
 		model.addAttribute("productList", productList);
 		model.addAttribute("pageno", pageno);
 		model.addAttribute("productCount", productCount);
+		model.addAttribute("brandList", brandList);
+		model.addAttribute("BList", BList);
 		//model.addAttribute("brandList", brandList);
 		//model.addAttribute("price", price);
 		//System.out.println(productList.get(1).getP_no());

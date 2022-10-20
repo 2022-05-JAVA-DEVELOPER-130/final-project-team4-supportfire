@@ -214,7 +214,7 @@ $.ajax({
 });
 
 
-$(document).on('click', '#mypage_info', function(){
+$(document).on('click', '#mypage_info', function(e){
 	$.ajax({
 		url:'mypage_form',
 		method:'POST',
@@ -223,7 +223,7 @@ $(document).on('click', '#mypage_info', function(){
 			$('#fff').html(mypage_info(jsonResult.data[0]));
 		}
 	});
-
+	e.preventDefault();
 });
 	$(document).on('click','#modify' ,function(e){
 		

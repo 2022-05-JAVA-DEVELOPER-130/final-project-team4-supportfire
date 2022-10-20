@@ -456,7 +456,7 @@ function changeProductList(pageno) {
                                 <input type="hidden" id="p_no" value="${data.itemList[i].p_no}">
                                 </div>
                                 <div class="product__item__text">
-                                	<h6>Nike</h6>
+                                	<h6>${resultObj.brandList[i]}</h6>
                                     <a href="shop-details?p_no=${data.itemList[i].p_no}" class="add-cart">제품 상세보기</a>
                                     <h5>${data.itemList[i].p_name}</h5>
                                     <h6>${data.priceList[i].min_price}</h6>
@@ -493,31 +493,32 @@ function changeProductList(pageno) {
 		}
 	});
 }
-function brandsList(br_no) {
-	$.ajax({
-		url: "brands_list_rest",
-		method: "post",
-		data: {"br_no" :br_no},
-		dataType: "json",
-		success:function(resultObj){
-			console.log(resultObj)
-			for(var i=0; i<data.length; i++){
-					htmlBuffer +=
-							` <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                          b       <div class="product__item__pic set-bg" data-setbg="img/product/${product.p_image}">
-                                <input type="hidden" id="p_no" value="${product.p_no}">
+function brandsList_content(jsonResult, brand, min_price) {
+	return	`
+				 <div class="col-lg-4 col-md-6 col-sm-6">
+                      <div class="product__item">
+                           <div class="product__item__pic set-bg"> <img src="img/product/${jsonResult.p_image}">
+                                <input type="hidden" id="p_no" value="${jsonResult.p_no}">
                                 </div>
                                 <div class="product__item__text">
-                                	<h6>123</h6>
-                                    <a href="shop-details?p_no=${product.p_no}" class="add-cart">제품 상세보기</a>
-                                    <h5>${product.p_name}</h5>
-                                    <h6>${productList.priceList[status.index].min_price}</h6>
+                                	<h6>${brand}</h6>
+                                    <a href="shop-details?p_no=${jsonResult.p_no}" class="add-cart">제품 상세보기</a>
+                                    <h5>${jsonResult.p_name}</h5>
+                                    <h6>${min_price}</h6>
                                 </div>
                             </div>
                         </div>
 							`;
-			};
-		}
-	})
+		
+}
+
+function number_btn(){
+	return `
+	<li class="page-item active"><button class="page-link" href="#">1</button></li>
+	<li class="page-item">
+					                        <button class="page-link" onclick="changeProductList();"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+				                    	 </li>
+	
+	`;
+	
 }
