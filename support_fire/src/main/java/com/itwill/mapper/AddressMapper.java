@@ -21,7 +21,7 @@ public interface AddressMapper {
 	@Delete("delete from address where a_no = #{a_no}")
 	int delete(int a_no);
 	
-	@Select("select * from member m join address a on m.m_address <> a.a_streetAddr where m.m_id = #{m_id}")
+	@Select("select * from member m join address a on m.m_address <> a.a_streetAddr and m.m_id = a.m_id where m.m_id = #{m_id}")
 	List<Address> selectAllById(String m_id);
 	
 	@Select("select * from address where a_no=#{a_no}")
