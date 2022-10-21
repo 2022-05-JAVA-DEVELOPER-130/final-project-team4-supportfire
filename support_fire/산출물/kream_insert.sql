@@ -568,16 +568,16 @@ insert into bidType values(1, '구매');
 insert into bidType values(2, '판매');
 
 /************회원*****************/
-insert into member values('seongmin', '1234', '정성민', '01012345678', '970902', 'seongmin@gamil.com', '남', 1000, '서울시 강남구');
-insert into member values('bongkyoun', '1234', '김봉균', '01023456789', '940601', 'bongkyoun@gamil.com', '남', 1000, '서울시 서초구');
-insert into member values('jiwon', '1234', '김지원', '01034567890', '971002', 'jiwon@gamil.com', '여', 1000, '서울시 종로구');
-insert into member values('hyun', '1234', '박현', '01045678901', '900602', 'hyun@gamil.com', '남', 1000, '서울시 중구');
-insert into member values('enbi', '1234', '임은비', '01012345678', '970902', 'seongmin@gamil.com', '남', 1000, '서울시 강남구');
-insert into member values('joo2', '1234', '이주희', '01023456789', '940601', 'bongkyoun@gamil.com', '남', 1000, '서울시 서초구');
-insert into member values('sojin', '1234', '안소진', '01034567890', '971002', 'jiwon@gamil.com', '여', 1000, '서울시 종로구');
-insert into member values('seoyoung', '1234', '최서영', '01045678901', '900602', 'hyun@gamil.com', '남', 1000, '서울시 중구');
-insert into member values('kakarot', '1234', '카카로트', '01045678901', '900602', 'hyun@gamil.com', '남', 1000, '서울시 중구');
-insert into member values('naruto', '1234', '나루토', '01045678901', '900602', 'hyun@gamil.com', '남', 1000, '서울시 중구');
+insert into member values('seongmin', '1234', '정성민', '01011111111', '970902', 'seongmin@gamil.com', '남', 1000, '서울시 강남구');
+insert into member values('bongkyoun', '1234', '김봉균', '01022222222', '940601', 'bongkyoun@gamil.com', '남', 1000, '서울시 서초구');
+insert into member values('jiwon', '1234', '김지원', '01033333333', '971002', 'jiwon@gamil.com', '여', 1000, '서울시 종로구');
+insert into member values('hyun', '1234', '박현', '01044444444', '900602', 'hyun@gamil.com', '남', 1000, '서울시 중구');
+insert into member values('enbi', '1234', '임은비', '01055555555', '970902', 'seongmin@gamil.com', '남', 1000, '서울시 강남구');
+insert into member values('joo2', '1234', '이주희', '01066666666', '940601', 'bongkyoun@gamil.com', '남', 1000, '서울시 서초구');
+insert into member values('sojin', '1234', '안소진', '01077777777', '971002', 'jiwon@gamil.com', '여', 1000, '서울시 종로구');
+insert into member values('seoyoung', '1234', '최서영', '01088888888', '900602', 'hyun@gamil.com', '남', 1000, '서울시 중구');
+insert into member values('kakarot', '1234', '카카로트', '01099999999', '900602', 'hyun@gamil.com', '남', 1000, '서울시 중구');
+insert into member values('naruto', '1234', '나루토', '01011111112', '900602', 'hyun@gamil.com', '남', 1000, '서울시 중구');
     
 /***********배달주소*************/
 
@@ -632,16 +632,17 @@ insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 406000, sysdat
 insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 496000, sysdate, sysdate+7, 56, 'hyun', 2, 1);
 insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 486000, sysdate, sysdate+7, 59, 'hyun', 2, 1);
 
-insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 169000, sysdate, sysdate+7, 1, 'seongmin', 1, 2);
-insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 140000, sysdate, sysdate+7, 2, 'seongmin', 1, 1);
-insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 160000, sysdate, sysdate+7, 3, 'seongmin', 1, 1);
-insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 165000, sysdate, sysdate+7, 4, 'seongmin', 1, 1);
-insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 150000, sysdate, sysdate+7, 5, 'seongmin', 1, 1);
-insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 153000, sysdate, sysdate+7, 6, 'seongmin', 1, 1);
-insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 140000, sysdate, sysdate+7, 7, 'seongmin', 1, 1);
-insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 140000, sysdate, sysdate+7, 8, 'seongmin', 1, 1);
-insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 155000, sysdate, sysdate+7, 9, 'seongmin', 1, 1);
-insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 180000, sysdate, sysdate+7, 10, 'seongmin', 1, 2);
+insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 169000, sysdate, sysdate+7, 450, 'seongmin', 2, 2);
+insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 140000, sysdate, sysdate+7, 422, 'seongmin', 2, 1);
+insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 160000, sysdate, sysdate+7, 430, 'seongmin', 2, 1);
+insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 165000, sysdate, sysdate+7, 380, 'seongmin', 2, 1);
+insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 150000, sysdate, sysdate+7, 368, 'seongmin', 2, 1);
+insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 153000, sysdate, sysdate+7, 378, 'seongmin', 2, 1);
+insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 140000, sysdate, sysdate+7, 345, 'seongmin', 2, 1);
+insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 140000, sysdate, sysdate+7, 480, 'seongmin', 2, 1);
+insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 155000, sysdate, sysdate+7, 435, 'seongmin', 2, 1);
+insert into productDetail values(PRODUCTDETAIL_PD_NO_SEQ.nextval, 180000, sysdate, sysdate+7, 521, 'seongmin', 2, 2);
+
 
 /************주문**************/
 insert into orders values(1, sysdate, 1, 41, '배송준비중');
@@ -657,7 +658,7 @@ insert into payment values(1, '지원준비', '01034567890', '인천', '안전�
 insert into payment values(2, '우치하', '01087654321', '나뭇잎 마을', '안전한 배송 부탁 드립니다.', 2, 3);
 
 /********************REQNA*****************/
-insert into reqna values(reqna_rq_no_seq.nextval, '안녕하세요 support_fire 1:1 문의 담담자 CS 정성윤입니다. 현재 고객님의 주문 단계는 입금전 단계 입니다 상품은 입금이된 후 출고가 진행되오니 결제 후 사이트를 통하여 배송상황 확인 부탁드립니다.', sysdate);
+insert into reqna values(reqna_rq_no_seq.nextval, '안녕하세요 support_fire 1:1 문의 담담자 CS 정성윤입니다. 현재 고객님의 주문 단계는 입금전 단계 입니다. 상품은 입금이된 후 출고가 진행되오니 결제 후 사이트를 통하여 배송상황 확인 부탁드립니다.', sysdate);
 insert into reqna values(reqna_rq_no_seq.nextval, '안녕하세요 support_fire 1:1 문의 담담자 CS 임현정입니다. 아쉽게도 나이키 측에서 재고가 많이 풀리지 않아 세계적으로 매물이 부족한 상황입니다.', sysdate);
 insert into reqna values(reqna_rq_no_seq.nextval, '안녕하세요 support_fire 1:1 문의 담담자 CS 박현입니다. 죄송하지만 코로나 사태로 인하여 물류량 증가로 전체적인 배송이 지연되는 상황입니다 고객님의 너그러운 마음으로 이해 부탁드립니다.', sysdate);
 
@@ -672,12 +673,34 @@ insert into qna values(QNA_Q_NO_SEQ.nextval, '나이키 x 드래곤볼 콜라보
 insert into qna values(QNA_Q_NO_SEQ.nextval, '주문한지 15일째인데 상품이 도착하지 않고있습니다.', '맨발로 다니라는 소리인가요?', sysdate, 'enbi', 1);
 
 /**********notice***********/
-insert into notice values(NOTICE_N_NO_SEQ.nextval, '야미1', '까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득1', sysdate, 0, 0);
-insert into notice values(NOTICE_N_NO_SEQ.nextval, '야미2', '빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득2', sysdate, 0, 0);
-insert into notice values(NOTICE_N_NO_SEQ.nextval, '야미3', '까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득3', sysdate, 0, 0);
-insert into notice values(NOTICE_N_NO_SEQ.nextval, '야미4', '빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득4', sysdate, 0, 0);
-insert into notice values(NOTICE_N_NO_SEQ.nextval, '야미5', '까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득까드득5', sysdate, 0, 0);
-insert into notice values(NOTICE_N_NO_SEQ.nextval, '야미6', '빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득빠드득6', sysdate, 0, 1);
+insert into notice values(NOTICE_N_NO_SEQ.nextval, '인터넷 익스플로러(IE) 지원 종료 안내', 
+                                                     '안녕하세요 support_fire입니다. 
+                                                     6/15(수)부터 마이크로소프트(MS)의 공식 지원이 종료되는 ‘인터넷 익스플로러(IE)’에 대한 업데이트 지원을 종료합니다. 구글 크롬(Chrome) 등 최신 브라우저를 사용하시길 바랍니다. 감사합니다.', 
+                                                     sysdate, 0, 1);
+insert into notice values(NOTICE_N_NO_SEQ.nextval, '택배사 파업 여파 해소 및 배송 정상화 안내', 
+                                                    '안녕하세요 support_fire입니다. 
+                                                    택배노조의 파업 및 종료 후 여파로 인한 배송 지연이 오늘부터 정상화되었습니다.
+                                                    현재 모든 지역에서 파업 전과 같은 정상 일정으로 배송이 가능함을 알려 드립니다.배송 정상화를 기다려 주셔서 감사합니다.
+                                                    앞으로도 더 나은 서비스 제공을 위해 최선의 노력을 다하겠습니다. 감사합니다.',
+                                                    sysdate, 0, 0);
+insert into notice values(NOTICE_N_NO_SEQ.nextval, '신규 회원 가입 혜택 변경 안내', 
+                                                     '안녕하세요 support_fire입니다. 
+                                                     (기존)회원 가입 시 적립금 지급 금액 : 500원
+                                                     (현재)회원 가입 시 적립금 지금 금액 : 1000원 으로 인상 되었습니다 많은 관심 부탁드립니다. 감사합니다.', 
+                                                     sysdate, 0, 0);
+insert into notice values(NOTICE_N_NO_SEQ.nextval, '배송지연 안내', 
+                                                    '안녕하세요 support_fire입니다. 
+                                                    배송이 지연되어 죄송합니다 근데 어쩔 수 없습니다.', 
+                                                    sysdate, 0, 0);
+insert into notice values(NOTICE_N_NO_SEQ.nextval, '친구추천 기능 삭제 안내', 
+                                                    '안녕하세요 support_fire입니다. 
+                                                     친구추천 기능이 삭제되어 죄송합니다 근데 어쩔 수 없습니다.', 
+                                                     sysdate, 0, 0);
+insert into notice values(NOTICE_N_NO_SEQ.nextval, '이벤트 추첨 결과 안내', 
+                                                     '안녕하세요 support_fire입니다. 
+                                                     추첨결과 아무도 당첨되지 않았습니다.
+                                                     다음을 기약하시길....',
+                                                     sysdate, 0, 0);
 
 /*********review**********/
 
